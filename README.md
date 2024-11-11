@@ -116,12 +116,10 @@ The following "bugs" in the Juno code affect this mod
 The following bugs are known to me in SpaceRace
 
 * The projects inspector behaves badly.  Some (low priority) fields do not update regularly.  Sometimes new projects do not appear until the scene reloads.  Occasionally, the inability to update the inspector leads other methods to fail.
-
-* Sometimes craft do not proceed through their orbit correctly when in warp.  I don't know if this is a result of my changes to the navball or whether this is an inherent bug in Juno, but I cannot reproduce it reliably.  Please play with UNDO/QUICKLOAD unlocked.  Astronauts will die if you don't.
-
+  
 * If you use the planet studio during a career game, the scripts do not load when you leave the studio.  Reloading your last save fixes this.
 
-* Craft validation will need to be rewritten from scratch.  For now, the validator will not always stop you from integrating a craft that you could not design with your current technology.
+* Craft validation will need to be rewritten from scratch.  For now, the validator will not stop you from integrating a craft that you could not design with your current technology.
 
 ---------- Current State of the Mod -----------
 
