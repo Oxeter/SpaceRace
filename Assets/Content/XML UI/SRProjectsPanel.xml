@@ -1,0 +1,131 @@
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\ModTools\UI\XmlLayout.xsd">
+    <Include path="Ui/Xml/Styles.xml" />
+    <Include path="Ui/Xml/InspectorPanel.xml" />
+    
+    <VerticalLayout id="sr-projects-panel" class="translucent-panel-dark border draggable inspector-panel" translucency="0.15" padding="0 0 0 5" contentSizeFitter="vertical" childAlignment="LowerCenter" width="400" height="800" childForceExpandHeight="true" rectAlignment="LowerRight" offsetXY="-50 50">
+      <Panel class="inspector-header" color="DarkPanel" translucency="0" preferredHeight="30">
+        <TextMeshPro internalId="title-text" class="inspector-title" margin="5 0 50 0" text="Projects"/>
+        <Image internalId="pin-button" class="inspector-panel-pin" width="28" height="28" offsetXY="-20 0" sprite="Ui/Sprites/Panel-Pin" rectAlignment="MiddleRight" onClick="PinMainPanel();" hoverClass="inspector-panel-pin-hover" />
+        <Image internalId="close-button" class="inspector-panel-pin" width="24" height="24" offsetXY="0 0" sprite="Ui/Sprites/Common/IconCloseFlyout" rectAlignment="MiddleRight" onClick="CloseMainPanel();" hoverClass="inspector-panel-pin-hover" />
+      </Panel>
+      <VerticalScrollView class="no-image" internalId="scroll-view" pivot="0 1" preferredHeight="600">
+        <VerticalLayout class="no-image" internalId="financials" contentSizeFitter="vertical" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" spacing="5" padding="7 7 7 7">
+            <Panel id="current-funds" class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro internalId="label" class="label column-left" text="Current Funds"/>
+            <TextMeshPro internalId="value" class="value column-right" raycastTarget="true" />
+            </Panel>
+            <Panel id="net-income" class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro internalId="label" class="label column-left" text="Net Income"/>
+            <TextMeshPro internalId="value" class="value column-right" raycastTarget="true" text="blah"/>
+            </Panel>
+            <Panel class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro internalId="label"  class="label column-left" text="Available Technicians"/>
+            <TextMeshPro id="available-technicians" internalId="value"  class="value column-right" raycastTarget="true" text="0"/>
+            </Panel>
+            <Panel  class="inspector-panel-row inspector-template no-image" preferredHeight="35" navigation="None">
+            <TextMeshPro internalId="label" class="label column-left" text="New Integration From" />
+            <HorizontalLayout class="no-image column-right" internalId="container" spacing="10" childForceExpandWidth="true" rectAlignment="MiddleCenter">
+                  <Panel class="inspector-panel-row no-image" navigation="None">
+                    <ContentButton id = "new from designer" internalId="button" class="btn stretch" onClick="OnClickIntegrateCurrent">
+                      <TextMeshPro internalId="label" text = "Designer" />
+                    </ContentButton>
+                  </Panel>
+                  <Panel class="inspector-panel-row no-image" navigation="None">
+                    <ContentButton id = "new-from-file" internalId="button" class="btn stretch" onClick="OnClickIntegrateFromFile">
+                      <TextMeshPro internalId="label" text = "File" />
+                    </ContentButton>
+                  </Panel>
+            </HorizontalLayout>
+            </Panel>
+            <Panel id="new-engine-button" class="inspector-panel-row inspector-template no-image" navigation="None">
+              <ContentButton internalId="button" class="btn stretch" onClick="OnClickDevelopEngine">
+                <TextMeshPro internalId="label" text="Develop Selected Engine" />
+              </ContentButton>
+            </Panel>
+            <VerticalLayout id="projects-parent" class="no-image" contentSizeFitter="vertical" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" spacing="5" padding="0 0 7 7">
+            </VerticalLayout>
+        </VerticalLayout>
+      </VerticalScrollView>
+    </VerticalLayout>
+    
+<RectTransform id="project-panel-templates" active="false">
+    <VerticalLayout id="template-integration-element"  class="no-image" contentSizeFitter="vertical" childForceExpandHeight="true" pivot="0 1" spacing="5" padding="0 0 0 0"> 
+      <Panel internalId="header-content" class="inspector-header translucent-panel inspector-panel-row">
+        <Image internalId="progress-bar" sprite="Ui/Sprites/Common/White" border="Border" ignoreLayout="true" color="ProgressBarBackground" fillAmount="0" fillMethod="Horizontal" fillOrigin="0" type="Filled" />
+        <Image internalId="arrow" class="header-arrow" offsetXY="10 0" rotation="0 0 0"/>
+        <TextMeshPro internalId="project-name" offsetXY="20 0" class="label" fontStyle="Bold,UpperCase" color="LabelText" fontSize="16" alignment="Left" />
+        <TextMeshPro internalId="project-time" offsetXY="0 0" class="label" color="LabelText" fontSize="16" alignment="Right" />
+        <Button internalId="project-launch" class="btn-success" rectAlignment="MiddleRight" width = "100" height = "100%" active = "false">
+            <TextMeshPro buttonColors="Success|SuccessHover|SuccessPressed|Success" fontStyle="Bold,UpperCase" fontSize="16" alignment="center" text = "Launch" />
+        </Button>
+      </Panel>
+      <VerticalLayout internalId="project-details" class="no-image" contentSizeFitter="vertical" childForceExpandHeight="true" pivot="0 1" spacing="5" padding="0 0 7 7" active="false">
+        <Panel class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro class="label column-left" text="Efficiency"/>
+            <TextMeshPro internalId="efficiency" class="value column-right" tooltip="test" raycastTarget="true" text="1"/>
+        </Panel>
+        <VerticalLayout internalId="efficiency-factors" class="no-image" contentSizeFitter="vertical" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" spacing="5" padding="50 50 7 7">
+        </VerticalLayout>
+        <Panel class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro class="label column-left" text="Progress/Day"/>
+            <TextMeshPro internalId="progress-per-day" class="value column-right" raycastTarget="true" text="0"/>
+        </Panel>
+        <Panel class="inspector-panel-row tooltip-row no-image" preferredHeight="40">
+          <Panel class="slider">
+            <TextMeshPro internalId="technicians-slider-label" class="label" text="Technicians"/>
+            <TextMeshPro internalId="technicians-slider-value" class="value" text="0"/>
+            <Slider internalId="technicians-slider" value="0.0" minValue="0.0" maxValue ="10.0" wholeNumbers="true"/>
+          </Panel>
+        </Panel>
+        <Panel internalId="rush-panel" data-toggle-state="false" class="inspector-panel-row tooltip-row no-image" navigation="None">
+          <TextMeshPro internalId="label" class="label column-left" text="Rush" overflowMode="Overflow" enableWordWrapping="false" />
+          <Panel class="column-right">
+            <Toggle internalId="rush-toggle" toggleBackgroundImage="" anchorMax="1, .5" anchorMin="1, .5" pivot="1, .5" colors="Button|ButtonHover|ButtonPressed|ButtonDisabled" navigation="None" />
+          </Panel>
+        </Panel>
+        <Panel class="inspector-panel-row no-image" navigation="None">
+          <ContentButton internalId="cancel-button" class="btn btn-danger stretch" width="150" onClick="OnCancelButtonPressed();">
+            <TextMeshPro internalId="label" text="CANCEL PROJECT" />
+          </ContentButton>
+          </Panel>
+      </VerticalLayout>
+    </VerticalLayout>
+
+    <VerticalLayout id="template-part-development-element"  class="no-image" contentSizeFitter="vertical" childForceExpandHeight="true" pivot="0 1" spacing="5" padding="0 0 0 0"> 
+      <Panel internalId="header-content" class="inspector-header translucent-panel inspector-panel-row">
+        <Image internalId="progress-bar" sprite="Ui/Sprites/Common/White" border="Border" ignoreLayout="true" color="ProgressBarBackground" fillAmount="0" fillMethod="Horizontal" fillOrigin="0" type="Filled" />
+        <Image internalId="arrow" class="header-arrow" offsetXY="10 0" rotation="0 0 0"/>
+        <TextMeshPro internalId="project-name" offsetXY="20 0" class="label" fontStyle="Bold,UpperCase" color="LabelText" fontSize="16" alignment="Left" />
+        <TextMeshPro internalId="project-time" offsetXY="0 0" class="label" color="LabelText" fontSize="16" alignment="Right" />
+      </Panel>
+      <VerticalLayout internalId="project-details" class="no-image" contentSizeFitter="vertical" childForceExpandHeight="true" pivot="0 1" spacing="5" padding="0 0 7 7" active="false">
+        <Panel class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro class="label column-left" text="Efficiency"/>
+            <TextMeshPro internalId="efficiency" class="value column-right" tooltip="test" raycastTarget="true" text="1"/>
+        </Panel>
+        <VerticalLayout internalId="efficiency-factors" class="no-image" contentSizeFitter="vertical" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" spacing="5" padding="50 50 7 7">
+        </VerticalLayout>
+        <Panel class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro class="label column-left" text="Progress/Day"/>
+            <TextMeshPro internalId="progress-per-day" class="value column-right" raycastTarget="true" text="0"/>
+        </Panel>
+        <Panel internalId="rush-panel" data-toggle-state="false" class="inspector-panel-row tooltip-row no-image" navigation="None">
+          <TextMeshPro internalId="label" class="label column-left" text="Rush" overflowMode="Overflow" enableWordWrapping="false" />
+          <Panel class="column-right">
+            <Toggle internalId="rush-toggle" toggleBackgroundImage="" anchorMax="1, .5" anchorMin="1, .5" pivot="1, .5" colors="Button|ButtonHover|ButtonPressed|ButtonDisabled" navigation="None" />
+          </Panel>
+        </Panel>
+        <Panel class="inspector-panel-row no-image" navigation="None">
+          <ContentButton internalId="cancel-button" class="btn btn-danger stretch" width="150" onClick="OnCancelButtonPressed();">
+            <TextMeshPro internalId="label" text="CANCEL PROJECT" />
+          </ContentButton>
+        </Panel>
+      </VerticalLayout>
+    </VerticalLayout>
+
+    <Panel id="template-efficiency-factor" class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro internalId="factor" class="label column-left" text=""/>
+            <TextMeshPro internalId="penalty" class="value column-right" tooltip = "" color = "ValueText" raycastTarget="true" text="0"/>
+    </Panel>
+</RectTransform>
+</XmlLayout>

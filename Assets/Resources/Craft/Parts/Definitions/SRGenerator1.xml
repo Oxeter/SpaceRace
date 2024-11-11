@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="Generator1">
+  <PartType id="SRGenerator1" includeInBodyDrag="true" name="Generator1" prefabPath="Craft/Parts/Prefabs/Generator1.prefab" mass="0" price="0" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <Modifiers>
+      <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="-1" collisionExplodeImpulse="2000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="true" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="-1" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" supportsTransparency="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <Generator baseFuelFlow="0.00069" baseMass="75" baseScale="1" consumptionOverride="1" costPerWatt="3000" efficiency="0.5" fuelConsumptionScale="1" fuelSourceAttachPoint="0" fuelType="HP LOX/LH2" generationOverride="1" hideBase="false" scale="1" stretch="0" soundVolume="0" inspectorEnabled="true" partPropertiesEnabled="false" staticPriceAndMass="false" version="3" versionLast="3" versionsAllowed="" />
+      <SpaceRace.SRFuelCell scale="1" efficiency="0" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint name="AttachPointBottom" position="0,0,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
+    </AttachPoints>
+    <SubpartTypes>
+      <SubpartType index="0" xmlName="" displayName="Part" />
+    </SubpartTypes>
+  </PartType>
+  <DesignerParts>
+    <DesignerPart name="Fuel Cell" category="Electronics" description="A fuel cell that converts high-pressure hydrogen and oxygen to electricity. The only reasonable solution for multiday missions with high power needs. Will be ineffective until the appropriate technology is developed." order="2" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <Assembly>
+        <Parts>
+          <Part id="1" partType="SRGenerator1" position="0,0,0" rotation="0,0,0">
+            <Config />
+            <Generator />
+            <SpaceRace.SRFuelCell />
+          </Part>
+        </Parts>
+      </Assembly>
+    </DesignerPart>
+  </DesignerParts>
+  <PartStyles>
+    <SubpartStyles subpartIndex="0">
+      <Style id="Default" displayName="Default">
+        <TextureStyles>
+          <TextureStyle id="FuelCell1" />
+        </TextureStyles>
+      </Style>
+    </SubpartStyles>
+  </PartStyles>
+</Part>

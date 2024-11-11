@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Crew Tower Base" category="Pad Hardware" description="Segment for constructing crew towers.  Free of charge.  Extra heavy to help balance.  Don't send it to space." order="300" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="445" partType="CrewCompartment" position="0,0,0" rotation="0,0,0" name="Space Habitat" materials="17,0,0,0,0" texture="Fuselage9" textureTiling="4,3.85">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="3.420084E-08,4.250654E-08,1.138602E-07" explosiveness="-1" massScale="5" priceScale="0" />
+          <Fuselage bottomScale="2,2" cornerRadiuses="0,0,0,0,0,0,0,0" deformations="0,0,0" depthCurve="0" meshPriceMultiplier="100" offset="0,3.25,0" shellDensityOverride="-1" topScale="2,2" volume="103.999947" volumeInner="103.319992" version="3" />
+          <CrewCompartment capacity="6" crewExitPosition="0,0,2" minPressure="5000" volumePerIndividual="15" />
+        </Part>
+      </Parts>
+      <Connections />
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

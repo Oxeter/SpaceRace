@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="Parachute">
+  <PartType id="ParachuteSR - Drogue Chute" includeInBodyDrag="true" name="Parachute" prefabPath="Craft/Parts/Prefabs/Parachute1.prefab" mass="28.8" price="0" partCollisions="AutoDisablePerPart" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <Modifiers>
+      <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="0" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="2000" collisionDisconnectVelocity="-1" collisionExplodeImpulse="3000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="0.1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1000" occlusion="Auto" partCollisionHandling="AutoDisablePerPart" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Parachute" supportsActivation="true" supportsTransparency="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <Parachute aslBased="false" autocutASL="-1" autocutDensity="0.5" baseSize="0.5" chuteHeight="1" chuteRadius="2" chuteRadiusDeflated="0.5" cordLength="5" deploymentASL="-1" deploymentDensity="0.15" inflationASL="-1" inflationDensity="0.3" maxDeploymentSpeed="1000" referenceDensity="1.2" snapThresholdMultiplier="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint name="AttachPoint1" position="0,0,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" jointType="Rigid" />
+    </AttachPoints>
+    <SubpartTypes>
+      <SubpartType index="0" xmlName="base" displayName="Base" />
+      <SubpartType index="1" xmlName="parachute" displayName="Parachute" />
+    </SubpartTypes>
+  </PartType>
+  <DesignerParts>
+    <DesignerPart name="Drogue Chute" category="Control &amp; Descent" description="Activate these in an atmosphere to reduce your chances of rapid unplanned disassembly." order="1" showInDesigner="true" snapshotDistanceScaler="1.5" snapshotPartOffset="-0.01,0,0" snapshotRotation="30,30,0">
+      <Assembly>
+        <Parts>
+          <Part id="1" partType="ParachuteSR - Drogue Chute" position="0,0,0" rotation="0,0,0">
+            <Config />
+            <Parachute />
+          </Part>
+        </Parts>
+      </Assembly>
+    </DesignerPart>
+  </DesignerParts>
+  <PartStyles>
+    <SubpartStyles subpartIndex="0">
+      <Style id="Base" displayName="Top chute">
+        <TextureStyles>
+          <TextureStyle id="ParchuteBase" />
+        </TextureStyles>
+      </Style>
+      <Style id="Small" displayName="Side chute">
+        <TextureStyles>
+          <TextureStyle id="Default" />
+        </TextureStyles>
+      </Style>
+    </SubpartStyles>
+    <SubpartStyles subpartIndex="1">
+      <Style id="ParachuteStripedHorizontal" displayName="H. Striped">
+        <TextureStyles>
+          <TextureStyle id="Parachute1" />
+        </TextureStyles>
+      </Style>
+      <Style id="ParachuteStripedVertical" displayName="V. Striped">
+        <TextureStyles>
+          <TextureStyle id="Parachute1" />
+        </TextureStyles>
+      </Style>
+      <Style id="ParachuteCheckered" displayName="Checkered">
+        <TextureStyles>
+          <TextureStyle id="Parachute1" />
+        </TextureStyles>
+      </Style>
+    </SubpartStyles>
+  </PartStyles>
+</Part>

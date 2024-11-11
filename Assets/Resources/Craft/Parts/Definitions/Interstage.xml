@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Interstage" category="Structural" description="Use this to split your craft into stages." order="12" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="19" partType="Detacher1" position="0,0,0" rotation="0,0,0" activationStage="0" materials="0,3,4,2,0">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config autoActivateIfNoStageOrActivationGroup="false" centerOfMass="1.709916E-09,3.791165E-10,5.27168E-09" heatShieldScale="0" />
+          <Fuselage bottomScale="0.1,0.1" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="1.5" offset="0,0.14,0" shellDensityOverride="1200" topScale="0.1,0.1" volume="0.00869632047" volumeInner="0.0075086" version="3" />
+          <Detacher force="0" version="2" />
+          <CoverEngine />
+          <CrossFeed />
+        </Part>
+      </Parts>
+      <Connections />
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

@@ -1,0 +1,70 @@
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\ModTools\UI\XmlLayout.xsd">
+  <Include path="Ui/Xml/Styles.xml" />
+  <Include path="Ui/Xml/InspectorPanel.xml" />
+  <Defaults>
+    <Panel class="design-button" preferredHeight="25" rectAlignment="UpperCenter" raycastTarget="true" colors="Button|ButtonHover|ButtonPressed|ButtonDisabled" onClick="OnListItemClicked(this);" />
+    <Panel class="design-button-hover" color="Button" />
+    <Panel class="design-button-press" color="ButtonHover" />
+    <Image class="design-button" onClick="OnDesignButtonPressed(this);" />
+  </Defaults>
+    <VerticalLayout id="sr-projects-panel" class="translucent-panel-dark border draggable inspector-panel" translucency="0.15" padding="0 0 0 5" contentSizeFitter="vertical" childAlignment="LowerCenter" width="250" height="800" childForceExpandHeight="true" rectAlignment="MiddleLeft" offsetXY="0 0">
+      <Panel class="inspector-header" color="DarkPanel" translucency="0" preferredHeight="30">
+        <TextMeshPro internalId="title-text" class="inspector-title" margin="5 0 50 0" text="Load Craft"/>
+        <Image internalId="close-button" class="inspector-panel-pin" width="24" height="24" offsetXY="0 0" sprite="Ui/Sprites/Common/IconCloseFlyout" rectAlignment="MiddleRight" onClick="Close();" hoverClass="inspector-panel-pin-hover" />
+      </Panel>
+      <VerticalLayout  pivot="0 1" spacing="5" padding="7 7 7 7">
+      <Panel id="none-selected" class="inspector-panel-row tooltip-row no-image" preferredHeight="15" active="true">
+        <TextMeshPro internalId="label" class="label" raycastTarget="true" text="Select a file below"/>
+      </Panel>
+        <VerticalLayout id="selected-details" pivot="0 1" spacing="5" padding="0 0 7 7" active="false">
+          <Panel id="design-name" class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro internalId="label" class="label column-left" text="Craft"/>
+            <TextMeshPro internalId="value" class="value column-right" raycastTarget="true" text=""/>
+          </Panel>     
+          <Panel id="design-mass" class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro internalId="label" class="label column-left" text="Mass"/>
+            <TextMeshPro internalId="value" class="value column-right" raycastTarget="true" text="0"/>
+          </Panel>
+          <Panel id="design-price" class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+            <TextMeshPro internalId="label" class="label column-left" text="Price" />
+            <TextMeshPro internalId="value" class="value column-right" raycastTarget="true" text="0" />
+          </Panel>    
+          <Panel id="flight-name-label-element" class="inspector-panel-row tooltip-row no-image" preferredHeight="15">
+          <TextMeshPro internalId="label" class="label" raycastTarget="true" text="Flight Name"/>
+          </Panel>
+          <Panel id="flight-name" class="no-image" height="32" padding="1 1 1 1">
+            <TextMeshProInputField id="flight-name-input" text="" class="search-input" onValueChanged="FilterDesignList(value);">
+              <TMP_Placeholder text="Flight Name..." />
+              <TMP_Text />
+            </TextMeshProInputField>
+          </Panel>
+          <Panel id="integrate-button" class="inspector-panel-row no-image" navigation="None">
+          <ContentButton internalId="button" class="btn stretch" onClick="OnIntegrateButtonPressed();">
+            <TextMeshPro internalId="label" text="INTEGRATE" />
+          </ContentButton>
+          </Panel>
+        </VerticalLayout>
+      <Panel class="inspector-panel-row  tooltip-row no-image" preferredHeight="15">
+        <Image internalId="image" height="1" color="#2E353E" />
+      </Panel>
+      <Panel class="no-image" height="32" padding="1 1 1 1" rectAlignment="UpperCenter">
+        <TextMeshProInputField id="search-input" text="" class="search-input" onValueChanged="FilterItems(value);">
+          <TMP_Placeholder text="Search..." />
+          <TMP_Text text="" />
+        </TextMeshProInputField>
+      </Panel>
+      </VerticalLayout>
+      <VerticalScrollView class="no-image" internalId="scroll-view" pivot="0 1" preferredHeight="600">
+      <VerticalLayout id="designs-parent" pivot="0 1" spacing="5" padding="7 7 7 7" childForceExpandHeight="false">
+      </VerticalLayout>
+      </VerticalScrollView>
+    </VerticalLayout>
+    
+<RectTransform id="new-integration-templates" active="false">
+    <Panel id="design-button-template" class="inspector-panel-row no-image" navigation="None" preferredHeight="25">
+      <ContentButton internalId="button" craftId="0" class="btn stretch design-button">
+        <TextMeshPro internalId="label" text="BUTTON" />
+      </ContentButton>
+    </Panel>
+</RectTransform>
+</XmlLayout>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="Lander Module">
+  <PartType id="SRCommandPod5" includeInBodyDrag="true" name="Lander Module" prefabPath="Craft/Parts/Prefabs/CommandPod5.prefab" mass="1" price="5000000" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <Modifiers>
+      <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="2500" collisionDisconnectVelocity="-1" collisionExplodeImpulse="3000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="true" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" supportsTransparency="true" thermalMassRatio="0.25" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <CommandPod activationGroupNames="" activationGroupStates="" autoRecalculateStages="true" configurableContents="true" configureBattery="0.05" configureGyros="0" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="0,0,0" pidRoll="0,0,0" pilotSeatRotation="0,0,0" powerConsumption="0" reorientCraftOnConfigChange="true" replicateActivationGroups="All" replicateControls="true" replicateStageActivations="true" stageCalculationVersion="2" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <FuelTank autoFuelType="false" capacity="2494.8" fuel="2494.8" fuelType="Battery" priority="0" subPriority="0" utilization="-1" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <FuelTank autoFuelType="true" capacity="0" fuel="0" fuelType="Monopropellant" priority="0" subPriority="0" utilization="-1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <CrewCompartment capacity="3" commandPodEnabledInCompartment="false" crewExitPosition="0,0,-1.25" crewExitRotation="0,180,0" maxPressure="-1" minPressure="-1" visibleInCompartment="false" volumePerIndividual="3" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <SpaceRace.SRCapsule baseScale="1" commoditiesScale="0.05" comShifter="0" height="1.27" heightStretch="1" mass="0" configureFuelCapacity="0.3" radiusBottom="1" radiusPercent="1" radiusTop="0.416" requiredAreaPerAstronaut="1.5" unscaledCenterOfMass="0,-0.4,0" wallThickness="0.03" powerConsumption="0.25" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <SpaceRace.SRAvionics guidance="Mechanical" maxThrustScale="3" communicationScale="8" powerConsumption="0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <FlightProgram maxCallStackSize="100" maxInstructionsPerFrame="25" maxThreads="50" outputToDevConsole="false" timeSinceLaunch="0" powerConsumptionPerInstruction="0" broadcastPowerConsumptionPerByte="0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint name="AttachPointBottomLoad" position="0,-0.666,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" crewTraversable="true" />
+      <AttachPoint name="AttachPointTop" position="0,0.664,0" rotation="270,180,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.32" crewTraversable="true" />
+      <AttachPoint name="AttachPointBottom" position="0,-0.666,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" radius="0.8" connectionType="Shell" />
+      <AttachPoint name="SurfaceAstronaut" surface="CommandPodCollider" canSeek="false" connectionType="Eva" />
+      <AttachPoint name="Surface" surface="CommandPodCollider" canSeek="false" crewTraversable="true" />
+    </AttachPoints>
+    <SubpartTypes>
+      <SubpartType index="0" xmlName="" displayName="Part" />
+    </SubpartTypes>
+  </PartType>
+  <DesignerParts>
+    <DesignerPart name="Extraplanetary Landing Module" category="Command" description="Lighter and more fragile than a capsule that can survive Earth reentry.  Contains a configurable fuel tank." order="500" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <Assembly>
+        <Parts>
+          <Part id="1" partType="SRCommandPod5" position="0,0,0" rotation="0,0,0">
+            <Config />
+            <CommandPod />
+            <FuelTank />
+            <FuelTank />
+            <CrewCompartment />
+            <SpaceRace.SRCapsule />
+            <SpaceRace.SRAvionics />
+            <FlightProgram />
+          </Part>
+        </Parts>
+      </Assembly>
+    </DesignerPart>
+  </DesignerParts>
+  <PartStyles>
+    <SubpartStyles subpartIndex="0">
+      <Style id="Default" displayName="Default">
+        <TextureStyles>
+          <TextureStyle id="Fuselage1" />
+          <TextureStyle id="Fuselage2" />
+          <TextureStyle id="Fuselage3" />
+          <TextureStyle id="Fuselage4" />
+          <TextureStyle id="Fuselage5" />
+          <TextureStyle id="Fuselage6" />
+          <TextureStyle id="Fuselage7" />
+          <TextureStyle id="Fuselage8" />
+          <TextureStyle id="Fuselage9" />
+          <TextureStyle id="Fuselage10" />
+          <TextureStyle id="Fuselage11" />
+        </TextureStyles>
+      </Style>
+    </SubpartStyles>
+  </PartStyles>
+</Part>

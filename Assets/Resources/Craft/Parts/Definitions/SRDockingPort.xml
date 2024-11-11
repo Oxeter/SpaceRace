@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="Docking Port">
+  <PartType id="SRDockingPort" includeInBodyDrag="true" name="Docking Port" prefabPath="Craft/Parts/Prefabs/DockingPort1.prefab" mass="0" price="0" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <Modifiers>
+      <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="0" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="3000" collisionDisconnectVelocity="-1" collisionExplodeImpulse="4000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1000" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="true" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" supportsTransparency="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <DockingPort magnetForce="1" scale="0" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="2" versionLast="2" versionsAllowed="" />
+      <CameraVantage autoCenterCamera="true" cameraOffset="0,0,0" cameraRotationOffset="-90,0,0" dirtIntensity="0" enabledByDefault="true" hideBase="false" scale="1" fieldOfView="60" fieldOfViewMax="100" fieldOfViewMin="40" isHidden="false" isNight="true" nightVisionColor="#FFFFFF" lookAtCommandPod="false" manualRegister="false" padPosition="false" variableZoom="false" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <CrossFeed attachPointA="0" attachPointB="1" mode="Disabled" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <SpaceRace.SRAdjust inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint name="AttachPoint1" position="0,-0.0715,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" crewTraversable="true" />
+      <AttachPoint name="DockingAttachPoint" position="0,0.0716,0" rotation="270,180,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" jointType="Rigid" crewTraversable="true" />
+    </AttachPoints>
+    <SubpartTypes>
+      <SubpartType index="0" xmlName="" displayName="Part" />
+    </SubpartTypes>
+  </PartType>
+  <DesignerParts>
+    <DesignerPart name="Docking Port" category="Command" description="Allows connecting two crafts in flight so they can be friends and transfer fuel." order="900" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <Assembly>
+        <Parts>
+          <Part id="1" partType="SRDockingPort" position="0,0,0" rotation="0,0,0">
+            <Config />
+            <DockingPort />
+            <CameraVantage />
+            <CrossFeed />
+            <SpaceRace.SRAdjust />
+          </Part>
+        </Parts>
+      </Assembly>
+    </DesignerPart>
+  </DesignerParts>
+  <PartStyles>
+    <SubpartStyles subpartIndex="0">
+      <Style id="Default" displayName="Default">
+        <TextureStyles>
+          <TextureStyle id="DockingPort1" />
+        </TextureStyles>
+      </Style>
+    </SubpartStyles>
+  </PartStyles>
+</Part>

@@ -1,0 +1,109 @@
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\..\ModTools\UI\XmlLayout.xsd">
+    <Include path="Ui/Xml/Design/DesignStyles.xml" />
+	<Include path="Ui/Xml/Styles.xml" />
+	<Include path="Ui/Xml/InspectorPanel.xml" />
+    <Defaults>
+        <ContentButton class="selected" buttonColors="Primary|PrimaryHover|ButtonPressed|Button" />
+    </Defaults>
+    <VerticalScrollView class="no-image">
+        <VerticalLayout class="no-image" childForceExpandHeight="false" pivot="0 1" contentSizeFitter="vertical" rectAlignment="UpperCenter" childAlignment="UpperCenter" padding="20 20 20 50" spacing="10">
+
+
+            <Panel class="inspector-panel-row no-image" navigation="None">
+                <ContentButton internalId="integrate-craft-button" class="btn stretch" width="250" onClick="OnLoadButtonPressed();">
+                    <TextMeshPro internalId="label" text="LOAD PREVIOUS DESIGN" />
+                </ContentButton>
+            </Panel>
+            <Panel class="inspector-panel-row no-image" navigation="None">
+                <ContentButton internalId="integrate-craft-button" class="btn stretch" width="250" onClick="OnIntegrateButtonPressed();">
+                    <TextMeshPro internalId="label" text="INTEGRATE CRAFT" />
+                </ContentButton>
+            </Panel>
+            <Panel class="header" rectAlignment="LowerCenter">
+                <TextMeshPro internalId="label" text="Stages" fontStyle="Bold" class="tooltip" tooltip="The stages of the rocket" />
+                <Image class="separator" />
+            </Panel>
+            <VerticalLayout id="stage-list" class="no-image" childForceExpandHeight="false" pivot="0 1" contentSizeFitter="vertical" rectAlignment="UpperCenter" childAlignment="UpperCenter" padding="0 0 20 20" spacing="10">
+            </VerticalLayout> 
+            <Panel class="inspector-panel-row no-image" navigation="None">
+                <ContentButton internalId="integrate-craft-button" class="btn stretch" width="250" onClick="OnNameCraftButtonPressed();">
+                    <TextMeshPro internalId="label" text="RENAME CRAFT" />
+                </ContentButton>
+            </Panel>  
+            <Panel class="inspector-panel-row no-image" navigation="None">
+                <ContentButton internalId="integrate-craft-button" class="btn stretch" width="250" onClick="OnNameButtonPressed();">
+                    <TextMeshPro internalId="label" text="NAME SELECTED STAGES" />
+                </ContentButton>
+            </Panel>           
+            <Panel class="inspector-panel-row no-image" navigation="None">
+                <ContentButton internalId="develop-stages-button" class="btn stretch" width="250" onClick="OnDevelopStagesButtonPressed();">
+                    <TextMeshPro internalId="label" text="DEVELOP SELECTED STAGES" />
+                </ContentButton>
+            </Panel>
+            <Panel class="inspector-panel-row no-image" navigation="None">
+                <ContentButton internalId="previous-stages-button" class="btn stretch" width="250" onClick="OnPreviousStagesButtonPressed();">
+                    <TextMeshPro internalId="label" text="PREVIOUS STAGES" />
+                </ContentButton>
+            </Panel>
+            <Panel class="header" rectAlignment="LowerCenter">
+                <TextMeshPro internalId="label" text="Parts" fontStyle="Bold" class="tooltip" tooltip="Parts that require development" />
+                <Image class="separator" />
+            </Panel>
+            <VerticalLayout id="part-list" class="no-image" childForceExpandHeight="false" pivot="0 1" contentSizeFitter="vertical" rectAlignment="UpperCenter" childAlignment="UpperCenter" padding="0 0 20 20" spacing="10">
+            </VerticalLayout>
+            <Panel class="inspector-panel-row no-image" navigation="None">
+                <ContentButton internalId="develop-stages-button" class="btn stretch" width="250" onClick="OnDevelopPartButtonPressed();">
+                    <TextMeshPro internalId="label" text="DEVELOP SELECTED PART" />
+                </ContentButton>
+            </Panel>
+        </VerticalLayout>
+    </VerticalScrollView>
+
+    <RectTransform id="dev-flyout-templates" active="false">
+        
+        <Panel id="template-stage-panel" class="no-image" padding="10 10 10 10">
+            <ContentButton internalId="stage-button" class="btn stretch" ignoreLayout="true" translucency="0.15"/>
+            <TableLayout internalId="fop-list" autoCalculateHeight="true" columnWidths="0 40">
+                <Row preferredHeight="30">
+                    <Cell columnSpan="2" dontUseTableCellBackground="true">
+                        <TextMeshPro internalId = "stage-name" alignment="Center" fontStyle="Bold" text="StageName"/>
+                    </Cell>
+                </Row>
+            </TableLayout>
+        </Panel>
+
+        <Row id="template-fop-element" preferredHeight="30">
+            <Cell dontUseTableCellBackground="true">
+                <TextMeshPro internalId = "label" class="label column-left" text="" />
+            </Cell>
+            <Cell dontUseTableCellBackground="true">
+                <TextMeshPro internalId = "value" class="value column-right" text="" />
+            </Cell>
+        </Row>
+
+        <Panel id="template-part-panel" padding="0 0 0 0">
+            <Panel padding="10 10 10 10" preferredWidth="310">
+                <ContentButton internalId="part-button" class="btn stretch" ignoreLayout="true" translucency="0.15"/>
+                <TableLayout internalId="property-list" autoCalculateHeight="true" columnWidths="100 200">
+                    <Row preferredHeight="30">
+                        <Cell columnSpan="2" dontUseTableCellBackground="true">
+                            <TextMeshPro internalId = "part-name" columnSpan="2" alignment="Center" fontStyle="Bold" text="PartName"/>
+                        </Cell>
+                    </Row>
+                </TableLayout>
+            </Panel>
+            <Panel preferredWidth="30" rectAlignment="MiddleRight">
+                <TextMeshPro internalId = "occurences" class="value column-right" text="x1" />
+            </Panel>
+        </Panel>
+
+        <Row id="template-prop-element" preferredHeight="20">
+            <Cell dontUseTableCellBackground="true">
+                <TextMeshPro internalId = "label" class="label column-left" text="" />
+            </Cell>
+            <Cell dontUseTableCellBackground="true">
+                <TextMeshPro internalId = "value" class="value column-right" text="" />
+            </Cell>
+        </Row>
+    </RectTransform>
+</XmlLayout>

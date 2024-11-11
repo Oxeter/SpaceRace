@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="Rocket Engine">
+  <PartType id="SRRocketEngine" includeInBodyDrag="true" name="Rocket Engine" prefabPath="Craft/Parts/Prefabs/RocketEngine1.prefab" mass="0" price="0" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="true">
+    <Modifiers>
+      <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="750" collisionDisconnectVelocity="-1" collisionExplodeImpulse="1000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" supportsTransparency="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <RocketEngine chamberPressure="1" engineSubTypeId="GasGenerator1" engineTypeId="Liquid" fuelType="LOX/RP1" gimbalRange="1" nozzleSize="1" nozzleThroatSize="0.85" nozzleTypeId="Bravo" fuelGrain="RodAndTube" size="1" supportsWarpBurn="false" thrustOverride="1" massFlowRateOverride="-1" wattsPerFuelFlowOverride="-1" ignited="false" ignitionsOverride="-1" ignitionsUsed="0" minThrottleOverride="-1" throttleResponse="-1" heatTransferOverride="1" directDamage="0" overexpansionDamage="10" engineSoundOverride="None" exhaustExpansionRange="-1,-1" exhaustGlobalIntensity="-1" exhaustScale="1" exhaustOffset="0" exhaustShockIntensity="-1" exhaustShockDirectionOffset="0" exhaustRimShade="-1" exhaustSootIntensity="0" exhaustSootLength="0" exhaustColor="Default" exhaustColorExpanded="Default" exhaustColorTip="Default" exhaustColorShock="Default" exhaustColorFlame="Default" exhaustColorSoot="Default" smokeColor="Default" hasSmoke="true" smokeOffset="1" smokeSpeedOverride="1" exhaustTextureStrength="1" nozzleDiscStrength="5" mass="8.806104" price="2252275" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="0" outputCurveOffset="0" showActivationGroup="false" showInputAxis="true" showInvert="true" type="Standard" zeroOnDeactivate="true" inputId="Throttle" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <SpaceRace.SRRocketEngine throttleDown="0" airLight="false" maxIgnitions="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint name="AttachPointTop" tag="Top" position="0,0,0" rotation="270,180,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" fuelLine="true" />
+    </AttachPoints>
+    <SubpartTypes>
+      <SubpartType index="0" xmlName="engineType" displayName="Engine Type" />
+      <SubpartType index="1" xmlName="subType" displayName="Sub Type" />
+      <SubpartType index="2" xmlName="nozzle" displayName="Nozzle" />
+      <SubpartType index="3" xmlName="nozzleExtension" displayName="Nozzle Extension" />
+    </SubpartTypes>
+  </PartType>
+  <DesignerParts>
+    <DesignerPart name="Rocket Engine" category="Propulsion" description="Basic rocket engine, configure it to meet your mission parameters." order="125" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="-25,100,0">
+      <Assembly>
+        <Parts>
+          <Part id="1" partType="SRRocketEngine" position="0,0,0" rotation="0,-90,0">
+            <Config />
+            <RocketEngine />
+            <InputController />
+            <SpaceRace.SRRocketEngine />
+          </Part>
+        </Parts>
+      </Assembly>
+    </DesignerPart>
+  </DesignerParts>
+  <PartStyles>
+    <SubpartStyles subpartIndex="0">
+      <Style id="Default" displayName="Default" />
+    </SubpartStyles>
+    <SubpartStyles subpartIndex="1">
+      <Style id="Default" displayName="Default" />
+    </SubpartStyles>
+    <SubpartStyles subpartIndex="2">
+      <Style id="Default" displayName="Default" />
+    </SubpartStyles>
+    <SubpartStyles subpartIndex="3">
+      <Style id="Default" displayName="Default" />
+    </SubpartStyles>
+  </PartStyles>
+</Part>

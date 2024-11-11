@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1366777262, guid: c37b925f2b4978342b2e0b83a8fa404a, type: 3}
+  m_Name: ModData
+  m_EditorClassIdentifier: 
+  _assemblies:
+  - SpaceRace.dll
+  _author: Oxeter
+  _description: 'Lead the United States space program from 1950.  Can you beat the
+    Soviets to the moon?
+
+
+    Required Mod: Harmony
+
+
+    Instructions: Unzip the
+    SpaceRace folder into your Career folder and install a solar system with Earth
+    (Solar System and RSS both work).  When starting a new career, select Sandbox
+    and choose the solar system.  Then select Career and choose SpaceRace.'
+  _loadPriority: 1000
+  _name: SpaceRace
+  _otherAssets:
+  - {fileID: 4900000, guid: 3efd5e99bef6d8c878e563cb5d12181c, type: 3}
+  _prefabs: []
+  _steamDescription: 
+  _steamLanguage: English
+  _steamPreviewPath: 
+  _steamTags: 
+  _steamTitle: 
+  _steamVisibility: 0
+  _versionMajor: 0
+  _versionMinor: 1
+  _partCategories: []
+  _parts:
+  - {fileID: 4900000, guid: 47adee86534be93d499a3c157fe02c73, type: 3}
+  - {fileID: 4900000, guid: 2c9b8e635fef7e6788c13f02dca99631, type: 3}
+  - {fileID: 4900000, guid: 2aa6b2e4d9c26976687e64a10239c63f, type: 3}
+  - {fileID: 4900000, guid: 9faf92d61bf53ed7aba73a36bb18c62a, type: 3}
+  - {fileID: 4900000, guid: 5998706ec03a320399c007d14c9621a8, type: 3}
+  - {fileID: 4900000, guid: 23213805de0e59d728d3e10ecc43b59f, type: 3}
+  - {fileID: 4900000, guid: 99ac990aa3cf764e38eb5593c2a48e9d, type: 3}
+  - {fileID: 4900000, guid: 0bb8a25ed7f699c7a9ebee514936ef33, type: 3}
+  - {fileID: 4900000, guid: 2310e8e9a070b16148d9b184b57afd38, type: 3}
+  - {fileID: 4900000, guid: fb9c2fbbb48a67eb9b88f831d1bd605e, type: 3}
+  - {fileID: 4900000, guid: ec198276a627cab16a17721d710aee35, type: 3}
+  - {fileID: 4900000, guid: 4b7e0e8122ed2124f8d8777d7ca6e583, type: 3}
+  - {fileID: 4900000, guid: 00686c38faa80ec8089c5a8f78a502ef, type: 3}
+  - {fileID: 4900000, guid: f24c933ee963479fdb3ec8f840254e13, type: 3}
+  - {fileID: 4900000, guid: 3eca156f9fac72629be26feaa3c612e6, type: 3}
+  - {fileID: 4900000, guid: 1092d406187cfc598adf1f37ef27f50f, type: 3}
+  - {fileID: 4900000, guid: bf69b0a9fa9c503cdad818c497ab984e, type: 3}
+  - {fileID: 4900000, guid: 0f64f8d6d130eb3068b828604cdd4d8f, type: 3}
+  - {fileID: 4900000, guid: 2a4b0abd3f32ac7dcad44831676b1574, type: 3}
+  - {fileID: 4900000, guid: d1cbc1d5c49817c29b3c558f45c9b904, type: 3}
+  - {fileID: 4900000, guid: b309cda6a1123eb61ae7d705f17d5805, type: 3}
+  _partStyleExtensions: []
+  _partTextureStyles: []
+  _persistentObjects:
+  - {fileID: 6354731577328299750, guid: fb0121385bb34a8a9bc26b2127cdfb16, type: 3}
+  _uiResourceDatabases:
+  - {fileID: 11400000, guid: 9ace3d3408265c4e6a3b7a7ec0caa162, type: 2}
+  - {fileID: 11400000, guid: 07d6ffa0ae3bfdbc083759de313b53a6, type: 2}

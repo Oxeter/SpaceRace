@@ -1,0 +1,394 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3442631056116458266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7317043914328782204}
+  - component: {fileID: 3290317366976609514}
+  - component: {fileID: 6890826719519627065}
+  - component: {fileID: 5493699054857657211}
+  - component: {fileID: 5953673549887036719}
+  - component: {fileID: 5285997034121347306}
+  - component: {fileID: -2643533038481225257}
+  - component: {fileID: 962909209647679237}
+  - component: {fileID: 284352030039674128}
+  - component: {fileID: -4977536059210388914}
+  - component: {fileID: 8698251038804088061}
+  m_Layer: 0
+  m_Name: SRCommandPod3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7317043914328782204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3290317366976609514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1298369543, guid: 43320b5f70320504aa4b1543184e13b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _allowDesignerReorientationOnPullout: 1
+    _allowIndividualPartRemoval: 0
+    _defaultColorIndexPrimary: 0
+    _defaultColorIndexTrim1: 1
+    _defaultColorIndexTrim2: 2
+    _defaultColorIndexTrim3: 3
+    _defaultColorIndexTrim4: 4
+    _id: SRCommandPod3
+    _includeInBodyDrag: 1
+    _mirrorConfig:
+      _hasRotationOffset: 0
+      _rotationOffsetEuler: {x: -0, y: 0, z: 0}
+    _name: Patriot Capsule
+    _partCollisionHandling: 0
+    _price: 5000000
+    _unscaledMass: 1
+    _usePreferredNodeName: 1
+--- !u!114 &6890826719519627065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -631517893, guid: 43320b5f70320504aa4b1543184e13b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _activationGroup: 0
+    _category: {fileID: 11400000, guid: 4bfc71c0b9c1253428ca08e136ecc26f, type: 2}
+    _description: Carries humans to space and back. Also contains avionics, batteries
+      and monopropellant.
+    _displayOrder: 400
+    _iconPath: 
+    _iconType: 0
+    _name: Patriot Capsule
+    _partTypeOverrides: []
+    _position: {x: 0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0}
+    _showInDesigner: 1
+    _snapshotDistanceScaler: 1
+    _snapshotPartOffset: {x: 0, y: 0, z: 0}
+    _snapshotPartRotation: {x: 0, y: 0, z: 0}
+    _snapshotRotation: {x: 30, y: 30, z: 0}
+--- !u!114 &5493699054857657211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -841283480, guid: 43320b5f70320504aa4b1543184e13b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _id: 
+    _inputId: 
+    _inspectorEnabled: 0
+    _partPropertiesEnabled: 1
+    _staticPriceAndMass: 0
+    _version: 1
+    _versionLast: 1
+    _versionsAllowed: 
+    _autoActivateIfNoStageOrActivationGroup: 1
+    _buoyancyBaseScale: 1
+    _buoyancyUserScale: 1
+    _castShadows: 1
+    _centerOfMass: {x: 0, y: 0, z: 0}
+    _collisionDisconnectImpulse: 3000
+    _collisionDisconnectVelocity: -1
+    _collisionExplodeImpulse: 4000
+    _collisionExplodeVelocity: -1
+    _collisionPreventExternalDisconnections: 0
+    _collisionVelocityMode: 1
+    _dragScale: 1
+    _dragScaleActive: 1
+    _dragScaleAngular: 1
+    _explosiveness: 0
+    _fuelLine: 0
+    _heatShield: 0
+    _heatShieldBaseScale: 1
+    _heatShieldMass: 0
+    _heatShieldScale: 0
+    _heatShieldValidation: 1
+    _ignoreValidation: 0
+    _includeInDrag: 1
+    _inertiaTensorBaseScale: 1
+    _inertiaTensorMin: 0.05
+    _inertiaTensorUserScale: 1
+    _initialCraftNodeId: -1
+    _massScale: 1
+    _maxDamage: 100
+    _maxDrag: 0
+    _maxDragActive: 0
+    _maxTemperature: 1000
+    _occlusion: 0
+    _partCollisionHandling: 0
+    _partCollisionResponse: 2
+    _partScale: {x: 1, y: 1, z: 1}
+    _partSelectionEnabled: 1
+    _preventDebris: 1
+    _priceScale: 1
+    _raiseWaterEventsEvenIfNotBuoyant: 0
+    _renderQueue: 0
+    _stageActivationType: 0
+    _supportsActivation: 1
+    _supportsTransparency: 1
+    _thermalMassRatio: 0.25
+    _tutorialId: 
+--- !u!114 &5953673549887036719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1861138772, guid: 55a7c5278766598448d9083b0de0861d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _id: 
+    _inputId: 
+    _inspectorEnabled: 1
+    _partPropertiesEnabled: 1
+    _staticPriceAndMass: 0
+    _version: 1
+    _versionLast: 1
+    _versionsAllowed: 
+    _activationGroupNames:
+    - 
+    _activationGroupStates: 
+    _autoRecalculateStages: 1
+    _configurableContents: 1
+    _configureBattery: 0.1
+    _configureGyros: 0
+    _craftConfigAutoAssign: 1
+    _craftConfigType: 0
+    _currentStage: 0
+    _pidPitch: {x: 0, y: 0, z: 0}
+    _pidRoll: {x: 0, y: 0, z: 0}
+    _pilotSeatRotation: {x: 0, y: 0, z: 0}
+    _powerConsumption: 0
+    _reorientCraftOnConfigChange: 1
+    _replicateActivationGroups: 2
+    _replicateControls: 1
+    _replicateStageActivations: 1
+    _stageCalculationVersion: 2
+    _useDefaultPilotSeatRotation: 1
+--- !u!114 &5285997034121347306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 59408311, guid: 55a7c5278766598448d9083b0de0861d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _id: 
+    _inputId: 
+    _inspectorEnabled: 0
+    _partPropertiesEnabled: 0
+    _staticPriceAndMass: 0
+    _version: 1
+    _versionLast: 1
+    _versionsAllowed: 
+    _autoFuelType: 0
+    _capacity: 2494.8
+    _fuel: 2494.8
+    _fuelType: Battery
+    _fuelTypeDescription: 
+    _fuelTypeReadOnly: 
+    _priority: 0
+    _subPriority: 0
+    _utilization: -1
+--- !u!114 &-2643533038481225257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 59408311, guid: 55a7c5278766598448d9083b0de0861d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _id: 
+    _inputId: 
+    _inspectorEnabled: 0
+    _partPropertiesEnabled: 0
+    _staticPriceAndMass: 0
+    _version: 1
+    _versionLast: 1
+    _versionsAllowed: 
+    _autoFuelType: 1
+    _capacity: 0
+    _fuel: 0
+    _fuelType: Monopropellant
+    _fuelTypeDescription: 
+    _fuelTypeReadOnly: 
+    _priority: 0
+    _subPriority: 0
+    _utilization: -1
+--- !u!114 &962909209647679237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1264219031, guid: 55a7c5278766598448d9083b0de0861d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _id: 
+    _inputId: 
+    _inspectorEnabled: 1
+    _partPropertiesEnabled: 1
+    _staticPriceAndMass: 0
+    _version: 1
+    _versionLast: 1
+    _versionsAllowed: 
+    _capacity: 3
+    _capacityLabel: 
+    _commandPodEnabledInCompartment: 0
+    _crewExitPosition: {x: 0, y: 0, z: -1.25}
+    _crewExitRotation: {x: 0, y: 180, z: 0}
+    _maxPressure: -1
+    _minPressure: -1
+    _visibleInCompartment: 0
+    _volumePerIndividual: 3
+--- !u!114 &284352030039674128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd51656e18e3d0b68a6519127b6b1bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _id: 
+    _inputId: 
+    _inspectorEnabled: 1
+    _partPropertiesEnabled: 1
+    _staticPriceAndMass: 0
+    _version: 1
+    _versionLast: 1
+    _versionsAllowed: 
+    _baseScale: 1.5
+    _commoditiesScale: 0.05
+    _comShifter: 0
+    _height: 1.27
+    _heightStretch: 1
+    _mass: 0
+    _configureFuelCapacity: 0
+    _radiusBottom: 0.8
+    _radiusPercent: 1
+    _radiusTop: 0.416
+    _requiredAreaPerAstronaut: 1.5
+    _unscaledCenterOfMass: {x: 0, y: -0.4, z: 0}
+    _wallThickness: 0.05
+    _powerConsumption: 0.25
+--- !u!114 &-4977536059210388914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d4c9f7a5c49924084e25b2d1ed2314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _id: 
+    _inputId: 
+    _inspectorEnabled: 1
+    _partPropertiesEnabled: 1
+    _staticPriceAndMass: 0
+    _version: 1
+    _versionLast: 1
+    _versionsAllowed: 
+    _guidance: Radio
+    _maxThrustScale: 0
+    _communicationScale: 0
+    _powerConsumption: 0
+    LaunchLocationName: 
+    TooMuchThrust: 0
+    InCommunication: 1
+    FlightTime: 0
+    OriginalCommandId: -1
+    MaxFlightTime: 0
+--- !u!114 &8698251038804088061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442631056116458266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1551392140, guid: 55a7c5278766598448d9083b0de0861d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    _id: 
+    _inputId: 
+    _inspectorEnabled: 1
+    _partPropertiesEnabled: 1
+    _staticPriceAndMass: 0
+    _version: 1
+    _versionLast: 1
+    _versionsAllowed: 
+    _maxCallStackSize: 100
+    _maxInstructionsPerFrame: 25
+    _maxThreads: 50
+    _outputToDevConsole: 0
+    _timeSinceLaunch: 0
+    _powerConsumptionPerInstruction: 0
+    _broadcastPowerConsumptionPerByte: 0

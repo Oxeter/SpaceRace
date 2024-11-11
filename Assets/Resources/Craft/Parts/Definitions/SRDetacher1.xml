@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="Interstage">
+  <PartType id="SRDetacher1" includeInBodyDrag="true" name="Interstage" prefabPath="Craft/Parts/Prefabs/Detacher1.prefab" mass="0" price="0" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <Modifiers>
+      <Config autoActivateIfNoStageOrActivationGroup="false" buoyancyBaseScale="0" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="-1" collisionExplodeImpulse="2000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1000" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="Detacher" supportsActivation="true" supportsTransparency="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <Fuselage autoResize="true" bottomScale="1,1" buoyancy="0" clampDistances="-1,1,-1,1,-1,1,-1,1" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" depthCurved="false" flattenNormals="None" fuelPercentage="0" meshMassMultiplier="1" meshPriceMultiplier="1" meshType="Detacher1" normalSmoothingAngle="60" offset="0,1.4,0" shellDensityOverride="-1" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="1,1" volume="-1" volumeInner="-1" wallThickness="1,1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="3" versionLast="3" versionsAllowed="2" />
+      <Detacher detachOnActivated="true" force="0" scale="1" attachPointIndex="0" targetAttachPoints="AttachPointEngine,AttachPointTop" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="2" versionLast="2" versionsAllowed="" />
+      <CoverEngine coverEngine="true" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <CrossFeed attachPointA="1" attachPointB="2" mode="Disabled" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <SpaceRace.SRAdjust inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint name="AttachPointBottom" tag="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="false" ignoreSurfaces="true" connectionType="Shell" />
+      <AttachPoint name="AttachPointBottomLoad" tag="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" />
+      <AttachPoint name="AttachPointTop" tag="Top" position="0,1,0" rotation="270,180,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="true" jointType="Rigid" connectionType="Shell" />
+      <AttachPoint name="AttachPointEngine" tag="AdaptBottom" position="0,0,0" rotation="270,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="false" canSeek="false" ignoreSurfaces="true" jointType="Rigid" connectionType="Legacy" />
+    </AttachPoints>
+    <SubpartTypes>
+      <SubpartType index="0" xmlName="" displayName="Part" />
+    </SubpartTypes>
+  </PartType>
+  <DesignerParts>
+    <DesignerPart name="Interstage" category="Structural" description="Use this to split your craft into stages." order="7" showInDesigner="true" snapshotDistanceScaler="1" snapshotRotation="30,30,0">
+      <Assembly>
+        <Parts>
+          <Part id="1" partType="SRDetacher1" position="0,0,0" rotation="0,0,0">
+            <Config />
+            <Fuselage />
+            <Detacher />
+            <CoverEngine />
+            <CrossFeed />
+            <SpaceRace.SRAdjust />
+          </Part>
+        </Parts>
+      </Assembly>
+    </DesignerPart>
+  </DesignerParts>
+  <PartStyles>
+    <SubpartStyles subpartIndex="0">
+      <Style id="Interstage-2" displayName="Normal">
+        <TextureStyles>
+          <TextureStyle id="Fuselage1" />
+          <TextureStyle id="Fuselage2" />
+          <TextureStyle id="Fuselage3" />
+          <TextureStyle id="Fuselage4" />
+          <TextureStyle id="Fuselage5" />
+          <TextureStyle id="Fuselage6" />
+          <TextureStyle id="Fuselage7" />
+          <TextureStyle id="Fuselage8" />
+          <TextureStyle id="Fuselage9" />
+          <TextureStyle id="Fuselage10" />
+          <TextureStyle id="Fuselage11" />
+          <TextureStyle id="Default" />
+        </TextureStyles>
+      </Style>
+      <Style id="Interstage-1" displayName="Striped">
+        <TextureStyles>
+          <TextureStyle id="Fuselage1" />
+          <TextureStyle id="Fuselage2" />
+          <TextureStyle id="Fuselage3" />
+          <TextureStyle id="Fuselage4" />
+          <TextureStyle id="Fuselage5" />
+          <TextureStyle id="Fuselage6" />
+          <TextureStyle id="Fuselage7" />
+          <TextureStyle id="Fuselage8" />
+          <TextureStyle id="Fuselage9" />
+          <TextureStyle id="Fuselage10" />
+          <TextureStyle id="Fuselage11" />
+          <TextureStyle id="Default" />
+        </TextureStyles>
+      </Style>
+      <Style id="Interstage-4" displayName="Soyuz">
+        <TextureStyles>
+          <TextureStyle id="Default" />
+        </TextureStyles>
+      </Style>
+    </SubpartStyles>
+  </PartStyles>
+</Part>

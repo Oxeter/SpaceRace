@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Ground-Command" category="Pad Hardware" description="A command pod for controlling ground equipment that does not need to be developed.  Don't take it to space." order="100" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="203" partType="SRCommandDisc1" position="0,0,0" rotation="0,0,0" name="Ground Command Pod" commandPodId="203" materials="18,1,2,3,4" texture="Fuselage4">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="7.81394E-08,3.890905E-09,6.298381E-08" priceScale="0" />
+          <Fuselage autoResize="false" bottomScale="2.820343,2.820343" cornerRadiuses="0,0,0,0,0,0,0,0" deformations="0,0,0" offset="0,0.2660065,0" topScale="2.820343,2.820343" volume="16.9272327" volumeInner="16.5490437" partPropertiesEnabled="true" />
+          <FuelTank capacity="232265.32875853404" fuel="232265.32875853404" utilization="0.0055" />
+          <CommandPod activationGroupNames=",,,,,,,Landing Gear,Solar Panels,RCS" activationGroupStates="false,false,false,false,false,false,false,true,false,true" configureBattery="0.01" pidPitch="10,0,25" pidRoll="10,0,25" pilotSeatRotation="270,0,0">
+            <Controls />
+          </CommandPod>
+          <FlightProgram powerConsumptionPerInstruction="0.01" broadcastPowerConsumptionPerByte="0.1" />
+          <CrewCompartment capacity="0" crewExitPosition="0,0,2.820343" minPressure="5000" volumePerIndividual="1E+07" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+      </Parts>
+      <Connections />
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

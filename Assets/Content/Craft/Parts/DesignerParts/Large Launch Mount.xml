@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Large Launch Mount" category="Pad Hardware" description="A large adjustable platform on which to mount your rockets." order="600" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="428" partType="FairingBase1" position="1.513596,2.459452,1.228121" rotation="9.39297E-05,-4.963484E-05,180" name="Launch Clamps" activationStage="1" stageOverride="true" materials="24,24,24,24,24" symmetryId="81399aa5-4cbb-4994-a514-82edcf16c386" texture="Default">
+          <Drag drag="0,0,31.92172,28.84758,0,0" area="0,0,35.07201,31.98319,0,0" />
+          <Config centerOfMass="2.203516E-07,0.02541659,1.161939E-07" heatShield="287.671082" heatShieldMass="0.719177663" heatShieldScale="0.1" stageActivationType="LandingLeg" symmetryId="531ef1a1-b22c-414c-9d34-38cce5412b8b" />
+          <Fuselage bottomScale="6.061573,6.061573" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="0.8" offset="2.057087E-15,0.1166375,-1.538338E-08" shellDensityOverride="-1" topScale="10.1084,10.1084" volume="48.34796" volumeInner="45.1727" symmetryId="99100bdb-5f0d-4571-b15d-5c9b9a52dbee" version="3" />
+          <Fairing symmetryId="2d874aa1-f22b-449f-ad38-02c3fad3726d" />
+        </Part>
+        <Part id="429" partType="FairingBase1" position="1.513596,2.258322,1.228121" rotation="6.488679E-05,-3.961692E-05,-3.292203E-05" name="Launch Clamps" stageOverride="true" materials="24,24,24,24,24" symmetryId="4555a109-2291-41aa-b415-4de5710fc3b9" texture="Default">
+          <Drag drag="4.179131,4.161613,16.36158,16.17852,4.204155,4.214165" area="11.48635,11.48635,18.63514,18.42576,11.48635,11.48635" />
+          <Config centerOfMass="3.533922E-07,-0.001070596,2.13301E-07" heatShield="296.10437" heatShieldMass="0.7402609" heatShieldScale="0.1" stageActivationType="LandingLeg" symmetryId="4e105a99-5b8d-473c-acef-acac41f2f40c" />
+          <Fuselage bottomScale="10.4008,10.4008" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="0.8" offset="-7.385927E-09,0.08448505,-6.456981E-16" shellDensityOverride="-1" topScale="10.1084,10.1084" volume="55.1892166" volumeInner="51.8147469" symmetryId="b18827d2-9039-48dc-8ecd-d33951209a78" version="3" />
+          <Fairing symmetryId="f44058d1-8857-4ab0-9e52-ad0206accb1f" />
+        </Part>
+        <Part id="430" partType="CargoBay1" position="1.513596,2.168293,1.228121" rotation="7.513208E-05,-4.462588E-05,-3.292204E-05" name="Launch Deck" materials="18,18,18,18,18" symmetryId="880abf2b-4672-4b31-9d47-716c932181c4" partStyle="CargoBay-7" outsideTexture="Fuselage2" insideTexture="Default">
+          <Drag drag="0,0,241.1474,229.2074,0,0" area="0,0,241.1474,229.2074,0,0" />
+          <Config centerOfMass="8.986265E-08,-0.0006625381,5.517081E-07" heatShieldScale="0" maxTemperature="3000" priceScale="0" symmetryId="0cd58ebd-416c-4f48-853f-aef9f5523c8c" />
+          <Fuselage bottomScale="12,12" cornerRadiuses="1,1,1,1,0,0,0,0" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="2" offset="-6.605139E-08,0.00554657,-9.574882E-08" shellDensityOverride="-1" topScale="10.4008,10.4008" volume="4.95343447" volumeInner="2.06719756" symmetryId="def6d676-d845-4deb-a6ad-ffa234fff675" version="3" />
+          <CargoBay symmetryId="b4bd33f3-f53e-4bf8-8d64-08ddd805192b" />
+          <SubPartRotator enabledRotation="89.60239,269.9998,270.3971" symmetryId="efbfad0d-8167-4cf1-bc60-a3e6e2968475" />
+          <SubPartRotator enabledRotation="88.30997,269.9998,271.6899" symmetryId="9d0d5e3b-f440-4c15-84f5-e51b30df20f7" />
+        </Part>
+        <Part id="431" partType="CargoBay1" position="1.513596,1.834942,1.22812" rotation="8.537735E-05,-4.963484E-05,-3.292205E-05" name="Launch Pad" materials="18,18,18,18,18" symmetryId="31fed680-45bf-4f00-97e5-1133c4996669" partStyle="CargoBay-3">
+          <Drag drag="13.29188,12.83018,0,1.203968,13.00285,12.60495" area="13.7198,13.7198,0,1.203968,13.40074,13.40074" />
+          <Config centerOfMass="2.076583E-07,-4.202333E-09,4.942268E-07" heatShieldScale="0" massScale="5" maxTemperature="3000" priceScale="0" symmetryId="ad4d3947-4f1f-42b1-9a87-76ada2005914" />
+          <Fuselage bottomScale="12,12" cornerRadiuses="0,0,0,0,0,0,0,0" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="2" offset="-2.869086E-08,0.3278027,-1.171574E-07" shellDensityOverride="-1" topScale="12,12" volume="377.6288" volumeInner="371.554016" symmetryId="badbcfd4-cc20-47de-978a-8edfc494cb6b" version="3" />
+          <CargoBay hingeStyle="Sliding" symmetryId="526afb9b-5c59-49f6-8a91-6df2a2ab657c" />
+          <SubPartRotator enabledRotation="0,90,0" symmetryId="f3b24524-2933-4b27-b401-f81529628a39" />
+          <SubPartRotator enabledRotation="0,270,0" symmetryId="77e2c767-9367-45e9-89a8-fa8c297533d2" />
+        </Part>
+        <Part id="432" partType="CargoBay1" position="1.513596,0.6558825,1.228119" rotation="-9.562267E-05,180,3.292203E-05" name="Launch Pad" materials="18,18,18,18,18" symmetryId="1f6353b6-065e-4570-80da-7c28ef32e591" partStyle="CargoBay-3">
+          <Drag drag="38.49054,39.77429,0,3.873625,37.81487,39.00854" area="41.1594,41.1594,0,3.873625,40.20221,40.20221" />
+          <Config centerOfMass="8.749157E-08,-6.846409E-09,2.998885E-07" heatShieldScale="0" massScale="5" priceScale="0" symmetryId="5da20391-4e1c-49a3-811d-15170c76df9f" />
+          <Fuselage bottomScale="12,12" cornerRadiuses="0,0,0,0,0,0,0,0" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="2" offset="1.177087E-07,0.8512592,2.893684E-07" shellDensityOverride="-1" topScale="12,12" volume="980.650757" volumeInner="974.073242" symmetryId="2f845257-ea2f-4bcd-bcf3-5367aaee82bc" version="3" />
+          <CargoBay symmetryId="fe371ac7-bcc7-4350-ac85-4814a5d509df" />
+          <SubPartRotator enabledRotation="-1.947655E-05,90,1.947655E-05" symmetryId="18d59487-f442-49e4-8af2-d2ddfe6489d5" />
+          <SubPartRotator enabledRotation="-1.947655E-05,270,-1.947655E-05" symmetryId="9440255d-5ff8-4252-819a-b2c0ec4ca3c5" />
+        </Part>
+        <Part id="435" partType="Strut1" position="12.58687,-2.476836,-9.913242" rotation="359.7642,180,180" materials="2,4,4,2,2" symmetryId="47a4c28e-6429-4479-b1eb-c66f0e9a532d" texture="Fuselage11">
+          <Drag drag="0,10.27015,0,2.486655,0,10.16004" area="0,11.48635,0,2.551883,0,11.48635" />
+          <Config centerOfMass="-1.780511E-08,1.676096E-08,1.658126E-08" heatShieldScale="0" massScale="5" partCollisionHandling="Never" partCollisionResponse="None" priceScale="0" symmetryId="33d75d53-9623-449e-9f45-50bb2425c8ca" />
+          <Fuselage bottomScale="0.8089218,0.8089218" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="1.185641E-06,4.547949,0" shellDensityOverride="-1" topScale="0.8089218,0.8089218" volume="22.249052" volumeInner="21.96347" symmetryId="0d1fdc41-1ea7-45cb-bfa3-339578a9940b" version="3" />
+        </Part>
+        <Part id="440" partType="Strut1" position="-9.627762,-2.476817,-9.845163" rotation="359.7643,270,179.9999" materials="2,4,4,2,2" symmetryId="09b8b90c-6da9-44a5-ace6-1cc3eb24b46d" texture="Fuselage11">
+          <Drag drag="0.1513996,7.748906,0,2.486553,10.37525,0" area="0.957196,8.61476,0,2.52571,11.48635,0" />
+          <Config centerOfMass="-1.780511E-08,1.676096E-08,1.658126E-08" heatShieldScale="0" massScale="5" partCollisionHandling="Never" partCollisionResponse="None" priceScale="0" symmetryId="d94ccb79-195f-49b9-915b-5f5f285fbcbf" />
+          <Fuselage bottomScale="0.8089218,0.8089218" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="1.185641E-06,4.547949,0" shellDensityOverride="-1" topScale="0.8089218,0.8089218" volume="22.249052" volumeInner="21.96347" symmetryId="37a1e301-5622-4101-8961-8ddd6b3fd14f" version="3" />
+        </Part>
+        <Part id="441" partType="Strut1" position="-9.559689,-2.476857,12.36947" rotation="359.7644,3.217273E-07,180" materials="2,4,4,2,2" symmetryId="41f424b9-ab78-45bd-a0db-88b57c9f0635" texture="Fuselage11">
+          <Drag drag="8.528426,0.9309202,0,2.486656,10.15754,0" area="11.48635,3.828784,0,2.538796,11.48635,0" />
+          <Config centerOfMass="-1.780511E-08,1.676096E-08,1.658126E-08" heatShieldScale="0" massScale="5" partCollisionHandling="Never" partCollisionResponse="None" priceScale="0" symmetryId="c600996a-a770-4558-8780-ece3240b81c6" />
+          <Fuselage bottomScale="0.8089218,0.8089218" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="1.185641E-06,4.547949,0" shellDensityOverride="-1" topScale="0.8089218,0.8089218" volume="22.249052" volumeInner="21.96347" symmetryId="a678cefe-d85b-4735-b9ba-152dcf6f205d" version="3" />
+        </Part>
+        <Part id="442" partType="Strut1" position="12.65495,-2.476876,12.30139" rotation="359.7643,90,180.0001" materials="2,4,4,2,2" symmetryId="56eb8d2a-29c2-4d6f-a223-06311ffcfbaa" texture="Fuselage11">
+          <Drag drag="10.37651,0,0,2.421479,0,10.37525" area="11.48635,0,0,2.538796,0,11.48635" />
+          <Config centerOfMass="-1.780511E-08,1.676096E-08,1.658126E-08" heatShieldScale="0" massScale="5" partCollisionHandling="Never" partCollisionResponse="None" priceScale="0" symmetryId="8c6a1e8a-c7d4-4840-8863-aea0c8bac7ac" />
+          <Fuselage bottomScale="0.8089218,0.8089218" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="1.185641E-06,4.547949,0" shellDensityOverride="-1" topScale="0.8089218,0.8089218" volume="22.249052" volumeInner="21.96347" symmetryId="b6be5261-cd94-4558-90eb-131ef1aeee26" version="3" />
+        </Part>
+        <Part id="452" partType="Block1" position="-9.827587,1.341685,-11.08438" rotation="-0.000175859,180,3.290984E-05" materials="0,1,2,3,4" symmetryId="1b855982-1242-4756-b57d-025b40a002e7">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config heatShieldScale="0" symmetryId="fcc71928-b7d1-4b03-82b0-1229602f39b4" />
+          <GenericPart scale="1.25" symmetryId="3362f4a2-99ae-4caf-b62b-8a8b5b8e711c" />
+        </Part>
+        <Part id="457" partType="Generator1" position="-9.864422,0.315083,-10.77188" rotation="270,3.565422E-05,0" name="Ground Power" materials="0,3,2,1,3" symmetryId="5ff578cc-a024-4735-8fdb-ed2960466c4c">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config autoActivateIfNoStageOrActivationGroup="true" massScale="5" priceScale="0" symmetryId="d8becc9c-7fd3-41cd-8c08-7cf7658d7d4f" />
+          <Generator consumptionOverride="0" generationOverride="30" symmetryId="c2e8e81a-b4fe-4c6a-8d9a-89ac05014383" version="3" />
+          <CrewCompartment capacity="0" minPressure="5000" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="true" symmetryId="034b7133-5380-4a8e-8179-12b8a2300063" />
+        </Part>
+        <Part id="456" partType="SRCommandDisc1" position="-9.827236,0.9442066,-11.08439" rotation="0.0002949947,0.3988288,180.2356" name="Ground Command Pod" commandPodId="456" materials="18,1,2,3,4" symmetryId="45a210db-dbce-4a2a-a78e-cdf7161b5230" texture="Fuselage4">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="8.857912E-09,6.72954E-10,1.429905E-08" priceScale="0" symmetryId="55dd4d4a-2eb5-45d2-abc9-a3d5c7d635e0" />
+          <Fuselage autoResize="false" bottomScale="0.3098135,0.3098135" cornerRadiuses="0,0,0,0,0,0,0,0" deformations="0,0,0" offset="0,0.08497138,0" topScale="0.3098135,0.3098135" volume="0.06524742" volumeInner="0.0593020171" partPropertiesEnabled="true" symmetryId="c958b01f-47fb-44b2-b68d-25f9809cd0e7" />
+          <FuelTank capacity="895.28591823451279" fuel="895.28591823451279" subPriority="-15" utilization="0.0055" symmetryId="e572bb96-3e3e-4fe4-b6d6-a15490a9897a" />
+          <CommandPod activationGroupNames=",,,,,,,Landing Gear,Solar Panels,RCS" activationGroupStates="false,false,false,false,false,false,false,true,false,true" configureBattery="0.01" pidPitch="10,0,25" pidRoll="10,0,25" pilotSeatRotation="89.76344,269.9296,89.53073" symmetryId="cc711ec7-c678-4b79-9d70-749542dd2569">
+            <Controls />
+          </CommandPod>
+          <FlightProgram symmetryId="ebb23146-0e51-4b8e-a5fb-c4f261eb302d" />
+          <CrewCompartment capacity="0" crewExitPosition="0,0,0.3098135" minPressure="5000" volumePerIndividual="1E+07" inspectorEnabled="false" partPropertiesEnabled="false" symmetryId="f1675ad4-fccb-4c45-bb65-288b3e7a0c7e" />
+        </Part>
+      </Parts>
+      <Connections>
+        <Connection partA="429" partB="428" attachPointsA="1" attachPointsB="1" symmetryId="8d608543-fbaa-4234-bb70-b8e7d103ea6b" />
+        <Connection partA="430" partB="429" attachPointsA="2" attachPointsB="0" symmetryId="4cb3a325-8d13-4c2b-8c40-e74634fd4812">
+          <BodyJoint body="20" connectedBody="19" breakTorque="1E+07" breakForce="0" jointType="Normal" position="0.01139013,1.075119,-0.004840064" connectedPosition="-1.392327E-07,-0.1691322,-2.933666E-07" axis="0,0,1" secondaryAxis="0,1,0" />
+        </Connection>
+        <Connection partA="431" partB="430" attachPointsA="2" attachPointsB="1" symmetryId="be679ea4-8fde-455d-9db9-cef6bc77ebe9" />
+        <Connection partA="432" partB="431" attachPointsA="2" attachPointsB="1" symmetryId="404d6293-acfa-49e4-8449-becd6116243c" />
+        <Connection partA="435" partB="432" attachPointsA="1" attachPointsB="0" symmetryId="a3e9f4b3-7e35-4f2e-84e1-0cbdae40d06b" />
+        <Connection partA="440" partB="432" attachPointsA="1" attachPointsB="0" symmetryId="a3e9f4b3-7e35-4f2e-84e1-0cbdae40d06b" />
+        <Connection partA="441" partB="432" attachPointsA="1" attachPointsB="0" symmetryId="a3e9f4b3-7e35-4f2e-84e1-0cbdae40d06b" />
+        <Connection partA="442" partB="432" attachPointsA="1" attachPointsB="0" symmetryId="a3e9f4b3-7e35-4f2e-84e1-0cbdae40d06b" />
+        <Connection partA="452" partB="432" attachPointsA="5" attachPointsB="0" symmetryId="53a7d982-d585-4c95-8717-dc3cb565ee3b" />
+        <Connection partA="457" partB="432" attachPointsA="0" attachPointsB="0" symmetryId="4ddbf348-78f7-4385-8e77-87754c326a3c" />
+        <Connection partA="456" partB="452" attachPointsA="1" attachPointsB="1" symmetryId="bb263b19-2cfa-4d02-88be-7c9e00244ac7" />
+      </Connections>
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

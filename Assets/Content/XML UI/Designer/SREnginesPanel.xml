@@ -1,0 +1,38 @@
+<XmlLayout xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\ModTools\UI\XmlLayout.xsd">
+    <Include path="Ui/Xml/Styles.xml" />
+    <Include path="Ui/Xml/InspectorPanel.xml" />
+    
+    <VerticalLayout id="sr-engines-panel" class="translucent-panel-dark border draggable inspector-panel" translucency="0.15" padding="0 0 0 5" contentSizeFitter="vertical" childAlignment="LowerCenter" width="400" height="800" childForceExpandHeight="true" rectAlignment="LowerRight" offsetXY="-50 50">
+      <Panel class="inspector-header" color="DarkPanel" translucency="0" preferredHeight="30">
+        <TextMeshPro internalId="title-text" class="inspector-title" margin="5 0 50 0" text="Engine Designs"/>
+        <Image internalId="pin-button" class="inspector-panel-pin" width="28" height="28" offsetXY="-20 0" sprite="Ui/Sprites/Panel-Pin" rectAlignment="MiddleRight" onClick="PinMainPanel();" hoverClass="inspector-panel-pin-hover" />
+        <Image internalId="close-button" class="inspector-panel-pin" width="24" height="24" offsetXY="0 0" sprite="Ui/Sprites/Common/IconCloseFlyout" rectAlignment="MiddleRight" onClick="CloseMainPanel" hoverClass="inspector-panel-pin-hover" />
+      </Panel>
+        <Panel id="integrate-button" class="inspector-panel-row no-image" navigation="None">
+          <ContentButton internalId="button" class="btn stretch" onClick="OnDevelopButtonPressed();">
+            <TextMeshPro internalId="label" text="DEVELOP" />
+          </ContentButton>
+        </Panel>
+      <VerticalScrollView class="no-image" internalId="scroll-view" pivot="0 1" preferredHeight="600">
+            <VerticalLayout id="families-parent" class="no-image" contentSizeFitter="vertical" childAlignment="UpperCenter" childForceExpandHeight="false" pivot="0 1" spacing="5" padding="0 0 7 7">
+            </VerticalLayout>
+      </VerticalScrollView>
+    </VerticalLayout>
+    
+<RectTransform id="engine-design-templates" active="false">
+    <VerticalLayout id="template-engine-family-element"  class="no-image" contentSizeFitter="vertical" childForceExpandHeight="true" pivot="0 1" spacing="5" padding="0 0 0 0"> 
+      <Panel internalId="header-content" class="inspector-header translucent-panel inspector-panel-row">
+        <Image internalId="arrow" class="header-arrow" offsetXY="10 0" rotation="0 0 0"/>
+        <TextMeshPro internalId="family-name" offsetXY="20 0" class="label" fontStyle="Bold,UpperCase" color="LabelText" fontSize="16" alignment="Left" />
+      </Panel>
+      <VerticalLayout internalId="engine-list" class="no-image" contentSizeFitter="vertical" childForceExpandHeight="false" pivot="0 1" spacing="5" padding="7 7 7 7" active="false">
+      </VerticalLayout>
+    </VerticalLayout>
+
+    <Panel id="template-engine-element" class="inspector-panel-row no-image" navigation="None">
+      <ContentButton internalId="engine-button" class="btn stretch" onClick="OnEngineButtonPressed();">
+        <TextMeshPro internalId="label" text="ENGINE NAME" />
+      </ContentButton>
+    </Panel>
+</RectTransform>
+</XmlLayout>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="Heat Shield">
+  <PartType id="HeatShieldSR - Heat Shield" includeInBodyDrag="true" name="Heat Shield" prefabPath="Craft/Parts/Prefabs/HeatShield1.prefab" mass="0" price="0" partCollisions="Default" defaultMaterials="0,1,2,3,4" subpartsSharePartStyle="false" stylesShareHeader="false">
+    <Modifiers>
+      <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="2500" collisionDisconnectVelocity="-1" collisionExplodeImpulse="3000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="17.68" heatShieldMass="0" heatShieldScale="0.5" heatShieldValidation="false" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="0.2" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="false" supportsTransparency="true" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      <Fuselage autoResize="false" bottomScale="1,1" buoyancy="0" clampDistances="-1,1,-1,1,-1,1,-1,1" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" depthCurved="true" flattenNormals="None" fuelPercentage="0" meshMassMultiplier="1" meshPriceMultiplier="1" meshType="Cone1" normalSmoothingAngle="60" offset="0,0.1,0" shellDensityOverride="-1" subpartIndex="0" supportsXZOffset="true" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0.1,0.1" volume="-1" volumeInner="-1" wallThickness="1,1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="3" versionLast="3" versionsAllowed="" />
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint name="AttachPointBottom" tag="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="true" allowInvertedConnection="false" canReceive="true" canSeek="true" ignoreSurfaces="false" />
+      <AttachPoint name="AttachPointMiddle" position="0,0,0" rotation="270,180,0" positionOffset="0,0,0" rotationOffset="0,0,0" allowRotation="false" allowInvertedConnection="false" canReceive="false" canSeek="false" ignoreSurfaces="true" connectionType="Legacy" />
+    </AttachPoints>
+    <SubpartTypes>
+      <SubpartType index="0" xmlName="" displayName="Part" />
+    </SubpartTypes>
+  </PartType>
+  <DesignerParts>
+    <DesignerPart name="Heat Shield" category="Control &amp; Descent" description="Provides protection from intense heat during re-entry." order="5" showInDesigner="true" snapshotDistanceScaler="1" snapshotPartRotation="0,0,180" snapshotRotation="30,30,0">
+      <Assembly>
+        <Parts>
+          <Part id="1" partType="HeatShieldSR - Heat Shield" position="0,0,0" rotation="0,0,180">
+            <Config />
+            <Fuselage />
+          </Part>
+        </Parts>
+      </Assembly>
+    </DesignerPart>
+  </DesignerParts>
+  <PartStyles>
+    <SubpartStyles subpartIndex="0">
+      <Style id="HeatShield-1" displayName="Default">
+        <TextureStyles>
+          <TextureStyle id="Default" />
+        </TextureStyles>
+      </Style>
+    </SubpartStyles>
+  </PartStyles>
+</Part>

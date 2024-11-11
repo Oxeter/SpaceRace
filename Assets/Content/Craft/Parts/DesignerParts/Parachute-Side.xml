@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Parachute - Side" category="Control &amp; Descent" description="A parachute of histrorical mass" order="0" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="13" partType="SRParachute" position="0,0,0" rotation="0,0,0" name="Drogue Chute" activationStage="0" materials="16,15,15,17,15" baseStyle="Small">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config heatShieldScale="0" />
+          <Parachute autocutASL="5875.709" autocutDensity="0.5" baseSize="0.5" chuteHeight="1" chuteRadius="2" chuteRadiusDeflated="0.5" cordLength="5" deploymentASL="16081.6133" deploymentDensity="0.15" inflationASL="10205.9043" inflationDensity="0.3" maxDeploymentSpeed="1000" referenceDensity="1.2" />
+          <SRAdjust />
+        </Part>
+      </Parts>
+      <Connections />
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>
