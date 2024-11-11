@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Medium Science Equipment" category="Payloads" description="A comprehensive suite of instruments to gather scientific data" order="0" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="6" partType="Fuselage1" position="0,0,0" rotation="0,0,0" name="Medium Science Package" materials="19,4,4,0,0" texture="Fuselage10">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="9.700932E-09,3.88741E-09,1.287641E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.25,0.25" cornerRadiuses="0,0,0,0,0,0,0,0" deadWeight="28.35" deadWeightPercentage="0.02" deformations="0,0,0" depthCurve="0" offset="0,0.2499998,0" shellDensityOverride="-1" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.25,0.25" volume="0.124999888" volumeInner="0.117499895" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="64.62493896484375" fuel="64.62493896484375" fuelType="None" inspectorEnabled="false" partPropertiesEnabled="false" />
+		  <Payload payloadId="Payload-Science-2" />
+        </Part>
+      </Parts>
+      <Connections />
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

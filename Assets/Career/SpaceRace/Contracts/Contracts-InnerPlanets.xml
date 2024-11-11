@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Contracts>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs techNodes="com2" />
+      <Contract customer="jpl" id="mars-flyby" name="Mars Flyby" money="25000000" moneyAdvance="0" cancelPenalty="0" research="1" priority="10" probability="@Probability" difficulty="3">
+         <Description
+            short="Send a craft to flyby Mars and return scienfific data."
+            long="Now that we can reach orbit, we should prove that we can reach the moon." />
+         <Requirements>
+            <TrackedLaunch>
+               <Payload payloadId="Payload-Science-2" payloadName="Science Equipment" allowWarp="true" onFail="Warn">
+                  <Planet name="Mars" description="Fly to Mars">
+                     <Expression expression="10000000 > AltitudeASL " description="Fly within 10,000km of Mars" />
+                     <Expression expression="CraftNode.AllowPlayerControl" >
+						  <Timer min="86400" description="Maintain control for one day" />
+                     </Expression>
+                  </Planet>
+               </Payload>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 1 ? 0 : 500" />
+         <Expression name="Tech" value="NumCompletions = 1 ? 1 : 0" />
+         <Expression name="Apoapsis" value="NumCompletions = 1 ? 5000e3 : 50000e3" />
+      </Params>
+      <Prereqs  contracts="mars-flyby" />
+      <Contract customer="jpl" id="mars-orbit" name="Mars Orbiter" money="10000000" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="3">
+         <Description
+            short="Send a craft to orbit Mars"
+            long="Placing a useful craft in lunar orbit will allow us to study the moon more deeply.  We can track magnetism and radiation over time and take photographs of surface locations." />
+         <Requirements>
+            <TrackedLaunch>
+               <Payload payloadId="Payload-Science-2" payloadName="Science Equipment" allowWarp="true" onFail="Warn">
+                  <Planet name="Mars" description="Fly to Mars">
+                     <Orbit op="Less" property="apoapsis" value="@Apoapsis">
+						<Orbit op="Greater" property="periapsis" value="100e3">
+							<Timer min="86400" description="Maintain orbit for one day" />
+						</Orbit>
+                     </Orbit>
+                  </Planet>
+               </Payload>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 1 ? 0 : 500" />
+      </Params>
+      <Prereqs  contracts="mars-orbit" />
+      <Contract customer="jpl" id="mars-lander" name="Mars Lander" money="50000000" research="1" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="4">
+         <Description
+            short="Send a craft to land on Mars"
+            long="" />
+         <Requirements>
+            <TrackedLaunch>
+               <Payload payloadId="Payload-Science-2" payloadName="Science Equipment" allowWarp="true" showValue="false" onFail="Warn">
+                  <Planet name="Mars" description="Fly to Mars">
+                     <Expression expression="Grounded" description="Land on Mars" visibility="HiddenWhenPassed" listedInMenu="false">
+						<Expression expression="2 > SurfaceVelocity" description="Land on Mars" />
+					 </Expression>
+                  </Planet>
+               </Payload>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs techNodes="com2" />
+      <Contract customer="jpl" id="venus-flyby" name="Venus Flyby" money="25000000" moneyAdvance="0" cancelPenalty="0" research="1" priority="10" probability="@Probability" difficulty="3">
+         <Description
+            short="Send a craft to flyby Venus and return scienfific data."
+            long="Now that we can reach orbit, we should prove that we can reach the moon." />
+         <Requirements>
+            <TrackedLaunch>
+               <Payload payloadId="Payload-Science-2" payloadName="Science Equipment" allowWarp="true" onFail="Warn">
+                  <Planet name="Venus" description="Fly to Mars">
+                     <Expression expression="50000000 > AltitudeASL " description="Fly within 50,000km of Venus" />
+                     <Timer min="86400" description="Maintain contact for one day" />
+                  </Planet>
+               </Payload>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 1 ? 0 : 500" />
+         <Expression name="Tech" value="NumCompletions = 1 ? 1 : 0" />
+         <Expression name="Apoapsis" value="NumCompletions = 1 ? 10000e3 : 100000e3" />
+      </Params>
+      <Prereqs  contracts="venus-flyby" />
+      <Contract customer="jpl" id="venus-orbit" name="Venus Orbiter" money="10000000" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="3">
+         <Description
+            short="Send a craft to orbit Venus"
+            long="" />
+         <Requirements>
+            <TrackedLaunch>
+               <Payload payloadId="Payload-Science-2" payloadName="Science Equipment" allowWarp="true" onFail="Warn">
+                  <Planet name="Venus" description="Fly to Venus">
+                     <Orbit op="Less" property="apoapsis" value="@Apoapsis">
+						<Orbit op="Greater" property="periapsis" value="150e3">
+							<Timer min="86400" description="Maintain orbit for one day" />
+						</Orbit>
+                     </Orbit>
+                  </Planet>
+               </Payload>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 1 ? 0 : 500" />
+      </Params>
+      <Prereqs  contracts="venus-orbit" />
+      <Contract customer="jpl" id="venus-lander" name="Venus Lander" money="50000000" research="1" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="4">
+         <Description
+            short="Send a craft to land on Venus"
+            long="" />
+         <Requirements>
+            <TrackedLaunch>
+               <Payload payloadId="Payload-Science-2" payloadName="Science Equipment" allowWarp="true" showValue="false" onFail="Warn">
+                  <Planet name="Venus" description="Fly to Venus">
+                     <Expression expression="Grounded" description="Land on Venus" visibility="HiddenWhenPassed" listedInMenu="false">
+						<Expression expression="2 > SurfaceVelocity" description="Land on Venus" />
+					 </Expression>
+                  </Planet>
+               </Payload>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+</Contracts>
+
+

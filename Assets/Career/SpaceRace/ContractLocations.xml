@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContractLocations>
+   <ContractLocation id="Earth.Canaveral" name="Cape Canaveral" latLonAgl="28.51,-80.63,0" planet="Earth" range="500" loadDistance="50000" />
+   <ContractLocation id="Earth.300km" name="300km Target" latLonAgl="28.51,-77.48,0" planet="Earth" range="500" loadDistance="50000" />   
+   <ContractLocation id="Earth.2400km" name="2400km Target" latLonAgl="28.51,-56.03,0" planet="Earth" range="500" loadDistance="50000" />      
+   <ContractLocation id="Earth.8000km" name="8000km Target" latLonAgl="-4.46,-13.07,0" planet="Earth" range="500" loadDistance="50000" />
+</ContractLocations>

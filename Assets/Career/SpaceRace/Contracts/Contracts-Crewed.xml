@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Contracts>
+	<ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs techNodes="crew" />
+      <Contract customer="internal" id="extra-crew" name="Crewed Launch Viewing" money="0" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Send a crewmemeber to visit a rocket on the launchpad"
+            long="The test pilots you are training should get to see a rocket up close.  Send one to the pad.  Recover them before you light the engines.  Historically, NASA sent the Mercury 7 to watch the launch of an Atlas rocket like the ones they would later ride to orbit.  The rocket exploded moments after liftoff." />
+         <Requirements>
+			<Payload mode="Recover" num="1" craftTrackingId="extra-1" payloadId="extra-1" payloadName="Astronaut" description="Send an astronaut to the launch pad" alwaysEvaluate="true" allowWarp="true">
+			</Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+<ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="vanguard" techNodes="crew" />
+      <Contract customer="nasc" id="capsule-suborbit" name="Space Capsule Suborbital Test" money="250000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Develop a capsule and launch it into space"
+            long="Human exploration of space will require a new kind of vehicle to keep our astronauts safe from the vaccuum of space and the inferno of reentry.  Develop a space capsule and launch it into space.  Historically, the Mercury capsule was developed to carry a single person to orbit.  It was initially tested empty on suborbital trajectories." />
+         <Requirements>
+			 <PartCount partId="Eva" num="0" description="Do not carry a crew" >
+				<Any num="1">
+					 <PartCount partId="SRCommandPod3" num="1" description="Send an unmanned capsule">
+						<Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						 <Expression expression="AltitudeASL > 150e3" description="Reach 150km" />
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					  </Planet>
+					 </PartCount>
+					 <PartCount partId="SRCommandPod4" num="1" description="Send an unmanned capsule">
+						<Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						 <Expression expression="AltitudeASL > 150e3" description="Reach 150km" />
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					  </Planet>
+					 </PartCount>
+				</Any>
+             </PartCount>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="capsule-suborbit" />
+      <Contract customer="nasc" id="crewed-suborbit" name="First Person in Space" money="25000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Launch a craft to space with a crewmember aboard and return it."
+            long="It is time to place the first American in space.  This may be a suborbital flight.  Historically, knowing that waiting for the Atlas rocket would delay the program, the United States elected to launch astronauts on the smaller Redstone missle.  The first flight took Alan Shepard into space and back." />
+         <Requirements>
+				<Payload mode="Recover" num="1" craftTrackingId = "crewed-suborbit-1" payloadId="crewed-suborbit-1" payloadName="Astronaut 1" description="Have the first astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+					  <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						 <Expression expression="AltitudeASL > 150e3" description="Reach 150km" />
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					  </Planet>
+                </Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="capsule-suborbit" />
+      <Contract customer="nasc" id="capsule-orbit" name="Uncrewed Orbital Flight Test" money="75000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Send a capsule into orbit and return it."
+            long="Before we send a person into orbit, we must test our capsule's ability to safely do so.  This will test retropropulsion, life support and reentry hardware in ways that our suborbital attempt did not. Historically, the United States flew an empty capsule and then a chimpanzee to orbit before commiting a human pilot to the craft." />
+         <Requirements>
+			 <PartCount type="Eva" num="0" description="Do not carry a crew" >
+				<Any num="1" listedInMenu="false">
+					 <PartCount partId="SRCommandPod3" num="1" description="Send an unmanned capsule">
+						<Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						 <Orbit op="Greater" property="periapsis" value="150e3">
+							 <Timer min="14400" description="Maintain orbit for 4 hours" />
+						 </Orbit>
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					  </Planet>
+					 </PartCount>
+					 <PartCount partId="SRCommandPod4" num="1" description="Send an unmanned capsule"  listedInMenu="false">
+						<Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed"  listedInMenu="false">
+						 <Orbit op="Greater" property="periapsis" value="150e3"  listedInMenu="false">
+							 <Timer min="14400" description="Maintain orbit for 4 hours"  listedInMenu="false"/>
+						 </Orbit>
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth"  listedInMenu="false"/>
+					  </Planet>
+					 </PartCount>
+				</Any>
+             </PartCount>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="capsule-orbit" />
+      <Contract customer="nasc" id="crewed-orbit" name="First Person in Orbit" money="75000000" research="1" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Launch a craft to orbit with a crewmember aboard and return it."
+            long="blah TEST" />
+         <Requirements>
+				<Payload mode="Recover" num="1" craftTrackingId = "crewed-orbit-1" payloadId="crewed-orbit-1" payloadName="Astronaut 1" description="Have the designated astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+					  <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						 <Orbit op="Greater" property="periapsis" value="150e3">
+							 <Timer min="14400" description="Maintain orbit for 4 hours" />
+						 </Orbit>
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					  </Planet>
+                </Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 2 ? 0 : 500" />
+        <Expression name="Tech" value="NumCompletions = 2 ? 1: 0" />
+        <Expression name="Duration" value="3600 * 6 * (NumCompletions * NumCompletions +1)" />
+      </Params>
+      <Prereqs contracts="crewed-orbit" />
+      <Contract customer="nasc" id="crewed-orbit-repeat" name="Additional Crewed Orbits" research="@Tech" money="50000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Send a crew on a longer-duration orbital mission and return."
+            long="Now that we know a person can survive orbit, we must test the endurance limits of both crew and capsule.  Histroically, the Mercury 7 followed John Glenn with longer and longer missions.  Gordon Coopers's 34 hour mission strained the limits of the hardware and landed with power depleted.  A proposed 3 day mission was cancelled." />
+         <Requirements>
+				<Payload mode="Recover" num="1" craftTrackingId = "crewed-orbit-1" payloadId="crewed-orbit-1" payloadName="Astronaut 1" description="Have the designated astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+					  <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						 <Orbit op="Greater" property="periapsis" value="150e3">
+							 <Timer min="@Duration" description="Maintain orbit for @Duration:time" />
+						 </Orbit>
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					  </Planet>
+                </Payload>
+         </Requirements>
+      </Contract>0
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="crewed-orbit-repeat" />
+      <Contract customer="nasc" id="gemini-start" name="Two-Person Orbital Flight" money="400000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Send two crew to orbit and adjust their apoapsis midflight"
+            long="Developing the skills for more complex missions requires more capable hardware.  Develop a capsule with room for at least two astronauts and the ability to adjust its orbit mid-mission.  Demonstrate these abilities in a crewed test flight.  Historically, Project Gemini allowed NASA to test the feasibility of the planned Apollo missions.  Orbital maneuvers, rendevous, docking, extra-vehicular activites, and long-duration flight were all pioneered in low Earth orbit by the Gemini crew and spacecraft." />
+         <Requirements>
+				<Payload mode="Recover" num="1" craftTrackingId = "crewed-orbit-2" payloadId="crewed-orbit-2" payloadName="Astronaut 1" description="Have the first astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+					<Payload mode="Recover" num="1" craftTrackingId = "crewed-orbit-3" payloadId="crewed-orbit-3" payloadName="Astronaut 2" description="Have the second astronaut aboard" alwaysEvaluate="true" allowWarp="true">  
+					  <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						 <Orbit op="Greater" property="periapsis" value="150e3">
+							<Orbit op="Greater" property="apoapsis" value="220e3">
+							 <Timer min="7200" description="Maintain orbit for 2 hours" />
+							 </Orbit>
+							 <Orbit op="Less" property="apoapsis" value="170e3">
+							 <Timer min="7200" description="Maintain new orbit for 2 hours" />
+							 </Orbit>
+						 </Orbit>
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					  </Planet>
+					</Payload>  
+                </Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+    <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 3 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="gemini-start" />
+      <Contract customer="nasc" id="gemini-spacewalk" name="Extra-Vehicular Activities" money="30000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Send an astronaut out of the hatch during an orbital spaceflight."
+            long="Long-distance missions in space may require in-space repairs.  Our astonauts must learn to work outside the capsule.  Take two astronauts to orbit and have one perform a spacewalk.  Historically, NASA nearly gave up on spacewalks after the first few were so exhausting, ineffective and in some cases dangerous.  Before the final Gemini mission, Buzz Aldrin and his trainers came upon the idea of practicing in a gigantic pool.  This lead to modifications of handholds and footholds so that astronauts could more easily control their bodies in microgravity." />
+         <Requirements>
+				<Payload mode="Recover" num="1" craftTrackingId = "crewed-orbit-2" payloadId="crewed-orbit-2" payloadName="Astronaut 1" description="Have the designated astronaut aboard" alwaysEvaluate="true" allowWarp="true"> 
+					  <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						 <Orbit op="Greater" property="periapsis" value="150e3">
+							 <PartCount op="greater" num="2" partId="Eva" description="Have at least two crew"/>
+							 <Expression expression="IsDrood" description="Leave the vehicle with the designated astronaut.">
+								 <Timer min="60" description="Spacewalk for one minute." />
+							 </Expression>
+						 </Orbit>
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					  </Planet>
+                </Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+    <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 3 ? 0 : 500" />
+        <Expression name="Duration" value="(4 * NumCompletions + 2 )* 86400 " />
+      </Params>
+      <Prereqs contracts="gemini-start" />
+      <Contract customer="nasc" id="gemini-duration" name="Long Duration Mission" money="30000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Send two astronauts to orbit for @Duration:time."
+            long="A mission to the moon could take a couple weeks.  We need to know how this will affect the minds and bodies of the astronauts.  We will also need power systems that can maintain a spacecraft for this duration.  Historically, the longest Gemini mission was 14 days.  NASA installed fuel cells on the Gemini craft as the batteries to support such a long mission would be prohibitively heavy." />
+         <Requirements>
+				<Payload mode="Recover" num="1" craftTrackingId = "crewed-orbit-3" payloadId="crewed-orbit-3" payloadName="Astronaut 1" description="Have the designated astronaut aboard" alwaysEvaluate="true" allowWarp="true"> 
+					  <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						 <Orbit op="Greater" property="periapsis" value="150e3">
+							 <PartCount op="greater" num="2" partId="Eva" description="Have at least two crew"/>
+							 <Timer min="@Duration" description="Remain on orbit for @Duration:time" />
+						 </Orbit>
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					  </Planet>
+                </Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="gemini-start" />
+      <Contract customer="nasc" id="gemini-first-rendevous" name="First Orbital Rendevous" money="30000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Launch a target vehicle to orbit, then send a crewed vehicle to rendevous with it."
+            long="Limiting our moon rockets to a reasonable size means either multiple launches or a separate lander craft.  Either way, we need to find practical means of bringing two craft together in orbit.  Launch a targest vehicle into low earth orbit and a capsule can attempt to rendevous with it.  Historically, NASA developed the Agena target vehicle for rendevous and docking tests.  When the Agena failed to reach orbit for Gemini 5, Gemini 6 was readied instead.  The first orbital rendevous occured between two manned capsules." />
+         <Requirements>
+			 <PartCount num="1" payloadId="Docking-Target" description="hmmm" visibility="Hidden" alwaysEvaluateChildren="true" listedInMenu="false" showValue="false" >
+				 <Any num="1" description="Have or launch a target vehicle" alwaysEvaluateChildren="true">
+					<PartCount num="1" payloadId="Docking-Target" description="Have the target port" listedInMenu="false" showValue="false" >
+						 <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+							<Orbit op="Greater" property="periapsis" value="160e3" alwaysEvaluateChildren="true">
+								<Orbit op="Less" property="apoapsis" value="250e3">
+									<Timer min="10" description="Maintain orbit for 10 seconds" listedInMenu="false"/>
+								</Orbit>
+							</Orbit>
+						 </Planet>
+					</PartCount>
+					<PartCount num="0" payloadId="Docking-Target" description="Don't have the target port" visibility="Hidden" listedInMenu="false" showValue="false" >
+						<TrackSpawnedCraft craftTrackingId="Docking-Target" listedInMenu="false" visibility="Hidden" onFail="Stop">
+							<SpawnedCraftDistance range="100000000" description="Have a target vehicle in orbit" autoSelectTarget="true" showTargetButton="true" />
+						</TrackSpawnedCraft>
+					</PartCount>
+				 </Any>
+				 <Payload mode="Recover" num="1" craftTrackingId = "crewed-orbit-4" payloadId="crewed-orbit-4" payloadName="Astronaut 1" description="Have the designated astronaut aboard" alwaysEvaluate="true" allowWarp="true"> 
+					 <PartCount num="0" payloadId="Docking-Target" description="Launch a second craft" listedInMenu="false" showValue="false" >
+						 <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+						   <Orbit op="Greater" property="periapsis" value="150e3">
+							   <PartCount partId="Eva" op="greater" num="2" description="Carry at least two crew"/>
+								  <TrackSpawnedCraft craftTrackingId="Docking-Target" listedInMenu="false" visibility="Hidden" onFail="Stop">
+									<SpawnedCraftDistance range="10" description="Come to a stop within 10 meters of the target" autoSelectTarget="true" showTargetButton="true" >
+									   <Timer min="60"/>
+									</SpawnedCraftDistance>
+								 </TrackSpawnedCraft>
+							</Orbit>
+						 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+						</Planet>
+					  </PartCount>
+				  </Payload>
+			</PartCount>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+	<ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="gemini-first-rendevous" />
+      <Contract customer="nasc" id="gemini-first-dock" name="First Docking" money="30000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Launch an uncrewed target vehicle and then send a capsule to dock with it."
+            long="We need to develop the capability for two separate vehicles to attach together to transfer crew or cargo.  Dock a two-person crewed vehicle to an uncrewed vehicle in orbit.  If you decide to launch a new target vehicle, be sure to destroy or abandon any previous target vehicles to avoid confusion." />
+        <Requirements>
+			 <PartCount num="1" payloadId="Docking-Target" description="hmmm" startBypassed="false" alwaysEvaluateChildren="true" visibility="Hidden" listedInMenu="false" showValue="false" >
+			 <Any num="1" description="Have or launch a target vehicle" alwaysEvaluateChildren="true">
+				<PartCount num="1" payloadId="Docking-Target" description="Launch an unmanned target vehicle" listedInMenu="false" showValue="false" >
+					 <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed" listedInMenu="false" showValue="false" >
+						<Orbit op="Greater" property="periapsis" value="160e3" alwaysEvaluateChildren="true">
+							<Orbit op="Less" property="apoapsis" value="250e3">
+								<Timer min="10" description="Maintain orbit for 10 seconds" listedInMenu="false"/>
+							</Orbit>
+						</Orbit>
+					 </Planet>
+				</PartCount>
+				<PartCount num="0" payloadId="Docking-Target" description="Don't have the target port" visibility="Hidden" listedInMenu="false" showValue="false" >
+					<TrackSpawnedCraft craftTrackingId="Docking-Target" listedInMenu="false" visibility="Hidden" onFail="Stop">
+						<SpawnedCraftDistance range="100000000" description="Have a target vehicle in orbit" autoSelectTarget="true" showTargetButton="true" />
+					</TrackSpawnedCraft>
+				</PartCount>
+			 </Any>
+			 <Payload mode="Recover" num="1" craftTrackingId = "crewed-orbit-4" payloadId="crewed-orbit-4" payloadName="Astronaut 1" description="Have the designated astronaut aboard" alwaysEvaluate="true" allowWarp="true"> 
+				 <PartCount num="0" payloadId="Docking-Target" description="Launch a second craft" listedInMenu="false" showValue="false" >
+					 <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+					   <Orbit op="Greater" property="periapsis" value="150e3">
+						   <PartCount partId="Eva" op="greater" num="2" description="Carry at least two crew"/>
+							  <TrackSpawnedCraft craftTrackingId="Docking-Target" listedInMenu="false" visibility="Hidden" onFail="Stop">
+								<SpawnedCraftDistance range="100" description="Approach the target" autoSelectTarget="true" showTargetButton="true" />
+							 </TrackSpawnedCraft>
+							 <CraftEvent event="Docked" description="Dock to the target." dockedCraftTrackingId="Docking-Target" />
+						</Orbit>
+					 <Expression expression="Grounded" description="Undock and return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+					 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					</Planet>
+				  </PartCount>
+              </Payload>
+            </PartCount>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   	<ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 1 ? 0 : 500" />
+        <Expression name="Apo" value="(NumCompletions * 600000) + 700000 " />
+      </Params>
+      <Prereqs contracts="gemini-first-dock" />
+      <Contract customer="nasc" id="gemini-first-dock" name="Attached Maneuvers" money="30000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Dock with a target vehicle and adjust the orbit of the combined craft."
+            long="Now that we have brought two craft together, we need to establish that one craft can push the other.  Use the target vehicle to push the crewed craft to a higher orbit.  Historically, the Agena target vehicle was designed to achieve orbit with 1.5 tons of residual propellant.  One target vehicles used this propellant to push a docked Gemini capsules to over 1300km apogee." />
+        <Requirements>
+			 <PartCount num="1" payloadId="Docking-Target" description="hmmm" startBypassed="false" alwaysEvaluateChildren="true" visibility="Hidden" listedInMenu="false" showValue="false" >
+			 <Any num="1" description="Have or launch a target vehicle" alwaysEvaluateChildren="true">
+				<PartCount num="1" payloadId="Docking-Target" description="Launch an unmanned target vehicle" listedInMenu="false" showValue="false" >
+					 <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed" listedInMenu="false" showValue="false" >
+						<Orbit op="Greater" property="periapsis" value="160e3" alwaysEvaluateChildren="true">
+							<Orbit op="Less" property="apoapsis" value="250e3">
+								<Timer min="10" description="Maintain orbit for 10 seconds" listedInMenu="false"/>
+							</Orbit>
+						</Orbit>
+					 </Planet>
+				</PartCount>
+				<PartCount num="0" payloadId="Docking-Target" description="Don't have the target port" visibility="Hidden" listedInMenu="false" showValue="false" >
+					<TrackSpawnedCraft craftTrackingId="Docking-Target" listedInMenu="false" visibility="Hidden" onFail="Stop">
+						<SpawnedCraftDistance range="100000000" description="Have a target vehicle in orbit" autoSelectTarget="true" showTargetButton="true" />
+					</TrackSpawnedCraft>
+				</PartCount>
+			 </Any>
+			 <Payload mode="Recover" num="1" craftTrackingId = "crewed-orbit-4" payloadId="crewed-orbit-4" payloadName="Astronaut 1" description="Have the designated astronaut aboard" alwaysEvaluate="true" allowWarp="true"> 
+					 <Planet name="Earth" description="Launch from Earth" visibility="HiddenWhenPassed">
+					   <PartCount num="0" payloadId="Docking-Target" description="Launch a second craft" listedInMenu="false" showValue="false" >
+						  <Orbit op="Greater" property="periapsis" value="150e3" alwaysEvaluateChildren="true">
+						  <Orbit op="Less" property="apoapsis" value="260e3">
+						   <PartCount partId="Eva" op="greater" num="2" description="Carry at least two crew"/>
+							  <TrackSpawnedCraft craftTrackingId="Docking-Target" listedInMenu="false" visibility="Hidden" onFail="Stop">
+								<SpawnedCraftDistance range="100" description="Approach the target" autoSelectTarget="true" showTargetButton="true" />
+							 </TrackSpawnedCraft>
+							 </Orbit>
+						</Orbit>
+						</PartCount>
+						<CraftEvent event="Docked" description="Dock to the target." dockedCraftTrackingId="Docking-Target" />
+						<Orbit op="Greater" property="apoapsis" value="@Apo">
+							<Timer min="7200" description="Maintain orbit for 2 hours" listedInMenu="false"/>
+						</Orbit>
+					    <Orbit op="Less" property="apoapsis" value="260e3">
+						   <Timer min="7200" description="Maintain orbit for 2 hours" listedInMenu="false"/>
+						</Orbit>
+					    <Expression expression="Grounded" description="Undock and return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+					    <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+					</Planet>
+              </Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+</Contracts>
+
+
+
+

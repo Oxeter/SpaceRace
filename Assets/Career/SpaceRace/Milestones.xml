@@ -1,0 +1,1347 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Milestones>
+   <!-- CAREER STATE -->
+   <Milestone id="contracts" name="Fulfilled Contracts" expression="NumCompletedContracts" valueFormat="n0" event="FlightEnd" persistent="true" description="Who wants to explore when you can farm the same contract over an over? Let's see how many contracts you can get." >
+      <Tier value="1" money="0" research="0" description="Money doesn't grow from trees, you need to complete contracts from time to time to get some." />
+      <Tier value="5" money="0" research="0" description="Can you get on track and complete a handful of contracts?" />
+      <Tier value="15" money="0" research="0" description="If you try to grow a company, the more contracts you fulfill the better you'll make, 15 is a pretty decent start." />
+      <Tier value="50" money="0" research="0" description="You are farming those contracts like a champ, what are you doing to need that much cash?" />
+      <Tier value="100" money="0" research="0" description="At this point you have earned a good reputation, can you get into the triple digits?" />
+   </Milestone>
+   <Milestone id="money-spent" name="Money Spent" expression="MoneySpent" valueFormat="money" event="FlightEnd" persistent="true" description="Let the money flow, this will account for all your expenses." >
+      <Tier value="1e6" money="0" research="0" description="The expenses pile up, by the time you realize you are burning millions as if they were paper." />
+      <Tier value="10e6" money="0" research="0" description="Right now it may seem surreal to even think you will be expending so much... just wait." />
+      <Tier value="100e6" money="0" research="0" description="If you manage to spend this much money, you may need to go get some fresh air." />
+      <Tier value="1e9" money="0" research="0" description="Ok, this will actually be challenging, either you are playing a lot or you are making things out of gold if you hit this." />
+      <Tier value="1e12" money="0" research="0" description="A trillion in expenses is what you would expect from a company going all around a stellar system, what are you even doing?" />
+   </Milestone>
+   <Milestone id="launched-crafts" name="Launched Crafts" expression="NumLaunches" valueFormat="n0" event="Launch" accumulate="false" persistent="true" description="Launch unique crafts into the world." >
+      <Tier value="5" money="0" research="0" description="The more you launch, the more experienced you get. Get familiar with the process." />
+      <Tier value="15" money="0" research="0" description="You seem to be getting familiar with the dynamics, keep on going!" />
+      <Tier value="50" money="0" research="0" description="So far you have launched a handful of times, now things get real." />
+      <Tier value="100" money="0" research="0" description="You must be getting the hang of this by now, what is sure is you are at least trying." />
+      <Tier value="500" money="0" research="0" description="At this point are you even flying them or just launching and recovering a cheap craft to get this milestone?" />
+   </Milestone>
+   <Milestone id="recovery" name="Scrapping Returns" expression="MoneyRecovered" valueFormat="money" event="FlightEnd" persistent="true" description="Recover crafts to get money in return." >
+      <Tier value="10e3" money="0" research="0" description="If you plan things ahead of time or are just lucky to get your crafts back, your money savings are going to make up for a large cut of your future investments." />
+      <Tier value="100e3" money="0" research="0" description="Saving $100k in recoveries is really impressive, this is more than what your first crafts cost!" />
+      <Tier value="1e6" money="0" research="0" description="Imagine being a millionaire just from the money saved by recovering your crafts." />
+      <Tier value="10e6" money="0" research="0" description="Many companies fail to understand the importance of recovery and refurbishment. By saving 10M$ you are going to have more saved money than their yearly incomes." />
+      <Tier value="1e9" money="0" research="0" description="Saving a billion just from intelligent planning and engineering, this will put you in everyone's mouths." />
+   </Milestone>
+   <Milestone id="explosion-count" name="Explosions" expression="NumExplosions" valueFormat="n0" event="FlightEnd" persistent="true" description="Blow things up, each explosion will add one to the count." >
+      <Tier value="10" money="0" research="0" description="There's no success without failure, and there's no fun without some explosions. Causing 10 explosions is just the start." />
+      <Tier value="50" money="0" research="0" description="Aerospace is infamous for how likely it is for things to go South, but by the time you cause 50 explosions you are going to start to get some looks." />
+      <Tier value="250" money="0" research="0" description="If you get past 250 explosions either you are purposely blowing stuff up or you should reconsider your design process." />
+      <Tier value="1e3" money="0" research="0" description="You are going for 1000 explosions!? How are you even getting this many?" />
+      <Tier value="10e3" money="0" research="0" description="You have to be doing something insanely well to get enough money to blow this much stuff up, so now that you are at it, let's get those fireworks going!" />
+   </Milestone>
+   <Milestone id="top-altitude" name="Record Altitude" expression="max(value, Periapsis > 80e3 ? Apoapsis : AltitudeASL)" valueFormat="distance" event="Update" persistent="true" description="How high you have gone. When in orbit, this is defined by your apoapsis.">
+      <Tier value="10e3" money="0" research="0" description="Higher than the tallest of mountains, your first step towards reaching the stars." />
+      <Tier value="30e3" money="0" research="0" description="Above 30km the atmosphere is thin enough for wings to be useless and drag low enough for hitting record speeds." />
+      <Tier value="80e3" money="0" research="0" description="At 80km there is no air anymore, you have reached space!" />
+      <Tier value="300e3" money="0" research="0" description="To reach 300km you need a beefy rocket, no matter if you go straight up or orbit the planet." />
+      <Tier value="1e6" money="0" research="0" description="Look down. Isn't it beautiful?" />
+   </Milestone>
+   <Milestone id="top-speed" name="Top Speed" expression="max(value, Velocity)" valueFormat="velocity" event="Update" persistent="true" description="You have reached far around Droo, it's time to reach the stars.">
+      <Tier value="343" money="0" research="0" description="You are supersonic." />
+      <Tier value="1e3" money="0" research="0" description="Mach 3 achieved." />
+      <Tier value="2240" money="0" research="0" description="The speed reached by the bumper rocket in 1950." />
+      <Tier value="8e3" money="0" research="1" description="Assuming you're pointing the right way, you're in orbit." />
+      <Tier value="109e2" money="0" research="0" description="You're headed to the moon (if you aimed correctly)." />
+   </Milestone>
+   <!--
+   <Milestone id="orbit-price" name="Cheap Space" expression="min(value, LaunchPrice / max(0.01, Mass))" valueFormat="money" event="Orbit" reversed="true" startValue="30e6" persistent="true" description="Try to get the price per kg to orbit cost as low as possible. This mileston includes the mass of the craft that reaches orbit, not just the payload." >
+      <Tier value="1e6" money="0" research="10" description="Getting to space isn't cheap, especially when you are making a compact dedicated rocket. How cheap can you go?" />
+      <Tier value="1e3" money="0" research="20" description="In the 50s, when large rockets became a thing, the cost per kg was really prohibitive, try to outsmart them." />
+      <Tier value="100" money="0" research="30" description="Shuttles can bring the cost of sending things to orbit down by a lot, but they are complex vehicles, try to do better." />
+      <Tier value="10" money="0" research="40" description="Modern reusable rockets are bringing the cost to space down, can you get into the single digits per kg?" />
+      <Tier value="1" money="0" research="50" description="When trying to lower costs to space it is common to see rockets becoming larger. How large do you have to go?" />
+   </Milestone>
+   -->
+   <Milestone id="docks" name="Unique Docks" expression="NumDockedCrafts" valueFormat="n0" event="Dock" persistent="true" description="Try to dock as many unique crafts together as you can." >
+      <Tier value="1" money="0" research="0" description="One of the most challenging things you can do in Droo orbit is docking, can you do it at least once?" />
+      <Tier value="3" money="0" research="0" description="If you want to start colonizing other worlds you need to get some experience docking things together." />
+      <Tier value="10" money="0" research="0" description="Space Stations are usually built in orbit, they require lots of docks, can you pull it off?" />
+      <Tier value="25" money="0" research="0" description="You seem to be an expert at docking stuff together, a true profesional space pilot!" />
+      <Tier value="50" money="0" research="0" description="At this point you should already know you don't need to be in orbit for the docks to count, right?" />
+   </Milestone>
+   <Milestone id="astronauts" name="Astronaut Wings" expression="NumDroodsEnteredOrbit" valueFormat="n0" event="Orbit" persistent="true" description="Put your droods on a stable orbit for their first time." >
+      <Tier value="1" money="0" research="1" description="Droods are one of the most important assets you can have, are you going to risk loosing them?" />
+      <Tier value="3" money="0" research="0" description="Sending a single drood to space is impressive, but by the time you have sent 3 nobody will have a doubt on your skills." />
+      <Tier value="10" money="0" research="0" description="The best tool you have to explore space is your crew, train at least 10 in the absence of gravity." />
+      <Tier value="25" money="0" research="0" description="Space Tourism, running a Space Station... you name it. You need to bring more droods up there." />
+      <Tier value="50" money="0" research="0" description="For droods to become interplanetary you need to bring more and more to space, let's spread!" />
+   </Milestone>
+
+   <!-- CONSUMABLES -->
+   <!--
+   <Milestone id="fuel-burnt" name="Total Fuel Burnt" expression="0" event="TODO" description="TODO." >
+      <Tier value="1" money="0" research="00" description="TODO." />
+      <Tier value="3" money="0" research="00" description="TODO." />
+      <Tier value="10" money="0" research="00" description="TODO." />
+      <Tier value="25" money="0" research="00" description="TODO." />
+      <Tier value="50" money="0" research="00" description="TODO." />
+   </Milestone>
+   <Milestone id="explosion-size" name="Largest Explosion" expression="0" event="TODO" description="TODO." >
+      <Tier value="10" money="0" research="00" description="TODO." />
+      <Tier value="50" money="0" research="00" description="TODO." />
+      <Tier value="250" money="0" research="00" description="TODO." />
+      <Tier value="1e3" money="0" research="00" description="TODO." />
+      <Tier value="10e3" money="0" research="00" description="TODO." />
+   </Milestone>
+   <Milestone id="heatshield-burnt" name="Total Heatshield Burnt" expression="TODO" event="0" description="TODO." >
+      <Tier value="5" money="0" research="00" description="TODO." />
+      <Tier value="25" money="0" research="00" description="TODO." />
+      <Tier value="100" money="0" research="00" description="TODO." />
+      <Tier value="500" money="0" research="00" description="TODO." />
+      <Tier value="2500" money="0" research="00" description="TODO." />
+   </Milestone>
+   <Milestone id="power-generated" name="Power Generated" expression="0" event="TODO" description="TODO." >
+      <Tier value="1" money="0" research="00" description="TODO." />
+      <Tier value="3" money="0" research="00" description="TODO." />
+      <Tier value="10" money="0" research="00" description="TODO." />
+      <Tier value="25" money="0" research="00" description="TODO." />
+      <Tier value="50" money="0" research="00" description="TODO." />
+   </Milestone>
+   -->
+
+
+   <!-- CELESTIAL BODY MILESTONES -->
+
+
+   <!-- VULCO -->
+
+   <!-- BASIC -->
+   <Milestone id="Vulco-flyby" planet="Vulco" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="30" />
+      <Tier value="5" money="0" research="40" />
+      <Tier value="10" money="0" research="60" />
+      <Tier value="25" money="0" research="80" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+   <Milestone id="Vulco-orbit" planet="Vulco" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="40" />
+      <Tier value="5" money="0" research="50" />
+      <Tier value="10" money="0" research="75" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Vulco-landing" planet="Vulco" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="200" />
+      <Tier value="50" money="0" research="300" />
+   </Milestone>
+
+   <!-- TERRAIN ELEVATION -->
+   <Milestone id="Vulco-height" planet="Vulco" name="Highest Climb" expression="TimeGrounded > 5 ? max(value, AltitudeASL) : value" valueFormat="distance" event="Update" persistent="true" description="The tallest point is 8430m high, can you find it and stand on top of it?">
+      <Tier value="1500" money="0" research="10" />
+      <Tier value="3000" money="0" research="20" />
+      <Tier value="4500" money="0" research="30" />
+      <Tier value="6000" money="0" research="40" />
+      <Tier value="7500" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Vulco-distance-land" planet="Vulco" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="10" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="100e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Vulco-distance-walk" planet="Vulco" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="10" money="0" research="20" />
+      <Tier value="100" money="0" research="30" />
+      <Tier value="1e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Vulco-speed-land" planet="Vulco" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <!--
+   <Milestone id="Vulco-impact" planet="Vulco" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- SERGEAA -->
+
+   <!-- BASIC -->
+   <Milestone id="Sergeaa-flyby" planet="Sergeaa" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="25" />
+      <Tier value="5" money="0" research="40" />
+      <Tier value="10" money="0" research="60" />
+      <Tier value="25" money="0" research="80" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+   <Milestone id="Sergeaa-orbit" planet="Sergeaa" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="30" />
+      <Tier value="5" money="0" research="50" />
+      <Tier value="10" money="0" research="75" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Sergeaa-landing" planet="Sergeaa" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="150" />
+      <Tier value="50" money="0" research="200" />
+   </Milestone>
+
+   <!-- TERRAIN ELEVATION -->
+   <Milestone id="Sergeaa-height" planet="Sergeaa" name="Highest Climb" expression="TimeGrounded > 5 ? max(value, AltitudeASL) : value" valueFormat="distance" event="Update" persistent="true" description="The tallest point is 12420m high, can you find it and stand on top of it?">
+      <Tier value="750" money="0" research="10" />
+      <Tier value="1500" money="0" research="20" />
+      <Tier value="3e3" money="0" research="30" />
+      <Tier value="6e3" money="0" research="40" />
+      <Tier value="12e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Sergeaa-distance-land" planet="Sergeaa" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Sergeaa-distance-air" planet="Sergeaa" name="Distance Flying" expression="(-TimeGrounded > 1 AND SurfaceVelocityLateral > abs(0.5 * SurfaceVelocityVertical) AND AtmosphereHeight > (2 * AltitudeASL)) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled flying through the atmosphere.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Sergeaa-distance-walk" planet="Sergeaa" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="10" money="0" research="20" />
+      <Tier value="100" money="0" research="30" />
+      <Tier value="1e3" money="0" research="40" />
+      <Tier value="10e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Sergeaa-speed-land" planet="Sergeaa" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Sergeaa-speed-air" planet="Sergeaa" name="Air Speed" expression="(SurfaceVelocityLateral > abs(5 * SurfaceVelocityVertical) AND 30000 > AltitudeASL AND -10 > TimeGrounded) ? max(value, MachNumber) : value" valueFormat="mach" event="Update" persistent="true" description="Go as fast as you can while under 30km high and keeping your trajectory mostly horizontal without touching the ground for more than 10 seconds.">
+      <Tier value="0.5" money="0" research="10" />
+      <Tier value="1" money="0" research="20" />
+      <Tier value="2" money="0" research="30" />
+      <Tier value="3" money="0" research="40" />
+      <Tier value="5" money="0" research="50" />
+   </Milestone>
+
+
+   <!-- DROO -->
+   
+   <!-- BASIC -->
+   <Milestone id="Droo-orbit" planet="Droo" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="30" rewardMessage="Congrats on achieving your first orbit around Droo!" />
+      <Tier value="5" money="0" research="50" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="100" money="0" research="150" />
+      <Tier value="1000" money="0" research="200" />
+   </Milestone>
+   <Milestone id="Droo-flyby" planet="Droo" name="Hyperbolic" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to get their eccentricity above 1.">
+      <Tier value="1" money="0" research="50" rewardMessage="Congrats on going hyperbolic for the first time!" />
+      <Tier value="5" money="0" research="100" />
+      <Tier value="10" money="0" research="150" />
+      <Tier value="25" money="0" research="200" />
+      <Tier value="50" money="0" research="250" />
+   </Milestone>
+
+   <!-- TERRAIN ELEVATION -->
+   <Milestone id="Droo-height" planet="Droo" name="Highest Climb" expression="TimeGrounded > 5 ? max(value, AltitudeASL) : value" valueFormat="distance" event="Update" persistent="true" description="The tallest point is 7426m high, can you find it and stand on top of it?">
+      <Tier value="3e3" money="0" research="10" />
+      <Tier value="4e3" money="0" research="20" />
+      <Tier value="5e3" money="0" research="30" />
+      <Tier value="6e3" money="0" research="40" />
+      <Tier value="7e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Droo-depth" planet="Droo" name="Deepest Dive" expression="max(value, -AltitudeASL)" valueFormat="distance" event="Update" persistent="true" description="The lowest point is 14114m deep, can you find it and dive to it?">
+      <Tier value="1e3" money="0" research="10" />
+      <Tier value="4e3" money="0" research="20" />
+      <Tier value="8e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="14e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Droo-distance-land" planet="Droo" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="1e3" money="0" research="10" />
+      <Tier value="10e3" money="0" research="20" />
+      <Tier value="100e3" money="0" research="30" />
+      <Tier value="1e6" money="0" research="40" />
+      <Tier value="10e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Droo-distance-air" planet="Droo" name="Distance Flying" expression="(-TimeGrounded > 1 AND SurfaceVelocityLateral > abs(0.5 * SurfaceVelocityVertical) AND AtmosphereHeight > (2 * AltitudeASL)) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled flying through the atmosphere.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Droo-distance-water" planet="Droo" name="Distance Navigating" expression="(TimeGrounded > 1 AND InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have navigated in the oceans and lakes.">
+      <Tier value="1e3" money="0" research="10" />
+      <Tier value="10e3" money="0" research="20" />
+      <Tier value="100e3" money="0" research="30" />
+      <Tier value="1e6" money="0" research="40" />
+      <Tier value="10e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Droo-distance-walk" planet="Droo" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="21098" money="0" research="10" />
+      <Tier value="42195" money="0" research="20" />
+      <Tier value="161e3" money="0" research="30" />
+      <Tier value="805e3" money="0" research="40" rewardMessage="But I would walk 500 miles" />
+      <Tier value="1610e3" money="0" research="50" rewardMessage="And I would walk 500 more just to be the man who walks a thousand miles to fall down at your door." />
+   </Milestone>
+   <Milestone id="Droo-distance-swim" planet="Droo" name="Distance Swum" expression="(IsDrood AND TimeGrounded > 1 AND InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have swam with a Drood.">
+      <Tier value="1e3" money="0" research="10" />
+      <Tier value="2e3" money="0" research="20" />
+      <Tier value="5e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Droo-speed-land" planet="Droo" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="28" money="0" research="10" />
+      <Tier value="56" money="0" research="20" />
+      <Tier value="111" money="0" research="30" />
+      <Tier value="340" money="0" research="40" />
+      <Tier value="1000" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Droo-speed-water" planet="Droo" name="Water Speed" expression="(TimeGrounded > 5 AND InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Navigate as fast as possible without going airborne, your record will be set after you have been touching the water for more than 10 consecutive seconds.">
+      <Tier value="10" money="0" research="10" />
+      <Tier value="25" money="0" research="20" />
+      <Tier value="50" money="0" research="30" />
+      <Tier value="100" money="0" research="40" />
+      <Tier value="150" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Droo-speed-air" planet="Droo" name="Air Speed" expression="(SurfaceVelocityLateral > abs(5 * SurfaceVelocityVertical) AND 15000 > AltitudeASL AND -10 > TimeGrounded) ? max(value, MachNumber) : value" valueFormat="mach" event="Update" persistent="true" description="Go as fast as you can while under 15km high and keeping your trajectory mostly horizontal.">
+      <Tier value="0.1" money="0" research="10" />
+      <Tier value="0.5" money="0" research="20" />
+      <Tier value="1" money="0" research="30" />
+      <Tier value="3" money="0" research="40" />
+      <Tier value="8" money="0" research="50" />
+   </Milestone>
+
+
+   <!-- BRIGO -->
+
+   <!-- BASIC -->
+   <Milestone id="Brigo-flyby" planet="Brigo" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="5" money="0" research="20" />
+      <Tier value="10" money="0" research="30" />
+      <Tier value="25" money="0" research="40" />
+      <Tier value="50" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Brigo-orbit" planet="Brigo" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="20" />
+      <Tier value="5" money="0" research="35" />
+      <Tier value="10" money="0" research="50" />
+      <Tier value="25" money="0" research="75" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+   <Milestone id="Brigo-landing" planet="Brigo" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="25" />
+      <Tier value="5" money="0" research="50" />
+      <Tier value="10" money="0" research="75" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+
+   <!-- TERRAIN ELEVATION -->
+   <Milestone id="Brigo-depth" planet="Brigo" name="Deepest Point" expression="TimeGrounded > 1 ? min(value, AltitudeASL) : value" valueFormat="altitude" reversed="true" startValue="100000" event="Update" persistent="true" description="The lowest point in the large crater is 23640m deep, can you find it and go there?">
+      <Tier value="1500" money="0" research="10" />
+      <Tier value="0" money="0" research="20" />
+      <Tier value="-500" money="0" research="30" />
+      <Tier value="-15e3" money="0" research="40" />
+      <Tier value="-21e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Brigo-distance-land" planet="Brigo" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Brigo-distance-walk" planet="Brigo" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Brigo-speed-land" planet="Brigo" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <!--
+   <Milestone id="Brigo-impact" planet="Brigo" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- LUNA -->
+
+   <!-- BASIC -->
+   <Milestone id="Luna-flyby" planet="Luna" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="5" money="0" research="20" />
+      <Tier value="10" money="0" research="30" />
+      <Tier value="25" money="0" research="40" />
+      <Tier value="50" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Luna-orbit" planet="Luna" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="20" />
+      <Tier value="5" money="0" research="40" />
+      <Tier value="10" money="0" research="60" />
+      <Tier value="25" money="0" research="80" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+   <Milestone id="Luna-landing" planet="Luna" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="35" />
+      <Tier value="5" money="0" research="70" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="150" />
+      <Tier value="50" money="0" research="200" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Luna-distance-land" planet="Luna" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Luna-distance-walk" planet="Luna" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Luna-speed-land" planet="Luna" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <!--
+   <Milestone id="Luna-impact" planet="Luna" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- T.T. -->
+
+   <!-- BASIC -->
+   <Milestone id="TT-flyby" planet="T.T." name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="15" />
+      <Tier value="5" money="0" research="30" />
+      <Tier value="10" money="0" research="45" />
+      <Tier value="25" money="0" research="60" />
+      <Tier value="50" money="0" research="75" />
+   </Milestone>
+   <Milestone id="TT-orbit" planet="T.T." name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="35" />
+      <Tier value="5" money="0" research="50" />
+      <Tier value="10" money="0" research="75" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="TT-landing" planet="T.T." name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="20" />
+      <Tier value="5" money="0" research="40" />
+      <Tier value="10" money="0" research="60" />
+      <Tier value="25" money="0" research="80" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="TT-distance-land" planet="T.T." name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="10" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="TT-distance-walk" planet="T.T." name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="10" money="0" research="20" />
+      <Tier value="100" money="0" research="30" />
+      <Tier value="1e3" money="0" research="40" />
+      <Tier value="10e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <!--
+   <Milestone id="TT-impact" planet="T.T." name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- CYLERO -->
+
+   <!-- BASIC -->
+   <Milestone id="Cylero-flyby" planet="Cylero" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="25" />
+      <Tier value="5" money="0" research="40" />
+      <Tier value="10" money="0" research="55" />
+      <Tier value="25" money="0" research="70" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+   <Milestone id="Cylero-orbit" planet="Cylero" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="30" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="90" />
+      <Tier value="25" money="0" research="120" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Cylero-landing" planet="Cylero" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="150" />
+      <Tier value="50" money="0" research="200" />
+   </Milestone>
+
+   <!-- TERRAIN ELEVATION -->
+   <Milestone id="Cylero-height" planet="Cylero" name="Highest Climb" expression="TimeGrounded > 5 ? max(value, AltitudeASL) : value" valueFormat="distance" event="Update" persistent="true" description="The tallest point is 13538m high, can you find it and stand on top of it?">
+      <Tier value="3e3" money="0" research="10" />
+      <Tier value="4500" money="0" research="20" />
+      <Tier value="6e3" money="0" research="30" />
+      <Tier value="7500" money="0" research="40" />
+      <Tier value="11e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Cylero-distance-land" planet="Cylero" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Cylero-distance-air" planet="Cylero" name="Distance Flying" expression="(-TimeGrounded > 1 AND SurfaceVelocityLateral > abs(0.5 * SurfaceVelocityVertical) AND AtmosphereHeight > (2 * AltitudeASL)) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled flying through the atmosphere.">
+      <Tier value="1e3" money="0" research="10" />
+      <Tier value="10e3" money="0" research="20" />
+      <Tier value="100e3" money="0" research="30" />
+      <Tier value="1e6" money="0" research="40" />
+      <Tier value="10e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Cylero-distance-walk" planet="Cylero" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="100e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Cylero-speed-land" planet="Cylero" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Cylero-speed-air" planet="Cylero" name="Air Speed" expression="(SurfaceVelocityLateral > abs(5 * SurfaceVelocityVertical) AND 10000 > AltitudeASL AND -10 > TimeGrounded) ? max(value, MachNumber) : value" valueFormat="mach" event="Update" persistent="true" description="Go as fast as you can while under 10km high and keeping your trajectory mostly horizontal.">
+      <Tier value="0.05" money="0" research="10" />
+      <Tier value="0.1" money="0" research="20" />
+      <Tier value="0.25" money="0" research="30" />
+      <Tier value="0.5" money="0" research="40" />
+      <Tier value="1" money="0" research="50" />
+   </Milestone>
+
+
+   <!-- NIOBE -->
+
+   <!-- BASIC -->
+   <Milestone id="Niobe-flyby" planet="Niobe" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="20" />
+      <Tier value="5" money="0" research="40" />
+      <Tier value="10" money="0" research="60" />
+      <Tier value="25" money="0" research="80" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+   <Milestone id="Niobe-orbit" planet="Niobe" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="20" />
+      <Tier value="5" money="0" research="40" />
+      <Tier value="10" money="0" research="60" />
+      <Tier value="25" money="0" research="80" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+   <Milestone id="Niobe-landing" planet="Niobe" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="5" money="0" research="20" />
+      <Tier value="10" money="0" research="30" />
+      <Tier value="25" money="0" research="40" />
+      <Tier value="50" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Niobe-distance-land" planet="Niobe" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="10" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Niobe-distance-walk" planet="Niobe" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="10" money="0" research="20" />
+      <Tier value="100" money="0" research="30" />
+      <Tier value="1e3" money="0" research="40" />
+      <Tier value="10e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <!--
+   <Milestone id="Niobe-impact" planet="Niobe" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- HERMA -->
+
+   <!-- BASIC -->
+   <Milestone id="Herma-flyby" planet="Herma" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="20" />
+      <Tier value="5" money="0" research="40" />
+      <Tier value="10" money="0" research="60" />
+      <Tier value="25" money="0" research="80" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+   <Milestone id="Herma-orbit" planet="Herma" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="20" />
+      <Tier value="5" money="0" research="40" />
+      <Tier value="10" money="0" research="60" />
+      <Tier value="25" money="0" research="80" />
+      <Tier value="50" money="0" research="100" />
+   </Milestone>
+   <Milestone id="Herma-landing" planet="Herma" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="5" money="0" research="20" />
+      <Tier value="10" money="0" research="30" />
+      <Tier value="25" money="0" research="40" />
+      <Tier value="50" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Herma-distance-land" planet="Herma" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="10" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Herma-distance-walk" planet="Herma" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="10" money="0" research="20" />
+      <Tier value="100" money="0" research="30" />
+      <Tier value="1e3" money="0" research="40" />
+      <Tier value="10e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <!--
+   <Milestone id="Herma-impact" planet="Herma" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- HANDREW'S COMET -->
+
+   <!-- BASIC -->
+   <Milestone id="Comet-flyby" planet="Handrew's Comet" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="100" />
+      <Tier value="10" money="0" research="150" />
+      <Tier value="25" money="0" research="200" />
+      <Tier value="50" money="0" research="250" />
+   </Milestone>
+   <Milestone id="Comet-orbit" planet="Handrew's Comet" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="100" />
+      <Tier value="10" money="0" research="150" />
+      <Tier value="25" money="0" research="200" />
+      <Tier value="50" money="0" research="250" />
+   </Milestone>
+   <Milestone id="Comet-landing" planet="Handrew's Comet" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="100" />
+      <Tier value="10" money="0" research="150" />
+      <Tier value="25" money="0" research="200" />
+      <Tier value="50" money="0" research="250" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Comet-distance-land" planet="Handrew's Comet" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="10" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Comet-distance-walk" planet="Handrew's Comet" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="10" money="0" research="20" />
+      <Tier value="100" money="0" research="30" />
+      <Tier value="1e3" money="0" research="40" />
+      <Tier value="10e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <!--
+   <Milestone id="Comet-impact" planet="Handrew's Comet" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- TYDOS -->
+
+   <!-- BASIC -->
+   <Milestone id="Tydos-flyby" planet="Tydos" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="30" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="90" />
+      <Tier value="25" money="0" research="120" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Tydos-orbit" planet="Tydos" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="30" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="90" />
+      <Tier value="25" money="0" research="120" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+
+   <!-- GAS GIANT -->
+   <Milestone id="Tydos-aerobrake" planet="Tydos" name="Aerobraking" expression="DeltaTime * DragAcceleration" valueFormat="velocity" accumulate="true" event="Update" persistent="true" description="How much speed you have lost thanks to aerobrakes.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="50" />
+      <Tier value="10e3" money="0" research="100" />
+      <Tier value="100e3" money="0" research="150" />
+      <Tier value="1e6" money="0" research="200" />
+   </Milestone>
+   <Milestone id="Tydos-depth" planet="Tydos" name="Deepest Dive" expression="min(value, AltitudeASL)" valueFormat="distance" event="Update" reversed="true" startValue="3000000" persistent="true" description="In gas giants Sea Level is considered to be where the atmosphere reaches one bar. How deep into Tydos' atmosphere can you go?">
+      <Tier value="2e6" money="0" research="10" />
+      <Tier value="1e6" money="0" research="20" />
+      <Tier value="500e3" money="0" research="30" />
+      <Tier value="200e3" money="0" research="40" />
+      <Tier value="60e3" money="0" research="50" />
+   </Milestone>
+
+
+   <!-- NEBRA -->
+
+   <!-- BASIC -->
+   <Milestone id="Nebra-flyby" planet="Nebra" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="40" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="80" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="120" />
+   </Milestone>
+   <Milestone id="Nebra-orbit" planet="Nebra" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="40" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="80" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="120" />
+   </Milestone>
+   <Milestone id="Nebra-landing" planet="Nebra" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="100" />
+      <Tier value="5" money="0" research="150" />
+      <Tier value="10" money="0" research="200" />
+      <Tier value="25" money="0" research="250" />
+      <Tier value="50" money="0" research="300" />
+   </Milestone>
+
+   <!-- TERRAIN ELEVATION -->
+   <Milestone id="Nebra-height" planet="Nebra" name="Highest Climb" expression="TimeGrounded > 5 ? max(value, AltitudeASL) : value" valueFormat="distance" event="Update" persistent="true" description="The tallest point is 2943m high, can you find it and stand on top of it?">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="500" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="2e3" money="0" research="40" />
+      <Tier value="2900" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Nebra-depth" planet="Nebra" name="Deepest Dive" expression="max(value, -AltitudeASL)" valueFormat="distance" event="Update" persistent="true" description="The lowest point is 7212m deep, can you find it and dive to it?">
+      <Tier value="500" money="0" research="10" />
+      <Tier value="1500" money="0" research="20" />
+      <Tier value="3000" money="0" research="30" />
+      <Tier value="5000" money="0" research="40" />
+      <Tier value="7000" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Nebra-distance-land" planet="Nebra" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="10" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Nebra-distance-water" planet="Nebra" name="Distance Navigating" expression="(TimeGrounded > 1 AND InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have navigated in the oceans and lakes.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Nebra-distance-air" planet="Nebra" name="Distance Flying" expression="(-TimeGrounded > 1 AND SurfaceVelocityLateral > abs(0.5 * SurfaceVelocityVertical) AND AtmosphereHeight > (2 * AltitudeASL)) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled flying through the atmosphere.">
+      <Tier value="1e3" money="0" research="10" />
+      <Tier value="10e3" money="0" research="20" />
+      <Tier value="100e3" money="0" research="30" />
+      <Tier value="1e6" money="0" research="40" />
+      <Tier value="10e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Nebra-distance-walk" planet="Nebra" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Nebra-distance-swim" planet="Nebra" name="Distance Swum" expression="(IsDrood AND TimeGrounded > 1 AND InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have swam with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="5e3" money="0" research="40" />
+      <Tier value="25e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Nebra-speed-land" planet="Nebra" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Nebra-speed-water" planet="Nebra" name="Water Speed" expression="(TimeGrounded > 5 AND InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Navigate as fast as possible without going airborne, your record will be set after you have been touching the water for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="25" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="75" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Nebra-speed-air" planet="Nebra" name="Air Speed" expression="(SurfaceVelocityLateral > abs(5 * SurfaceVelocityVertical) AND 30000 > AltitudeASL AND -10 > TimeGrounded) ? max(value, MachNumber) : value" valueFormat="mach" event="Update" persistent="true" description="Go as fast as you can while under 30km high and keeping your trajectory mostly horizontal.">
+      <Tier value="0.1" money="0" research="10" />
+      <Tier value="0.5" money="0" research="20" />
+      <Tier value="1" money="0" research="30" />
+      <Tier value="2" money="0" research="40" />
+      <Tier value="3" money="0" research="50" />
+   </Milestone>
+
+
+   <!-- MIROS -->
+
+   <!-- BASIC -->
+   <Milestone id="Miros-flyby" planet="Miros" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="40" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="80" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="120" />
+   </Milestone>
+   <Milestone id="Miros-orbit" planet="Miros" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="40" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="80" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="120" />
+   </Milestone>
+   <Milestone id="Miros-landing" planet="Miros" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Miros-distance-land" planet="Miros" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Miros-distance-walk" planet="Miros" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Miros-speed-land" planet="Miros" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <!--
+   <Milestone id="Miros-impact" planet="Miros" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- ORCUS -->
+
+   <!-- BASIC -->
+   <Milestone id="Orcus-flyby" planet="Orcus" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="40" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="80" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="120" />
+   </Milestone>
+   <Milestone id="Orcus-orbit" planet="Orcus" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="40" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="80" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="120" />
+   </Milestone>
+   <Milestone id="Orcus-landing" planet="Orcus" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="75" />
+      <Tier value="5" money="0" research="100" />
+      <Tier value="10" money="0" research="125" />
+      <Tier value="25" money="0" research="150" />
+      <Tier value="50" money="0" research="200" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Orcus-distance-land" planet="Orcus" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Orcus-distance-walk" planet="Orcus" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Orcus-speed-land" planet="Orcus" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <!--
+   <Milestone id="Orcus-impact" planet="Orcus" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- URADOS -->
+
+   <!-- BASIC -->
+   <Milestone id="Urados-flyby" planet="Urados" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="40" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="80" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Urados-orbit" planet="Urados" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="40" />
+      <Tier value="5" money="0" research="60" />
+      <Tier value="10" money="0" research="80" />
+      <Tier value="25" money="0" research="100" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+
+   <!-- GAS GIANT -->
+   <Milestone id="Urados-aerobrake" planet="Urados" name="Aerobraking" expression="DeltaTime * DragAcceleration" valueFormat="velocity" accumulate="true" event="Update" persistent="true" description="How much speed you have lost thanks to aerobrakes.">
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="100" />
+      <Tier value="10e3" money="0" research="150" />
+      <Tier value="100e3" money="0" research="200" />
+      <Tier value="1e6" money="0" research="250" />
+   </Milestone>
+   <Milestone id="Urados-depth" planet="Urados" name="Deepest Dive" expression="min(value, AltitudeASL)" valueFormat="distance" reversed="true" startValue="900000" event="Update" persistent="true" description="In gas giants Sea Level is considered to be where the atmosphere reaches one bar. How deep into Urados' atmosphere can you go?">
+      <Tier value="800e3" money="0" research="10" />
+      <Tier value="500e3" money="0" research="20" />
+      <Tier value="300e3" money="0" research="30" />
+      <Tier value="150e3" money="0" research="40" />
+      <Tier value="60e3" money="0" research="50" />
+   </Milestone>
+
+
+   <!-- JASTRUS -->
+
+   <!-- BASIC -->
+   <Milestone id="Jastrus-flyby" planet="Jastrus" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Jastrus-orbit" planet="Jastrus" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="100" />
+      <Tier value="5" money="0" research="150" />
+      <Tier value="10" money="0" research="200" />
+      <Tier value="25" money="0" research="250" />
+      <Tier value="50" money="0" research="300" />
+   </Milestone>
+   <Milestone id="Jastrus-landing" planet="Jastrus" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Jastrus-distance-land" planet="Jastrus" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="10" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Jastrus-distance-walk" planet="Jastrus" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="10" money="0" research="20" />
+      <Tier value="100" money="0" research="30" />
+      <Tier value="1e3" money="0" research="40" />
+      <Tier value="10e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Jastrus-speed-land" planet="Jastrus" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <!--
+   <Milestone id="Jastrus-impact" planet="Jastrus" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- BOREAS -->
+
+   <!-- BASIC -->
+   <Milestone id="Boreas-flyby" planet="Boreas" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Boreas-orbit" planet="Boreas" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Boreas-landing" planet="Boreas" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+
+   <!-- TERRAIN ELEVATION -->
+   <Milestone id="Boreas-depth" planet="Boreas" name="Deepest Point" expression="TimeGrounded > 1 ? min(value, AltitudeASL) : value" valueFormat="altitude" reversed="true" startValue="5000" event="Update" persistent="true" description="There's a water leakage in one of the cracks, how deep can you go?">
+      <Tier value="3500" money="0" research="10" />
+      <Tier value="2000" money="0" research="20" />
+      <Tier value="1000" money="0" research="30" />
+      <Tier value="0" money="0" research="40" />
+      <Tier value="-250" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Boreas-distance-land" planet="Boreas" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Boreas-distance-walk" planet="Boreas" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Boreas-speed-land" planet="Boreas" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <!--
+   <Milestone id="Boreas-impact" planet="Boreas" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+
+
+   <!-- TAURUS -->
+
+   <!-- BASIC -->
+   <Milestone id="Taurus-flyby" planet="Taurus" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Taurus-orbit" planet="Taurus" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="200" />
+      <Tier value="5" money="0" research="300" />
+      <Tier value="10" money="0" research="400" />
+      <Tier value="25" money="0" research="500" />
+      <Tier value="50" money="0" research="600" />
+   </Milestone>
+   <Milestone id="Taurus-landing" planet="Taurus" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+
+   <!-- TERRAIN ELEVATION -->
+   <Milestone id="Taurus-height" planet="Taurus" name="Highest Climb" expression="(TimeGrounded > 5) ? max(value, AltitudeASL) : value" valueFormat="distance" event="Update" persistent="true" description="The tallest point is 4677m high, can you find it and stand on top of it?">
+      <Tier value="250" money="0" research="10" />
+      <Tier value="1000" money="0" research="20" />
+      <Tier value="2000" money="0" research="30" />
+      <Tier value="3000" money="0" research="40" />
+      <Tier value="4000" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Taurus-depth" planet="Taurus" name="Deepest Dive" expression="max(value, -AltitudeASL)" valueFormat="distance" event="Update" persistent="true" description="The lowest point is 4150m deep, can you find it and dive to it?">
+      <Tier value="500" money="0" research="10" />
+      <Tier value="1000" money="0" research="20" />
+      <Tier value="2000" money="0" research="30" />
+      <Tier value="3000" money="0" research="40" />
+      <Tier value="4000" money="0" research="50" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Taurus-distance-land" planet="Taurus" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Taurus-distance-water" planet="Taurus" name="Distance Navigating" expression="(TimeGrounded > 1 AND InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have navigated in the oceans and lakes.">
+      <Tier value="100" money="0" research="10" />
+      <Tier value="1e3" money="0" research="20" />
+      <Tier value="10e3" money="0" research="30" />
+      <Tier value="100e3" money="0" research="40" />
+      <Tier value="1e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Taurus-distance-air" planet="Taurus" name="Distance Flying" expression="(-TimeGrounded > 1 AND SurfaceVelocityLateral > abs(0.5 * SurfaceVelocityVertical) AND AtmosphereHeight > (2 * AltitudeASL)) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled flying through the atmosphere.">
+      <Tier value="1e3" money="0" research="10" />
+      <Tier value="10e3" money="0" research="20" />
+      <Tier value="100e3" money="0" research="30" />
+      <Tier value="1e6" money="0" research="40" />
+      <Tier value="10e6" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Taurus-distance-walk" planet="Taurus" name="Walked Distance" expression="(IsDrood AND TimeGrounded) > 1 AND !InWater ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="10" money="0" research="20" />
+      <Tier value="100" money="0" research="30" />
+      <Tier value="1e3" money="0" research="40" />
+      <Tier value="10e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Taurus-distance-swim" planet="Taurus" name="Distance Swum" expression="(IsDrood AND TimeGrounded > 1 AND InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have swam with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="5e3" money="0" research="40" />
+      <Tier value="25e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Taurus-speed-land" planet="Taurus" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Taurus-speed-water" planet="Taurus" name="Methane Speed" expression="(TimeGrounded > 5 AND InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Navigate as fast as possible without going airborne, your record will be set after you have been touching the water for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="25" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="75" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Taurus-speed-air" planet="Taurus" name="Air Speed" expression="(SurfaceVelocityLateral > abs(5 * SurfaceVelocityVertical) AND 30000 > AltitudeASL AND -10 > TimeGrounded) ? max(value, MachNumber) : value" valueFormat="mach" event="Update" persistent="true" description="Go as fast as you can while under 30km high and keeping your trajectory mostly horizontal.">
+      <Tier value="0.5" money="0" research="10" />
+      <Tier value="1" money="0" research="20" />
+      <Tier value="2" money="0" research="30" />
+      <Tier value="3" money="0" research="40" />
+      <Tier value="5" money="0" research="50" />
+   </Milestone>
+
+
+   <!-- HYPATCHION -->
+
+   <!-- BASIC -->
+   <Milestone id="Hypatchion-flyby" planet="Hypatchion" name="Flybys" expression="NumPlanetFlyBys" event="HyperbolicOrbit" persistent="true" description="How many unique crafts have managed to fly by.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Hypatchion-orbit" planet="Hypatchion" name="Orbits" expression="NumPlanetOrbits" event="Orbit" persistent="true" description="How many unique crafts have reached a stable orbit.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+   <Milestone id="Hypatchion-landing" planet="Hypatchion" name="Landings" expression="NumPlanetContacts" event="SurfaceContact" persistent="true" description="How many crafts have safely landed.">
+      <Tier value="1" money="0" research="50" />
+      <Tier value="5" money="0" research="75" />
+      <Tier value="10" money="0" research="100" />
+      <Tier value="25" money="0" research="125" />
+      <Tier value="50" money="0" research="150" />
+   </Milestone>
+
+   <!-- TRAVELED DISTANCE -->
+   <Milestone id="Hypatchion-distance-land" planet="Hypatchion" name="Grounded Distance Traveled" expression="(TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have traveled by land.">
+      <Tier value="10" money="0" research="10" />
+      <Tier value="100" money="0" research="20" />
+      <Tier value="1e3" money="0" research="30" />
+      <Tier value="10e3" money="0" research="40" />
+      <Tier value="50e3" money="0" research="50" />
+   </Milestone>
+   <Milestone id="Hypatchion-distance-walk" planet="Hypatchion" name="Walked Distance" expression="(IsDrood AND TimeGrounded > 1 AND !InWater) ? FrameDistanceSurface : 0" valueFormat="distance" accumulate="true" event="Update" persistent="true" description="How much you have walked with a Drood.">
+      <Tier value="1" money="0" research="10" />
+      <Tier value="10" money="0" research="20" />
+      <Tier value="100" money="0" research="30" />
+      <Tier value="1e3" money="0" research="40" />
+      <Tier value="10e3" money="0" research="50" />
+   </Milestone>
+
+   <!-- SPEED -->
+   <Milestone id="Hypatchion-speed-land" planet="Hypatchion" name="Land Speed" expression="(TimeGrounded > 5 AND !InWater) ? max(value, SurfaceVelocity) : value" valueFormat="velocity" event="Update" persistent="true" description="Drive as fast as possible without going airborne, your record will be set after you have been grounded for more than 10 consecutive seconds.">
+      <Tier value="5" money="0" research="10" />
+      <Tier value="15" money="0" research="20" />
+      <Tier value="30" money="0" research="30" />
+      <Tier value="50" money="0" research="40" />
+      <Tier value="100" money="0" research="50" />
+   </Milestone>
+   <!--
+   <Milestone id="Hypatchion-impact" planet="Hypatchion" name="Ground Impact" expression="max(value, ImpactStrength)" event="Update" persistent="true" description="How hard you have crashed against the terrain.">
+      <Tier value="10e3" money="0" research="10" />
+      <Tier value="100e3" money="0" research="20" />
+      <Tier value="1e6" money="0" research="30" />
+      <Tier value="10e6" money="0" research="40" />
+      <Tier value="100e6" money="0" research="50" />
+   </Milestone>
+   -->
+</Milestones>

@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Contracts>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Contract customer="internal" id="space-center" money="500000" moneyAdvance="0" cancelPenalty="0" name="Space Center" priority="100" probability="@Probability" difficulty="1" canReject="false" flairText="Progression" >
+         <Description
+            short="Visit the space center."
+            long="Nothing can happen in the timeless void of a menu screen.  Head to the space center and get your space program moving." />
+         <Requirements>
+            <PartCount id="initial-part-count" num="1" partId="Block1" description="Visit the Space Center" showValue="false" onFail="Warn"/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="space-center" />
+      <Contract customer="nrl" id="Karman" research="1" name="Cross the Karman Line" money="2000000" moneyAdvance="0" cancelPenalty="0" priority="100" probability="@Probability" difficulty="1" canReject="false" flairText="Progression" >
+         <Description
+            short="Launch a rocket to at least 100km altitude and return."
+            long="Theodore von Karman says that 100km is the boundary of outer space.  Sending a craft beyond it is a momentous human achievement. Of course the German's already did this in World War II.  The United States has also recently sent rockets above the Karman line.  But YOU have not, so get to it." />
+         <Requirements>
+            <TrackedLaunch>
+               <Planet name="Earth" description="Launch from Earth" >
+                  <Expression expression="AltitudeASL > 100e3" description="Cross the Karman Line" displayExpression="max(displayValue, AltitudeASL)" displayFormat="distance" visibility="HiddenWhenPassed" />
+				  <CraftExpression expression="Grounded" description="Touch down safely" showValue="false" />
+               </Planet>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+         <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="Karman" />
+      <Contract customer="nrl" id="bumper" name="Two-Stage Missle Testing" money="10000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1">
+         <Description
+            short="Use a two-stage rocket to achieve 400km altitude."
+            long="The rocket equation suggests that dropping the majority of the dry mass partway through flight unlocks much higher craft performance.  Demonstrate the feasibility of a two-stage rocket.  You'll need to modify an engine to be able to light in the air.  Historically, this was accomplished by the Bumper missions.  A WAC Corporal sounding rocket was launched atop a refurbished V2.  These missions gave engineers the confidence to pursue large multistage rockets." />
+         <Requirements>
+            <TrackedLaunch>
+                  <Planet name="Earth" description="Launch from Earth">
+					 <Expression expression="Thrust > 0" description="Maintain positive thrust to high altitude" displayExpression="Thrust / 1000" displayFormat="n0">
+						<CraftExpression expression="Grounded" description="Launch" showValue="false" visibility="HiddenWhenPassed" listedInMenu="false"/>
+						<Expression expression="AltitudeASL > 30e3" description="Reach 30km ASL" displayExpression="max(displayValue, AltitudeASL)" displayFormat="distance" />
+					 </Expression>
+					 <Expression expression="Thrust = 0" description="Exhaust or shutdown your first-stage engine"/>
+					 <Expression expression="Thrust > 0" description="Ignite your second-stage engine" displayExpression="Thrust / 1000" displayFormat="n0">
+					   <Timer min="30" description="Maintain thrust for 30 seconds" />
+					 </Expression>
+                     <Expression expression="AltitudeASL > 400e3" description="Reach 400km ASL" displayExpression="max(displayValue, AltitudeASL)" displayFormat="distance" />
+                  </Planet>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 10 ? 0 : 500" />
+         <Expression name="Tech" value="NumCompletions % 5 = 4 ? 1 : 0" />
+         <Expression name="Scale" value="(NumCompletions + 1) * 0.1" />
+         <Random name="ExperimentVersion" min="-0.5" max="5.49" round="1" distributionScale="@Scale" distribution="0,0,1,1|1,1,0,0" />
+         <List name="ExperimentName" index="@ExperimentVersion" values="Photo-Imaging;Aeronomy;Air-Sampling;X-Ray;Solar-Radiation;Ionospheric" />
+         <List name="Payload" index="@ExperimentVersion" values="Sounding-0;Sounding-0;Sounding-0;Sounding-0;Payload-Science-2;Payload-Science-2" />
+         <List name="Money" index="@ExperimentVersion" values="500000;500000;600000;750000;4000000;5000000" />
+         <List name="Altitude" index="@ExperimentVersion" values="100;100;120;150;100;150" />
+         <List name="Customer" index="@ExperimentVersion" values="aoc;aoc;wdd;wdd;nrl;nrl;" />
+      </Params>
+      <Prereqs contracts="Karman" />
+      <Contract customer="@Customer" id="sounding-payload" name="@ExperimentName Experiment" money="@Money" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="1">
+         <Description
+            short="Send a scientific payload to space."
+            long="We have a @ExperimentName device that needs to be delivered to the edge of space and returned safely.  Historically, a large variety of scientific experiments were launched on sounding rockets. This gave humanity its first insights into the environment that awaited them in the ionosphere and in space." />
+         <Requirements>
+            <TrackedLaunch>
+               <PartCount id="initial-part-count" num="1" payloadId="@Payload" description="Launch with the payload." showValue="false" onFail="Stop">
+                  <Planet name="Earth" description="Launch from Earth">
+                     <Expression expression="AltitudeASL > @Altitude * 1000" description="Reach @Altitude km ASL" displayExpression="max(displayValue, AltitudeASL)" displayFormat="distance" />
+                     <CraftExpression expression="Grounded" description="Touch down safely" showValue="false"/>
+                  </Planet>
+               </PartCount>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="Karman" />
+      <Contract customer="aoc" id="redstone" research="1" name="SRBM Development" money="100000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="false" flairText="Progression">
+         <Description
+            short="Develop a missile to deliver a 3 ton payload 300km away."
+            long="We need to develop a missile to deliver strategic weaponry at short range against our adversaries.  The initial test will focus on range and payload capacity.  We will provide a payload simulator with a 3 ton mass.  Demonstrate the ability to deliver it 300km downrange.  Historically, this capacity was provided by the PGM-11 Redstone Missile, armed with the W-39 warhead." />
+         <Requirements>
+            <TrackedLaunch>
+			   <Payload payloadId="srbm" payloadName="SRBM" description="Use your SRBM design" allowWarp="true" onFail="Warn">
+               <PartCount id="initial-part-count" num="1" payloadId="Dummy-W39" description="Carry the payload." showValue="false" onFail="Stop">
+                  <Planet name="Earth" description="Launch from Earth">
+                     <Expression expression="AltitudeASL > 50e3" description="Reach 40km ASL" displayExpression="max(displayValue, AltitudeASL)" displayFormat="distance" visibility="HiddenWhenPassed" >
+                     </Expression>
+                     <Location locationId="Earth.Canaveral" range="-300000" sequential="false" description="Travel at least 300km downrange" distanceMode="GreatCircle" showTargetButton="false" visibility="Visible">
+                     </Location>
+                  </Planet>
+               </PartCount>
+               </Payload>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+    <ContractTemplate>
+      <Params>
+         <Expression name="Accuracy" value="NumCompletions = 2 ? 300 : 30000 - 27000 * NumCompletions" />
+         <Expression name="Difficulty" value="NumCompletions +2" />
+         <Expression name="Probability" value="NumCompletions > 2 ? 0 : 500" />
+         <Expression name="Tech" value="NumCompletions = 2 ? 1 : 0" />
+      </Params>
+      <Prereqs contracts="redstone" />
+      <Contract customer="aoc" id="redstone-repeat" money="10000000" moneyAdvance="0" cancelPenalty="0" research="@Tech" name="SRBM Testing" priority="10" probability="@Probability" canReject="true" difficulty="@Difficulty">
+         <Description
+            short="Deliver a 3 ton payload to a target 300km away."
+            long="Repeat your earlier test of a short range missile.  This time, accuracy will also be measured.  Deliver the payload to within @Accuracy:distance of the target.  Historically, the PGM-11 Redstone was rated to land within 300m of its target at least 50% of the time." />
+         <Requirements>
+            <TrackSpawnedCraft craftTrackingId="SRBM" description="Use your SRBM design" visibility="HiddenWhenPassed" listedInMenu="false" >
+                <SpawnedCraftDistance range="1" description="Use your SRBM design" autoSelectTarget= "false" showTargetButton ="false" showValue="false">
+				<Payload payloadId="srbm" payloadName="Dummy W-39 Warhead">
+				<Planet name="Earth" description="Launch from Earth">
+					 <Location locationId="Earth.300km" range="@Accuracy" description="Deliver the payload within @Accuracy:distance of the target." distanceMode="Line" showTargetButton="true">
+					 </Location>
+				  </Planet>
+				  </Payload>
+				  </SpawnedCraftDistance>
+            </TrackSpawnedCraft>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 2 ? 0 : 300" />
+         <Expression name="Tech" value="NumCompletions = 2 ? 1 : 0" />
+         <Expression name="Money" value="NumCompletions = 0 ? 25000000 : 10000000" />
+         <Expression name="Speed" value="1000 * (NumCompletions + 4)" />
+      </Params>
+      <Prereqs techNodes="1955mat" />
+      <Contract customer="aoc" id="reentry-test" name="Reentry Testing" money="@Money" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="2">
+         <Description
+            short="Launch a craft to @Speed:velocity, survive reentry and land"
+            long="Delivering a payload halfway around the world is doubly difficult.  On one end, we need a new class of large missiles.  On the other, we need formidable shielding to survive reentry.  While we wait for the large missles, test reentry from high speeds at a smaller scale.  Historically, the army developed an inexpensive second stage for a modified Redstone missile and test flew protective nosecones." />
+         <Requirements>
+            <TrackedLaunch>
+                  <Planet name="Earth" description="Launch from Earth">
+                     <Expression expression="AltitudeASL > 100e3" description="Reach 100km ASL" displayExpression="max(displayValue, AltitudeASL)" displayFormat="distance">
+						 <Expression expression="SurfaceVelocity > @Speed" description="Travel at @Speed:velocity" displayExpression="SurfaceVelocity" displayFormat="velocity">
+							<Expression expression="100 > Mass" description="Separate a rentry vehicle of less than 100kg mass" displayExpression="Mass" displayFormat="mass"/>
+                         </Expression>
+                     </Expression>
+                     <CraftExpression expression="Grounded" description="Reenter and touch down safely" showValue="false" listedInMenu="false"/>
+                  </Planet>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="redstone" />
+      <Contract customer="wdd" id="icbm" money="1000000000" moneyAdvance="0" cancelPenalty="0" name="ICBM Development" priority="10" probability="@Probability" difficulty="1" canReject="false">
+         <Description
+            short="Develop a missile to deliver a large payload halfway around the world."
+            long="The Air Force is prioritizing development of a rocket that can deliver a warhead at least 8000km away.  Don't expect to achieve this with the currently available engines.  You should develop larger engines with higher performance fuels. 
+Historically, this objective was realized by the SM-65 Atlas series. Also historically, the requirements were changed partway through the project as smaller warheads became available." />
+         <Requirements>
+            <TrackedLaunch>
+				<Payload payloadId="icbm" payloadName="Dummy W-49 Warhead" allowWarp="true">
+				<Planet name="Earth" description="Launch from Earth">
+                    <Expression expression="AltitudeASL > 100e3" description="Reach 100km ASL" displayExpression="max(displayValue, AltitudeASL)" displayFormat="distance" visibility="HiddenWhenPassed" />
+                     <Location locationId="Earth.Canaveral" range="-8000000" sequential="false" description="Travel at least 8000km downrange" distanceMode="GreatCircle" showTargetButton="false"/>
+                     <Expression expression="1e3 > AltitudeAGL" description="Survive Reentry to 1km" displayExpression="AltitudeASL" displayFormat="distance" />
+				  </Planet>
+				  </Payload>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Accuracy" value="NumCompletions = 2 ? 1400 : 100000 - 90000 * NumCompletions" />
+         <Expression name="Difficulty" value="NumCompletions + 3" />
+         <Expression name="Probability" value="NumCompletions > 2 ? 0 : 500" />
+         <Expression name="Tech" value="NumCompletions = 2 ? 1 : 0" />
+      </Params>
+      <Prereqs contracts="icbm" />
+      <Contract customer="wdd" id="icbm-repeat" money="100000000" moneyAdvance="0" cancelPenalty="0" research="@Tech" name="ICBM Testing" priority="10" probability="@Probability" difficulty="@Difficulty" canReject="true">
+         <Description
+            short="Deliver a payload to a target 8000km away."
+            long="Repeat your test of an intercontinental ballistic missile, this time demonstrating your ability to land within @Accuracy:distance of a set target.  Your craft must have at least 65% commonality with the development design (in either parts or stages).  Your nose cone will need heat shielding to survive reentry.  Historically, the SM-65 Atlas was rated accurate enough to deliver its payload within 1.4km of the target at least 50% of the time." />
+         <Requirements>
+			<TrackSpawnedCraft craftTrackingId="ICBM1" description="Use your ICBM design" visibility="HiddenWhenPassed" listedInMenu="false" >
+                <SpawnedCraftDistance range="1" description="Use your ICBM design" autoSelectTarget= "false" showTargetButton ="false" showValue="false">
+				<Payload payloadId="icbm" payloadName="Dummy W-49 Warhead" allowWarp="true">
+				<Planet name="Earth" description="Launch from Earth">
+                    <Location locationId="Earth.8000km" range="@Accuracy" description="Deliver the payload within @Accuracy:distance of the target." distanceMode="Line" showTargetButton="false">
+						 <Expression expression="1000 > AltitudeASL" description="Descend to 1km ASL near the target" displayExpression="AltitudeASL" displayFormat="distance" visibility="HiddenWhenPassed" />
+                    </Location>
+				  </Planet>
+				  </Payload>
+				  </SpawnedCraftDistance>
+            </TrackSpawnedCraft>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs techNodes="pre-titan" />
+      <Contract customer="wdd" id="icbm2" money="1000000000" moneyAdvance="0" cancelPenalty="0" name="Alternate ICBM Development" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Develop an alternative intercontinental ballistic missile."
+            long="The Air Force does not want all its eggs in one basket.  Develop an ICBM to the same capability as the first one but use entirely new hardware: no stages or developed parts in common.  This gives us insurance in case some component of the first design is late or defective.  You may also have newer ideas now than when you produced your first design.  Historically, new confidence in airlit engines lead the Air Force to develop the Titan.  This was a two stage missle that was cheaper than the Atlas." />
+         <Requirements>
+            <TrackSpawnedCraft craftTrackingId="ICBM2" description="Use an alternate ICBM design" visibility="HiddenWhenPassed" listedInMenu="false" >
+                <SpawnedCraftDistance range="1" description="Use an alternate ICBM design" autoSelectTarget= "false" showTargetButton ="false" showValue="false">
+				<Payload payloadId="icbm2" payloadName="Dummy W-49 Warhead (Alternate)" allowWarp="true">
+				<Planet name="Earth" description="Launch from Earth">
+                    <Expression expression="AltitudeASL > 100e3" description="Reach 100km ASL" displayExpression="max(displayValue, AltitudeASL)" displayFormat="distance" visibility="HiddenWhenPassed" />
+                     <Location locationId="Earth.Canaveral" range="-8000000" sequential="false" description="Travel at least 8000km downrange" distanceMode="GreatCircle" showTargetButton="false"/>
+                     <Expression expression="1e3 > AltitudeAGL" description="Survive Reentry to 1km" displayExpression="AltitudeASL" displayFormat="distance" />
+				  </Planet>
+				  </Payload>
+				  </SpawnedCraftDistance>
+            </TrackSpawnedCraft>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Accuracy" value="NumCompletions = 2 ? 1400 : 100000 - 90000 * NumCompletions" />
+         <Expression name="Difficulty" value="NumCompletions + 3" />
+         <Expression name="Probability" value="NumCompletions > 2 ? 0 : 500" />
+         <Expression name="Tech" value="NumCompletions = 2 ? 1 : 0" />
+      </Params>
+      <Prereqs contracts="icbm2" />
+      <Contract customer="wdd" id="icbm2-repeat" money="100000000" moneyAdvance="0" cancelPenalty="0" research="@Tech" name="Alternate ICBM Testing" priority="10" probability="@Probability" difficulty="@Difficulty" canReject="true">
+         <Description
+            short="Deliver a payload to a target 8000km away."
+            long="Repeat your test of your second intercontinental ballistic missile, this time demonstrating your ability to land within @Accuracy:distance of a set target.  You will need to use a similar configuration to the development contract." />
+         <Requirements>
+			<TrackSpawnedCraft craftTrackingId="ICBM2" description="Use your alternate ICBM design" visibility="HiddenWhenPassed" listedInMenu="false" >
+                <SpawnedCraftDistance range="1" description="Use your alternate ICBM design" autoSelectTarget= "false" showTargetButton ="false" showValue="false">
+				<Payload payloadId="icbm2" payloadName="Dummy W-49 Warhead (Alternate)" allowWarp="true">
+				<Planet name="Earth" description="Launch from Earth">
+                    <Location locationId="Earth.8000km" range="@Accuracy" description="Deliver the payload within @Accuracy:distance of the target." distanceMode="Line" showTargetButton="false">
+						 <Expression expression="1000 > AltitudeASL" description="Descend to 1km ASL near the target" displayExpression="AltitudeASL" displayFormat="distance" visibility="HiddenWhenPassed" />
+                    </Location>
+				  </Planet>
+				  </Payload>
+				  </SpawnedCraftDistance>
+            </TrackSpawnedCraft>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+        <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs techNodes="pre-jupiter" />
+      <Contract customer="aoc" id="mrbm" money="500000000" moneyAdvance="0" cancelPenalty="0" name="MRBM Development" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Develop a medium range ballistic missile."
+            long="The Air Force and Army are alarmed by the slow relative progress of the ICBM program, especially with respect to our competition.  Both would like a stopgap medium-range missile to deploy in Europe until the ICBM fleet is ready.  There is no time for new engine development or risky experiments with upper stages.  Use existing hardware as much as possible.  The design also needs to be transportable, so keep the wet mass under 50 tons.  Historically this initiative birthed two competing designs, the Thor and the Jupiter.  Both had similar capabilities and both were later modified for orbital launches." />
+         <Requirements>
+            <TrackedLaunch>
+				<Payload payloadId="mrbm" payloadName="Dummy W-49 Warhead (Medium Range)" allowWarp="true">
+				<Planet name="Earth" description="Launch from Earth">
+					<Expression expression="50000 > Mass" description="Launch with mass less than 50 tons." visibility="HiddenWhenPassed" displayExpression="Mass" displayFormat="mass">
+					  <Expression expression="Grounded" description="Launch with mass less than 50 tons." listedInMenu="false"/>
+					</Expression>
+                    <Expression expression="AltitudeASL > 100e3" description="Reach 100km ASL" displayExpression="max(displayValue, AltitudeASL)" displayFormat="distance" visibility="HiddenWhenPassed" />
+                     <Location locationId="Earth.Canaveral" range="-2400000" sequential="false" description="Travel at least 2400km downrange" distanceMode="GreatCircle" showTargetButton="false"/>
+                     <Expression expression="1e3 > AltitudeAGL" description="Survive Reentry to 1km" displayExpression="AltitudeASL" displayFormat="distance" />
+				  </Planet>
+				  </Payload>
+			</TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Accuracy" value="NumCompletions = 2 ? 1800 : 100000 - 90000 * NumCompletions" />
+         <Expression name="Difficulty" value="NumCompletions + 3" />
+         <Expression name="Probability" value="NumCompletions > 2 ? 0 : 500" />
+         <Expression name="Tech" value="NumCompletions = 2 ? 1 : 0" />
+      </Params>
+      <Prereqs contracts="mrbm" />
+      <Contract customer="aoc" id="mrbm-repeat" money="50000000" moneyAdvance="0" cancelPenalty="0" research="@Tech" name="MRBM Testing" priority="10" probability="@Probability" difficulty="@Difficulty" canReject="true">
+         <Description
+            short="Deliver a payload to a target 2400km away."
+            long="Repeat your test of your medium-range ballistic missile, this time demonstrating your ability to land within @Accuracy:distance of a set target.  You will need to use a similar configuration to the development contract.  Historically, the Jupiter and Thor missles were accurate to within 1500m." />
+         <Requirements>
+			<TrackSpawnedCraft craftTrackingId="MRBM" description="Use your MRBM design" visibility="HiddenWhenPassed" listedInMenu="false" >
+                <SpawnedCraftDistance range="1" description="Use your MRBM design" autoSelectTarget= "false" showTargetButton ="false" showValue="false">
+				<Payload payloadId="mrbm" payloadName="Dummy W-49 Warhead (Medium Range)" allowWarp="true">
+				<Planet name="Earth" description="Launch from Earth">
+					<Expression expression="50000 > Mass" description="Launch with mass less than 50 tons." visibility="HiddenWhenPassed" displayExpression="Mass" displayFormat="mass">
+					  <Expression expression="1 > SurfaceVelocity" description="Launch with mass less than 50 tons." listedInMenu="false"/>
+					</Expression>
+                    <Location locationId="Earth.2400km" range="@Accuracy" description="Deliver the payload within @Accuracy:distance of the target." distanceMode="Line" showTargetButton="false">
+						 <Expression expression="1000 > AltitudeASL" description="Descend to 1km ASL near the target" displayExpression="AltitudeASL" displayFormat="distance" visibility="HiddenWhenPassed" />
+                    </Location>
+				  </Planet>
+				  </Payload>
+				  </SpawnedCraftDistance>
+            </TrackSpawnedCraft>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+</Contracts>
+
+

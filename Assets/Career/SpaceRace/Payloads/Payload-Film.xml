@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Film Canister" category="Payloads" description="A set of instruments to gather basic environmental data" order="0" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="5" partType="Fuselage1" position="0,0,0" rotation="0,0,0" name="Film Canister" materials="18,4,4,0,0" texture="Fuselage3">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="2.843343E-09,4.575542E-11,3.54147E-09" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.1,0.1" deadWeight="2.641508" deadWeightPercentage="0.049999997" deformations="0,0,0" depthCurve="0" offset="0,0.07500002,0" shellDensityOverride="-1" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.1,0.1" volume="0.00465874467" volumeInner="0.00387826585" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="2.4341940879821777" fuel="2.4341940879821777" fuelType="None" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <Payload payloadId="Payload-Film" />
+        </Part>
+      </Parts>
+      <Connections />
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

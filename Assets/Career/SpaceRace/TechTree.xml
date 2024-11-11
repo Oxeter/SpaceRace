@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TechTree>
+   <Items>
+      <!-- Map -->
+      <Item id="Map.Enable" name="Enable Map View" description="The map view is a great tool used to check your crafts from space, also being able to check other planets and moons in advance." />
+      <Item id="Map.Lines" name="Display Orbit Lines" description="Knowing your rocket trajectory is vital for space travel, this will let you predict where and when you are going to be in a certain spot." />
+      <Item id="Map.Maneuver" name="Plan Maneuvers" description="Complex space missions require advanced planning tools. Maneuver nodes will let you easily plan your burns to change your orbit according to plan." />
+      <Item id="MaxActiveCrafts" value="1" name="Max Active Crafts" valueFormat="{0}" description="The management of multiple crafts in orbit is complex, this is limited to ensure you don't pollute the system for no reason." />
+      <Item id="MaxContractsOffered" value="10" name="Max Contracts Offered" valueFormat="{0}" description="Dealing with clients can be overwhelming, but the more contracts you get, the more freedom in your selection you will have." />
+
+      <!-- Milestones -->
+      <Item id="Milestone.docks" name="Docking Milestone" description="Unused." />
+      <Item id="Milestone.astronauts" name="Astronaut Wings Milestone" description="Unused." />
+
+      <!-- Config -->
+      <Item id="Cheats.QuickSave" name="Quick Saving" description="Regrets have never been less of a thing, quicksaving lets you set checkpoints during a mission and go back to them at any point." />
+      <Item id="Cheats.UndoRetry" name="Undo and Retry" description="Time traveling is a powerful tool, get a second chance after messing it up or hop into the designer to tweak the craft before coming back." />
+      <Item id="Cheats.TinkerPanel" name="Tinker Panel" description="A menu with a handful set of tools that aren't officially supported but that can unlock loads of fun." />
+      <Item id="Cheats.CustomLaunch" name="Custom Launchsites" description="Is there a place you really like? Are you tired of having to get to orbit every time? Just save a launch location and done." />
+      <Item id="Cheats.FlightCheats" name="Flight Cheats" description="A menu with a handful set of tools that will let you teleport, change gravity, have infinite fuel... your wishes come true!" />
+      <Item id="Cheats.CareerCheats" name="Career Cheats" description="A context menu letting you set contracts as completed and access contract dev QoL tools." />
+      <Item id="Cheats.SkipValidation" name="Skip Validation" description="Tired of being told you can't launch? No wonder! Do whatever you want with this unlocked." />
+      <Item id="Cheats.SpaceRaceCheats" name="Space Race Cheats" description="Enables a button to complete projects instantly." />      
+      <Item id="Config.FuelLine" name="Fuel Lines" description="Fuel lines let you send fuel across any part of your rocket, letting it reach your engines no matter what the configuration of the structure is." />
+      <Item id="Config.HeatShield" value="0" name="Heatshield Coating" valueFormat="{0:P0}" description="Heatshield coatings give parts some extra protection to heat, peeling off the extra heat and thus running out over time." />
+      
+      <!-- Sizes -->
+      <Item id="MaxSize.Beacon" value="1" name="Beacon Size" valueFormat="{0:P0}" description="The maximum size of the beacons." />
+      <Item id="MaxSize.Capsule" value="1" name="Crew Capsule Size" valueFormat="{0:P0}" description="The maximum size of a crew capsule."/>
+      <Item id="MaxSize.Detacher" value="4" name="Side Detacher Size" valueFormat="{0:P0}" description="The maximum size of a side detacher."/>
+      <Item id="MaxSize.Docking" value="2" name="Docking Port Size" valueFormat="{0:P0}" description="The maximum size of a docking port."/>
+      <Item id="MaxSize.ElectricMotor" value="1" name="Electric Motor Size" valueFormat="{0:P0}" description="The maximum size of a electric motor." />
+      <Item id="MaxSize.Engine" value="4" name="Ion Engine Size" valueFormat="{0:P0}" description="The maximum size of an ion engine." />
+      <Item id="MaxSize.JetEngine" value="1" name="Jet Engine Size" valueFormat="{0:P0}" description="The maximum size of a jet engine." />
+      <Item id="MaxSize.JointRotator" value="1" name="Joint Rotator Size" valueFormat="{0:P0}" description="The maximum size of a joint rotator." />
+      <Item id="MaxSize.LandingGear" value="1" name="Landing Gear Size" valueFormat="{0:P0}" description="The maximum size of a landing gear." />
+      <Item id="MaxSize.LandingLeg" value="1" name="Landing Gear Size" valueFormat="{0:P0}" description="The maximum size of a landing gear." />
+      <Item id="MaxSize.Light" value="1" name="Light Size" valueFormat="{0:P0}" description="The maximum size of the lights." />
+      <Item id="MaxSize.Parachute" value="1" name="Parachute Size" valueFormat="{0:P0}" description="The maximum size of a parachute." />
+      <Item id="MaxSize.Piston" value="1" name="Piston Size" valueFormat="{0:P0}" description="The maximum size of a piston." />
+      <Item id="MaxSize.Prop" value="1" name="Propeller Size" valueFormat="{0:P0}" description="The maximum size of a propeller assembly." />
+      <Item id="MaxSize.RCS" value="4" name="RCS Size" valueFormat="{0:P0}" description="The maximum size of a RCS." />
+      <Item id="MaxSize.RocketEngine" value="1" name="Rocket Engine Size" valueFormat="{0:P0}" description="The maximum size of a rocket engine." />
+      <Item id="MaxSize.Shock" value="2" name="Shock Size" valueFormat="{0:P0}" description="The maximum size of a shock."/>
+      <Item id="MaxSize.SolarPanelArray" value="1" name="Solar Panel Array Size" valueFormat="{0:P0}" description="The maximum size of a solar panel Array." />
+      <Item id="MaxSize.Wheel" value="1" name="Rover Wheel Size" valueFormat="{0:P0}" description="The maximum size of a rover wheel." />
+
+      <!-- Chute -->
+      <Item id="Chute.Radius" value="0" name="Parachute Radius" valueFormat="{0}" display="Manually defined based on (maxSize * radius) m" description="How large your chute can be, increasing its drag." />
+      <Item id="Chute.Length" value="0" name="Parachute Chord Length" valueFormat="{0}" display="Manually defined based on (5 * maxSize * chordLength) m" description="The length of a parachute chord can make it more stable." />
+      
+      <!-- Command Disc -->
+      <Item id="Command.Battery" value="1" name="Command Disc Battery" valueFormat="{0:P0}" description="The amount of volume in a command disc dedicated to store batteries." />
+      <Item id="Command.Gyro" value="0" name="Command Disc Gyro" valueFormat="{0:P0}" description="The amount of volume in a command disc dedicated to store gyroscopes. These can point a craft but can be slow and expensive." />
+      <Item id="Command.Electronic" value="false" name="Electronic Guidance" description="Guidance system that can perform complex maneuvers without ground input.  Craft retain control even when temporaily out of communication range." />
+      
+
+      <!-- Crew Compartment -->
+      <Item id="Compartment.Volume" value="1000000000000" name="Crew Volume" valueFormat="{0}" description="The amount of volume available for each crew member in a compartment." />
+
+      <!-- Camera -->
+      <Item id="Camera.NightVision" name="Night Vision" description="Night Vision cameras allow you to see in the dark without the need of having lights, but they need at least some light to work." />
+
+	  <!-- Fuel Cell -->
+	  <Item id="Fuelcell.Efficiency" value="0" name="Fuel Cell Efficiency" valueFormat="{0:P0}" description="Efficiency of fuel cells.  Early fuel cell technology was almost entirely driven by the needs of space programs." />
+	  
+	  <!-- Fuel Tanks -->
+	  <Item id="Fueltank.Alloy"  name="Aluminium Alloy Construction" description="Aluminium copper tanks can provide the same strength as aluminium with less mass." />
+	  
+	  
+      <!-- Fuselage -->
+      <Item id="Fuselage.DeadWeight" value="0" name="Dead Weight" valueFormat="{0:P0}" description="Lead pellets you can put in your fuel tanks to adjust the CoM." />
+      <Item id="Fuselage.Pinch" value="0" name="Pinch" valueFormat="{0:P0}" description="The pinch tool allows you to deform a fuselage to make it narrower on one side." />
+      <Item id="Fuselage.Slant" value="0" name="Slant" valueFormat="{0:P0}" description="The slant tool lets you make a diagonal cut to the top face of a fuselage." />
+      <Item id="Fuselage.Clamp" value="false" name="Clamp" description="The clamp tool lets you cut sections out of a fuselage." />
+      <Item id="Fuselage.Curve" value="false" name="Curve" description="The curve tool lets you change the profile of a nosecone to any curve." />
+
+
+      <!-- Solar Panel Arrays -->
+      <Item id="SolarPanelArray.Columns" value="0" name="Columns" valueFormat="{0}" description="The amount of panels per row the array can have." />
+      <Item id="SolarPanelArray.Rows" value="0" name="Rows" valueFormat="{0}" description="The amount of rows of panels the array can have." />
+      <Item id="SolarPanelArray.Shape" value="0" name="Shape" valueFormat="{0:P0}" description="How much the panel can be stretched to tweak its shape." />
+
+      <!-- Electric Motor -->
+      <Item id="ElectricMotor.Brake" value="1000" name="Electric Motor Brakes" valueFormat="{0}" description="The brake torque affects how hard it can stop." />
+      <Item id="ElectricMotor.RPM" value="2500" name="Electric Motor RPM" valueFormat="{0}" description="How fast the electric motor can spin given enough torque." />
+      <Item id="ElectricMotor.Torque" value="1000" name="Electric Motor Torque" valueFormat="{0}" description="The torque of a motor defines how much force it can do." />
+
+      <!-- Propeller Assembly -->
+      <Item id="Prop.BladeCount" value="3" name="Propeller Blade Count" valueFormat="{0}" description="The number of unique blades in the propeller assembly." />
+      <Item id="Prop.VariablePitch" value="false" name="Variable Pitch" description="A set of hinges in the propeller blades, allowing for a variable pitch to fine tune their AoA." />
+
+      <!-- Wheels -->
+      <Item id="Wheel.Brake" value="5000" name="Wheel Brakes" valueFormat="{0}" description="The brake torque affects how hard it can stop a wheel." />
+      <Item id="Wheel.Suspension" name="Wheel Suspension" description="Shock absorbers integrated in the wheels can help drive on bumpy terrain." />
+      <Item id="Wheel.Torque" value="1000" name="Wheel Torque" valueFormat="{0}" description="The torque of a motor defines how much force it can do." />
+
+      <!-- Landing Gear -->
+      <Item id="LandingGear.Retraction" name="Gear Retraction" description="The hability to retract the landing gear to reduce its drag footprint." />
+
+      <!-- Wings -->
+      <Item id="Wing.ControlSurfaces" value="0" name="Control Surfaces Per Wing" valueFormat="{0}" description="The amount of control surfaces you can pack in a single wing." />
+      <Item id="Wing.Edge" value="0.5" name="Wing Chord" valueFormat="{0}m" description="The wing chord is the size the wing can have between its front and back." />
+      <Item id="Wing.Length" value="0.5" name="Wing Span" valueFormat="{0}m" description="The wing span is its length, the distance between the root and the tip." />
+      <Item id="Wing.Thickness" value="0.05" name="Wing Thickness" valueFormat="{0}m" description="How thick a wing can get, making them more resistant to snaps and increasing its fuel storage capacity." />
+
+      <!-- Rocket Engine Grain -->
+      <Item id="RocketEngine.Grain.Star" name="Star Grain" displayValue="SOLID FUEL GRAIN" description="A solid propellant grain that results in a basic ramp up, hold, ramp down thrust curve." />
+      <Item id="RocketEngine.Grain.Tubular" name="Tubular Grain" displayValue="SOLID FUEL GRAIN" description="A solid propellant with a hole in the center, resulting in a ramping up thrust curve." />
+      <Item id="RocketEngine.Grain.DoubleAnchor" name="Double Anchor Grain" displayValue="SOLID FUEL GRAIN" description="A solid propellant grain that results in a ramping down thrust curve." />
+      <Item id="RocketEngine.Grain.RodAndTube" name="Rod And Tube Grain" displayValue="SOLID FUEL GRAIN" description="A solid propellant grain designed to produce a constant thrust over its entire burn." />
+      <Item id="RocketEngine.Grain.MultiFin" name="Multifin Grain" displayValue="SOLID FUEL GRAIN" description="A solid propellant grain that burns all of the fuel at the start, resulting in a large impulse followed by a long residual thrust." />
+
+      <!-- Rocket Engine Nozzles -->
+      <Item id="RocketEngine.Nozzle.Bell" name="Bell Nozzle" displayValue="ENGINE NOZZLE" description="Bell shaped nozzles provide better performance than their conical counterparts. This one is resizable." />
+      <Item id="RocketEngine.Nozzle.Cone" name="Cone Nozzle" displayValue="ENGINE NOZZLE" description="Cone shaped nozzles are about as basic as a nozzle can be, but this one is resizable." />
+      <Item id="RocketEngine.Nozzle.Bravo" name="Bravo Nozzle" displayValue="ENGINE NOZZLE" description="It's a basic bell shaped rocket nozzle. More efficient than a cone." />
+      <Item id="RocketEngine.Nozzle.Delta" name="Delta Nozzle" displayValue="ENGINE NOZZLE" description="Resizable bell shaped nozzle with more visual detail." />
+      <Item id="RocketEngine.Nozzle.Alpha" name="Alpha Nozzle" displayValue="ENGINE NOZZLE" description="Advanced rocket nozzle with integrated cooling system." />
+      <Item id="RocketEngine.Nozzle.Omega" name="Omega Nozzle" displayValue="ENGINE NOZZLE" description="Gigantic nozzle that pairs well with the Gas Generator II power cycle." />
+      <Item id="RocketEngine.Nozzle.Plug" name="Graphite Nozzle" displayValue="ENGINE NOZZLE" description="A milled piece of graphite, the simplest possible plug to put at the end of a rocket." />
+      <Item id="RocketEngine.Nozzle.Echo" name="Echo Nozzle" displayValue="ENGINE NOZZLE" description="Large nozzle made for solid rocket boosters." />
+      <Item id="RocketEngine.Nozzle.Aerospike" name="Aerospike" displayValue="ENGINE NOZZLE" description="Aerospike nozzles offer better performance across a wide range of altitudes than bell or cone nozzles." />
+      <Item id="RocketEngine.Nozzle.Film" name="Film" displayValue="ENGINE NOZZLE" description="Relies only on film-cooling to keep the engine cooled." />
+
+      <!-- Rocket Engine Power Cycles -->
+      <Item id="RocketEngine.Power.Liquid" name="" description="Unused" />
+      <Item id="RocketEngine.Power.GasGenerator1" name="Gas Generator I" displayValue="ENGINE TYPE" description="Gas generator is a powerful type of fuel injection capable of respectable chamber pressures." />
+      <Item id="RocketEngine.Power.GasGenerator2" name="Gas Generator II" displayValue="ENGINE TYPE" description="It's the muscle car equivalent for rocket engines. It's powerful, but it's not too efficient." />
+      <Item id="RocketEngine.Power.Staged1" name="Staged" displayValue="ENGINE TYPE" description="Very advanced power cycle capable of extremely high chamber pressures." />
+      <Item id="RocketEngine.Power.Staged2" name="Full Flow Staged" displayValue="ENGINE TYPE" description="The holy grail of power cycles capable of the highest chamber pressures at the highest efficiency." />
+      <Item id="RocketEngine.Power.PressureFed" name="Pressure Fed" displayValue="ENGINE TYPE" description="The simplest possible rocket engine, it isn't very powerful but it works great in space. As a plus, it can gimbal, enabling for precise maneuvers." />
+      <Item id="RocketEngine.Power.Expander" name="Expander Cycle" displayValue="ENGINE TYPE" description="Fuel boils in cooling channels on the combustion chamber or nozzle of the engine.  The pressure of this gas drives a turbine to power the fuel pumps." />
+      <Item id="RocketEngine.Power.SteamGenerator" name="Steam Generator" displayValue="ENGINE TYPE" description="Hydrogen peroxide is flowed through a catalyst to produce steam, which drives the fuel pumps." />
+      <Item id="RocketEngine.Power.Electric" name="Electric" displayValue="ENGINE TYPE" description="A high tech rocket engine without a turbopump, using electric pumps to get the fuel into the chamber." />
+      <Item id="RocketEngine.Power.Solid" name="" displayValue="ENGINE TYPE" description="Unused" />
+      <Item id="RocketEngine.Power.Model" name="Model Rocket" displayValue="ENGINE TYPE" description="A very small engine with very low efficiencies, perfect for hobbyists or stage separations." />
+      <Item id="RocketEngine.Power.Booster" name="Solid Booster" displayValue="ENGINE TYPE" description="An oversized version of the model rocket, perfect to increase the launch thrust of your rockets without spending too much." />
+      <Item id="RocketEngine.Power.Nuclear" name="Nuclear" displayValue="ENGINE TYPE" description="Very efficient, but it doesn't pack a punch." />
+      <Item id="RocketEngine.Power.Monoprop" name="Monopropellant" displayValue="ENGINE TYPE" description="Small, but precise engine." />
+      <Item id="RocketEngine.Power.Redundant" name="Redundant" displayValue="ENGINE TYPE" description="An engine with redundant valves and a high degree of pre-flight testing.  Expensive and heavy but the closest thing we have to a reliable rocket engine." />
+
+
+      
+      <!-- Jet Engines -->
+      <Item id="JetEngine.BypassRatio" value="0" name="Bypass Ratio" valueFormat="{0}" description="This can greatly increase fuel efficiency. All the cool engineers are doing it these days." />
+      <Item id="JetEngine.CompressionRatio" value="0" name="Compression Ratio" valueFormat="{0}" description="Increasing compression can increase fuel efficiency (and thrust up to a point), but also increases the length and weight of the core." />
+      <Item id="JetEngine.Reverse" value="false" name="Jet Reverse Thrust" description="Reverse thrust lets you invert the force of the engine to help you brake the craft." />
+      <Item id="JetEngine.Afterburner" value="false" name="Jet Afterburner" description="Afterburners can greatly increase thrust by lowering efficiency. And they look cool so win-win." />
+
+      <!-- Fuel Types -->
+      <Item id="FuelType.Battery" name="Battery" displayValue="FUEL TYPE" description="A chemical storage for your power needs, so you don't depend strictly on power generation." />
+      <Item id="FuelType.Jet" name="Jet Fuel" displayValue="FUEL TYPE" description="Plane juice, your everyday kerosene, ready to be pumped into a jet engine to spin it up." />
+      <Item id="FuelType.LOX/ETOH" name="Etholox" displayValue="FUEL TYPE" description="75% alcohol and 25% water mixed with liquid oxygen.  Less efficient than kerosene but more predictable." />
+      <Item id="FuelType.LOX/RP1" name="Kerolox" displayValue="FUEL TYPE" description="A more refined version of the jet fuel mixed with liquid oxygen, providing high energy density." />
+      <Item id="FuelType.LOX/LH2" name="Hydrolox" displayValue="FUEL TYPE" description="A very efficient fuel with an incredibly low density, requiring large tanks, mixed with liquid oxygen." />
+      <Item id="FuelType.LOX/CH4" name="Methalox" displayValue="FUEL TYPE" description="A light and efficient fuel right in between hydrolox and kerolox, mixed with liquid oxygen." />
+      <Item id="FuelType.HP LOX/ETOH" name="Etholox" displayValue="FUEL TYPE" description="75% alcohol and 25% water mixed with liquid oxygen.  Less efficient than kerosene but more predictable." />
+      <Item id="FuelType.HP LOX/RP1" name="Kerolox" displayValue="FUEL TYPE" description="A more refined version of the jet fuel mixed with liquid oxygen, providing high energy density." />
+      <Item id="FuelType.HP LOX/LH2" name="Hydrolox" displayValue="FUEL TYPE" description="A very efficient fuel with an incredibly low density, requiring large tanks, mixed with liquid oxygen." />
+      <Item id="FuelType.HP LOX/CH4" name="Methalox" displayValue="FUEL TYPE" description="A light and efficient fuel right in between hydrolox and kerolox, mixed with liquid oxygen." />
+      <Item id="FuelType.LH2" name="Liquid Hydrogen" displayValue="FUEL TYPE" description="Pure hydrogen without any oxydizer, necessary for combustionless nuclear engines." />
+      <Item id="FuelType.H2O" name="Water" displayValue="FUEL TYPE" description="Purified tap water, useful not only as ballast but also for the combustionless nuclear engines." />
+      <Item id="FuelType.Monopropellant" name="Monopropellant" displayValue="FUEL TYPE" description="Nasty hypergolic propellant, easy to ignite but insanely toxic." />
+      <Item id="FuelType.MMHNTO" name="Hydrazine/NTO" displayValue="FUEL TYPE" description="Hypergolic propellant burned with an oxidizer for increased performance." /> 
+      <Item id="FuelType.HP MMHNTO" name="Hydrazine/NTO" displayValue="FUEL TYPE" description="Hypergolic propellant burned with an oxidizer for increased performance." /> 
+      <Item id="FuelType.Nitrogen" name="Nitrogen" displayValue="FUEL TYPE" description="High pressure gas released without combustion.  Simple but inefficient." />  
+      <Item id="FuelType.Solid" name="Solid" displayValue="FUEL TYPE" description="A solid paste easy to store and cheap to produce, that once ignited can't be turned off." />
+      <Item id="FuelType.Jetpack" name="Jetpack Fuel" displayValue="FUEL TYPE" description="A fuel tightly packed on the back of the Drood's suit, allowing for movement in space." />
+      <Item id="FuelType.Xenon" name="Xenon" displayValue="FUEL TYPE" description="A noble gas with very heavy molecules, that once accelerated to high speeds can result in high efficiencies." />
+      <Item id="FuelType.None" name="None" displayValue="FUEL TYPE" description="Zero, zilch, zip, nada, nothing." />
+
+      <!-- Limitations -->
+      <Item id="Crew" value="0" name="Crew Limit" valueFormat="{0}" description="The max amount of Droods that can be hired in the current sandbox." />
+      <Item id="Craft.Stages" value="99" name="Max Stages" valueFormat="{0}" description="The more complex you need to make your crafts, the more stages you will need in order to manage part activations." />
+      <Item id="Craft.MaxHeight" value="99999" visible="false" name="" description="Unused" />
+      <Item id="Craft.MaxDiameter" value="99999" visible="false" name="" description="Unused" />
+      <Item id="Craft.MaxPartCount" value="99999" visible="false" name="" description="Unused" />
+
+      <!-- Part Styles -->
+      <Item id="Style.CargoBay1.0.CargoBay-4" name="Doorless Cargo Bay" displayValue="PART STYLE" description="A variant of the cargo bay with no doors, for whatever you may need to have just half a fuselage." />
+      <Item id="Style.CargoBay1.1.CargoBay-4" name="Doorless Cargo Bay" displayValue="PART STYLE" description="" />
+
+      <Item id="Style.Detacher1.0.Interstage-4" name="Soyuz Interstage" displayValue="PART STYLE" description="Simpler and more rugged, this style of interstage will just ensure things don't come apart until you want." />
+      
+      <Item id="Style.EvaChair1.0.Rover" name="Basic Chair" displayValue="PART STYLE" description="A chair. Usable furniture. Ideal to sit down for a while and... yeah. A chair." />
+      <Item id="Style.EvaChair1.0.Rocket" name="Rocket Seat" displayValue="PART STYLE" description="A rocket chair to keep your crew comfy when under the high Gs of a launch." />
+
+      <Item id="Style.JetEngine1.1.JetEngineShroud-1" name="Basic Shroud" displayValue="PART STYLE" description="Jet engines are expensive components, this cover will sure make things look more professional." />
+      <Item id="Style.JetEngine1.1.JetEngineShroud-2" name="Chevron Shroud" displayValue="PART STYLE" description="If you want to get fancy, chevron is the way to go, you will be cutting the air like butter." />
+      <Item id="Style.JetEngine1.1.JetEngineShroud-None-2" name="No Shroud" displayValue="PART STYLE" description="A naked engine will afford you some mass, but leave the fragile components exposed to the elements." />
+      <Item id="Style.JetEngine1.2.Straight" name="Straight Fan" displayValue="PART STYLE" description="A bunch of planks spinning fast. It does the job, but it sure is ugly." />
+      <Item id="Style.JetEngine1.2.Curved" name="Curved Fan" displayValue="PART STYLE" description="You may try to lie to yourself thinking you want curved fans to get a better airflow, but we all know you just want their fancy looks." />
+      <Item id="Style.JetEngine1.2.SCurve" name="S Curve Fan" displayValue="PART STYLE" description="As you get further away from the rotation axis the ideal angle of attack of the fan blades changes, this fan will match the ideal angle to result in the best looking engines." />
+      <Item id="Style.JetEngine1.3.Military" name="Military Nozzle" displayValue="JET NOZZLE" description="Who doesn't want to have a moving nozzle that adjusts its opening to maximize performance and allows for the hottests of exhausts?" />
+      <Item id="Style.JetEngine1.3.Civilian" name="Civilian Nozzle" displayValue="JET NOZZLE" description="Civilian nozzles are a fancier version of the basic, ideal for a wide range of sizes, from a small private one to a commercial passenger plane." />
+      <Item id="Style.JetEngine1.3.Basic" name="Basic Nozzle" displayValue="JET NOZZLE" description="The basic engine nozzle is boring, but effective, and for a cheap craft they will sure do the job." />
+      <Item id="Style.JetEngine1.4.Spiral" name="Spiral Tip" displayValue="PART STYLE" description="A fancy bit." />
+      <Item id="Style.JetEngine1.4.Spike" name="Spike Tip" displayValue="PART STYLE" description="A pointy bit." />
+      <Item id="Style.JetEngine1.4.Round" name="Round Tip" displayValue="PART STYLE" description="A rounded bit." />
+      <Item id="Style.JetEngine1.4.None" name="No Tip" displayValue="PART STYLE" description="No bit... how ugly!" />
+
+      <Item id="Style.LandingGear1.1.Wheel-Single" name="Single Wheel" displayValue="PART STYLE" description="A single wheel attached on one of its ends." />
+      <Item id="Style.LandingGear1.1.Wheel-Double" name="Double Wheel" displayValue="PART STYLE" description="A double wheel, allowing for twice the traction and braking power." />
+      <Item id="Style.LandingGear1.1.Wheel-Straddled" name="Straddled Wheel" displayValue="PART STYLE" description="A single wheel attached on both ends." />
+      <Item id="Style.LandingGear1.2.Bay-Straight" name="Straight Door" displayValue="PART STYLE" description="A flat door... yeah, that is all, it is flat and it is a door." />
+      <Item id="Style.LandingGear1.2.Bay-Curved" name="Curved Door" displayValue="PART STYLE" description="A curved door that will better match rounded fuselages." />
+      <Item id="Style.LandingGear1.2.Bay-None" name="No Bay" displayValue="PART STYLE" description="Without a bay the landing gear will be left exposed once retracted." />
+      <Item id="Style.LandingGear1.3.Door-Vertical" name="Sideways Door Hinges" displayValue="PART STYLE" description="A hinge that opens a pair of doors towards the sides of the bay." />
+      <Item id="Style.LandingGear1.3.Door-Horizontal" name="Forwards Door Hinges" displayValue="PART STYLE" description="A hinge that opens a pair of doors alongside the direction of the bay." />
+      <Item id="Style.LandingGear1.3.Door-Side" name="Single Door Hinge" displayValue="PART STYLE" description="A hinge that opens a door towards one side of the bay." />
+      <Item id="Style.LandingGear1.3.Door-None" name="No Door" displayValue="PART STYLE" description="Just a hole, in case you hate aerodynamics." />
+      
+      <Item id="Style.Parachute1.0.Base" name="Nosecone Parachute" displayValue="PART STYLE" description="An aerodynamic package meant to be mounted at the front of a craft to split the airstream." />
+      <Item id="Style.Parachute1.0.Small" name="Side Parachute" displayValue="PART STYLE" description="A compact package ideal to just snap on the side of your craft to get a handy parachute." />
+      <Item id="Style.Parachute1.1.ParachuteStripedHorizontal" name="Horizontal Stripes" displayValue="PART STYLE" description="A ringed parachute. It makes for a perfect target if you want to train your aim." />
+      <Item id="Style.Parachute1.1.ParachuteStripedVertical" name="Vertical Stripes" displayValue="PART STYLE" description="A striped parachute similar to the ones used in crewed capsules." />
+      <Item id="Style.Parachute1.1.ParachuteCheckered" name="Checkered Pattern" displayValue="PART STYLE" description="A checkered pattern meant to make small parachutes easy to spot in the sky." />
+      
+      <Item id="Style.RoverWheel1.1.RuggedRim" name="Rugged Rim" displayValue="PART STYLE" description="A rim containing a motor with tons of torque and a good gear reduction to further increase it." />
+      <Item id="Style.RoverWheel1.1.LunarRim" name="Lunar Rim" displayValue="PART STYLE" description="A rim containing a motor with low torque and a huge gear reduction to get good torque using less power, also keeping speeds down." />
+      <Item id="Style.RoverWheel1.1.RetroRim" name="Retro Rim" displayValue="PART STYLE" description="A rim containing a cheap motor with low torque and a normal gear reduction." />
+      <Item id="Style.RoverWheel1.1.RacingRim" name="Racing Rim" displayValue="PART STYLE" description="A rim containing a motor designed for speed, with decent torque and a great gear increment allowing for very high speeds." />
+      <Item id="Style.RoverWheel1.1.LandingGearRim" name="Landing Gear Rim" displayValue="PART STYLE" description="A rim containing a motor with normal torque and gear reduction." />
+      <Item id="Style.RoverWheel1.2.RoverTireRugged" name="Rugged Tire" displayValue="PART STYLE" description="A tire with great grip when offroad but mediocre over concrete." />
+      <Item id="Style.RoverWheel1.2.RoverTireLunar" name="Lunar Tire" displayValue="PART STYLE" description="A tire with insanely good offroad grip but very dense and expensive." />
+      <Item id="Style.RoverWheel1.2.RoverTireSmooth" name="Smooth Tire" displayValue="PART STYLE" description="The perfect tire for races, with very good grip on concrete but terrible when offroading." />
+      <Item id="Style.RoverWheel1.2.RoverTireStreet" name="Street Tire" displayValue="PART STYLE" description="An average tire with decent grip on concrete and mediocre grip offroad." />
+      <Item id="Style.RoverWheel1.2.RoverTireLandingGear" name="Landing Gear Tire" displayValue="PART STYLE" description="A well balanced wheel with normal grip on any surface." />
+
+      <Item id="Style.PropellerAssembly1.1.PropellerDrone" name="Drone" displayValue="PART STYLE" description="A set of very agressive blades made out of composite materials, making them very light and powerful." />
+      <Item id="Style.PropellerAssembly1.1.PropellerCivilian" name="Civilian" displayValue="PART STYLE" description="A classic small aircraft propeller made out of aluminium. All rounded performance for a decent price." />
+      <Item id="Style.PropellerAssembly1.1.PropellerWarbird" name="Warbird" displayValue="PART STYLE" description="Carved out of wood to imitate the blades in the XX century fighters, perfect for replica lovers." />
+      <Item id="Style.PropellerAssembly1.1.PropellerScimitar" name="Scimitar" displayValue="PART STYLE" description="A curved blade capable of cutting through the air like a sword. Careful not to put your finger in it." />
+      <Item id="Style.PropellerAssembly1.1.PropellerFlat" name="Flat" displayValue="PART STYLE" description="Let it fool you. It looks like a helicopter but it lacks the swashplate. Players will surely find a way to make helis out of this." />
+      <Item id="Style.PropellerAssembly1.1.PropellerBoat1" name="Vortex" displayValue="PART STYLE" description="A small boat propeller, perfect for motorboats of small submarines." />
+      <Item id="Style.PropellerAssembly1.1.PropellerBoat2" name="Riptide" displayValue="PART STYLE" description="A very large boat propeller made out of heavy steel. Watch out for the icebergs." />
+
+      <!-- Basic Fuselage Styles -->
+      <Item id="Style.CargoBay1.0.CargoBay-2" name="Custom" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.CargoBay1.0.CargoBay-3" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.CargoBay1.0.CargoBay-5" name="One Door" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.CargoBay1.1.CargoBay-2" name="Custom" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.CargoBay1.1.CargoBay-3" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.CargoBay1.1.CargoBay-5" name="One Door" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.CommandDisc1.0.Solid-1" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.CrewCompartment.0.Solid-1" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Detacher1.0.Interstage-2" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Fuselage1.0.Solid-1" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Gyroscope1.0.Solid-1" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.HeatShield1.0.HeatShield-1" name="Default" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Inlet1.0.Inlet-1" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Inlet1.0.Inlet-2" name="Beveled" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Fairing1.0.Fairing-1" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.FairingBase1.0.Fairing-1" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.FairingNoseCone1.0.FairingNoseCone-4" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.FairingNoseCone1.0.FairingNoseCone-2" name="Straight" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.NoseCone1.0.NoseCone-2" name="Ogive" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.NoseCone1.0.NoseCone-Straight-2" name="Straight" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Strut1.0.Solid-1" name="Normal" displayValue="PART STYLE" description="Unused" value="true" />
+
+      <!-- Striped Fuselage Styles -->
+      <Item id="Style.CargoBay1.0.CargoBay-1" name="Normal Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.CargoBay1.1.CargoBay-1" name="Normal Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.CrewCompartment.0.Solid-2" name="Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.Detacher1.0.Interstage-1" name="Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.Fuselage1.0.Solid-2" name="Striped Fuselage" displayValue="PART STYLE" description="Striped variants of all the fuselages, including fuel tanks, interstages, fairings... To add a pop of color to your crafts." />
+      <Item id="Style.Gyroscope1.0.Solid-2" name="Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.Fairing1.0.Fairing-2" name="Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.FairingBase1.0.Fairing-2" name="Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.FairingNoseCone1.0.FairingNoseCone-1" name="Normal Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.FairingNoseCone1.0.FairingNoseCone-3" name="Straight Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.NoseCone1.0.NoseCone-Straight-1" name="Straight Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.NoseCone1.0.NoseCone-1" name="Ogive Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.Strut1.0.Solid-2" name="Striped" displayValue="PART STYLE" description="" />
+
+      <!-- Rounded Fuselage Styles -->
+      <Item id="Style.NoseCone1.0.NoseCone-Round-2" name="Rounded Noses" displayValue="PART STYLE" description="Although their colliders are still pointy, rounded noses are perfect for anything spherical." />
+      <Item id="Style.NoseCone1.0.NoseCone-Round-1" name="Round Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.FairingNoseCone1.0.FairingNoseCone-5" name="Rounded Striped" displayValue="PART STYLE" description="" />
+      <Item id="Style.FairingNoseCone1.0.FairingNoseCone-6" name="Rounded" displayValue="PART STYLE" description="" />
+
+      <!-- Solar Panel Styles -->
+      <Item id="Style.SolarPanelArray.2.Hex" name="Thin Film" visible="false" displayValue="PART STYLE" description="Low efficiency but cheap panels, good enough to power your most basic needs." />
+      <Item id="Style.SolarPanelArray.2.Simple" name="Monocrystalline" visible="false" displayValue="PART STYLE" description="An old but reliable technology, more expensive than thin film but at the same time, more efficient." />
+      <Item id="Style.SolarPanelArray.2.Advanced" name="Perovskite" visible="false" displayValue="PART STYLE" description="Top tier solar panels, breaking the theoretical limits of maximum efficiency using fancy new materials." />
+      <Item id="Style.SolarPanel1.0.Hex" name="Thin Film" displayValue="PART STYLE" description="Low efficiency but cheap panels, good enough to power your most basic needs." />
+      <Item id="Style.SolarPanel1.0.Simple" name="Monocrystalline" displayValue="PART STYLE" description="An old but reliable technology, more expensive than thin film but at the same time, more efficient." />
+      <Item id="Style.SolarPanel1.0.Advanced" name="Perovskite" displayValue="PART STYLE" description="Top tier solar panels, breaking the theoretical limits of maximum efficiency using fancy new materials." />
+
+      <!-- Unused Styles -->
+      <Item id="Style.JetEngine1.0.Core" name="Core" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Light1.0.CircularSpotlight" name="Circular" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Light1.0.SquareSpotlight" name="Square" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Package.0.Crate" name="Wooden Crate" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Package.0.ShippingContainer" name="Shipping Container" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.Package.0.Barrel" name="Barrel" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.SolarPanelArray.1.Square" name="Square" displayValue="PART STYLE" description="Unused" value="true" />
+      <Item id="Style.TestPilot.0.TestPilot1" name="TestPilot" displayValue="PART STYLE" description="Unused" value="true" />
+
+      <!-- Initial Designer Part Scales - Currently only fuselage parts are supported -->
+      <Item id="StartScale.Fuselage" value="0.1" visible="false" name="" description="" />
+      <Item id="StartScale.Wing" value="0.2" visible="false" name="" description="" />
+
+      <!-- Tech Nodes that Unlock Contracts -->
+      <Item id="Contract.Unlock" name="New Contracts" displayValue="$" description="You will get new contracts after unlocking this tech." value="true" />
+      <Item id="Contract.Unlock.Comsats" name="New Contracts" displayValue="$" description="You will get lucrative private contracts to deploy communications satellites." value="true" />
+      <Item id="Contract.Unlock.InnerPlanets" name="New Contracts" displayValue="$" description="You will get new contracts to explore Venus and Mars." value="true" />
+      <Item id="Contract.Unlock.Reentry" name="New Contracts" displayValue="$" description="You will get new contracts to test reentry from near-orbital speeds." value="true" />
+      <Item id="Contract.Unlock.ICBMPad" name="New Contracts" displayValue="$" description="Unlocks the construction of medium-sized launch complexes, suitable for ICBMs.  You may want to save this until you need it so they do not clog up your contracts list." value="true" />
+      <Item id="Contract.Unlock.HeavyPad" name="New Contracts" displayValue="$" description="Unlocks the construction of large launch complexes, suitable for heavy-lift rockets." value="true" />
+      <Item id="Contract.Unlock.SuperHeavyPad" name="New Contracts" displayValue="$" description="Unlocks the construction of very large launch complexes, suitable for super heavy-lift rockets." value="true" />
+      
+      
+      <!-- SpaceRace stuff -->
+      <Item id="SpaceRace.AirLightReliability" value ="1" name="Air Light Testing Factor" valueFormat="{0}" description="Reduces the ignition penalty for airlighting engines." />
+      <Item id="SpaceRace.GroundLightReliability" value ="1" name="Ground Testing Factor" valueFormat="{0}" description="Engines that light on the pad will be more reliable, at the cost of additional rollout time." />
+      <Item id="SpaceRace.RushRate" value ="1" name="Rush Rate" valueFormat="{0:P0}" description="Increases the speed and cost of projects that are rushing." />
+      <Item id="SpaceRace.ShutDownSafety" value ="1" name="Shutdown Safety Factor" valueFormat="{0}" description="Increases the likelihood that a failing engine will safe itself after shutdown (instead of exploding). Also increases engine cost." />
+      <Item id="SpaceRace.ComTech" value ="0" name="Communications Technology" valueFormat="{0}" description="Send signals farther with the same size antenna." />
+      <Item id="SpaceRace.GlobalRadio" name="Global Radio Network" description="Set up radio stations around the world to communicate with craft that are not above the horizon from their launch site." />
+      <Item id="SpaceRace.Recovery" value ="0.1" name="Recovery Factor" valueFormat="{0:P0}" description="The maximum percentage of price/production that can be realized from recovered hardware." />
+      <Item id="SpaceRace.WaterRecoveryMass" value ="3000" name="Water Recovery Mass" valueFormat="{0}" description="The maximum mass (in kg) that can be recovered from a water landing." />
+      <Item id="SpaceRace.ModularCapsules" value ="false" name="Modular Capsules" description="Capsules designed with modular components allow modifications and upgrades for minimal investment." />
+      
+      
+      <!-- Chamber pressure soft limit -->
+      <Item id="RocketEngine.MaxChamberPressure" value="0.55" name="Chamber Pressure" valueFormat="{0:P0}" description="Represents the ability to run rocket engines reliably at higher pressures." />
+      
+      
+   </Items>
+   <Nodes>
+      <!-- Tier 0 -->
+      <Node id="start" name="Start" cost="0">
+
+         <Item id="Part.Fin" value="true" />
+         <Item id="Part.Nose Cone" value="true" />
+         <Item id="Part.Command Disc" value="false" />
+         <Item id="Part.Electric Motor" value="true" />
+         <Item id="Part.Docking Port" value="false" />
+         
+         <Item id="MaxSize.RocketEngine" value="6.0" />
+         <Item id="MaxActiveCrafts" value="3" />
+         <Item id="Map.Enable" value="true" />
+		 <Item id="Map.Lines" value="true" />
+		 <Item id="Map.Maneuver" value="true" />
+
+         <Item id="Part.Fairing Nose Cone" value="true" />
+         <Item id="Part.Fairing" value="true" />
+         <Item id="Part.Fairing Base" value="true" />
+         
+         <Item id="MaxSize.Capsule" value="2.0" />
+         
+         <Item id="Part.Label" value="true" partScale="0.6" partRotation="0, 180, 0" />
+         <Item id="Part.Camera" value="true" partRotation="0,180,0" partScale="0.6" />
+         <Item id="Part.Piston Leg" value="true" />
+         <Item id="MaxSize.LandingLeg" value="2" />
+         <Item id="StartScale.Fuselage" value="1" />
+         <Item id="Part.Interstage" value="false" />
+         <Item id="Style.Detacher1.0.Interstage-4" value="true" />
+         <Item id="Part.Side Interstage" value="true" partScale="0.6" />
+         
+         <Item id="Fuselage.DeadWeight" value="1" />
+         <Item id="Part.Strut" value="true" partScale="0.6" />
+         <Item id="Part.Block" value="true" />
+         <Item id="Part.Ball" value="true" />
+         
+         <Item id="Wing.Edge" value="5" />
+         <Item id="Wing.Length" value="5"  />
+         <Item id="Wing.Thickness" value="0.5" />
+         <Item id="StartScale.Wing" value="1" />
+         <Item id="Style.HeatShield1.0.HeatShield-1" value="true" />
+         
+         <Item id="Part.Small Bay" value="true" />
+         <Item id="Part.Cargo Bay" value="true" />
+         
+         <Item id="Part.Strut" value="true" partScale="0.6" />
+         <Item id="Part.Block" value="true" />
+         <Item id="Part.Ball" value="true" />
+         <Item id="Style.Strut1.0.Solid-2" visible="false" value="true" />
+         
+         <!-- Parachutes -->
+         <Item id="Style.Parachute1.0.Small" value="true" />
+         <Item id="Style.Parachute1.1.ParachuteStripedHorizontal" value="true" visible="false" />
+         <Item id="MaxSize.Parachute" value="4" />
+         <Item id="Chute.Radius" value="10" display="40m" />
+         <Item id="Chute.Length" value="10" display="200m" />
+         <Item id="Style.Parachute1.1.ParachuteCheckered" value="true" />
+         <Item id="Style.Parachute1.0.Base" value="true" />
+         <Item id="Style.Parachute1.1.ParachuteStripedVertical" value="true" visible="false" />
+         
+         <!-- Propulsion -->
+         <Item id="FuelType.None" value="true" />         
+         <Item id="RocketEngine.Power.Solid" value="true" visible="false" />
+         <Item id="RocketEngine.Power.Model" value="true" visible="false" />
+         <Item id="RocketEngine.Power.Booster" value="true" />
+         <Item id="RocketEngine.Power.Monoprop" value="true" />
+         <Item id="RocketEngine.Grain.Star" value="true" visible="false" />
+         <Item id="RocketEngine.Power.Liquid" value="true" visible="false" />
+         <Item id="RocketEngine.Power.PressureFed" value="true" />
+         <Item id="RocketEngine.Power.GasGenerator1" value="true" />
+         <Item id="RocketEngine.Power.GasGenerator2" value="true" /> 
+         <Item id="RocketEngine.Power.SteamGenerator" value="true" />
+         <Item id="RocketEngine.Nozzle.Plug" value="true" visible="false" />
+         <Item id="RocketEngine.Nozzle.Film" value="true" visible="false" />         
+         <Item id="RocketEngine.Nozzle.Bravo" value="true" />
+         <Item id="RocketEngine.Nozzle.Alpha" value="true" />         
+         <Item id="RocketEngine.Nozzle.Cone" value="true" />
+         <Item id="RocketEngine.Nozzle.Delta" value="true" />
+         <Item id="RocketEngine.Nozzle.Omega" value="true" />
+         <Item id="RocketEngine.Nozzle.Echo" value="true" />
+         
+         
+		  <Item id="RocketEngine.Grain.Star" value="true" />
+		  <Item id="RocketEngine.Grain.Tubular" value="true" />
+		  <Item id="RocketEngine.Grain.DoubleAnchor" value="true" />
+		  <Item id="RocketEngine.Grain.RodAndTube" value="true" />
+		  <Item id="RocketEngine.Grain.MultiFin" value="true" />
+
+         
+         <!--Lights and Motors-->
+         <Item id="Part.Beacon Light" value="true" />
+         <Item id="Part.Light" value="true" />
+         <Item id="Part.Hinge Rotator" value="true" partRotation="0,90,0" />
+         <Item id="Part.Rotator" value="true" />
+         <Item id="Part.Piston" value="true" />
+         
+
+         
+         <!-- Unused -->
+         <Item id="Part.Fuel Tank" value="false" />
+         <Item id="Part.Package" value="false" />
+         <Item id="Part.Tourist" value="false" />
+
+      </Node>
+      
+      <Node id="never" name="Never" cost="10000">
+		<Item id="Contract.Unlock" value="true"/>
+      </Node>
+      
+      <Node id="pre-titan" name="Redundant Dissimilar Architecture" cost="10000">
+		  <Item id="Contract.Unlock" value="true"/>
+	  </Node>
+	  
+	  <Node id="pre-jupiter" name="Stopgap Ballistic Missiles" cost="10000">
+		  <Item id="Contract.Unlock" value="true"/>
+	  </Node>
+      
+      <Node id="pre-explorer" name="Explorer Program" cost="10000">
+		  <Item id="Contract.Unlock" value="true"/>
+	  </Node>
+	  
+	  <Node id="pre-juno" name="Project Juno" cost="10000">
+		  <Item id="Contract.Unlock" value="true"/>
+	  </Node>
+	  
+      
+      <Node id="program" name="Program Management" cost="0" parent="start" researched="true">
+         <Item id="SpaceRace.AirLightReliability" value ="1" />
+         <Item id="SpaceRace.GroundLightReliability" value ="1"  />
+         <Item id="SpaceRace.RushRate" value ="1.5" />
+         <Item id="SpaceRace.Recovery" value ="0.1" />
+         <Item id="SpaceRace.WaterRecoveryMass" value ="300" />
+      </Node>
+      
+      <Node id="icbmpad" name="ICBM Launch Complexes" cost="0" parent="program">
+         <Item id="Contract.Unlock.ICBMPad" value="true" />
+      </Node>
+      
+      <Node id="heavypad" name="Large Launch Complexes" cost="0" parent="icbmpad">
+		<Item id="Contract.Unlock.HeavyPad" value="true" />
+      </Node>
+      
+      <Node id="superheavypad" name="Very Large Launch Complexes" cost="0" parent="heavypad">
+		<Item id="Contract.Unlock.SuperHeavyPad"  value="true" />
+      </Node>
+      
+      <Node id="vacuumtesting" name="Vacuum Testing Facility" cost="1" parent="program">
+        <Item id="SpaceRace.AirLightReliability" value ="2" />
+      </Node>
+      
+      <Node id="finao" name="Failure is Not an Option" cost="1" parent="vacuumtesting">
+        <Item id="SpaceRace.AirLightReliability" value ="3" />
+        <Item id="RocketEngine.Power.Redundant" value="true" />
+      </Node>
+      
+      
+      <Node id="initialtesting" name="Enhanced Pad Testing" cost="1" parent="program">
+        <Item id="SpaceRace.GroundLightReliability" value ="2" />
+      </Node>
+      
+      <Node id="crash" name="Crash Programs" cost="1" parent="program">
+        <Item id="SpaceRace.RushRate" value ="2.0" />
+      </Node>
+      
+      <Node id="shutdown" name="Enhanced Engine Monitoring" cost="1" parent="program">
+        <Item id="SpaceRace.ShutDownSafety" value ="2" />
+      </Node>
+      
+      <Node id="globalradio" name="Communication Stations" cost="1" parent="program">
+        <Item id="SpaceRace.GlobalRadio" value ="true" />
+      </Node>
+      
+      <Node id="reuse1" name="Refurishment Contracts" cost="1" parent="program">
+        <Item id="SpaceRace.Recovery" value ="0.5" />
+      </Node>
+      
+      <Node id="reuse2" name="Reusable Designs" cost="1" parent="reuse1">
+        <Item id="SpaceRace.Recovery" value ="0.8" />
+      </Node>
+      
+      <Node id="reuse1" name="Rapid Reuse" cost="1" parent="reuse2">
+        <Item id="SpaceRace.Recovery" value ="0.9" />
+      </Node>
+      
+       <Node id="water1" name="Large Martime Recovery" cost="1" parent="program">
+        <Item id="SpaceRace.WaterRecoveryMass" value ="3000" />
+      </Node>
+      
+      <Node id="water2" name="Larger Martime Recovery" cost="1" parent="water1">
+        <Item id="SpaceRace.WaterRecoveryMass" value ="30000" />
+      </Node>
+      
+      <Node id="water3" name="Just Let it Sink Already" cost="1" parent="water2">
+        <Item id="SpaceRace.WaterRecoveryMass" value ="300000" />
+      </Node>
+      
+      <Node id="modular" name="Modular Design" cost="1" parent="program">
+        <Item id="SpaceRace.ModularCapsules" value ="true" />
+      </Node>
+      
+      <Node id="ww2" name="World War II Fuels" cost="0" parent="start" researched="true">
+         <Item id="FuelType.LOX/ETOH" value="true" />
+         <Item id="FuelType.HP LOX/ETOH" value="true" visible="false"/>
+         <Item id="FuelType.Solid" value="true" />
+         <Item id="FuelType.Monopropellant" value="true" />
+         <Item id="FuelType.Nitrogen" value="true"/>
+         
+      </Node>
+      
+      <Node id="crew" name="Crewed Spaceflight Program" cost="1" parent="start">
+         <Item id="FuelType.Jetpack" value="true" visible="false" />
+         <Item id="Crew" value="7" />
+         <Item id="Part.Drood" value="true" />
+      </Node>
+      
+      <Node id="com1" name="Communications Technology" cost="1" parent="start">
+         <Item id="SpaceRace.ComTech" value="1" />
+         <Item id="Contract.Unlock.Comsats" value="true" />
+      </Node>
+      
+      <Node id="com2" name="Communications Technology" cost="1" parent="com1">
+         <Item id="SpaceRace.ComTech" value="2" />
+         <Item id="Contract.Unlock.InnerPlanets" value="true" />
+      </Node>
+      
+      <Node id="com3" name="Communications Technology" cost="1" parent="com2">
+         <Item id="SpaceRace.ComTech" value="3" />
+      </Node>
+      
+      <Node id="UDMH" name="Hydrazine Refinement" cost="1" parent="ww2">
+          <Item id="FuelType.MMHNTO" value="true" />
+          <Item id="FuelType.HP MMHNTO" value="true" visible="false"/>
+      </Node>
+      
+      <Node id="RP1" name="Kerosene Standards" cost="1" parent="ww2">
+        <Item id="FuelType.LOX/RP1" value="true" />
+        <Item id="FuelType.HP LOX/RP1" value="true" visible="false" />
+        <Item id="StartScale.Fuselage" value="1" visible="false"/>
+      </Node>
+      
+      <Node id="H2" name="Hydrogen Sourcing" cost="2" parent="ww2">
+        <Item id="FuelType.LOX/LH2" value="true" />
+        <Item id="FuelType.HP LOX/LH2" value="true" visible="false" />
+        <Item id="RocketEngine.Power.Expander" value="true" />
+        <Item id="StartScale.Fuselage" value="1" visible="false"/>
+      </Node>
+      
+      <Node id="CH4" name="LNG Pipelines" cost="2" parent="ww2">
+        <Item id="FuelType.LOX/CH4" value="true" />
+        <Item id="FuelType.HP LOX/CH4" value="true" visible="false" />
+        <Item id="RocketEngine.Power.Expander" value="true" />
+        <Item id="StartScale.Fuselage" value="1" visible="false"/>
+      </Node>
+      
+      <Node id="1955mat" name="1955 Material Science" cost="5" parent="start">
+          <Item id="RocketEngine.Nozzle.Bell" value="true" />
+          <Item id="RocketEngine.Power.Staged1" value="true" />
+          <Item id="RocketEngine.MaxChamberPressure" value="0.65" />
+          <Item id="Config.HeatShield" value="0.25" />
+          <Item id="Part.Heat Shield" value="true" />
+          <Item id="MaxSize.SolarPanelArray" value="4" visible="false"/>
+          <Item id="Style.SolarPanelArray.2.Hex" value="true" visible="false"/>
+          <Item id="Part.Solar Panel" value="true" partRotation="0,90,0" />
+          <Item id="Style.SolarPanel1.0.Hex" value="true" />
+          <Item id="Contract.Unlock.Reentry" value="true" />
+      </Node>
+      
+      <Node id="nuclear" name="Space Nuclear Propulsion Office" cost="3" parent="1955mat">
+		  <Item id="RocketEngine.Power.Nuclear" value="true" />
+      </Node>
+            
+      <Node id="1960mat" name="1960 Material Science" cost="10" parent="1955mat">
+          <Item id="Command.Electronic" value="true" />
+          <Item id="RocketEngine.MaxChamberPressure" value="0.7" />
+          <Item id="Config.HeatShield" value="0.5" />
+          <Item id="Fuelcell.Efficiency" value="0.5" />
+          <Item id="Fueltank.Alloy" value="true" />
+          <Item id="SolarPanelArray.Columns" value="5" visible="false"/>
+		  <Item id="SolarPanelArray.Rows" value="5" visible="false"/>
+		  <Item id="SolarPanelArray.Shape" value="1" visible="false"/>
+		  <Item id="Part.Solar Panel Array" value="true" partRotation="0,90,0" />
+      </Node>
+      
+
+      <Node id="fuelcells" name="Advanced Fuel Cells" cost="1" parent="1960mat">
+		  <Item id="Fuelcell.Efficiency" value="1" />
+      </Node>
+      
+      <Node id="1965mat" name="1965 Material Science" cost="15" parent="1960mat">
+          <Item id="RocketEngine.Power.Staged2" value="true" />
+          <Item id="RocketEngine.MaxChamberPressure" value="0.75" />
+      </Node>
+
+      
+      <Node id="1970mat" name="1970 Material Science" cost="20" parent="1965mat">
+          <Item id="RocketEngine.MaxChamberPressure" value="0.8" />
+      </Node>
+      
+      <Node id="fuelcells" name="Advanced Solar Panels" cost="1" parent="1970mat">
+          <Item id="Style.SolarPanel1.0.Simple" value="true" />
+          <Item id="Style.SolarPanelArray.2.Simple" value="true" visible="false"/>
+      </Node>
+      
+      <Node id="undo" name="I Wanna Cheat (a Little)" cost="0" parent="start">
+         <Item id="Cheats.QuickSave" value="true" />
+         <Item id="Cheats.UndoRetry" value="true" />
+      </Node>
+      
+      <Node id="cheater" name="I Wanna Cheat (a Lot)" cost="0" parent="undo">
+         <Item id="Cheats.TinkerPanel" value="true" />
+         <Item id="Cheats.CustomLaunch" value="true" />
+         <Item id="Cheats.FlightCheats" value="true" />
+         <Item id="Cheats.CareerCheats" value="true" />
+         <Item id="Cheats.SkipValidation" value="true" />
+         <Item id="Cheats.SpaceRaceCheats" value="true" />
+      </Node>
+   </Nodes>
+</TechTree>

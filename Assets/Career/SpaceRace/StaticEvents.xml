@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<ArrayOfStaticHistoricalEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <StaticHistoricalEvent Id="canaveral" Name="Cape Canaveral Opens" ImagePath="canaveral.png">
+    <Description>The Long Range Proving Ground at Cape Canaveral has been constructed as a joint project by the Army, Air Force and Navy.  Our previous location in White Sands was remote, but did not allow for signifcant downrange tests.  Here we fly craft hundreds or thousands of miles over the ocean without risk to life or property.</Description>
+    <FixedOccurenceDate>1950-01-01T11:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>  
+  <StaticHistoricalEvent Id="srbmproduction" Name="srbmproduction"  Repeatable="true" CompletedContractId="redstone-repeat" ManufactureQuantity = "28" ManufactureDaysPer = "60" ImagePath="redstone.png">
+    <Description> this will be overwritten </Description>
+    <FixedOccurenceDate>2050-10-13T12:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="redundant" Name="Dissimilar Redundant Architecture" CompletesTechId="pre-titan" ImagePath="redundant.png">
+    <Description> The Air Force has begun the process of developing a backup ICBM.  This missle can use a more modern design to achieve greater capabilities.  It will also give the contractors on the first ICBM some motivation to deliver.  While having similar requirements, the mandate is for an entirely new design using new engines, guidance and tankage.  This means that a defect in one part will not ground the entire missle deterrent.  A development contract is now available. </Description>
+    <FixedOccurenceDate>1955-05-01T12:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="stopgap" Name="The Race for a Stopgap" CompletesTechId="pre-jupiter" ImagePath="stopgap.png">
+    <Description>With intelligence pointing to a Soviet lead in the race to develop long-range missiles, defense planners have decided a stopgap is needed.  A medium-range missle could be rushed into service using the engines we have developed for ICBMs.  Our allies in Europe can deploy these as a stopgap to maintain strategic balance. A development contract is now available.</Description>
+    <FixedOccurenceDate>1955-12-01T12:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="teapot" Name="The Teapot Committee"  FundingName="ICBM Development" FundingEfficiency="2.5" ImagePath="teapot.png">
+    <Description> The Strategic Missile Evaluation Committee (codename Teapot) was established in October 1953.  The committee recommends that the ICBM program be accelerated and that the payload requirements be reduced to match new miniaturized warheads.  Your ICBM Development funding rate has increased.  </Description>
+    <FixedOccurenceDate>1954-02-10T12:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+   <StaticHistoricalEvent Id="geophysical" Name="The International Geophyiscal Year" FundingName="Project Vanguard" FundingEfficiency="2" ImagePath="geophysical.png">
+    <Description> The United States and the Soviet Union have both announced their intention to place articifial satellites into Earth orbit as part of recently announced Geophysical year.  The year, which is actually 18 months long, runs from 1957 to 1958. Your Project Vanguard funding rate has been modestly increased in order to meet this goal. </Description>
+    <FixedOccurenceDate>1955-08-10T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="sputnikfirst" Name="Sputnik 1" BlockedBy="orbitfirst" FailsContractIds="vanguard" CompletesTechId="pre-juno" FundingName="Project Vanguard" FundingEfficiency="2" ImagePath="sputnik.png">
+    <Description>The Soviet Union has awed the world by placing humanity's first artificial satellite into orbit.  The Sputnik probe lacked any scientific equipment and appears to be an effort to demonstrate Soviet superiority in heavy-lift missle technology. The satellite was launched on a 300-ton R7 ballistic missle. Preisdent Eisenhower dismisses the importance of this achievement, but others worry that the Soviet Union could soon have an uncounterable arsenal in orbit. Swift and succsessful completion of Project Vanguard is now essential to show the world that the United States will not fall behind in missle capabilities.  Project Vanguard has received crash funding and your contract has been cancelled and replaced. Do whatever it takes to get to orbit.</Description>
+    <FixedOccurenceDate>1957-10-10T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="sputniksecond" Name="Sputnik 1"  BlockedBy="sputnikfirst" ImagePath="sputnik.png" >
+    <Description>The Soviet Union has rushed to place a satellite into orbit to match the recent scientific achievement of the United States.  Unlike our recent scientific satellite, this had no scientific equipment aboard and appears to be a desperate attempt to save face.  The satellite was launched on a 300-ton R7 ballistic missle.  Some defense officials fret that the Soviet's heavy lift capability is ahead of our own.</Description>
+    <FixedOccurenceDate>1957-10-13T12:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="mrbmproduction" Name="mrbmproduction"  Repeatable="true" CompletedContractId="mrbm-repeat" ManufactureQuantity = "27" ManufactureDaysPer = "30" ImagePath="jupiter.png">
+    <Description> this will be overwritten </Description>
+    <FixedOccurenceDate>2050-10-13T12:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="icbm1production" Name="icbm1production"  Repeatable="true" CompletedContractId="icbm-repeat" ManufactureQuantity = "41" ManufactureDaysPer = "40" ImagePath="missilerow.png">
+    <Description> This should be replaced  </Description>
+    <FixedOccurenceDate>2050-10-13T12:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+    <StaticHistoricalEvent Id="icbm2production" Name="icbm2production"  Repeatable="true" CompletedContractId="icbm2-repeat" ManufactureQuantity = "33" ManufactureDaysPer = "40" ImagePath="missilerow.png">
+    <Description>  This should be replaced </Description>
+    <FixedOccurenceDate>2050-10-13T12:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="orbitfirst" Name="First Artificial Satellite" BlockedBy="sputnikfirst" CompletedContractId="vanguard" CompletesTechId="pre-explorer" ImagePath="juno.png">
+    <Description>The United States has awed the world by placing the first aritifical satellite in orbit. It launched on a small rocket with only peaceful applications. This satellite is our contribution to the International Geophyiscal year and will take unprecedented measurements of Earth and space. Already it has discovered bands of charged particles 1000km above the surface of the Earth.  Initial theories are that this is the solar wind, trapped by Earth's magnetic field.  What else will we discover as we continue to blaze a trail for humanity into the stars?  </Description>
+    <FixedOccurenceDate>1990-01-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+    <StaticHistoricalEvent Id="orbitsecond" Name="America Reaches Orbit" BlockedBy="orbitfirst" CompletedContractId="juno" FundingName="Project Vanguard" FundingEfficiency="0.5" CompletesTechId="pre-explorer" ImagePath="juno.png">
+    <Description>The United States placed its first aritifical satellite in orbit. This satellite is our contribution to the International Geophyiscal year and will take unprecedented measurements of Earth and space. Already it has discovered bands of charged particles 1000km above the surface of the Earth.  Scientists theorize that this is the solar wind, trapped by Earth's magnetic field.  While political leaders put on a brave face, this acheivement is clearly diminished in the eyes of the world by the prior efforts of the Soviet Union. Crash funding for Project Vanguard has expired.</Description>
+    <FixedOccurenceDate>1990-01-01T00:00:00</FixedOccurenceDate>
+    </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="nasa" Name="NASA founded" ImagePath="nasa.png">
+    <Description>Until now, space technology has been independently developed by three different braches of the military. The goverment has decided to reorganize these efforts.  The National Aeronautics and Space Administration will take over the exploration of outer space under civilian leadership.  Weapon development will be left to the military.  Missle development is no longer your mandate.  Funding for these contracts will cease January 1, 1960.  </Description>
+    <FixedOccurenceDate>1958-07-29T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+   <StaticHistoricalEvent Id="endicbm" Name="ICBM End" Visible="false"  FundingName="ICBM Development" FundingEfficiency="0">
+    <Description> </Description>
+    <FixedOccurenceDate>1960-01-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="endsrbm" Name="SRBM End" Visible="false"  FundingName="SRBM Development" FundingEfficiency="0">
+    <Description></Description>
+    <FixedOccurenceDate>1960-01-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+    <StaticHistoricalEvent Id="endicbm2" Name="ICBM2 End" Visible="false"  FundingName="Alternate ICBM Development" FundingEfficiency="0">
+    <Description></Description>
+    <FixedOccurenceDate>1960-01-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+      <StaticHistoricalEvent Id="endmrbm" Name="MRBM End" Visible="false"  FundingName="MRBM Development" FundingEfficiency="0">
+    <Description></Description>
+    <FixedOccurenceDate>1960-01-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+    <StaticHistoricalEvent Id="endsuborbitalcrew" Name="Suborbitalcrewkiller" ContractCompletedId="capsule-orbit" FailsContractIds="crewed-suborbit" Visible="false">
+    <Description></Description>
+    <FixedOccurenceDate>1990-02-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="crewed" Name="First American in Space" ContractCompletedId="crewed-suborbit" ImagePath="crewed.png">
+    <Description>An American has gone to space and returned safely.  This may not match the Soviet program for sending Cosmonauts to orbit, but it is still a great accomplishment for our nation.</Description>
+    <FixedOccurenceDate>2050-02-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="crewedorbit" Name="An American Orbits the Earth"  ContractCompletedId="crewed-orbit" ImagePath="crewedorbit.png">
+    <Description>An American has circled the Earth and returned.  Today our space program took its greatest step yet to enable manned exploration of the cosmos.  A mere 60 years after American ingenuity lead the way to powered flight, we are poised to lead the world into a new era of exploring the cosmos.</Description>
+    <FixedOccurenceDate>2050-02-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="kennedy" Name="We Will Go to the Moon" FundingName="Apollo Program" FundingEfficiency="2.5" ImagePath="kennedy.png">
+    <Description>The Kennedy administration has sought out an achievable objective that would show the world that America is the leader in space exploration.  The objective must be far beyond current capbilities, to give the United States the chance to catch up to Soviet advances in heavy-lift capabilities.  The president has asked congress to fund a decade-long program of enormous cost to place an American on the moon before 1970. </Description>
+    <FixedOccurenceDate>1962-02-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+   <StaticHistoricalEvent Id="gagarin" Name="Soviet Man in Space" FundingName="Crewed Spaceflight" FundingEfficiency="1.5" ImagePath="gagarin.png">
+    <Description>The Soviet Union has sent Yuri Gagarin into orbit.  The cosmonaut circled the earth once before returning safely.</Description>
+    <FixedOccurenceDate>1961-04-12T23:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+     <StaticHistoricalEvent Id="soyuz" Name="Soviet Tragedy"  ImagePath="soyuz1.png">
+    <Description>A test flight of the Soviet Union's new capsule has ended in tragedy, when a parachute failed to deploy before landing.  Cosmonaut Vladimir Komarov was killed in the crash.  How the Soviet moon program will recover from this setback remains to be seen.</Description>
+    <FixedOccurenceDate>1967-04-25T23:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="n1" Name="Soviet Moon Rocket Sighted" ImagePath="n1.png">
+    <Description>Although the Soviet government has made no public announcment, American satellites have detected a massive rocket on the launchpad at Baikonur.  Surely this is the launch vehicle for a crewed mission to the moon. Our adversaries may be mere months away from beginning test flights of this craft.</Description>
+    <FixedOccurenceDate>1967-12-11T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+   <StaticHistoricalEvent Id="apolloboost" Name="Apollo Program Ramps Up" FundingName="Apollo Program" FundingEfficiency="2" ImagePath="apolloramp.png">
+    <Description>With hardware and infrastructure development in full-swing, the needs of the Apollo Program are reaching their peak.  Funding has been increased.</Description>
+    <FixedOccurenceDate>1964-02-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+   <StaticHistoricalEvent Id="apollo11" Name="One Small Step" FundingName="Apollo Program" CompletedContractId="crewed-lunar-landing" FundingEfficiency="0.5" ImagePath="apollo11.png">
+    <Description> Man has walked on the moon, and that man was an American.  This is a great achievement for humanity and a great victory for the 400,000 of our citizens who contributed to this project.  History will show that the Soviets weren't remotely close to matching this achievement.  They will abandon their lunar ambitions in a few years.  The supremacy of our political system is now displayed for all the world to see. </Description>
+    <FixedOccurenceDate>1990-02-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="apollodecline" Name="The Nation Turns Away" FollowsEvent="apollo11" FollowDelay="30000000" FundingName="Apollo Program" FundingEfficiency="0.5" ImagePath="apollodecline.png">
+    <Description> After the incredible achievement of landing on the moon, the space program no longer has the urgency it once did in the eyes of the public.  Budget hawks see the current funding as unsustainable with a war to fund.  Others see such expenditures as outrageous with so much poverty and inequality at home. President Nixon has announced that the Apollo program will end in two years. </Description>
+    <FixedOccurenceDate>1990-02-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+  <StaticHistoricalEvent Id="apolloend" Name="The End of Apollo" FollowsEvent="apollodecline" FollowDelay="60000000" FundingName="Apollo Program" FundingEfficiency="0" ImagePath="apolloend.png">
+    <Description> The Apollo program is over.  The United States government is focusing its efforts elsewhere. The giant rockets that took humans beyond low orbit are unaffordable.  The great visionaries are retiring, knowing their dreams of moon bases and men on Mars will not come to pass.  NASA will have to chart a new course in space exploration.   Long duration stays in orbit, reusable launch vehicles and robotic missions to the planets will occupy the next decades.  Perhaps someday humankind will regain its desire to explore the stars. </Description>
+   <FixedOccurenceDate>1990-02-01T00:00:00</FixedOccurenceDate>
+  </StaticHistoricalEvent>
+</ArrayOfStaticHistoricalEvent>

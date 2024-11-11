@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<ProgramDB xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Pdata NextId="208" IntegrationsPrioritized="0" LastUpdateTime="0" LastLaunchConfig="0" TimeUntilNextCompletion="INF" AvailableTechnicians="10" TotalTechnicians="10" MaxTechnicians="20">
+    <ContractCrewsProvided />
+    <PartTechDeveloped>
+	  <TechOccurenceTriple Mod="SpaceRace.SRRCS" Tech="Fuel:Nitrogen" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.60" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Occurences="4" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:1" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:0.58" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:3" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Plug" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Cycle:Model" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="SolidEngineScale:0.58" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Fuel:Solid" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:5" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.08" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:7" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Bravo" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.75" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:9" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRAvionics" Tech="Guidance:Mechanical" Occurences="2" />
+      <TechOccurenceTriple Mod="SpaceRace.SRAvionics" Tech="PartFamily:11" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRAvionics" Tech="Guidance:Unguided" Occurences="2" />
+      <TechOccurenceTriple Mod="SpaceRace.SRAvionics" Tech="PartFamily:13" Occurences="2" />
+    </PartTechDeveloped>
+    <StageTechDeveloped>
+	  <TechOccurenceTriple Mod="SpaceRace.SRRCS" Tech="Fuel:Nitrogen" Occurences="1" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Occurences="10" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" Occurences="10" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Occurences="10" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" Occurences="10" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Plug" Occurences="10" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Cycle:Model" Occurences="10" />
+      <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Fuel:Solid" Occurences="10" />
+      <TechOccurenceTriple Mod="SpaceRace.SRAvionics" Tech="Guidance:Mechanical" Occurences="10" />
+      <TechOccurenceTriple Mod="SpaceRace.SRAvionics" Tech="Guidance:Unguided" Occurences="10" />
+    </StageTechDeveloped>
+    <TechIntegrated>
+	   <TechOccurenceTriple Mod="SpaceRace.SRRCS" Tech="Fuel:Nitrogen" Occurences="5" />
+	   <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:15" Occurences="5" />
+	   <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:19" Occurences="15" />
+	   <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:3" Occurences="50" />
+	   <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:5" Occurences="10" />
+	   <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Occurences="50" />
+	   <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" Occurences="20" />
+       <TechOccurenceTriple Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" Occurences="50" />
+	   <TechOccurenceTriple Mod="SpaceRace.SRAvionics" Tech="Guidance:Mechanical" Occurences="1" />
+	   <TechOccurenceTriple Mod="SpaceRace.SRAvionics" Tech="Guidance:Unguided" Occurences="1" />
+	</TechIntegrated>
+    <Flights />
+  </Pdata>
+  <Contractors>
+    <ContractorData Id="11" Name="North American" Visible="false" Temporary="false" Rush="false" HardwareTypes="Stage SpaceRace.SRCapsule" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="12" Name="Glenn Martin" Visible="false" Temporary="false" Rush="false" HardwareTypes="Stage SpaceRace.SRCapsule" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="13" Name="Convair" Visible="false" Temporary="false" Rush="false" HardwareTypes="Stage SpaceRace.SRCapsule" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="14" Name="Lockheed" Visible="false" Temporary="false" Rush="false" HardwareTypes="Stage" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="15" Name="Douglas Aircraft" Visible="false" Temporary="false" Rush="false" HardwareTypes="Stage" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="16" Name="McDonnell Aircraft" Visible="false" Temporary="false" Rush="false" HardwareTypes="Stage SpaceRace.SRCapsule" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="17" Name="Boeing" Visible="false" Temporary="false" Rush="false" HardwareTypes="Stage" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="18" Name="Grumman" Visible="false" Temporary="false" Rush="false" HardwareTypes="Stage SpaceRace.SRCapsule" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="21" Name="Aerojet" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRRocketEngine SpaceRace.SRRCS" Active="true" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="3631.1365424771138">
+      <DevelopedTechs>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:0.58" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:5" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:0.45" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:19" />
+      </DevelopedTechs>
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="22" Name="Rocketdyne" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRRocketEngine" Active="true" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="33204.151907240979">
+      <DevelopedTechs>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Bravo" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.75" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:13" />
+      </DevelopedTechs>
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="23" Name="Reaction Motors Inc" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRRocketEngine" Active="true" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="10034.959392037837">
+      <DevelopedTechs>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.08" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:15" />
+      </DevelopedTechs>
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="24" Name="General Electric" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRRocketEngine SpaceRace.SRCapsule" Active="true" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="40877.249194364158">
+      <DevelopedTechs>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.60" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:3" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Bravo" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.40" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:17" />
+      </DevelopedTechs>
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="25" Name="Thiokol" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRRocketEngine" Active="true" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="1396.401978539325">
+      <DevelopedTechs>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Plug" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:Model" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="SolidEngineScale:0.58" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:Solid" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:7" />
+      </DevelopedTechs>
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="26" Name="Pratt and Whitney" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRRocketEngine" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="31" Name="IBM" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRAvionics" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="32" Name="ACDelco" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRAvionics" Active="true" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="693.77142664619021">
+      <DevelopedTechs>
+        <Technology Mod="SpaceRace.SRAvionics" Tech="Guidance:Unguided" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="MaxThrust:-1" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="PartFamily:9" />
+      </DevelopedTechs>
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="33" Name="Autonetics" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRAvionics" Active="true" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="799.00093572323328">
+      <DevelopedTechs>
+        <Technology Mod="SpaceRace.SRAvionics" Tech="Guidance:Unguided" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="MaxThrust:-1" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="PartFamily:9" />
+      </DevelopedTechs>
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="41" Name="Marquat" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRRCS" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="34" Name="Raytheon" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRAvionics" Active="true" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="4375.9344473801548">
+      <DevelopedTechs>
+        <Technology Mod="SpaceRace.SRAvionics" Tech="Guidance:Mechanical" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="MaxThrust:3200" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="PartFamily:1" />
+      </DevelopedTechs>
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+    <ContractorData Id="35" Name="Univac" Visible="false" Temporary="false" Rush="false" HardwareTypes="SpaceRace.SRAvionics" Active="false" Inventory="0" AverageRecentInventory="0" AverageRecentRush="0" BaseProductionRate="0">
+      <DevelopedTechs />
+      <RecoveredHardware />
+      <RefurbishedHardware />
+    </ContractorData>
+  </Contractors>
+  <Integrations />
+  <ExternalIntegrations />
+  <StageDevelopments />
+  <PartDevelopments />
+  <ConstructionProjects />
+  <Funding/>
+</ProgramDB>

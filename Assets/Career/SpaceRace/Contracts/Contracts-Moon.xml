@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Contracts>
+	<ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="crewed-orbit" />
+      <Contract customer="nasc" id="lunar-reentry-test" name="Lunar Reentry Test" research="1" money="500000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="3" canReject="true">
+         <Description
+            short="Demonstrate the ability to recover a capsule from lunar reentry speeds."
+            long="The energy required to reach the moon is immense.  That energy will be converted to compression and heat when the spacecraft reenters the Earth's atmosphere.  Demonstrate that your craft can withstand these forces.  Histroically, the Apollo heat shield was an extensive upgrade to the ones used in LEO missions.  Apollo 4 and Apollo 6 sent unmanned capsules to high orbits and returned them in order to test reentry performance." />
+         <Requirements>
+				<PartCount type="Eva" num="0" description="Do not carry a crew" >
+					<Expression expression="Mass > 2000" description="Maintain a craft mass of at least 2 tons" >
+						 <Orbit op="Greater" property="apoapsis" value="100e6">
+							 <Timer min="86400" description="Orbit for at least one day" listedInMenu="false" />
+						 </Orbit>
+						 <Planet name="Earth" description="Return safely to Earth" listedInMenu="false">
+							<Expression expression="SurfaceVelocity > 10000" description="Approach the atmosphere travelling 10km/s">
+								<Expression expression="100000 > AltitudeASL" description="Enter the atmosphere"/>
+							</Expression>
+							 <Expression expression="Grounded" description="Touch down safely" visibility="HiddenWhenPassed" listedInMenu="false"/>
+							 <Expression expression="2 > SurfaceVelocity" description="Touch down safely" />
+						 </Planet>
+					</Expression>
+				</PartCount>
+         </Requirements>
+      </Contract>
+	</ContractTemplate>
+	<ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="crewed-orbit" />
+      <Contract customer="nasc" id="crewed-lunar-orbit" name="Crewed Lunar Orbit" money="20000000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="3" canReject="true">
+         <Description
+            short="Place a two-person craft in low lunar orbit."
+            long="As a precursor to landing on the moon, demonstrate the ability to send astronauts into lunar orbit and return them.  Historically, this was the mission of Apollo 8, which flew humans beyond low earth orbit for the first time." />
+         <Requirements>
+				<Payload mode="Recover" num="1" craftTrackingId = "crewed-moon-1" payloadId="crewed-moon-1" payloadName="Astronaut 1" description="Have the first astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+					<Payload mode="Recover" num="1" craftTrackingId = "crewed-moon-2" payloadId="crewed-moon-2" payloadName="Astronaut 2" description="Have the second astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+						 <Planet name="Moon" description="Orbit the moon" visibility="HiddenWhenPassed">
+							 <Orbit op="Less" property="apoapsis" value="500e3">
+								 <Timer min="36000" description="Orbit for ten hours" listedInMenu="false" />
+                            </Orbit>
+						 </Planet>
+						 <Planet name="Earth" description="Return safely to Earth" visibility="HiddenWhenPassed">
+							 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+							 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+						 </Planet>
+					</Payload>
+                </Payload>
+         </Requirements>
+      </Contract>
+	</ContractTemplate>
+        <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="crewed-lunar-orbit" />
+      <Contract customer="nasc" id="crewed-lunar-rehersal" name="Crewed Lunar Landing Rehersal" money="500000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="4" canReject="true">
+         <Description
+            short="Send a landing-capable craft to lunar orbit with two astronauts on board."
+            long="Before attempting a lunar landing, we need an all up test of the hardware.  Send a crew and a lander to low lunar orbit.  Historically, this was the objective of the Apollo 10 mission, which saw the astronauts descend toward the lunar surface in a lander module and then rendevous and dock with the command module before returning to Earth.  The lander was underfueled, so that the crew would not be tempted by the obvious opportunity to make history." />
+         <Requirements>
+			 <Payload mode="Recover" num="1" craftTrackingId = "crewed-moon-1" payloadId="crewed-moon-1" payloadName="Astronaut 1" description="Have the first astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+					<Payload mode="Recover" num="1" craftTrackingId = "crewed-moon-2" payloadId="crewed-moon-2" payloadName="Astronaut 2" description="Have the second astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+						 <Planet name="Moon" description="Orbit the moon">
+							 <Orbit op="Less" property="apoapsis" value="200e3" visibility="HiddenWhenPassed">
+								 <Expression expression="Mass > 15000" description="Have a craft mass of 15 tons" visibility="HiddenWhenPassed" >
+									<Timer min="7200" description="Orbit for two hours" listedInMenu="false" visibility="HiddenWhenPassed" />
+								 </Expression>
+                            </Orbit>
+						 </Planet>
+						 <Planet name="Earth" description="Return safely to Earth" visibility="HiddenWhenPassed">
+							 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+							 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+						 </Planet>
+					</Payload>
+                </Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="crewed-lunar-rehersal" />
+      <Contract customer="nasc" id="crewed-lunar-landing" name="Crewed Lunar Landing" money="500000000" research="1" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="5" canReject="true">
+         <Description
+            short="Land two people on the moon."
+            long="It is time to execute your plans.  Land two crew on the moon and return them dafely to earth.  Historically, this was achieved by the Apollo 11 mission, a few months before President Kennedy's end-of-decade deadline. Good luck!" />
+         <Requirements>
+			 <Any num="2" description="Complete a crewed mission to the surface of the moon">
+				<Payload mode="Recover" num="1" craftTrackingId = "crewed-moon-1" payloadId="crewed-moon-1" payloadName="Astronaut 1" description="Have the first astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+					<Payload mode="Recover" num="1" craftTrackingId = "crewed-moon-2" payloadId="crewed-moon-2" payloadName="Astronaut 2" description="Have the second astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+						 <Planet name="Moon" description="Travel to the moon" visibility="HiddenWhenPassed">
+							 <Expression expression="Grounded" description="Land on the moon" visibility="HiddenWhenPassed" listedInMenu="false"/>
+							 <Expression expression="2 > SurfaceVelocity" description="Land on the moon" />
+						 </Planet>
+						 <Planet name="Earth" description="Return safely to Earth" visibility="HiddenWhenPassed">
+							 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+							 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+						 </Planet>
+					</Payload>
+                </Payload>
+				<Planet name="Moon" description="Walk on the moon" visibility="HiddenWhenPassed">
+					<Expression expression="IsDrood AND Grounded" description="Walk on the moon" listedInMenu="false"/>
+				</Planet>
+              </Any>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+    <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 4 ? 0 : 500" />
+		<Random name="LatError" min="-30" max="30" />
+		<Random name="LongError" min="-57" max="103" />
+		<Expression name="LandingLat" value="NumCompletions > 0 ? -3.21 + @LatError : -3.21"/>
+        <Expression name="LandingLong" value="NumCompletions > 0 ? -5.21 + @LongError : -5.21"/>
+        <Expression name="Tech" value="1" />
+      </Params>
+      <Prereqs contracts="crewed-lunar-landing" />
+      <Contract customer="nasc" id="crewed-lunar-targetted" name="Targetted Lunar Landing" money="500000000" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="5" canReject="true">
+         <Description
+            short="Land two people at a specific target on the moon."
+            long="Now that we have demonstrated the ability to visit the moon, future missions should aim for scientifically interesting sites.  Historically, Apollo 12 demonstrated a targetted landing by visiting the Surveyor 3 lander." />
+         <Requirements>
+				<Payload mode="Recover" num="1" craftTrackingId = "crewed-moon-1" payloadId="crewed-moon-1" payloadName="Astronaut 1" description="Have the first astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+					<Payload mode="Recover" num="1" craftTrackingId = "crewed-moon-2" payloadId="crewed-moon-2" payloadName="Astronaut 2" description="Have the second astronaut aboard" alwaysEvaluate="true" allowWarp="true">
+						 <Location planet="Moon" latLonAgl="@LandingLat,@LandingLong,0" description="Travel to the targetted location" range = "1000" grounded="true" visibility="HiddenWhenPassed">
+							 <Expression expression="Grounded" description="Land near the target" visibility="HiddenWhenPassed" listedInMenu="false"/>
+							 <Expression expression="2 > SurfaceVelocity" description="Land near the target" />
+						 </Location>
+						 <Planet name="Earth" description="Return safely to Earth" visibility="HiddenWhenPassed">
+							 <Expression expression="Grounded" description="Return safely to Earth" visibility="HiddenWhenPassed" listedInMenu="false"/>
+							 <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
+						 </Planet>
+					</Payload>
+                </Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+</Contracts>
+
+

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Dummy W39" category="Payloads" description="A casing and inert mass that emulates a 3 ton W39 warhead." order="0" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="5" partType="Fuselage1" position="-0.09659386,0.1100025,-0.02587828" rotation="-2.584457E-06,0,0" name="Dummy W-39" materials="3,3,3,3,3" groupId="3346a1f8-bab2-4c21-92ae-9e8abc23243b" texture="Default" partConnectionsEnabled="false">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="6.021027E-09,2.292747E-09,1.737392E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.4400001,0.4400001" deadWeight="2720.62671" deadWeightPercentage="0.21" deformations="0,0,0" depthCurve="0" offset="-4.768372E-07,0.9500001,-5.960464E-08" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.4400001,0.4400001" volume="1.14244843" volumeInner="1.11024666" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="496.39385986328125" fuel="496.39385986328125" fuelType="None" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <Payload payloadId="srbm" />
+          <AttachPoints>
+			<AttachPoint id = "1" tag="Bottom" displayName="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="true" />
+			<AttachPoint id="2" tag="Top" displayName="Top" position="0,1,0" rotation="270,180,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="true" />
+			<AttachPoint id="4" tag="Top" displayName="Top" position="0,1,0" rotation="270,180,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused"  crewTraversable="true" connectionType="Shell" />
+			<AttachPoint id = "5" tag="Bottom" displayName="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" crewTraversable="true" connectionType="Shell" />
+		  </AttachPoints>
+        </Part>
+        <Part id="7" partType="Fuselage1" position="-0.09659576,1.134993,-0.02588198" rotation="-2.584457E-06,0,0" name="Dummy W-39" materials="3,3,3,3,3" groupId="3346a1f8-bab2-4c21-92ae-9e8abc23243b" texture="Default" partConnectionsEnabled="false">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="4.880525E-09,-0.007561685,1.467704E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage bottomScale="0.4400001,0.4400001" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="0,0.0749947,0" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.3500001,0.3500001" volume="0.072997354" volumeInner="0.06592906" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="40.148544311523438" fuel="40.148544311523438" fuelType="None" subPriority="10" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <AttachPoints>
+			<AttachPoint id = "1" tag="Bottom" displayName="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="true" />
+			<AttachPoint id="2" tag="Top" displayName="Top" position="0,1,0" rotation="270,180,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="true" />
+			<AttachPoint id="4" tag="Top" displayName="Top" position="0,1,0" rotation="270,180,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused"  crewTraversable="true" connectionType="Shell" />
+			<AttachPoint id = "5" tag="Bottom" displayName="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" crewTraversable="true" connectionType="Shell" />
+		  </AttachPoints>
+        </Part>
+        <Part id="8" partType="Fuselage1" position="-0.09659195,-1.194992,-0.02587578" rotation="-1.024528E-05,1.001791E-05,180" name="W39 Warhead" materials="3,3,3,3,3" groupId="3346a1f8-bab2-4c21-92ae-9e8abc23243b" texture="Default" partConnectionsEnabled="false">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="6.267892E-09,-6.097543E-09,2.375666E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.5000002,0.5000002" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="-6.463379E-07,0.3550009,2.376735E-06" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.5000002,0.5000002" volume="0.55128634" volumeInner="0.5324008" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="303.20748901367188" fuel="303.20748901367188" fuelType="None" subPriority="-13" />
+          <AttachPoints>
+			<AttachPoint id = "1" tag="Bottom" displayName="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="true" />
+			<AttachPoint id = "5" tag="Bottom" displayName="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" crewTraversable="true" connectionType="Shell" />
+		  </AttachPoints>
+        </Part>
+        <Part id="9" partType="NoseCone1" position="-0.09659576,1.284986,-0.02588233" rotation="-1.282974E-05,0,0" name="Dummy W-39" materials="11,11,11,11,11" groupId="3346a1f8-bab2-4c21-92ae-9e8abc23243b" style="NoseCone-Round-2" texture="Default" partConnectionsEnabled="false">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="2.120645E-09,-0.02579782,2.530149E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage bottomScale="0.3500001,0.3500001" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="7.229993E-15,0.0749999,-7.599618E-08" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolResizeBottom="false" toolResizeHeight="false" toolShapeBottom="false" toolShapeTop="false" topScale="0,0" volume="0.0373122543" volumeInner="0.03294203" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="20.521743774414063" fuelType="None" subPriority="11" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <AttachPoints>
+			<AttachPoint id="1" tag="Bottom" displayName="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="true" />
+			<AttachPoint id="2" tag="Bottom" displayName="Bottom" position="0,-1,0" rotation="90,0,0" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" crewTraversable="true" connectionType="Shell" />
+		  </AttachPoints>
+        </Part>
+      </Parts>
+      <Connections>
+        <Connection partA="7" partB="5" attachPointsA="1,5" attachPointsB="2,4" />
+        <Connection partA="5" partB="8" attachPointsA="1,5" attachPointsB="1,5" />
+        <Connection partA="9" partB="7" attachPointsA="1,2" attachPointsB="2,4" />
+      </Connections>
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Contracts>
+  <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="redstone" />
+      <Contract customer="nrl" id="vanguard" name="First Satellite" money="100000000" moneyAdvance="0" cancelPenalty="0" research="3" priority="10" probability="@Probability" difficulty="3" canReject="false" flairText="Progression">
+         <Description
+            short="Use a small launch vehicle to place a satellite in orbit and operate the satellite for one day."
+            long="The United States chose project Vanguard, submitted by the Naval Research Laboratory to place the first artificial satellite in orbit.  The proposal won out because it used a small, purpose-build launch vehicle that was not derived from a weapon of war. The Vanguard rocket had a mass of 10 tons." />
+         <Requirements>
+            <TrackedLaunch>
+			  <Planet name="Earth" description="Launch from Earth">
+			   <Payload payloadId="Payload-Science-1" payloadName="Science Equipment" allowWarp="true">
+				<Expression expression="20000 > Mass" description="Launch with mass less than 20 tons." visibility="HiddenWhenPassed" displayExpression="Mass" displayFormat="mass">
+				  <Expression expression="Grounded" description="Launch with mass less than 20 tons." listedInMenu="false"/>
+				</Expression>
+                <Orbit op="Greater" property="periapsis" value="140e3">
+					<Expression expression="FuelBattery > 0" description="Have battery power"  displayExpression="FuelBattery" displayFormat="n2">
+						<Timer min="86400" description="Maintain orbit for one day" />
+					</Expression>
+			    </Orbit>
+			    </Payload>
+              </Planet>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs techNodes="pre-juno" />
+      <Contract customer="nrl" id="juno" name="First Satellite - Rush" money="50000000" research="2" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="2" canReject="false" flairText="Progression">
+         <Description
+            short="Use any launch vehicle to place a satellite in orbit and operate the satellite for one day."
+            long="Sputnik has changed everything.  The United States must not be left behind.  Place a satellite in orbit as quickly as possible using any available hardware.  Historically, after Sputnik, the Vanguard rocket was rushed into service. After it's first attempt failed, Von Braun's team was given the green light to launch on a modified Jupiter Missle.  They placed the first American satellite into orbit on February ?? 1958." />
+         <Requirements>
+            <TrackedLaunch>
+               <Planet name="Earth" description="Launch from Earth">
+			   <Payload payloadId="Payload-Science-1" payloadName="Science Equipment" allowWarp="true">
+					<Orbit op="Greater" property="periapsis" value="140e3">
+						<Timer min="86400" description="Maintain orbit for one day" />
+					</Orbit>
+			    </Payload>
+              </Planet>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 40 ? 0 : 500" />
+         <Expression name="MaxInstances" value="floor(min(3, 0.25 * NumCompletions + 1))" />
+         <Expression name="Scale" value="min(5, NumCompletions * 0.25)" />
+         <Expression name="Tech" value="NumCompletions % 10 = 9 ? 1 : 0" /> 
+         <Random name="ExperimentVersion" min="0" max="1" round="1" distributionScale="@Scale" distribution="0,0,1,1|1,1,1,1" />
+         <List name="ExperimentName" index="@ExperimentVersion" values="Charged-Particle;Micrometeoroid;Magnetospheric;Atmospheric;Ionospheric;Astronomy" />
+         <List name="Customer" index="@ExperimentVersion" values="aoc;god;god;god;god;god" />
+         <List name="Difficulty" index="@ExperimentVersion" values="1;2;3;3;2;4" />
+         <List name="Funding" index="@ExperimentVersion" values="5000000;5000000;10000000;10000000;10000000;50000000" />
+         <List name="Apoapsis" index="@ExperimentVersion" values="2e6;4e5;4e7;8e5;4e5;1e6;" />
+         <List name="Periapsis" index="@ExperimentVersion" values="3e5;3e5;3e5;2e5;4e5;6e5;" />
+         <List name="Inclination" index="@ExperimentVersion" values="0;0;0;70;80;0" />
+         <List name="BypassInclination" index="@ExperimentVersion" values="true;true;true;false;false;true" />
+         <List name="Payload" index="@ExperimentVersion" values="Payload-Science-1;Payload-Science-1;Payload-Science-2;Payload-Science-2;Payload-Science-3;Payload-Sat-4" />
+         <Expression name="PeriapsisError" value="@Periapsis * 0.25" />
+         <Expression name="ApoapsisError" value="@Apoapsis * 0.25" />
+      </Params>
+      <Prereqs techNodes="pre-explorer" />
+      <Contract customer="@Customer" id="explorer" name="@ExperimentName Satellite" money="@Funding" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="@Difficulty" canReject="false" >
+         <Description
+            short="Send a scientific payload to orbit."
+            long="We have a @ExperimentName Satellite that needs to be delivered to orbit.  Historically, the explorer program placed dozens of scientific satellites into earth orbit." />
+         <Requirements>
+            <TrackedLaunch>
+               <Payload  payloadId="@Payload" payloadName="@ExperimentName Equipment" showValue="false" allowWarp="true">
+                  <Planet name="Earth" description="Launch from Earth">
+                     <Orbit tolerance="5" property="inclination" value="@Inclination" alwaysEvaluateChildren="true" startBypassed="@BypassInclination">
+                        <Orbit tolerance="@ApoapsisError" property="apoapsis" value="@Apoapsis" alwaysEvaluateChildren="true">
+                           <Orbit tolerance="@PeriapsisError" property="periapsis" value="@Periapsis">
+							   <Timer min="60" description="Hold orbital parameters for one minute" />
+                           </Orbit>
+                        </Orbit>
+                     </Orbit>
+                  </Planet>
+               </Payload>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 3 ? 0 : 500" />
+         <Expression name="Tech" value="NumCompletions = 3 ? 1 : 0" />
+      </Params>
+      <Prereqs contracts="explorer" />
+      <Contract customer="nasc" id="lunar-impact" name="Lunar Impactor" money="50000000" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="2">
+         <Description
+            short="Send a craft to impact the moon"
+            long="Now that we can reach orbit, we should prove that we can reach the moon." />
+         <Requirements>
+            <TrackedLaunch>
+               <PartCount num="1" payloadId="Payload-Science-2" description="Launch with science equipment" showValue="false" onFail="Warn">
+                  <Planet name="Moon" description="Fly to the moon">
+					 <Expression expression="10000 > AltitudeAGL AND FuelBattery > 0" description="Have battery power below 10km" >
+                     </Expression>
+                     <Expression expression="Grounded | (100 > AltitudeAGL AND IsDestroyed)" description="Crash into the moon" >
+                     </Expression>
+                  </Planet>
+               </PartCount>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 1 ? 0 : 500" />
+         <Expression name="Tech" value="NumCompletions = 1 ? 1 : 0" />
+         <Expression name="Apoapsis" value="NumCompletions = 1 ? 500e3 : 5000e3" />
+      </Params>
+      <Prereqs  contracts="lunar-impact" />
+      <Contract customer="nasc" id="lunar-orbit" name="Lunar Orbiter" money="50000000" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="3">
+         <Description
+            short="Send a craft to orbit the moon"
+            long="Placing a useful craft in lunar orbit will allow us to study the moon more deeply.  We can track magnetism and radiation over time and take photographs of surface locations." />
+         <Requirements>
+            <TrackedLaunch>
+               <PartCount num="1" payloadId="Payload-Science-2" description="Launch with science equipment" showValue="false" onFail="Warn">
+                  <Planet name="Moon" description="Fly to the moon">
+                     <Orbit op="Less" property="apoapsis" value="@Apoapsis">
+						<Expression expression="FuelBattery > 0" description="Maintain continuous power"  displayExpression="FuelBattery" displayFormat="n2">
+							<Timer min="86400" description="Maintain orbit for one day" />
+						</Expression>
+                     </Orbit>
+                  </Planet>
+               </PartCount>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+     <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 1 ? 0 : 500" />
+      </Params>
+      <Prereqs  contracts="lunar-orbit" />
+      <Contract customer="nasc" id="surveyor" name="Lunar Lander" money="100000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="4">
+         <Description
+            short="Send a craft to orbit the moon"
+            long="Placing a useful craft in lunar orbit will allow us to study the moon more deeply.  We can track magnetism and radiation over time and take photographs of surface locations." />
+         <Requirements>
+            <TrackedLaunch>
+               <PartCount num="1" payloadId="Payload-Science-2" description="Launch with science equipment" showValue="false" onFail="Warn">
+                  <Planet name="Moon" description="Fly to the moon">
+						 <Expression expression="Grounded" description="Land on the moon" visibility="HiddenWhenPassed" listedInMenu="false">
+							<Expression expression="2 > SurfaceVelocity" description="Land on the moon" />
+						 </Expression>
+                  </Planet>
+               </PartCount>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 3 ? 0 : 500" />
+		<Random name="LatError" min="-30" max="30" />
+		<Random name="LongError" min="-57" max="103" />
+		<Expression name="LandingLat" value="NumCompletions > 0 ? -3.21 + @LatError : -3.21"/>
+        <Expression name="LandingLong" value="NumCompletions > 0 ? -5.21 + @LongError : -5.21"/>
+        <Expression name="Tech" value="NumCompletions = 3 ? 1: 0" />
+        <Expression name="Money" value="NumCompletions = 0 ? 4000000: 20000000" />
+      </Params>
+      <Prereqs contracts="surveyor" />
+      <Contract customer="nasc" id="surveyor-targetted" name="Targetted Lunar Lander" money="@Money" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="4">
+         <Description
+            short="Land a craft softly near a specific location on the moon"
+            long="We have identified several sites which could potentially be used for futute human landing.  We should send unmanned landers to these sites to study the surface more closely." />
+         <Requirements>
+            <TrackedLaunch>
+               <PartCount num="1" payloadId="Payload-Science-2" description="Launch with science equipment" showValue="false" onFail="Warn">
+                  <Location planet="Moon" latLonAgl="@LandingLat,@LandingLong,0" description="Travel to the targetted location" range = "1000" grounded="true" visibility="HiddenWhenPassed">
+					 <Expression expression="Grounded" description="Land near the target" visibility="HiddenWhenPassed" listedInMenu="false"/>
+					 <Expression expression="2 > SurfaceVelocity" description="Land near the target" />				 
+				</Location>
+               </PartCount>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+</Contracts>
+
+

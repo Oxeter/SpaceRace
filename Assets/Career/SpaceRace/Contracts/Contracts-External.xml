@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Contracts>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 10 ? 0 : 500" />
+      </Params>
+      <Prereqs techNodes="pre-explorer" />
+      <Contract customer="nro" id="spy" name="Surveilence Satellite" money="50000000" moneyAdvance="0"  priority="10" probability="@Probability" difficulty="2">
+         <Description
+            short="Launch a space telescope to SSO and return the film"
+            long="We have a surveilence telescope that needs to be placed in sun-synchronous orbit.  After 10 days, it will exhaust all its film.  You should then return the film canister to Earth." />
+         <Requirements>
+            <TrackedLaunch>
+			   <Planet name="Earth" description="Launch from Earth">
+				  <Payload payloadId="Payload-Science-1" payloadName="Film Canister" allowWarp="true" showValue="false" onFail="Warn"> 
+					 <Payload payloadId="Payload-Science-3" payloadName="Surveilence Telescope" allowWarp="true" showValue="false" onFail="Warn">
+						 <Orbit tolerance="5" property="inclination" value="97" alwaysEvaluateChildren="true">
+							<Orbit tolerance="1000" property="apoapsis" value="250e3" alwaysEvaluateChildren="true">
+							   <Orbit tolerance="1000" property="periapsis" value="250e3">
+								  <Timer min="864000" description="Maintain orbit for ten days" /> 
+							   </Orbit>
+							</Orbit>
+						 </Orbit>
+					</Payload>
+				  <Expression expression="Grounded" description="Return the film to Earth" visibility="HiddenWhenPassed" listedInMenu="false">
+					<Expression expression="2 > SurfaceVelocity" description="Land safely" />
+				  </Expression>
+				  </Payload>
+               </Planet>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 1 ? 0 : 200" />
+      </Params>
+      <Prereqs techNodes="com1" />
+      <Contract customer="att" id="telstar" name="First Communications Satellites" money="100000000"  priority="5" probability="@Probability" difficulty="2">
+         <Description
+            short="Launch a communications satellite into a medium orbit."
+            long="Satellites have the potential to revolutionize global communications.  We have developed the world first active transmitting communications satellite.  You will need to deliver it to a medium orbit so our ground stations can track it." />
+         <Requirements>
+            <TrackedLaunch>
+			   <Planet name="Earth" description="Launch from Earth">
+				  <Payload payloadId="Comsat-1" payloadName="Communications Satellite" allowWarp="true" showValue="false" onFail="Warn"> 
+						 <Orbit tolerance="5" property="inclination" value="45" alwaysEvaluateChildren="true">
+							<Orbit tolerance="500000" property="apoapsis" value="6e6" alwaysEvaluateChildren="true">
+							   <Orbit tolerance="100000" property="periapsis" value="1e6">
+								  <Timer min="10" description="Maintain orbit for ten seconds" /> 
+							   </Orbit>
+							</Orbit>
+						 </Orbit>
+					</Payload>
+				</Planet>	
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 1 ? 0 : 200" />
+      </Params>
+      <Prereqs contracts="telstar" />
+      <Contract customer="att" id="syncom" name="First Geostationary Satellites" money="200000000"  priority="5" probability="@Probability" difficulty="4">
+         <Description
+            short="Launch a communications satellite into a geostationary orbit."
+            long="Commuinications satellites are most useful if they are stationary from the point of view of the ground.  Launch a satellite into a geostationary orbit." />
+         <Requirements>
+            <TrackedLaunch>
+			   <Planet name="Earth" description="Launch from Earth">
+					 <Payload payloadId="Comsat-1" payloadName="Communications Satellite" allowWarp="true" showValue="false" onFail="Warn">
+						 <Orbit tolerance="5" property="inclination" value="0" alwaysEvaluateChildren="true">
+							<Orbit tolerance="10000" property="apoapsis" value="35786000" alwaysEvaluateChildren="true">
+							   <Orbit tolerance="10000" property="periapsis" value="35786000">
+								  <Timer min="10" description="Maintain orbit for ten seconds" /> 
+							   </Orbit>
+							</Orbit>
+						 </Orbit>
+					</Payload>
+				</Planet>
+            </TrackedLaunch>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+</Contracts>
+
+

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Space Telescope" category="Payloads" description="Both capable of looking at far away galaxies and at Droo's surface with sub-meter resolution, this telescope can be a very powerful tool." order="2" showInDesigner="true" snapshotPartRotation="45,45,0" snapshotDistanceScaler="0.75">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="22" partType="Fuselage1" position="0,-1.981331,-3.814697E-06" rotation="2.561321E-05,0,0" name="Telescope" materials="3,3,3,3,3" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" texture="Fuselage7" textureTiling="0.05,9" textureOffset="0.1,0">
+          <Drag drag="2.400268,2.400268,0.01562904,1.181763,3.357267,3.357267" area="3.324158,3.324158,0.01562904,1.181763,4.309278,4.309278" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,0,0" rotation="0,0,0" scale="1" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="1" position="0,-0.875,-1.477929E-12" rotation="90,0,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="2" position="0,0.875,1.477929E-12" rotation="-90,180,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="3" position="0,0,1.25" rotation="0,0,0" scale="1.75" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="4" position="0,0.875,1.477929E-12" rotation="-90,180,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Shell" crewTraversable="false" />
+            <AttachPoint id="5" position="0,-0.875,-1.477929E-12" rotation="90,0,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Shell" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" heatShieldScale="0" ignoreValidation="true" massScale="0" priceScale="0" stageActivationType="Payload" supportsActivation="true" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="1.25,1.25" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" flattenNormals="Bottom" offset="0,0.875,1.477929E-12" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="1.25,1.25" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+          <Payload payloadId="Payload-Sat-4" />
+          <InputController input="1" id="Activator" inputId="Input" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="21" partType="Detacher1" position="0,-3.105526,-3.814697E-06" rotation="0,0,0" materials="0,3,4,3,0" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" style="Interstage-4">
+          <Drag drag="0.3051507,0.3056003,0.001278158,0.4414949,0.3051506,0.3063293" area="0.6195949,0.6195949,0.001302419,0.5673636,0.6195949,0.6195949" />
+          <AttachPoints>
+            <AttachPoint id="1" position="0,-0.25,0" rotation="90,0,0" scale="1.5" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="true" ignoreSurfaces="false" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="2" position="0,0.25,0" rotation="-90,180,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="true" jointType="Rigid" connectionType="Shell" crewTraversable="false" />
+            <AttachPoint id="3" position="0,0,0" rotation="270,0,0" scale="1" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="true" jointType="Rigid" connectionType="Legacy" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" centerOfMass="0,0.064,0" heatShieldScale="0" ignoreValidation="true" partSelectionEnabled="false" priceScale="0" stageActivationType="None" supportsActivation="false" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.75,0.75" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" meshMassMultiplier="0.3" offset="0,0.25,0" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" topScale="1.25,1.25" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+          <Detacher force="0.2" inspectorEnabled="false" partPropertiesEnabled="false" version="2" />
+          <InputController ignorePartActivationState="true" input="[*.Activator.Value]" zeroOnDeactivate="false" inputId="Activator" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputBasedActivator inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="23" partType="Strut1" position="-4.768372E-07,-0.05453873,-3.814697E-06" rotation="1.366038E-05,0,0" name="Primary Mirror" materials="23,23,23,23,23" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" style="JetEngineShroud-1" texture="Default">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,0,0" rotation="0,0,0" scale="1" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="true" />
+            <AttachPoint id="1" position="0,-0.05,0" rotation="90,0,0" scale="0.4931194" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="true" />
+            <AttachPoint id="2" position="0,0.05,0" rotation="-90,180,0" scale="1.99" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="true" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" centerOfMass="0,0.01877192,0" heatShieldScale="0" ignoreValidation="true" includeInDrag="false" massScale="0" occlusion="Always" partCollisionHandling="Never" partSelectionEnabled="false" priceScale="0" partPropertiesEnabled="false" />
+          <Fuselage bottomScale="0.2465597,0.2465597" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" normalSmoothingAngle="175" offset="0,0.05,0" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.995,0.995" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+        </Part>
+        <Part id="24" partType="SolarPanelArray" position="0,-0.9950027,1.196987" rotation="-1.707547E-05,89.99998,90.00002" materials="3,20,20,20,20" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" panelTexture="SolarPanelHex">
+          <Drag drag="2.521461,0,0.09696067,0.07580137,0.1396641,0.1391234" area="2.549656,0,0.1199855,0.09230907,0.1626439,0.1579969" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,0,0" rotation="90,0,0" scale="2.25" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="true" jointType="Rigid" connectionType="Normal" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" heatShieldScale="0" ignoreValidation="true" massScale="0" partSelectionEnabled="false" priceScale="0" supportsActivation="false" partPropertiesEnabled="false" />
+          <SolarPanelArray hideBase="true" length="0.75" rotateSpeed="0" rows="1" scale="2.25" inspectorEnabled="false" partPropertiesEnabled="false" version="2" />
+          <SubPartRotator enabledRotation="0,90,0" rotationSpeed="1.5" subPartPath="Meshes/HingeHolder/ExtensionPiston" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputController ignorePartActivationState="true" input="[*.Antenna.CurrentDistance]" zeroOnDeactivate="false" inputId="Activator" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputBasedActivator rangeEnd="5" rangeStart="4" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="25" partType="SolarPanelArray" position="0,-0.9950027,-1.196995" rotation="-8.537737E-06,270,89.99996" materials="3,20,20,20,20" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" panelTexture="SolarPanelHex">
+          <Drag drag="0,2.520269,0.09676783,0.07580137,0.1368941,0.1427074" area="0,2.549656,0.1199855,0.09230907,0.1579969,0.1626439" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,0,0" rotation="90,0,0" scale="2.25" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="true" jointType="Rigid" connectionType="Normal" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" heatShieldScale="0" ignoreValidation="true" massScale="0" partSelectionEnabled="false" priceScale="0" supportsActivation="false" partPropertiesEnabled="false" />
+          <SolarPanelArray hideBase="true" length="0.75" rotateSpeed="0" rows="1" scale="2.25" inspectorEnabled="false" partPropertiesEnabled="false" version="2" />
+          <SubPartRotator enabledRotation="0,-90,0" rotationSpeed="1.5" subPartPath="Meshes/HingeHolder/ExtensionPiston" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputController ignorePartActivationState="true" input="[*.Antenna.CurrentDistance]" zeroOnDeactivate="false" inputId="Activator" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputBasedActivator rangeEnd="5" rangeStart="4" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="26" partType="LandingLeg4" position="0.9814515,1.306034,-3.814697E-06" rotation="-6.717332E-12,90,180" name="Antenna" materials="3,0,2,0,0" symmetryId="74e7f6d9-bb73-4ad7-bbdd-c0e9f77e5df2" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false">
+          <Drag drag="0.4288562,0.4069147,0.1709406,0.07707242,0,0.3452117" area="0.5653797,0.5653797,0.1709406,0.08335493,0,0.4306175" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,0,0" rotation="0,180,0" scale="0.75" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" centerOfMass="-8.167873E-08,-0.593397,0.2475906" heatShieldScale="0" ignoreValidation="true" massScale="0" partSelectionEnabled="false" priceScale="0" stageActivationType="None" supportsActivation="false" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <LandingLegSuspension maxSuspensionScale="1.2" suspensionType="Rigid" targetCompression="0.15" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <LandingLeg deployedAngle="90" deployedExtensionY="0" extensionPercentage="0" scale="1.5" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputController ignorePartActivationState="true" input="[*.Activator.Value]" zeroOnDeactivate="false" inputId="Activator" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputBasedActivator inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="27" partType="LandingLeg4" position="-0.9814515,1.306034,-1.907349E-06" rotation="-1.832E-12,270,180" name="Antenna" materials="3,0,2,0,0" symmetryId="74e7f6d9-bb73-4ad7-bbdd-c0e9f77e5df2" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false">
+          <Drag drag="0.4289655,0.4103108,0.1709406,0.07707255,0.3522763,0" area="0.5653797,0.5653797,0.1709406,0.08335493,0.4894786,0" />
+          <Config autoActivateIfNoStageOrActivationGroup="false" centerOfMass="-8.167873E-08,-0.593397,0.2475906" heatShieldScale="0" ignoreValidation="true" massScale="0" partSelectionEnabled="false" priceScale="0" stageActivationType="None" supportsActivation="false" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <LandingLegSuspension maxSuspensionScale="1.2" suspensionType="Rigid" targetCompression="0.15" id="Antenna" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <LandingLeg deployedAngle="90" deployedExtensionY="0" extensionPercentage="0" scale="1.5" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputController ignorePartActivationState="true" input="[*.Activator.Value]" zeroOnDeactivate="false" inputId="Activator" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputBasedActivator inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="28" partType="Fuselage1" position="0,-0.7313347,-5.722046E-06" rotation="1.536793E-05,22.49999,-1.628444E-12" name="ADCS" materials="2,2,2,2,2" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" texture="Fuselage9" textureTiling="4,5.300001" textureOffset="0,0.885">
+          <Drag drag="0.350448,0.350448,1.503046,0.02083872,1.445273,1.445273" area="0.6319869,0.6319869,1.503046,0.02083872,1.820074,1.820074" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,0,0" rotation="0,0,0" scale="1" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="1" position="-5.124576E-20,-0.375,-1.463726E-12" rotation="90,0,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="2" position="5.124576E-20,0.375,1.463726E-12" rotation="-90,180,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="3" position="0,0,1.25" rotation="0,0,0" scale="0.75" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="4" position="5.124576E-20,0.375,1.463726E-12" rotation="-90,180,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Shell" crewTraversable="false" />
+            <AttachPoint id="5" position="-5.124576E-20,-0.375,-1.463726E-12" rotation="90,0,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Shell" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" heatShieldScale="0" ignoreValidation="true" priceScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="1.25,1.25" deadWeight="4174.88232" deadWeightPercentage="0.1" deformations="0,0,0" depthCurve="0" normalSmoothingAngle="0" offset="5.124576E-20,0.375,1.463726E-12" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="1.25,1.25" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+        </Part>
+        <Part id="29" partType="Detacher1" position="0,1.683662,-5.722046E-06" rotation="1.366038E-05,0,0" name="Main Tube" materials="2,3,4,4,2" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" texture="Fuselage10" textureTiling="1,0.5">
+          <Drag drag="6.121216,6.128875,2.779665,0,5.889134,5.951479" area="7.890028,7.890028,3.125583,0,7.710371,7.769224" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,-2,0" rotation="90,0,0" scale="2" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Shell" crewTraversable="false" />
+            <AttachPoint id="1" position="0,-2,0" rotation="90,0,0" scale="2" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="2" position="0,2,0" rotation="-90,180,0" scale="2" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="true" jointType="Rigid" connectionType="Shell" crewTraversable="false" />
+            <AttachPoint id="3" position="0,0,0" rotation="270,0,0" scale="1" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="true" jointType="Rigid" connectionType="Legacy" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" heatShieldScale="0" ignoreValidation="true" massScale="0" priceScale="0" stageActivationType="None" supportsActivation="false" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="1,1" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="0,2,0" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" topScale="1,1" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+        </Part>
+        <Part id="30" partType="RotatingNoseCone1" position="0,3.683664,-5.722046E-06" rotation="3.415098E-06,5.008956E-06,-6.782923E-14" name="Aperture Door" materials="3,2,4,4,4" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,0,0" rotation="90,0,0" scale="1.85" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="true" jointType="Fused" connectionType="Shell" crewTraversable="false" />
+          </AttachPoints>
+          <Config heatShield="29.1828651" heatShieldMass="0.07295716" heatShieldScale="0.1" ignoreValidation="true" includeInDrag="false" massScale="0" occlusion="Always" partSelectionEnabled="false" priceScale="0" supportsActivation="false" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <SubPartRotator rotationSpeed="0.1" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <KomodoNoseCone autoResize="false" defaultRadius="1" scale="1.85" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputController ignorePartActivationState="true" input="[*.Antenna.CurrentDistance]" zeroOnDeactivate="false" inputId="Activator" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <InputBasedActivator rangeEnd="5" rangeStart="4.9" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="31" partType="Fuselage1" position="0,-0.3313313,-3.814697E-06" rotation="0,22.5,0" name="Insulation" materials="2,2,2,2,2" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" texture="Fuselage10" textureTiling="4,20">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,0,0" rotation="0,0,0" scale="1" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="1" position="-2.103352E-17,-0.02499998,-1.463675E-12" rotation="90,0,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="2" position="2.103352E-17,0.02499998,1.463675E-12" rotation="-90,180,0" scale="1.95" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="3" position="0,0,1.1125" rotation="0,0,0" scale="0.2" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="4" position="2.103352E-17,0.02499998,1.463675E-12" rotation="-90,180,0" scale="1.95" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Shell" crewTraversable="false" />
+            <AttachPoint id="5" position="-2.103352E-17,-0.02499998,-1.463675E-12" rotation="90,0,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Shell" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" castShadows="false" centerOfMass="-1.647343E-19,-0.003915996,-1.146349E-14" heatShieldScale="0" ignoreValidation="true" includeInDrag="false" massScale="0" occlusion="Always" partCollisionHandling="Never" partSelectionEnabled="false" priceScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="1.25,1.25" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="2.103352E-17,0.02499998,1.463675E-12" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.975,0.975" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+        </Part>
+        <Part id="32" partType="Rotator1" position="0,3.133505,-3.814697E-06" rotation="-5.008967E-06,90,180" name="Secondary Mirror" materials="4,23,23,23,23" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" style="Solid-1">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <AttachPoints>
+            <AttachPoint id="0" position="-2.980234E-08,0.2560001,1.776357E-15" rotation="270,0,0" scale="1.80000007" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Hinge" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="1" position="-3.725312E-09,0.02799989,-4.041212E-14" rotation="90,0,0" scale="1.80000007" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" castShadows="false" heatShieldScale="0" ignoreValidation="true" includeInDrag="false" massScale="0" occlusion="Always" partCollisionHandling="Never" partScale="1,3,1" partSelectionEnabled="false" priceScale="0" supportsActivation="false" partPropertiesEnabled="false" />
+          <JointRotator allowFreeSpin="false" baseMode="None" scale="3" damperMultiplier="0" maxRange="0" maxSpeed="0" range="0" speed="0" inspectorEnabled="false" partPropertiesEnabled="false" version="2" />
+          <Fuselage autoResize="false" bottomScale="0.01,1" cornerRadiuses="0,0,0,0,0,0,0,0" deformations="0,0,0" offset="0,0.003,0" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" topScale="0.01,1" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="1,0.01" cornerRadiuses="0,0,0,0,0,0,0,0" deformations="0,0,0" offset="0,0.003,0" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" topScale="1,0.01" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="33" partType="NoseCone1" position="0,-2.918831,-3.814697E-06" rotation="-3.385879E-06,180,180" name="Service Door" materials="3,3,3,3,3" groupId="7dab028a-49c1-4bce-b83a-8c9939254f6b" partConnectionsEnabled="false" partStyleEnabled="false" texture="Fuselage3" textureOffset="0,0.02">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <AttachPoints>
+            <AttachPoint id="0" position="0,0,0" rotation="0,0,0" scale="1" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="false" allowRotation="false" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="1" position="0,-0.06250039,1.398881E-14" rotation="90,0,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="true" jointType="Fused" connectionType="Normal" crewTraversable="false" />
+            <AttachPoint id="2" position="0,-0.06250039,1.398881E-14" rotation="90,0,0" scale="2.236068" positionOffset="0,0,0" rotationOffset="0,0,0" enabled="false" ignoreSurfaces="true" allowRotation="false" jointType="Fused" connectionType="Shell" crewTraversable="false" />
+          </AttachPoints>
+          <Config autoActivateIfNoStageOrActivationGroup="false" castShadows="false" centerOfMass="0,-0.02500015,6.994449E-16" heatShieldScale="0" ignoreValidation="true" includeInDrag="false" massScale="0" occlusion="Always" partCollisionHandling="Never" partSelectionEnabled="false" priceScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="1.25,1.25" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="0,0.06250039,-1.398881E-14" supportsXZOffset="false" toolAutoAdaptBottom="false" toolResizeBottom="false" toolResizeHeight="false" toolShapeBottom="false" toolShapeTop="false" topScale="0,0" inspectorEnabled="false" partPropertiesEnabled="false" version="3" />
+        </Part>
+      </Parts>
+      <Connections>
+        <Connection partA="21" partB="22" attachPointsA="2" attachPointsB="5" />
+        <Connection partA="23" partB="22" attachPointsA="1" attachPointsB="0" />
+        <Connection partA="24" partB="22" attachPointsA="0" attachPointsB="0" symmetryId="b718f11c-8d1d-4fc4-8148-96e8f319c633" />
+        <Connection partA="25" partB="22" attachPointsA="0" attachPointsB="0" symmetryId="b718f11c-8d1d-4fc4-8148-96e8f319c633" />
+        <Connection partA="26" partB="22" attachPointsA="0" attachPointsB="0" symmetryId="f2cb501a-4b08-47f7-b2f9-3c065996d4cd" />
+        <Connection partA="27" partB="22" attachPointsA="0" attachPointsB="0" symmetryId="f2cb501a-4b08-47f7-b2f9-3c065996d4cd" />
+        <Connection partA="28" partB="22" attachPointsA="1,5" attachPointsB="2,4" />
+        <Connection partA="33" partB="22" attachPointsA="1" attachPointsB="0" />
+        <Connection partA="28" partB="29" attachPointsA="2,4" attachPointsB="1,0" />
+        <Connection partA="31" partB="28" attachPointsA="1" attachPointsB="0" />
+        <Connection partA="30" partB="29" attachPointsA="0" attachPointsB="2" />
+        <Connection partA="32" partB="31" attachPointsA="1" attachPointsB="2" />
+      </Connections>
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

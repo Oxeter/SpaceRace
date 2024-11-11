@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Comsat-1" category="Payloads" description="An early communcations satellite" order="0" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="19" partType="ElectricMotor2" position="1.192093E-07,-0.3345526,4.172325E-07" groupId="3255a1f8-bab2-a321-92ae-9bdabc83210e" rotation="-1.024528E-05,5.008957E-06,-4.478356E-13" materials="0,1,2,3,4">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config heatShieldScale="0" partPropertiesEnabled="false"/>
+          <ElectricMotor rpm="1000" scale="0.4" torque="30" partPropertiesEnabled="false"/>
+          <InputController inputId="Motor" />
+        </Part>
+        <Part id="21" partType="SRDetacher1" position="1.192093E-07,-0.1564593,2.980232E-07" groupId="3255a1f8-bab2-a321-92ae-9bdabc83210e" rotation="0,0,0" activationStage="0" materials="0,1,2,3,4">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="1.125901E-09,1.448806E-10,6.626496E-09" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.151646,0.151646" deformations="0,0,0" meshMassMultiplier="1.5" offset="0,0.006297946,0" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.151646,0.151646" volume="0.000899638864" volumeInner="0.0005399227" partPropertiesEnabled="false" />
+          <Detacher />
+          <CoverEngine />
+          <CrossFeed />
+          <SpaceRace.SRAdjust />
+        </Part>
+        <Part id="13" partType="Fuselage1" position="1.192093E-07,-0.1124492,4.172325E-07" groupId="3255a1f8-bab2-a321-92ae-9bdabc83210e" rotation="-1.195283E-05,1.593862E-06,3.415094E-06" name="Comsat" materials="0,4,4,0,0" texture="Fuselage2">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="4.778768E-09,0.01041137,9.284029E-09" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.1484219,0.1484219" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="2.679691E-16,0.03771329,-2.342661E-23" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.288923,0.288923" volume="0.01158723" volumeInner="0.008863682" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="6.3729763031005859" fuel="6.3729763031005859" fuelType="None" subPriority="4" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="12" partType="Fuselage1" position="1.192093E-07,-0.01616621,4.172325E-07" groupId="3255a1f8-bab2-a321-92ae-9bdabc83210e" rotation="-1.195283E-05,1.593862E-06,3.415094E-06" name="Comsat" materials="0,4,4,0,0" texture="Fuselage2">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="1.192179E-08,0.008322117,1.33575E-08" heatShieldScale="0" partPropertiesEnabled="false"/>
+          <Fuselage autoResize="false" bottomScale="0.288923,0.288923" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="4.161694E-16,0.05857062,-3.638269E-23" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.4,0.4" volume="0.04354273" volumeInner="0.03802685" version="3" partPropertiesEnabled="false" />
+          <FuelTank autoFuelType="false" capacity="23.948503494262695" fuel="23.948503494262695" fuelType="None" subPriority="4" partPropertiesEnabled="false"/>
+        </Part>
+        <Part id="11" partType="Fuselage1" position="2.384186E-07,0.1180534,4.172325E-07" groupId="3255a1f8-bab2-a321-92ae-9bdabc83210e" rotation="-1.195283E-05,1.593862E-06,3.415094E-06" name="Comsat" materials="0,4,4,0,0" texture="Fuselage2">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="5.342454E-09,0.003253415,4.443604E-09" heatShieldScale="0" partPropertiesEnabled="false"/>
+          <Fuselage autoResize="false" bottomScale="0.4,0.4" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="5.375328E-16,0.07565117,-4.699263E-23" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.4407061,0.4407061" volume="0.0830980539" volumeInner="0.07553527" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="45.703929901123047" fuel="45.703929901123047" fuelType="None" subPriority="6" partPropertiesEnabled="false"/>
+        </Part>
+        <Part id="6" partType="Fuselage1" position="-2.384186E-07,0.2184744,-8.34465E-07" groupId="3255a1f8-bab2-a321-92ae-9bdabc83210e" rotation="-1.878302E-05,8.424051E-06,1.707546E-06" name="Comsat" materials="19,4,4,0,0" texture="Fuselage8">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="5.982522E-09,-7.103165E-05,2.157911E-08" heatShieldScale="0" partPropertiesEnabled="false"/>
+          <Fuselage autoResize="false" bottomScale="0.4407061,0.4407061" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="-4.172224E-07,0.02477068,-5.923426E-07" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.4378718,0.4378718" volume="0.0296925548" volumeInner="0.0230161864" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="16.330905914306641" fuel="16.330905914306641" fuelType="None" subPriority="7" partPropertiesEnabled="false"/>
+        </Part>
+        <Part id="5" partType="NoseCone1" position="-5.960464E-07,0.463099,-1.370907E-06" groupId="3255a1f8-bab2-a321-92ae-9bdabc83210e" rotation="-1.878302E-05,8.424051E-06,1.707546E-06" name="Comsat" materials="0,4,4,0,0" style="NoseCone-Round-2" texture="Fuselage2">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="1.916773E-08,-0.07562581,1.123076E-08" heatShieldScale="0" partPropertiesEnabled="false"/>
+          <Fuselage autoResize="false" bottomScale="0.4378718,0.4378718" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="8.86936E-16,0.2198607,9.511653E-09" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0,0" volume="0.171196967" volumeInner="0.1622752" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="94.158332824707031" fuelType="None" subPriority="9" partPropertiesEnabled="false"/>
+          <Payload payloadId="Comsat-1" />
+        </Part>
+      </Parts>
+      <Connections>
+        <Connection partA="21" partB="19" attachPointsA="1" attachPointsB="0">
+          <BodyJoint body="1" connectedBody="4" breakTorque="1E+07" breakForce="0" jointType="Motor" position="2.980232E-08,4.510746,-1.937151E-07" connectedPosition="-5.960464E-08,-0.006298065,4.470348E-08" axis="-1.823782E-14,1,-2.980233E-07" secondaryAxis="-8.742279E-08,-3.576279E-07,-1" />
+        </Connection>
+        <Connection partA="13" partB="21" attachPointsA="5" attachPointsB="2">
+          <BodyJoint body="3" connectedBody="4" breakTorque="1E+07" breakForce="0" jointType="Normal" position="2.980232E-07,-0.328346,6.705523E-07" connectedPosition="0,0.006298065,0" axis="0,0,1" secondaryAxis="0,1,0" />
+        </Connection>
+        <Connection partA="13" partB="12" attachPointsA="2,4" attachPointsB="1,5" />
+        <Connection partA="12" partB="11" attachPointsA="2,4" attachPointsB="1,5" />
+        <Connection partA="11" partB="6" attachPointsA="2,4" attachPointsB="1,5" />
+        <Connection partA="6" partB="5" attachPointsA="2,4" attachPointsB="1,2" />
+      </Connections>
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

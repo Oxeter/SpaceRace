@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<ArrayOfFundingData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <FundingData Id="101" Name="Sounding Rockets" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="10000" Rush="false" ContractIds="Karman sounding-payload" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="102" Name="SRBM Development" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="150000" Rush="false" ContractIds="redstone redstone-repeat" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="103" Name="ICBM Development" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="200000" Rush="false" ContractIds="icbm icbm-repeat" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="104" Name="Alternate ICBM Development" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="500000" Rush="false" ContractIds="icbm2 icbm2-repeat" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="105" Name="MRBM Development" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="200000" Rush="false" ContractIds="mrbm mrbm-repeat" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="106" Name="Reentry Testing" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="100000" Rush="false" ContractIds="reentry-test" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="107" Name="Multistage Testing" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="50000" Rush="false" ContractIds="bumper" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="110" Name="Project Vanguard" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="50000" Rush="false" ContractIds="vanguard juno" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="111" Name="Explorer Program" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="100000" Rush="false" ContractIds="explorer" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="120" Name="Crewed Spaceflight" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="200000" Rush="false" ContractIds="capsule-suborbit crewed-suborbit capsule-orbit crewed-orbit crewed-orbit-repeat" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="130" Name="Lunar Exploration" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="200000" Rush="false" ContractIds="lunar-impact lunar-orbit surveyor surveyor-targetted" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="140" Name="Mars Exploration" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="50000" Rush="false" ContractIds="mars-flyby mars-orbit mars-lander" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="141" Name="Venus Exploration" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="50000" Rush="false" ContractIds="venus-flyby venus-orbit venus-lander" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+    <FundingData Id="131" Name="Apollo Program" ContractorId="0" Completed="false" Active="false" TotalProgress="0" CurrentProgress="0" BaseProgressPerDay="1000000" Rush="false" ContractIds="lunar-reentry-test crewed-lunar-orbit crewed-lunar-rehersal crewed-lunar-landing crewed-lunar-targetted" PermanentFunding="0">
+      <Technologies />
+    </FundingData>
+</ArrayOfFundingData>

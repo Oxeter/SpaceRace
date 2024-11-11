@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Contracts>
+    <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 97" />
+      </Params>
+      <Prereqs />
+      <Contract customer="internal" id="cons-lc-4" money="0" name="Construct Pad 4" unlockLocations="LC-4" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct Pad 4."
+            long="Complete the construction project to build Launch Pad 4, suitable for sounding rockets.  This pad supports 10 additional technicians" />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+       <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 97" />
+      </Params>
+      <Prereqs contracts = "cons-lc-4" />
+      <Contract customer="internal" id="cons-lc-4A" money="0" name="Construct Pad 4A" unlockLocations="LC-4A" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct Pad 4A."
+            long="Complete the construction project to build Launch Pad 4A, suitable for sounding rockets.  This pad supports 10 additional technicians" />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+
+
+      
+      
+      
+      
+
+          <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 95" />
+      </Params>
+      <Prereqs />
+      <Contract customer="internal" id="cons-lc-5" money="0" name="Construct LC 5" unlockLocations="LC-5" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 5."
+            long="Complete the construction project to build Launch Complex 5, a SRBM-capable complex.  This complex supports 40 additional technicians." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 94" />
+      </Params>
+      <Prereqs contracts = "cons-lc-5"/>
+      <Contract customer="internal" id="cons-lc-6" money="0" name="Construct Pad 6" unlockLocations="LC-6" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct Pad 6."
+            long="Complete the construction project to build Launch Pad 6, a SRBM-capable complex.  This pad supports 40 additional technicians." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 83" />
+      </Params>
+      <Prereqs contracts = "cons-lc-6" techNodes ="never"/>
+      <Contract customer="internal" id="cons-lc-17" money="0" name="Construct LC 17" unlockLocations="LC-17" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 17."
+            long="Complete the construction project to build Launch Complex 17, a SRBM-capable complex.  This complex supports 40 additional technicians." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 82" />
+      </Params>
+      <Prereqs contracts = "cons-lc-17" techNodes ="never"/>
+      <Contract customer="internal" id="cons-lc-18" money="0" name="Construct LC 18" unlockLocations="LC-18" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 18."
+            long="Complete the construction project to build Launch Complex 18, a SRBM-capable complex.  This complex supports 40 additional technicians." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 74" />
+      </Params>
+      <Prereqs contracts = "cons-lc-18" techNodes ="never"/>
+      <Contract customer="internal" id="cons-lc-26A" money="0" name="Construct LC 26A" unlockLocations="LC-26A" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 26A."
+            long="Complete the construction project to build Launch Complex 26A, a SRBM-capable complex.  This complex supports 40 additional technicians." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+       <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 74" />
+      </Params>
+      <Prereqs contracts = "cons-lc-18" techNodes ="never" />
+      <Contract customer="internal" id="cons-lc-26B" money="0" name="Construct LC 26B" unlockLocations="LC-26B" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 26B."
+            long="Complete the construction project to build Launch Complex 26B, a SRBM-capable complex.  This complex supports 40 additional technicians." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   
+   
+   
+       <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 87" />
+      </Params>
+      <Prereqs contracts = "cons-lc-5" techNodes ="never"/>
+      <Contract customer="internal" id="cons-lc-13" money="0" name="Construct LC 13" unlockLocations="LC-13" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 13."
+            long="Complete the construction project to build Launch Complex 13, an ICBM-capable complex.  This complex supports 200 additional technicians." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>   
+       <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 86" />
+      </Params>
+      <Prereqs techNodes ="icbmpad" />
+      <Contract customer="internal" id="cons-lc-14" money="0" name="Construct LC 14" unlockLocations="LC-14" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 14."
+            long="Complete the construction project to build Launch Complex 14, an ICBM-capable complex.  This complex supports 200 additional technicians." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>      
+       <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 85" />
+      </Params>
+      <Prereqs techNodes ="icbmpad" />
+      <Contract customer="internal" id="cons-lc-15" money="0" name="Construct LC 15" unlockLocations="LC-15" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 15."
+            long="Complete the construction project to build Launch Complex 15, an ICBM-capable complex.  This complex supports 200 additional technicians." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>   
+          <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 84" />
+      </Params>
+      <Prereqs contracts = "cons-lc-14" />
+      <Contract customer="internal" id="cons-lc-16" money="0" name="Construct LC 16" unlockLocations="LC-16" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 16."
+            long="Complete the construction project to build Launch Complex 16, an ICBM-capable complex." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate> 
+             <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 81" />
+      </Params>
+      <Prereqs contracts = "cons-lc-15" />
+      <Contract customer="internal" id="cons-lc-19" money="0" name="Construct LC 19" unlockLocations="LC-19" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 19."
+            long="Complete the construction project to build Launch Complex 19, an ICBM-capable complex." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>   
+             <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 80" />
+      </Params>
+      <Prereqs contracts = "cons-lc-16" techNodes="never" />
+      <Contract customer="internal" id="cons-slc-20" money="0" name="Construct SLC 20" unlockLocations="SLC-20" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct SLC 20."
+            long="Complete the construction project to build Space Launch Complex 20, an ICBM-capable complex." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>   
+    <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 64" />
+      </Params>
+      <Prereqs contracts = "cons-lc-19" techNodes="never" />
+      <Contract customer="internal" id="cons-lc-36" money="0" name="Construct LC 36" unlockLocations="LC-36" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 36."
+            long="Complete the construction project to build Space Launch Complex 36, an ICBM-capable complex." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>   
+   
+   
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 59" />
+      </Params>
+      <Prereqs techNodes ="heavypad" />
+      <Contract customer="internal" id="cons-slc-41" money="0" name="Construct SLC 41" unlockLocations="SLC-41" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct SLC 41."
+            long="Complete the construction project to build Space Launch Complex 41, which supports medium-lift rockets." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>     
+      <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 58" />
+      </Params>
+      <Prereqs contracts = "cons-slc-41" techNodes="never"/>
+      <Contract customer="internal" id="cons-slc-40" money="0" name="Construct SLC 40" unlockLocations="SLC-40" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct SLC 40."
+            long="Complete the construction project to build Space Launch Complex 40, which supports medium-lift rockets." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>    
+   
+   	<ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 53" />
+      </Params>
+      <Prereqs techNodes ="heavypad" />
+      <Contract customer="internal" id="cons-lc-37" money="0" name="Construct LC 37B" unlockLocations="LC-37B" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 37B."
+            long="Complete the construction project to build Launch Complex 37B, which support heavy lift rockets." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+         	<ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 52" />
+      </Params>
+      <Prereqs contracts ="cons-lc-37"/>
+      <Contract customer="internal" id="cons-lc-37A" money="0" name="Construct LC 37A" unlockLocations="LC-37A" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 37A."
+            long="Complete the construction project to build Launch Complex 37A, which support heavy lift rockets." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+      	<ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 52" />
+      </Params>
+      <Prereqs techNodes ="heavypad" />
+      <Contract customer="internal" id="cons-lc-34" money="0" name="Construct LC 34" unlockLocations="LC-34" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 34."
+            long="Complete the construction project to build Launch Complex 34, which support heavy lift rockets." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   
+	<ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 49" />
+      </Params>
+      <Prereqs techNodes ="superheavypad"/>
+      <Contract customer="internal" id="cons-lc-39a" money="0" name="Construct LC 39A" unlockLocations="LC-39A" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 39A."
+            long="Complete the construction project to build Launch Complex 39A, which support super-heavy lift rockets." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 48" />
+      </Params>
+      <Prereqs techNodes ="superheavypad" />
+      <Contract customer="internal" id="cons-lc-39b" money="0" name="Construct LC 39B" unlockLocations="LC-39B" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 39B."
+            long="Complete the construction project to build Launch Complex 39B, which support super-heavy lift rockets." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   <ContractTemplate>
+      <Params>
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 47" />
+      </Params>
+      <Prereqs contracts ="cons-lc-39a" techNodes="never"/>
+      <Contract customer="internal" id="cons-lc-39c" money="0" name="Construct LC 39C" unlockLocations="LC-39C" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
+         <Description
+            short="Construct LC 39C."
+            long="Complete the construction project to build Launch Complex 39C, which supports small rockets." />
+         <Requirements>
+            <Any num="1" description="Complete the construction project."/>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+</Contracts>
+
+

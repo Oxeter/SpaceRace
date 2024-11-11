@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="Dummy W49 (Alternate)" category="Payloads" description="A casing and inert mass that emulates a 760kg W-49 warhead for an alternate ICBM." order="0" showInDesigner="true">
+    <Assembly xmlVersion="15">
+      <Parts>
+        <Part id="26" partType="Fuselage1" position="0,-0.2097559,4.768372E-07" groupId="3244a1f8-bab2-4621-92ae-948abc8328ab" rotation="-2.049057E-05,1.502687E-05,180" name="Dummy W-49" materials="18,4,4,0,0" texture="Fuselage8">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="2.095565E-08,0.0360983,3.277902E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.3836549,0.3836549" deadWeight="386.141785" deadWeightPercentage="0.0899999961" deformations="0,0,0" depthCurve="0" offset="8.672539E-08,0.3102245,1.274736E-07" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.5,0.5" volume="0.378347844" volumeInner="0.363445133" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="189.36309814453125" fuel="189.36309814453125" fuelType="None" inspectorEnabled="false" partPropertiesEnabled="false" />
+          <Payload payloadId="icbm2" />
+        </Part>
+        <Part id="27" partType="Fuselage1" position="0,-0.7671442,1.192093E-06" groupId="3244a1f8-bab2-4621-92ae-948abc8328ab" rotation="-6.830189E-06,1.001791E-05,180" name="Dummy W-49" materials="18,4,4,0,0" texture="Default">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="7.673466E-09,-0.001309254,1.855366E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.3821429,0.3821429" deadWeight="351.76297" deadWeightPercentage="0.14" deformations="0,0,0" depthCurve="0" offset="-5.210348E-15,0.2471755,-2.946583E-08" shellDensityOverride="-1" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.3776155,0.3776155" volume="0.221569" volumeInner="0.211203739" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="104.80213928222656" fuel="104.80213928222656" fuelType="None" subPriority="-5" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="28" partType="Fuselage1" position="0,0.2156076,0" groupId="3244a1f8-bab2-4621-92ae-948abc8328ab" rotation="-2.049057E-05,1.502687E-05,180" name="Dummy W-49" materials="18,4,4,0,0" texture="Default" >
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="2.618938E-09,-2.628674E-09,1.326226E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.38,0.38" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="8.457189E-08,0.1151419,1.972406E-07" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.38,0.38" volume="0.103277989" volumeInner="0.09605192" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="56.802883148193359" fuel="56.802883148193359" fuelType="None" subPriority="4" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="29" partType="Fuselage1" position="4.768372E-07,0.3596363,-4.768372E-07" groupId="3244a1f8-bab2-4621-92ae-948abc8328ab" rotation="-2.049057E-05,1.502687E-05,180" name="Dummy W-49" materials="18,4,4,0,0" texture="Fuselage8">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="5.770962E-09,0.001054614,2.741609E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.35,0.35" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="7.703119E-08,0.02888632,2.28088E-07" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.38,0.38" volume="0.0239182767" volumeInner="0.0190305654" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="13.155051231384277" fuel="13.155051231384277" fuelType="None" subPriority="5" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+        <Part id="30" partType="Fuselage1" position="4.768372E-07,0.4016533,-9.536743E-07" groupId="3244a1f8-bab2-4621-92ae-948abc8328ab" rotation="-2.049057E-05,1.502687E-05,180" name="Dummy W-49" materials="18,4,4,0,0" texture="Default">
+          <Drag drag="0,0,0,0,0,0" area="0,0,0,0,0,0" />
+          <Config centerOfMass="-1.170559E-09,0.0008961037,2.474552E-08" heatShieldScale="0" partPropertiesEnabled="false" />
+          <Fuselage autoResize="false" bottomScale="0.3,0.3" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" offset="7.565384E-08,0.01313138,2.337224E-07" shellDensityOverride="-1" supportsXZOffset="false" toolAutoAdaptBottom="false" toolAutoAdaptTop="false" toolResizeBottom="false" toolResizeHeight="false" toolResizeRadius="false" toolResizeTop="false" toolShapeBottom="false" toolShapeTop="false" toolSupportsAddSection="false" topScale="0.35,0.35" volume="0.008632577" volumeInner="0.00517257163" partPropertiesEnabled="false" version="3" />
+          <FuelTank autoFuelType="false" capacity="4.747917652130127" fuel="4.747917652130127" fuelType="None" subPriority="6" inspectorEnabled="false" partPropertiesEnabled="false" />
+        </Part>
+      </Parts>
+      <Connections>
+        <Connection partA="26" partB="27" attachPointsA="2,4" attachPointsB="1,5" />
+        <Connection partA="28" partB="26" attachPointsA="2,4" attachPointsB="1,5" />
+        <Connection partA="29" partB="28" attachPointsA="2,4" attachPointsB="1,5" />
+        <Connection partA="30" partB="29" attachPointsA="2,4" attachPointsB="1,5" />
+      </Connections>
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>

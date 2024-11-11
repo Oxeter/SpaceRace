@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<HardwareDB xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" NextId="21">
+  <Families>
+    <SRPartFamily Id="1" PrimaryMod="SpaceRace.SRAvionics" Integrations="0" Name="320kN Mechanical Avionics" AnyDeveloped="true" StageProduction="32000" DesignerCategory="Command">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRAvionics" Tech="Guidance:Mechanical" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="MaxThrust:3200" />
+      </Technologies>
+      <Data>
+        <Part>
+          <SpaceRace.SRAvionics guidance="Mechanical" maxThrustScale="5" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+    <SRPartFamily Id="3" PrimaryMod="SpaceRace.SRRocketEngine" Integrations="0" Name="A4 Family" AnyDeveloped="true" StageProduction="968000.02861022973" DesignerCategory="Propulsion">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Description="Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" Description="H2O2 Generator" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.60" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="LOX/ETOH" nozzleTypeId="Film" engineTypeId="Liquid" engineSubTypeId="SteamGenerator" size="1.6" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+    <SRPartFamily Id="5" PrimaryMod="SpaceRace.SRRocketEngine" Integrations="0" Name="XASR-1 Family" AnyDeveloped="true" StageProduction="57593.747943639777" DesignerCategory="Propulsion">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Description="Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" Description="Pressure-Fed" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:0.58" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="HP LOX/ETOH" nozzleTypeId="Film" engineTypeId="Liquid" engineSubTypeId="PressureFed" size="0.575" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+    <SRPartFamily Id="7" PrimaryMod="SpaceRace.SRRocketEngine" Integrations="0" Name="2.5KS18000 Family" AnyDeveloped="true" StageProduction="14398.436985909944" DesignerCategory="Propulsion">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Plug" Description="Graphite" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:Model" Description="Solid I" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="SolidEngineScale:0.58" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:Solid" Description="Solid" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="Solid" nozzleTypeId="Plug" engineTypeId="Solid" engineSubTypeId="Model" size="0.575" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+    <SRPartFamily Id="9" PrimaryMod="SpaceRace.SRAvionics" Integrations="0" Name="-100N Unguided Avionics" AnyDeveloped="true" StageProduction="5000" DesignerCategory="Command">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRAvionics" Tech="Guidance:Unguided" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="MaxThrust:-1" />
+      </Technologies>
+      <Data>
+        <Part>
+          <SpaceRace.SRAvionics guidance="Unguided" maxThrustScale="0" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+    <SRPartFamily Id="9" PrimaryMod="SpaceRace.SRAvionics" Integrations="0" Name="-100N Unguided Avionics" AnyDeveloped="false" StageProduction="5000" DesignerCategory="Command">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRAvionics" Tech="Guidance:Unguided" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="MaxThrust:-1" />
+      </Technologies>
+      <Data>
+        <Part>
+          <SpaceRace.SRAvionics guidance="Unguided" maxThrustScale="0" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+    <SRPartFamily Id="13" PrimaryMod="SpaceRace.SRRocketEngine" Integrations="0" Name="NAA 75-110-A1 Family" AnyDeveloped="true" StageProduction="1156437.5" DesignerCategory="Propulsion">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Bravo" Description="Regenerative Chamber" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" Description="H2O2 Generator" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.75" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="LOX/ETOH" nozzleTypeId="Bravo" engineTypeId="Liquid" engineSubTypeId="SteamGenerator" size="1.75" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+    <SRPartFamily Id="15" PrimaryMod="SpaceRace.SRRocketEngine" Integrations="0" Name="XLR10 Family" AnyDeveloped="true" StageProduction="441359.41344499675" DesignerCategory="Propulsion">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Description="Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" Description="H2O2 Generator" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.08" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="LOX/ETOH" nozzleTypeId="Film" engineTypeId="Liquid" engineSubTypeId="SteamGenerator" size="1.075" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+    <SRPartFamily Id="17" PrimaryMod="SpaceRace.SRRocketEngine" Integrations="0" Name="A-1 Family" AnyDeveloped="true" StageProduction="301999.98998641974" DesignerCategory="Propulsion">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Bravo" Description="Regenerative Chamber" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" Description="Pressure-Fed" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.40" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="HP LOX/ETOH" nozzleTypeId="Bravo" engineTypeId="Liquid" engineSubTypeId="PressureFed" size="1.4" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+    <SRPartFamily Id="19" PrimaryMod="SpaceRace.SRRocketEngine" Integrations="0" Name="38ALDW-1500 Family" AnyDeveloped="true" StageProduction="38374.998390674613" DesignerCategory="Propulsion">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Description="Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" Description="Pressure-Fed" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:0.45" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="HP LOX/ETOH" nozzleTypeId="Film" engineTypeId="Liquid" engineSubTypeId="PressureFed" size="0.45" />
+        </Part>
+      </Data>
+    </SRPartFamily>
+  </Families>
+  <Parts>
+    <SRPart Id="2" Name="V-2 Avionics" ContractorId="34" Developed="true" Active="true" ProductionRequired="171669" ContractorMarkup="1.1693157643079759" PrimaryMod="SpaceRace.SRAvionics" DesignerCategory="Command" FamilyId="1" DesignerDescription="320kN Mechanical Avionics">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRAvionics" Tech="Guidance:Mechanical" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="MaxThrust:3200" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="PartFamily:1" Description="320kN Mechanical Avionics" />
+      </Technologies>
+      <Data>
+        <Part>
+          <FuelTank capacity="23518.665754190646" />
+          <SpaceRace.SRAvionics guidance="Mechanical" maxThrustScale="5" communicationScale="1" />
+        </Part>
+      </Data>
+    </SRPart>
+    <SRPart Id="4" Name="A4" ContractorId="24" Developed="true" Active="true" ProductionRequired="1502135.966424644" ContractorMarkup="1.1753040492534637" PrimaryMod="SpaceRace.SRRocketEngine" DesignerCategory="Propulsion" FamilyId="3" DesignerDescription="243kN Engine of the V-2 Rocket">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Description="Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" Description="H2O2 Generator" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.60" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:3" Description="A4 Family" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="LOX/ETOH" nozzleTypeId="Film" engineTypeId="Liquid" engineSubTypeId="SteamGenerator" size="1.6" chamberPressure="0.5" gimbalRange="0.5" nozzleSize="0.17" nozzleThroatSize="1" fuelGrain="RodAndTube" />
+          <SpaceRace.SRRocketEngine airLight="false" maxIgnitions="1" throttleDown="0" />
+        </Part>
+      </Data>
+    </SRPart>
+    <SRPart Id="6" Name="XASR-1" ContractorId="21" Developed="true" Active="true" ProductionRequired="75379.9983151257" ContractorMarkup="1.1715737938880919" PrimaryMod="SpaceRace.SRRocketEngine" DesignerCategory="Propulsion" FamilyId="5" DesignerDescription="11.7kN PressureFed engine burning HP Ethanol and LOx">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Description="Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" Description="Pressure-Fed" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:0.58" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:5" Description="XASR-1 Family" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="HP LOX/ETOH" nozzleTypeId="Film" engineTypeId="Liquid" engineSubTypeId="PressureFed" size="0.575" chamberPressure="0.6" gimbalRange="0" nozzleSize="0" nozzleThroatSize="1" fuelGrain="RodAndTube" />
+          <SpaceRace.SRRocketEngine airLight="false" maxIgnitions="1" throttleDown="0" />
+        </Part>
+      </Data>
+    </SRPart>
+    <SRPart Id="8" Name="2.5KS18000" ContractorId="25" Developed="true" Active="true" ProductionRequired="44821.998998150229" ContractorMarkup="1.083556592464447" PrimaryMod="SpaceRace.SRRocketEngine" DesignerCategory="Propulsion" FamilyId="7" DesignerDescription="87.4kN Model engine burning Solid">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Plug" Description="Graphite" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:Model" Description="Solid I" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="SolidEngineScale:0.58" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:Solid" Description="Solid" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:7" Description="2.5KS18000 Family" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="Solid" nozzleTypeId="Plug" engineTypeId="Solid" engineSubTypeId="Model" size="0.575" chamberPressure="0.6" gimbalRange="1" nozzleSize="2" nozzleThroatSize="1" fuelGrain="RodAndTube" />
+          <SpaceRace.SRRocketEngine airLight="true" maxIgnitions="1" throttleDown="0" />
+        </Part>
+      </Data>
+    </SRPart>
+    <SRPart Id="10" Name="Unguided Avionics" ContractorId="32" Developed="true" Active="true" ProductionRequired="10944" ContractorMarkup="1.2417677968740461" PrimaryMod="SpaceRace.SRAvionics" DesignerCategory="Command" FamilyId="9" DesignerDescription="Avionics that can manage a crafts functions but not provide guidance.">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRAvionics" Tech="Guidance:Unguided" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="MaxThrust:-1" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="PartFamily:9" Description="-100N Unguided Avionics" />
+      </Technologies>
+      <Data>
+        <Part>
+          <FuelTank capacity="5752.8893421790563" />
+          <SpaceRace.SRAvionics guidance="Unguided" maxThrustScale="0" communicationScale="0" />
+        </Part>
+      </Data>
+    </SRPart>
+    <SRPart Id="12" Name="Unguided Avionics" ContractorId="33" Developed="true" Active="true" ProductionRequired="20944" ContractorMarkup="1.1319665789604187" PrimaryMod="SpaceRace.SRAvionics" DesignerCategory="Command" FamilyId="9" DesignerDescription="Avionics that can manage a crafts functions but not provide guidance">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRAvionics" Tech="Guidance:Unguided" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="MaxThrust:-1" />
+        <Technology Mod="SpaceRace.SRAvionics" Tech="PartFamily:9" Description="-100N Unguided Avionics" />
+      </Technologies>
+      <Data>
+        <Part>
+          <FuelTank capacity="5752.8893421790563" />
+          <SpaceRace.SRAvionics guidance="Unguided" maxThrustScale="0" communicationScale="1" />
+        </Part>
+      </Data>
+    </SRPart>
+    <SRPart Id="14" Name="NAA 75-110-A1" ContractorId="22" Developed="true" Active="true" ProductionRequired="2067475.9537883103" ContractorMarkup="1.1884636402130127" PrimaryMod="SpaceRace.SRRocketEngine" DesignerCategory="Propulsion" FamilyId="13" DesignerDescription="386kN SteamGenerator engine burning Ethanol and LOx">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Bravo" Description="Regenerative Chamber" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" Description="H2O2 Generator" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.75" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:13" Description="NAA 75-110-A1 Family" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="LOX/ETOH" nozzleTypeId="Bravo" engineTypeId="Liquid" engineSubTypeId="SteamGenerator" size="1.75" chamberPressure="0.59" gimbalRange="1" nozzleSize="0.229999989" nozzleThroatSize="1" fuelGrain="RodAndTube" />
+          <SpaceRace.SRRocketEngine airLight="false" maxIgnitions="1" throttleDown="0" />
+        </Part>
+      </Data>
+    </SRPart>
+    <SRPart Id="16" Name="XLR10" ContractorId="23" Developed="true" Active="true" ProductionRequired="648071.985514462" ContractorMarkup="1.2997394440695644" PrimaryMod="SpaceRace.SRRocketEngine" DesignerCategory="Propulsion" FamilyId="15" DesignerDescription="102kN SteamGenerator engine burning Ethanol and LOx">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Description="Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:SteamGenerator" Description="H2O2 Generator" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.08" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:15" Description="XLR10 Family" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="LOX/ETOH" nozzleTypeId="Film" engineTypeId="Liquid" engineSubTypeId="SteamGenerator" size="1.075" chamberPressure="0.5" gimbalRange="1" nozzleSize="0" nozzleThroatSize="1" fuelGrain="RodAndTube" />
+          <SpaceRace.SRRocketEngine airLight="false" maxIgnitions="1" throttleDown="0" />
+        </Part>
+      </Data>
+    </SRPart>
+    <SRPart Id="18" Name="A-1" ContractorId="24" Developed="true" Active="true" ProductionRequired="156187.99650892615" ContractorMarkup="1.2753040492534637" PrimaryMod="SpaceRace.SRRocketEngine" DesignerCategory="Propulsion" FamilyId="17" DesignerDescription="60.4kN PressureFed engine burning HP Ethanol and LOx">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Bravo" Description="Regenerative Chamber" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" Description="Pressure-Fed" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:1.40" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:17" Description="A-1 Family" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="HP LOX/ETOH" nozzleTypeId="Bravo" engineTypeId="Liquid" engineSubTypeId="PressureFed" size="1.4" chamberPressure="0.6" gimbalRange="0" nozzleSize="0" nozzleThroatSize="1" fuelGrain="RodAndTube" />
+          <SpaceRace.SRRocketEngine airLight="false" maxIgnitions="1" throttleDown="0" />
+        </Part>
+      </Data>
+    </SRPart>
+    <SRPart Id="20" Name="38ALDW-1500" ContractorId="21" Developed="true" Active="true" ProductionRequired="69934.998436830938" ContractorMarkup="1.271573793888092" PrimaryMod="SpaceRace.SRRocketEngine" DesignerCategory="Propulsion" FamilyId="19" DesignerDescription="7.17kN PressureFed engine of the WAC Corporal sounding rocket">
+      <Technologies>
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Nozzle:Film" Description="Film" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Cycle:PressureFed" Description="Pressure-Fed" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="LiquidEngineScale:0.45" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="Fuel:LOX/ETOH" Description="LOX/ETOH" />
+        <Technology Mod="SpaceRace.SRRocketEngine" Tech="PartFamily:19" Description="38ALDW-1500 Family" />
+      </Technologies>
+      <Data>
+        <Part>
+          <RocketEngine fuelType="HP LOX/ETOH" nozzleTypeId="Film" engineTypeId="Liquid" engineSubTypeId="PressureFed" size="0.45" chamberPressure="0.6" gimbalRange="0" nozzleSize="0" nozzleThroatSize="1" fuelGrain="RodAndTube" />
+          <SpaceRace.SRRocketEngine airLight="false" maxIgnitions="1" throttleDown="0" />
+        </Part>
+      </Data>
+    </SRPart>
+  </Parts>
+  <Stages />
+  <CraftConfigs />
+  <PartsXml>
+    <PartsXML>
+      <Part id="2" partType="SRCommandDisc1" position="(0, 0, 0)" rotation="(0, 0, 0)" name="V-2 Avionics" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="1" materials="0,1,2,3,4" damage="0" style="Solid-1" texture="Fuselage1" textureTiling="1,1" textureOffset="0,0">
+        <Drag drag="0.6095906,0.1519908,1.711563,0,0.5560517,0.5560517" area="0.7952055,0.1988015,1.728714,0,0.7366246,0.7366246" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="7.025386E-09,-0.0006650142,1.304059E-08" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="-1" collisionExplodeImpulse="2000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1000" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="true" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" supportsTransparency="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <Fuselage autoResize="true" bottomScale="0.7513081,0.7513081" buoyancy="0" clampDistances="-1,1,-1,1,-1,1,-1,1" cornerRadiuses="1,1,1,1,1,1,1,1" deadWeight="0" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" depthCurved="false" flattenNormals="None" fuelPercentage="1" meshMassMultiplier="1" meshPriceMultiplier="1" meshType="Body1" normalSmoothingAngle="60" offset="0,0.245911,0" shellDensityOverride="1200" subpartIndex="0" supportsXZOffset="false" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0.7467505,0.7467505" volume="0.8570068" volumeInner="0.828041136" wallThickness="1,1" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" version="3" versionLast="3" versionsAllowed="2" />
+        <FuelTank autoFuelType="false" capacity="23518.665754190646" fuel="23518.665754190646" fuelType="Battery" priority="0" subPriority="52" utilization="0.011" inspectorEnabled="true" partPropertiesEnabled="false" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <Gyroscope electricalConsumption="0.3" mass="0" maxAcceleration="1" power="0" powerScale="1" spoolupRatio="1" utilization="0" inspectorEnabled="true" partPropertiesEnabled="false" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <CommandPod activationGroupNames=",,,,,,,Landing Gear,Solar Panels,RCS" activationGroupStates="false,false,false,false,false,false,false,true,false,true" autoRecalculateStages="true" configurableContents="true" configureBattery="0.02" configureGyros="0" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="10,0,25" pidRoll="10,0,25" pilotSeatRotation="270,0,0" powerConsumption="0" reorientCraftOnConfigChange="true" replicateActivationGroups="All" replicateControls="true" replicateStageActivations="true" stageCalculationVersion="2" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="">
+          <Controls />
+        </CommandPod>
+        <SpaceRace.SRAvionics guidance="Mechanical" maxThrustScale="5" communicationScale="1" powerConsumption="0.420000017" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+      <Part id="4" partType="SRRocketEngine" position="(0, 0, 0)" rotation="(0, 0, 0)" name="A4" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="1" materials="0,1,2,3,4" damage="0" engineTypeStyle="Default" engineTypeTexture="RocketEngine_Type" engineTypeTextureTiling="1,1" engineTypeTextureOffset="0,0" subTypeStyle="Default" subTypeTexture="RocketEngine_SubType" subTypeTextureTiling="1,1" subTypeTextureOffset="0,0" nozzleStyle="Default" nozzleTexture="RocketEngine_Nozzle" nozzleTextureTiling="1,1" nozzleTextureOffset="0,0" nozzleExtensionStyle="Default" nozzleExtensionTexture="RocketEngine_Extension" nozzleExtensionTextureTiling="1,1" nozzleExtensionTextureOffset="0,0">
+        <Drag drag="0.9037597,0.8420682,0,0.3418607,1.096599,0.8325211" area="1.223062,1.223062,0,0.6439441,1.518751,1.109201" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="750" collisionDisconnectVelocity="-1" collisionExplodeImpulse="1000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="2.5" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" supportsTransparency="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <RocketEngine chamberPressure="0.5" engineSubTypeId="SteamGenerator" engineTypeId="Liquid" fuelType="LOX/ETOH" gimbalRange="0.5" nozzleSize="0.17" nozzleThroatSize="1" nozzleTypeId="Film" fuelGrain="RodAndTube" size="1.6" supportsWarpBurn="false" thrustOverride="1" massFlowRateOverride="-1" wattsPerFuelFlowOverride="-1" ignited="false" ignitionsOverride="1" ignitionsUsed="0" minThrottleOverride="-1" throttleResponse="-1" heatTransferOverride="1" directDamage="0" overexpansionDamage="10" engineSoundOverride="None" exhaustExpansionRange="-1,-1" exhaustGlobalIntensity="-1" exhaustScale="1" exhaustOffset="0" exhaustShockIntensity="-1" exhaustShockDirectionOffset="0" exhaustRimShade="-1" exhaustSootIntensity="0" exhaustSootLength="0" exhaustColor="Default" exhaustColorExpanded="Default" exhaustColorTip="Default" exhaustColorShock="Default" exhaustColorFlame="Default" exhaustColorSoot="Default" smokeColor="Default" hasSmoke="true" smokeOffset="1" smokeSpeedOverride="1" exhaustTextureStrength="1" nozzleDiscStrength="5" mass="4.56900358" price="834520" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="0" outputCurveOffset="0" type="Standard" zeroOnDeactivate="true" inputId="Throttle" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <SpaceRace.SRRocketEngine throttleDown="0" airLight="false" maxIgnitions="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+      <Part id="6" partType="SRRocketEngine" position="(0, 0, 0)" rotation="(0, 0, 0)" name="XASR-1" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="1" materials="0,1,2,3,4" damage="0" engineTypeStyle="Default" engineTypeTexture="RocketEngine_Type" engineTypeTextureTiling="1,1" engineTypeTextureOffset="0,0" subTypeStyle="Default" subTypeTexture="RocketEngine_SubType" subTypeTextureTiling="1,1" subTypeTextureOffset="0,0" nozzleStyle="Default" nozzleTexture="RocketEngine_Nozzle" nozzleTextureTiling="1,1" nozzleTextureOffset="0,0" nozzleExtensionStyle="Default" nozzleExtensionTexture="RocketEngine_Extension" nozzleExtensionTextureTiling="1,1" nozzleExtensionTextureOffset="0,0">
+        <Drag drag="0.09579086,0,0.01208402,0.1002821,0.08653906,0.09991198" area="0.1253315,0,0.02593064,0.1426185,0.1336732,0.1507379" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="750" collisionDisconnectVelocity="-1" collisionExplodeImpulse="1000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" supportsTransparency="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <RocketEngine chamberPressure="0.6" engineSubTypeId="PressureFed" engineTypeId="Liquid" fuelType="HP LOX/ETOH" gimbalRange="0" nozzleSize="0" nozzleThroatSize="1" nozzleTypeId="Film" fuelGrain="RodAndTube" size="0.575" supportsWarpBurn="false" thrustOverride="1" massFlowRateOverride="-1" wattsPerFuelFlowOverride="-1" ignited="false" ignitionsOverride="1" ignitionsUsed="0" minThrottleOverride="-1" throttleResponse="-1" heatTransferOverride="1" directDamage="0" overexpansionDamage="10" engineSoundOverride="None" exhaustExpansionRange="-1,-1" exhaustGlobalIntensity="-1" exhaustScale="1" exhaustOffset="0" exhaustShockIntensity="-1" exhaustShockDirectionOffset="0" exhaustRimShade="-1" exhaustSootIntensity="0" exhaustSootLength="0" exhaustColor="Default" exhaustColorExpanded="Default" exhaustColorTip="Default" exhaustColorShock="Default" exhaustColorFlame="Default" exhaustColorSoot="Default" smokeColor="Default" hasSmoke="true" smokeOffset="1" smokeSpeedOverride="1" exhaustTextureStrength="1" nozzleDiscStrength="5" mass="0.135413557" price="49161" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="0" outputCurveOffset="0" type="Standard" zeroOnDeactivate="true" inputId="Throttle" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <SpaceRace.SRRocketEngine throttleDown="0" airLight="false" maxIgnitions="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+      <Part id="8" partType="SRRocketEngine" position="(0, 0, 0)" rotation="(0, 0, 0)" name="2.5KS18000" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="1" materials="0,1,2,3,4" damage="0" engineTypeStyle="Default" engineTypeTexture="Default" engineTypeTextureTiling="1,1" engineTypeTextureOffset="0,0" subTypeStyle="Default" subTypeTexture="Default" subTypeTextureTiling="1,1" subTypeTextureOffset="0,0" nozzleStyle="Default" nozzleTexture="RocketEngine_Nozzle" nozzleTextureTiling="1,1" nozzleTextureOffset="0,0" nozzleExtensionStyle="Default" nozzleExtensionTexture="Default" nozzleExtensionTextureTiling="1,1" nozzleExtensionTextureOffset="0,0">
+        <Drag drag="0.06902975,0.06226745,0.06082685,0.06082684,0,0.04953217" area="0.0994008,0.08643547,0.07779192,0.07779192,0,0.07963511" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="750" collisionDisconnectVelocity="-1" collisionExplodeImpulse="1000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" supportsTransparency="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <RocketEngine chamberPressure="0.6" engineSubTypeId="Model" engineTypeId="Solid" fuelType="Solid" gimbalRange="1" nozzleSize="2" nozzleThroatSize="1" nozzleTypeId="Plug" fuelGrain="RodAndTube" size="0.575" supportsWarpBurn="false" thrustOverride="1" massFlowRateOverride="-1" wattsPerFuelFlowOverride="-1" ignited="false" ignitionsOverride="-1" ignitionsUsed="0" minThrottleOverride="-1" throttleResponse="-1" heatTransferOverride="1" directDamage="0" overexpansionDamage="10" engineSoundOverride="None" exhaustExpansionRange="-1,-1" exhaustGlobalIntensity="-1" exhaustScale="1" exhaustOffset="0" exhaustShockIntensity="-1" exhaustShockDirectionOffset="0" exhaustRimShade="-1" exhaustSootIntensity="0" exhaustSootLength="0" exhaustColor="Default" exhaustColorExpanded="Default" exhaustColorTip="Default" exhaustColorShock="Default" exhaustColorFlame="Default" exhaustColorSoot="Default" smokeColor="Default" hasSmoke="true" smokeOffset="1" smokeSpeedOverride="1" exhaustTextureStrength="1" nozzleDiscStrength="5" mass="0.502117157" price="29232" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="0" outputCurveOffset="0" type="Standard" zeroOnDeactivate="true" inputId="Throttle" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <SpaceRace.SRRocketEngine throttleDown="0" airLight="true" maxIgnitions="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+      <Part id="10" partType="SRCommandDisc1" position="(0, 0, 0)" rotation="(0, 0, 0)" name="Unguided Avionics" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="15" materials="0,1,2,3,4" damage="0" style="Solid-1" texture="Fuselage1" textureTiling="1,1" textureOffset="0,0">
+        <Drag drag="0,0.2577811,0,0,0.2784329,0" area="0,0.2982024,0,0,0.3185407,0" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="-1.218585E-08,1.742706E-09,2.431376E-08" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="-1" collisionExplodeImpulse="2000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1000" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="true" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" supportsTransparency="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <Fuselage autoResize="true" bottomScale="0.7488632,0.7488632" buoyancy="0" clampDistances="-1,1,-1,1,-1,1,-1,1" cornerRadiuses="0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5" deadWeight="0" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" depthCurved="false" flattenNormals="None" fuelPercentage="1" meshMassMultiplier="1" meshPriceMultiplier="1" meshType="Body1" normalSmoothingAngle="60" offset="0,0.1,0" shellDensityOverride="1200" subpartIndex="0" supportsXZOffset="false" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0.7488632,0.7488632" volume="0.419264019" volumeInner="0.392985672" wallThickness="1,1" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" version="3" versionLast="3" versionsAllowed="2" />
+        <FuelTank autoFuelType="false" capacity="5752.8893421790563" fuel="5752.8893421790563" fuelType="Battery" priority="0" subPriority="3" utilization="0.0055" inspectorEnabled="true" partPropertiesEnabled="false" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <Gyroscope electricalConsumption="0.3" mass="0" maxAcceleration="1" power="0" powerScale="1" spoolupRatio="1" utilization="0" inspectorEnabled="true" partPropertiesEnabled="false" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <CommandPod activationGroupNames=",,,,,,,Landing Gear,Solar Panels,RCS" activationGroupStates="false,false,false,false,false,false,false,true,false,true" autoRecalculateStages="true" configurableContents="true" configureBattery="0.01" configureGyros="0" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="10,0,25" pidRoll="10,0,25" pilotSeatRotation="270.0198,6.62923E-13,0" powerConsumption="0" reorientCraftOnConfigChange="true" replicateActivationGroups="All" replicateControls="true" replicateStageActivations="true" stageCalculationVersion="2" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="">
+          <Controls />
+        </CommandPod>
+        <SpaceRace.SRAvionics guidance="Unguided" maxThrustScale="0" communicationScale="0" powerConsumption="0.03" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+      <Part id="12" partType="SRCommandDisc1" position="(0, 0, 0)" rotation="(0, 0, 0)" name="Unguided Avionics" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="6" materials="0,1,2,3,4" damage="0" style="Solid-1" texture="Fuselage1" textureTiling="1,1" textureOffset="0,0">
+        <Drag drag="0,0.2577811,0,0.6180136,0.2088247,0" area="0,0.2982024,0,0.6180136,0.2389053,0" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="-1.218585E-08,1.742706E-09,2.431376E-08" collisionDisconnectImpulse="1500" collisionDisconnectVelocity="-1" collisionExplodeImpulse="2000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1000" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="true" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="false" renderQueue="Default" stageActivationType="None" supportsActivation="true" supportsTransparency="true" thermalMassRatio="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <Fuselage autoResize="true" bottomScale="0.7488632,0.7488632" buoyancy="0" clampDistances="-1,1,-1,1,-1,1,-1,1" cornerRadiuses="0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5" deadWeight="0" deadWeightPercentage="0" deformations="0,0,0" depthCurve="0" depthCurved="false" flattenNormals="None" fuelPercentage="1" meshMassMultiplier="1" meshPriceMultiplier="1" meshType="Body1" normalSmoothingAngle="60" offset="0,0.1,0" shellDensityOverride="1200" subpartIndex="0" supportsXZOffset="false" toolAutoAdaptBottom="true" toolAutoAdaptTop="true" toolIgnore="false" toolResizeBottom="true" toolResizeHeight="true" toolResizeRadius="true" toolResizeTop="true" toolShapeBottom="true" toolShapeTop="true" toolSupportsAddSection="false" topScale="0.7488632,0.7488632" volume="0.419264019" volumeInner="0.392985672" wallThickness="1,1" inspectorEnabled="false" partPropertiesEnabled="false" staticPriceAndMass="false" version="3" versionLast="3" versionsAllowed="2" />
+        <FuelTank autoFuelType="false" capacity="5752.8893421790563" fuel="5752.8893421790563" fuelType="Battery" priority="0" subPriority="0" utilization="0.0055" inspectorEnabled="true" partPropertiesEnabled="false" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <Gyroscope electricalConsumption="0.3" mass="0" maxAcceleration="1" power="0" powerScale="1" spoolupRatio="1" utilization="0" inspectorEnabled="true" partPropertiesEnabled="false" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <CommandPod activationGroupNames=",,,,,,,Landing Gear,Solar Panels,RCS" activationGroupStates="false,false,false,false,false,false,false,true,false,true" autoRecalculateStages="true" configurableContents="true" configureBattery="0.01" configureGyros="0" craftConfigAutoAssign="true" craftConfigType="Rocket" currentStage="0" pidPitch="10,0,25" pidRoll="10,0,25" pilotSeatRotation="270.0198,6.62923E-13,0" powerConsumption="0" reorientCraftOnConfigChange="true" replicateActivationGroups="All" replicateControls="true" replicateStageActivations="true" stageCalculationVersion="2" useDefaultPilotSeatRotation="true" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="">
+          <Controls />
+        </CommandPod>
+        <SpaceRace.SRAvionics guidance="Unguided" maxThrustScale="0" communicationScale="1" powerConsumption="0.04" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+      <Part id="14" partType="SRRocketEngine" position="(0, 0, 0)" rotation="(0, 0, 0)" name="NAA 75-110-A1" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="1" materials="0,1,2,3,4" damage="0" engineTypeStyle="Default" engineTypeTexture="RocketEngine_Type" engineTypeTextureTiling="1,1" engineTypeTextureOffset="0,0" subTypeStyle="Default" subTypeTexture="RocketEngine_SubType" subTypeTextureTiling="1,1" subTypeTextureOffset="0,0" nozzleStyle="Default" nozzleTexture="RocketEngine_Nozzle" nozzleTextureTiling="1,1" nozzleTextureOffset="0,0" nozzleExtensionStyle="Default" nozzleExtensionTexture="Default" nozzleExtensionTextureTiling="1,1" nozzleExtensionTextureOffset="0,0">
+        <Drag drag="0,1.974949,0.006236913,0.7408873,2.391698,0.2773176" area="0,2.783237,0.01728709,1.508302,3.284934,0.4465263" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="750" collisionDisconnectVelocity="-1" collisionExplodeImpulse="1000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" supportsTransparency="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <RocketEngine chamberPressure="0.59" engineSubTypeId="SteamGenerator" engineTypeId="Liquid" fuelType="LOX/ETOH" gimbalRange="1" nozzleSize="0.229999989" nozzleThroatSize="1" nozzleTypeId="Bravo" fuelGrain="RodAndTube" size="1.75" supportsWarpBurn="false" thrustOverride="1" massFlowRateOverride="-1" wattsPerFuelFlowOverride="-1" ignited="false" ignitionsOverride="1" ignitionsUsed="0" minThrottleOverride="-1" throttleResponse="-1" heatTransferOverride="1" directDamage="0" overexpansionDamage="10" engineSoundOverride="None" exhaustExpansionRange="-1,-1" exhaustGlobalIntensity="-1" exhaustScale="1" exhaustOffset="0" exhaustShockIntensity="-1" exhaustShockDirectionOffset="0" exhaustRimShade="-1" exhaustSootIntensity="0" exhaustSootLength="0" exhaustColor="Default" exhaustColorExpanded="Default" exhaustColorTip="Default" exhaustColorShock="Default" exhaustColorFlame="Default" exhaustColorSoot="Default" smokeColor="Default" hasSmoke="true" smokeOffset="1" smokeSpeedOverride="1" exhaustTextureStrength="1" nozzleDiscStrength="5" mass="6.37925959" price="1328770" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="0" outputCurveOffset="0" type="Standard" zeroOnDeactivate="true" inputId="Throttle" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <SpaceRace.SRRocketEngine throttleDown="0" airLight="false" maxIgnitions="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+      <Part id="16" partType="SRRocketEngine" position="(0, 0, 0)" rotation="(0, 0, 0)" name="XLR10" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="1" materials="0,1,2,3,4" damage="0" engineTypeStyle="Default" engineTypeTexture="RocketEngine_Type" engineTypeTextureTiling="1,1" engineTypeTextureOffset="0,0" subTypeStyle="Default" subTypeTexture="RocketEngine_SubType" subTypeTextureTiling="1,1" subTypeTextureOffset="0,0" nozzleStyle="Default" nozzleTexture="RocketEngine_Nozzle" nozzleTextureTiling="1,1" nozzleTextureOffset="0,0" nozzleExtensionStyle="Default" nozzleExtensionTexture="RocketEngine_Extension" nozzleExtensionTextureTiling="1,1" nozzleExtensionTextureOffset="0,0">
+        <Drag drag="0.4467021,0.4389058,0.3618258,0.3450131,0.01159951,0" area="0.6050483,0.6050483,0.4797173,0.4797173,0.01706467,0" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="750" collisionDisconnectVelocity="-1" collisionExplodeImpulse="1000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" supportsTransparency="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <RocketEngine chamberPressure="0.5" engineSubTypeId="SteamGenerator" engineTypeId="Liquid" fuelType="LOX/ETOH" gimbalRange="1" nozzleSize="0" nozzleThroatSize="1" nozzleTypeId="Film" fuelGrain="RodAndTube" size="1.075" supportsWarpBurn="false" thrustOverride="1" massFlowRateOverride="-1" wattsPerFuelFlowOverride="-1" ignited="false" ignitionsOverride="1" ignitionsUsed="0" minThrottleOverride="-1" throttleResponse="-1" heatTransferOverride="1" directDamage="0" overexpansionDamage="10" engineSoundOverride="None" exhaustExpansionRange="-1,-1" exhaustGlobalIntensity="-1" exhaustScale="1" exhaustOffset="0" exhaustShockIntensity="-1" exhaustShockDirectionOffset="0" exhaustRimShade="-1" exhaustSootIntensity="0" exhaustSootLength="0" exhaustColor="Default" exhaustColorExpanded="Default" exhaustColorTip="Default" exhaustColorShock="Default" exhaustColorFlame="Default" exhaustColorSoot="Default" smokeColor="Default" hasSmoke="true" smokeOffset="1" smokeSpeedOverride="1" exhaustTextureStrength="1" nozzleDiscStrength="5" mass="2.3599174" price="360040" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="0" outputCurveOffset="0" type="Standard" zeroOnDeactivate="true" inputId="Throttle" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <SpaceRace.SRRocketEngine throttleDown="0" airLight="false" maxIgnitions="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+      <Part id="18" partType="SRRocketEngine" position="(0, 0, 0)" rotation="(0, 0, 0)" name="A-1" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="1" materials="0,1,2,3,4" damage="0" engineTypeStyle="Default" engineTypeTexture="RocketEngine_Type" engineTypeTextureTiling="1,1" engineTypeTextureOffset="0,0" subTypeStyle="Default" subTypeTexture="RocketEngine_SubType" subTypeTextureTiling="1,1" subTypeTextureOffset="0,0" nozzleStyle="Default" nozzleTexture="RocketEngine_Nozzle" nozzleTextureTiling="1,1" nozzleTextureOffset="0,0" nozzleExtensionStyle="Default" nozzleExtensionTexture="RocketEngine_Extension" nozzleExtensionTextureTiling="1,1" nozzleExtensionTextureOffset="0,0">
+        <Drag drag="0.908759,0.9041153,0,0.3942307,0.9614207,0.7686681" area="1.283568,1.283568,0,0.7649533,1.339573,1.058007" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="750" collisionDisconnectVelocity="-1" collisionExplodeImpulse="1000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" supportsTransparency="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <RocketEngine chamberPressure="0.6" engineSubTypeId="PressureFed" engineTypeId="Liquid" fuelType="HP LOX/ETOH" gimbalRange="0" nozzleSize="0" nozzleThroatSize="1" nozzleTypeId="Bravo" fuelGrain="RodAndTube" size="1.4" supportsWarpBurn="false" thrustOverride="1" massFlowRateOverride="-1" wattsPerFuelFlowOverride="-1" ignited="false" ignitionsOverride="1" ignitionsUsed="0" minThrottleOverride="-1" throttleResponse="-1" heatTransferOverride="1" directDamage="0" overexpansionDamage="10" engineSoundOverride="None" exhaustExpansionRange="-1,-1" exhaustGlobalIntensity="-1" exhaustScale="1" exhaustOffset="0" exhaustShockIntensity="-1" exhaustShockDirectionOffset="0" exhaustRimShade="-1" exhaustSootIntensity="0" exhaustSootLength="0" exhaustColor="Default" exhaustColorExpanded="Default" exhaustColorTip="Default" exhaustColorShock="Default" exhaustColorFlame="Default" exhaustColorSoot="Default" smokeColor="Default" hasSmoke="true" smokeOffset="1" smokeSpeedOverride="1" exhaustTextureStrength="1" nozzleDiscStrength="5" mass="0.564414263" price="101862" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="0" outputCurveOffset="0" type="Standard" zeroOnDeactivate="true" inputId="Throttle" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <SpaceRace.SRRocketEngine throttleDown="0" airLight="false" maxIgnitions="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+      <Part id="20" partType="SRRocketEngine" position="(0, 0, 0)" rotation="(0, 0, 0)" name="38ALDW-1500" activated="false" activationGroup="0" previouslyActivated="false" activationStage="0" stageOverride="false" commandPodId="1" materials="0,1,2,3,4" damage="0" engineTypeStyle="Default" engineTypeTexture="RocketEngine_Type" engineTypeTextureTiling="1,1" engineTypeTextureOffset="0,0" subTypeStyle="Default" subTypeTexture="RocketEngine_SubType" subTypeTextureTiling="1,1" subTypeTextureOffset="0,0" nozzleStyle="Default" nozzleTexture="RocketEngine_Nozzle" nozzleTextureTiling="1,1" nozzleTextureOffset="0,0" nozzleExtensionStyle="Default" nozzleExtensionTexture="RocketEngine_Extension" nozzleExtensionTextureTiling="1,1" nozzleExtensionTextureOffset="0,0">
+        <Drag drag="0.06360978,0,0.05488004,0.003157198,0.0543621,0.05587541" area="0.09678624,0,0.08358812,0.004399375,0.08316734,0.09314742" />
+        <Config autoActivateIfNoStageOrActivationGroup="true" buoyancyBaseScale="1" buoyancyUserScale="1" castShadows="true" centerOfMass="0,0,0" collisionDisconnectImpulse="750" collisionDisconnectVelocity="-1" collisionExplodeImpulse="1000" collisionExplodeVelocity="-1" collisionPreventExternalDisconnections="false" collisionVelocityMode="None" dragScale="1" dragScaleActive="1" dragScaleAngular="1" explosiveness="0" fuelLine="false" heatShield="0" heatShieldBaseScale="1" heatShieldMass="0" heatShieldScale="0" heatShieldValidation="true" ignoreValidation="false" includeInDrag="true" inertiaTensorBaseScale="1" inertiaTensorMin="0.05" inertiaTensorUserScale="1" initialCraftNodeId="-1" massScale="1" maxDamage="100" maxDrag="0" maxDragActive="0" maxTemperature="1500" occlusion="Auto" partCollisionHandling="Default" partCollisionResponse="Default" partScale="1,1,1" partSelectionEnabled="true" preventDebris="false" priceScale="1" raiseWaterEventsEvenIfNotBuoyant="true" renderQueue="Default" stageActivationType="Engine" supportsActivation="true" supportsTransparency="false" thermalMassRatio="1" inspectorEnabled="false" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <RocketEngine chamberPressure="0.6" engineSubTypeId="PressureFed" engineTypeId="Liquid" fuelType="HP LOX/ETOH" gimbalRange="0" nozzleSize="0" nozzleThroatSize="1" nozzleTypeId="Film" fuelGrain="RodAndTube" size="0.45" supportsWarpBurn="false" thrustOverride="1" massFlowRateOverride="-1" wattsPerFuelFlowOverride="-1" ignited="false" ignitionsOverride="1" ignitionsUsed="0" minThrottleOverride="-1" throttleResponse="-1" heatTransferOverride="1" directDamage="0" overexpansionDamage="10" engineSoundOverride="None" exhaustExpansionRange="-1,-1" exhaustGlobalIntensity="-1" exhaustScale="1" exhaustOffset="0" exhaustShockIntensity="-1" exhaustShockDirectionOffset="0" exhaustRimShade="-1" exhaustSootIntensity="0" exhaustSootLength="0" exhaustColor="Default" exhaustColorExpanded="Default" exhaustColorTip="Default" exhaustColorShock="Default" exhaustColorFlame="Default" exhaustColorSoot="Default" smokeColor="Default" hasSmoke="true" smokeOffset="1" smokeSpeedOverride="1" exhaustTextureStrength="1" nozzleDiscStrength="5" mass="0.101995923" price="45610" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <InputController activationGroup="0" currentValue="0" ignorePartActivationState="false" input="Throttle" invert="false" invertOnMirror="false" invertType="Output" max="1" min="0" outputCurveOffset="0" type="Standard" zeroOnDeactivate="true" inputId="Throttle" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+        <SpaceRace.SRRocketEngine throttleDown="0" airLight="false" maxIgnitions="1" inspectorEnabled="true" partPropertiesEnabled="true" staticPriceAndMass="false" version="1" versionLast="1" versionsAllowed="" />
+      </Part>
+    </PartsXML>
+  </PartsXml>
+</HardwareDB>
