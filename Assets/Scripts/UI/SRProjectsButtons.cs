@@ -19,6 +19,7 @@ namespace Assets.Scripts.SpaceRace.Ui
         public const string flightProjectToggleButtonId = "srprojects-flight-button";
         public const string flightCrewButtonId = "srprojects-crew-button";
 
+        public const string helpButtonId = "spacerace-help-button";
         public const string designProjectToggleButtonId = "srprojects-design-button";   
 
         public const string developmentToggleButtonId = "srdevelopment-button"; 
@@ -100,7 +101,7 @@ namespace Assets.Scripts.SpaceRace.Ui
                 request.AddOnLayoutRebuiltAction(xmlLayoutController =>
                 {
                     var button = xmlLayoutController.XmlLayout.GetElementById(designSpaceCenterButtonId);
-                    Debug.Log(button == null? "Button not found" : "Button found");
+                    //Debug.Log(button == null? "Button not found" : "Button found");
                     button.AddOnClickEvent(() => SRManager.Instance.pm.GoToSpaceCenter());
                 });
             }
@@ -172,10 +173,24 @@ namespace Assets.Scripts.SpaceRace.Ui
                         new XAttribute("sprite", "Ui/Sprites/Design/IconButtonAssignCrew"))                 
                 )
             ); 
+            translationButton.Parent.Add(
+                new XElement(
+                    nameSpace + "ContentButton",
+                    new XAttribute("id", helpButtonId),
+                    new XAttribute("class", "panel-button audio-btn-click"),
+                    new XAttribute("name", "NavPanel.SpaceRaceHelp"),
+                    new XAttribute("tooltip", "SpaceRace Help"),
+                    new XElement(
+                        nameSpace + "Image",
+                        new XAttribute("class", "panel-button-icon"),
+                        new XAttribute("sprite", "Ui/Sprites/Common/IconQuestionMark"))                 
+                )
+            ); 
             request.AddOnLayoutRebuiltAction(xmlLayoutController =>
             {
                 var button = xmlLayoutController.XmlLayout.GetElementById(flightProjectToggleButtonId);
                 var button2 = xmlLayoutController.XmlLayout.GetElementById(flightCrewButtonId);
+                var button3 = xmlLayoutController.XmlLayout.GetElementById(helpButtonId);
                 if (Game.IsCareer)
                 {
                     button.AddOnClickEvent(SRManager.Instance.pm.ToggleProgramPanel);
@@ -185,6 +200,15 @@ namespace Assets.Scripts.SpaceRace.Ui
                 {
                     button.SetAndApplyAttribute("active", "false");
                     button2.SetAndApplyAttribute("active", "false");
+                    
+                }
+                if (Game.IsCareer && ModSettings.Instance.ShowHelp)
+                {
+                    button3.AddOnClickEvent(SRManager.Instance.pm.Tutorial.ShowMessage);
+                }
+                else
+                {
+                    button3.SetAndApplyAttribute("active", "false");
                 }
             }); 
         }
@@ -212,6 +236,19 @@ namespace Assets.Scripts.SpaceRace.Ui
 
                 )
             );
+            launchButton.Parent.Add(
+                new XElement(
+                    ns + "Panel",
+                    new XAttribute("id", helpButtonId),
+                    new XAttribute("class", "toggle-button audio-btn-click"),
+                    new XAttribute("name", "Designer.SpaceRaceHelp"),
+                    new XAttribute("tooltip", "SpaceRace Help"),
+                    new XElement(
+                        ns + "Image",
+                        new XAttribute("class", "toggle-button-icon"),
+                        new XAttribute("sprite", "Ui/Sprites/Common/IconQuestionMark"))                 
+                )
+            ); 
             ns = XmlLayoutConstants.XmlNamespace;
             var viewButton = request.XmlDocument
                 .Descendants(ns + "Panel")
@@ -264,7 +301,7 @@ namespace Assets.Scripts.SpaceRace.Ui
                         )
                     )
                 )   
-            );          
+            );         
         }
     }
 }

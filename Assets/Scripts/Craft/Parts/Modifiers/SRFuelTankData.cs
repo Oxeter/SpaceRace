@@ -84,7 +84,7 @@ namespace Assets.Scripts.SpaceRace.Modifiers
         public void ContructionByFuelType(FuelTankData data)
         {
             _highPressure = IsHighPressure(data.FuelType.Id) || _forceHighPressure;
-            Debug.Log(string.Format("{0} is high pressure? {1}",data.FuelType.Id, _highPressure.ToString()));
+            //Debug.Log(string.Format("{0} is high pressure? {1}",data.FuelType.Id, _highPressure.ToString()));
             if (_highPressure && !Construction.HP) _constructionTypeId = "Steel Wall";
             if (data.FuelType.Id == "Solid") 
             {

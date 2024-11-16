@@ -180,11 +180,11 @@ namespace Assets.Scripts.SpaceRace.Projects
             if (Orders.Count > 0)
             {
                 Orders.Sort((a,b)=> a.Priority - b.Priority);
-                Debug.Log(Name +" has orders:" + Orders.Count.ToString());
+                //Debug.Log(Name +" has orders:" + Orders.Count.ToString());
                 bool rushrequest = Data.Rush;
                 double inventory = Math.Min(Orders[0].TotalProduction - Orders[0].CurrentProduction, _data.Inventory);
                 Orders[0].CurrentProduction += inventory;
-                Debug.Log($"{Orders[0].ContractorName} spending {Units.GetMoneyString((long)(inventory * Orders[0].Markup))} on inventory");
+                //Debug.Log($"{Orders[0].ContractorName} spending {Units.GetMoneyString((long)(inventory * Orders[0].Markup))} on inventory");
                 _pm.Career.SpendMoney((long)(inventory * Orders[0].Markup));
                 _data.Inventory -= inventory;
                 for (int i = Orders.Count - 1; i >= 0; i--)

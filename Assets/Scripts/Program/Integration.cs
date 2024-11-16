@@ -28,7 +28,7 @@ namespace Assets.Scripts.SpaceRace.Projects
     using ModApi.Scenes.Parameters;
     using Assets.Scripts.Flight.Sim;
     using Assets.Scripts.Craft.Fuel;
-
+    using System.Linq.Expressions;
 
     public interface IIntegrationScript : IProjectScript<IntegrationData>
     {
@@ -236,6 +236,7 @@ namespace Assets.Scripts.SpaceRace.Projects
                 default:
                     break;
             }
+            _pm.IntegrationTutorialCheck(Status);
             if (!CanSetTechniciansStatus.Contains(Status))
             {
                 SetRush(false);
@@ -386,21 +387,19 @@ namespace Assets.Scripts.SpaceRace.Projects
             _pm.LaunchingId = Id;
             if (Game.InFlightScene)
             {   
-                IFlightScene flightSceneScript = Game.Instance.FlightScene;
+                FlightSceneScript flightSceneScript = FlightSceneScript.Instance;
                 ICraftNode node = flightSceneScript.FlightState.CraftNodes.First(cr=> cr.NodeId == _data.NodeId);
                 if (!_pm.ContractsChanged && node.CraftScript != null && flightSceneScript.ChangePlayersActiveCommandPodImmediate(node.CraftScript.ActiveCommandPod, node))
                 {
                     string text = $"Launching {Name}.";
-                    flightSceneScript.FlightSceneUI.FlightLog.AddLog(text, FlightLogEntryCategory.Default);
                     flightSceneScript.FlightSceneUI.ShowMessage(text);
-                    FlightSceneScript.Instance.FlightState.Save();
-                    Game.Instance.GameState.Save();
-                    Game.Instance.GameStateManager.CopyGameStateTag(Game.Instance.GameState.Id, "Active", "Preflight");
-                    _pm.CheckForLaunch();
+                    flightSceneScript.TimeManager.RequestPauseChange(true, false);
+                    flightSceneScript.StartCoroutine(LaunchEndOfFrameImmediate());
                     return;
                 }
-                flightSceneScript.ChangePlayersActiveCraftNode(node);
                 Debug.Log("Reloading scene to launch.");
+                flightSceneScript.TimeManager.RequestPauseChange(true, false);
+                flightSceneScript.StartCoroutine(LaunchEndOfFrameReload(node));
                 return;
             }
             if (Game.InDesignerScene)
@@ -418,6 +417,24 @@ namespace Assets.Scripts.SpaceRace.Projects
             Game.Instance.StartFlightScene(parameters);
             return;
         }
+        private IEnumerator LaunchEndOfFrameImmediate()
+        {
+            yield return new WaitForEndOfFrame();
+            FlightSceneScript.Instance.FlightState.Save();
+            Game.Instance.GameState.Save();
+            Game.Instance.GameStateManager.CopyGameStateTag(Game.Instance.GameState.Id, "Active", "Preflight");
+            _pm.CheckForLaunch();
+        } 
+
+        private IEnumerator LaunchEndOfFrameReload(ICraftNode node)
+        {
+            yield return new WaitForEndOfFrame();
+            FlightSceneScript.Instance.FlightState.Save();
+            Game.Instance.GameState.Save();
+            Game.Instance.GameStateManager.CopyGameStateTag(Game.Instance.GameState.Id, "Active", "Preflight");
+            FlightSceneScript.Instance.ChangePlayersActiveCraftNode(node);
+            
+        } 
         public void SetTechnicians(int i)
         {
             if (i > _data.Technicians + _pm.AvailableTechnicians) i = _data.Technicians + _pm.AvailableTechnicians;
@@ -467,26 +484,36 @@ namespace Assets.Scripts.SpaceRace.Projects
             }
         }
 
-        private static bool IsCraftTooCloseToLaunchPosition(Vector3d existingCraftPosition, Vector3d launchPosition)
+        private static Vector3d LaunchPosition(LaunchLocation location)
         {
+            IPlanetNode planetNode = FlightSceneScript.Instance.FlightState.RootNode.FindPlanet(location.PlanetName);
+            Vector3d surfacePosition = planetNode.GetSurfacePosition(location.Latitude * 0.01745329, location.Longitude * 0.01745329, AltitudeType.AboveGroundLevel, location.AltitudeAboveGroundLevel, 0F);
+            return planetNode.SurfaceVectorToPlanetVector(surfacePosition);
+
+        }
+
+        private static bool IsCraftTooCloseToLaunchPosition(Vector3d existingCraftPosition, Vector3d launchPosition)
+        {  
             Vector3d lhs = existingCraftPosition - launchPosition;
             Vector3d normalized = launchPosition.normalized;
             double num = Mathd.Abs(Vector3d.Dot(lhs, normalized));
             double num2 = lhs.sqrMagnitude - num * num;
             return num2 < 400.0 && num < 250.0;
         }
-        private void ClearStartLocation(CraftNode craftNode)
+        private void ClearStartLocation(LaunchLocation location)
         {
+        Vector3d launch = LaunchPosition(location);
         CraftNode[] array = FlightSceneScript.Instance.FlightState.CraftNodes.ToArray();
         CraftNode[] array2 = array;
         foreach (CraftNode craftNode2 in array2)
         {
-            if (craftNode2 != craftNode && IsCraftTooCloseToLaunchPosition(craftNode2.Position, craftNode.Position))
+            if (IsCraftTooCloseToLaunchPosition(craftNode2.Position, launch))
             {
                 try
                 {
                     SRCraftRecovery craftRecovery = new SRCraftRecovery(_pm, craftNode2, new CraftNodeDataDynamic(craftNode2));
                     craftRecovery.RecoverParts();
+                    craftNode2.Enabled = false;
                     craftNode2.DestroyCraft();
                 }
                 catch (Exception ex)
@@ -527,8 +554,15 @@ namespace Assets.Scripts.SpaceRace.Projects
             XElement craftXml = _pm.Designs.GetCraftDesign(string.Format("Integration{0:D}", _data.ConfigId));
             CraftData craftData = Game.Instance.CraftLoader.LoadCraftImmediate(craftXml);
             EmptyTanks(craftData);
-            CraftNode node = fs.SpawnCraft(Name, craftData, location);
-            ClearStartLocation(node);
+            ClearStartLocation(location);
+            fs.TimeManager.RequestPauseChange(true, false);
+            fs.StartCoroutine(RolloutEndOfFrame(fs, craftData, location));       
+        }
+
+        private IEnumerator RolloutEndOfFrame(FlightSceneScript fs, CraftData data, LaunchLocation loc)
+        {
+            yield return new WaitForEndOfFrame();
+            CraftNode node = fs.SpawnCraft(Name, data, loc);
             node.FlightStart();
             _data.NodeId = node.NodeId;
             _data.Status = IntegrationStatus.Rollout;

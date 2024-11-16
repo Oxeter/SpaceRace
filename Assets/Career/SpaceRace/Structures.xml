@@ -18,7 +18,7 @@
 		  <string>LC-3</string>
 		</LaunchPads>
 		<Xml>
-			<StructureNode version="2" id="755d39de-b693-4d3b-9108-13e81253c920" name="LC-3" visibleInMapView="false" collapsed="false" prefabPath="Flight/GameView/Structures/Empty" latitude="28.499851500398663" longitude="-80.607084314747752" elevation="0.56" elevationType="AboveGroundLevel" heading="-142" loadDistance="100000" scale="1,1,1" lodScales="0.75,0.5,0.25,0">
+			<StructureNode version="2" id="755d39de-b693-4d3b-9108-13e81253c920" name="LC-3" visibleInMapView="false" collapsed="false" prefabPath="Flight/GameView/Structures/Empty" latitude="28.499851500398663" longitude="-80.607084314747752" elevation="0.65" elevationType="AboveGroundLevel" heading="-142" loadDistance="100000" scale="1,1,1" lodScales="0.75,0.5,0.25,0">
 			  <SubStructure version="1" name="Pad 1" prefabPath="Flight/GameView/Structures/BaseCubePrimitive" position="-25.43325,-1.798374,-88.61105" rotation="0,0,0" collapsed="false" lod="0" quality="Low" scale="15,4,30" tiling="1" color="#D8D8D8">
 				<SubStructure version="1" name="Launch FX" prefabPath="Flight/GameView/Structures/LaunchFX" position="0,0,0" rotation="0,0,0" collapsed="false" lod="0" quality="Low" scale="1,1,1">
 				  <SubStructure version="1" name="Launch FX - Pad" prefabPath="Flight/GameView/Structures/LaunchFXPad" position="1.271566E-05,0.6236973,-6.103516E-06" rotation="0,0,0" collapsed="false" lod="0" quality="Low" scale="1,1,1" />

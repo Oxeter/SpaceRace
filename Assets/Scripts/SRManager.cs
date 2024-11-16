@@ -107,9 +107,10 @@ namespace Assets.Scripts.SpaceRace
             StartProgramManager();
         }
 
-        public void StartProgramManager()
+        public void StartProgramManager(GameState state = null)
         {
-            if (Game.IsCareer) 
+            state ??= Game.Instance.GameState;
+            if (state.Mode == GameStateMode.Career) 
             {
                 _program = new GameObject("Program");
                 pm = _program.AddComponent<ProgramManager>();
@@ -117,6 +118,7 @@ namespace Assets.Scripts.SpaceRace
                 ProgramManagerLoaded?.Invoke(pm);
             }
         }
+
         public void KillProgramManager()
         {
             pm?.CloseProgramManager();
@@ -156,53 +158,6 @@ namespace Assets.Scripts.SpaceRace
     }
 
     /// <summary>
-    /// Attempted fix at precision error in spawncraft.  
-    /// Unfortunately CraftNode.InitialLaunch is internally set only.
-    /// disabled for now
-    /// </summary>
-    //[HarmonyPatch(typeof(FlightSceneScript), "SpawnCraft")]
-    class SpawnCraft_Patch
-    {
-        static bool Prefix(FlightSceneScript __instance, ref CraftNode __result, string craftNodeName, CraftData craftData, LaunchLocation location, XElement pendingXml = null)
-        {
-            float value = 0f - craftData.InitialBoundsMin.y;
-            IPlanetNode planetNode = __instance.FlightState.RootNode.FindPlanet(location.PlanetName);
-            bool flag = !planetNode.IsTerrainDataLoaded;
-            planetNode.LoadTerrainData();
-            Vector3d position = location.OrbitalPosition;
-            Vector3d velocity = location.Velocity;
-            Quaterniond heading = Quaterniond.identity;
-            if (location.LocationType != LaunchLocationType.Orbital)
-            {
-                Vector3d surfacePosition = planetNode.GetSurfacePosition(location.Latitude * Mathd.PI / 180.0, location.Longitude * Mathd.PI / 180.0, AltitudeType.AboveGroundLevel, location.AltitudeAboveGroundLevel, value);
-                position = planetNode.SurfaceVectorToPlanetVector(surfacePosition);
-                velocity = ((location.LocationType != 0) ? (planetNode.Rotation * location.Velocity) : (planetNode.Rotation * planetNode.CalculateSurfaceVelocity(surfacePosition.normalized * planetNode.PlanetData.Radius)));
-                heading = planetNode.Rotation * location.Rotation;
-            }
-            else if (location.Orbit != null)
-            {
-                Orbit orbit = new Orbit(location.Orbit, planetNode.PlanetData.Mass);
-                position = orbit.Position;
-                velocity = orbit.Velocity;
-            }
-
-            CraftNodeDataStatic data = new CraftNodeDataStatic(craftNodeName, position, velocity, heading, hasCommandPod: true);
-            CraftNode craftNode = new CraftNode(data, __instance.FlightState, planetNode.PlanetData.Mass, craftData, null, pendingXml){InitialLaunchHeadingIsDirectionOfTravel = true};
-            Traverse.Create(craftNode).Field("InitialLaunch").SetValue(true);
-            craftNode.InitialLaunchHeadingIsDirectionOfTravel = location.LocationType == LaunchLocationType.Orbital || location.LocationType == LaunchLocationType.SurfaceLockedAir;
-            planetNode.AddChildNode(craftNode);
-            __instance.FlightState.AddCraft(craftNode, null);
-            craftNode.Initialize();
-            craftNode.SetInitialCraftNodeData(location, __instance.FlightState.Time);
-            if (flag)
-            {
-                planetNode.UnloadTerrainData();
-            }
-            __result = craftNode;
-            return false;
-        }
-    }
-    /// <summary>
     /// Lets spacerace parts past the career validator
     /// </summary>
     [HarmonyPatch(typeof(TechTree), "IsDesignerPartAvailable")]
@@ -240,19 +195,19 @@ namespace Assets.Scripts.SpaceRace
     [HarmonyPatch(typeof(GameStateManager), "LoadGameState")]
     class LoadGameState_Patch
     {
-        static void Postfix(ref GameState __result)
+        static void Postfix(string id, string tag, ref GameState __result)
         {   
-            if (Game.IsCareer) 
+            if (__result.Mode == GameStateMode.Career) 
             {
                 if (SRManager.Instance.pm == null)
                 {
-                    SRManager.Instance.StartProgramManager();
+                    SRManager.Instance.StartProgramManager(__result);
                 }
                 else
                 {
-                    SRManager.Instance.pm?.Load();
+                    SRManager.Instance.pm?.Load(__result);
                 }
-                SRManager.Instance.pm.GameState = __result;
+                
             }
             else
             {
@@ -290,13 +245,22 @@ namespace Assets.Scripts.SpaceRace
         {
             if (Game.IsCareer)
             {
-                __instance.xmlLayout.GetElementById(SRProjectsButtons.flightProjectToggleButtonId).AddOnClickEvent(ProgramManager.Instance.ToggleProgramPanel);
-                __instance.xmlLayout.GetElementById(SRProjectsButtons.flightCrewButtonId).AddOnClickEvent(ProgramManager.Instance.OnClickCrewButton);
+                __instance.xmlLayout.GetElementById(SRProjectsButtons.flightProjectToggleButtonId).AddOnClickEvent(SRManager.Instance.pm.ToggleProgramPanel);
+                __instance.xmlLayout.GetElementById(SRProjectsButtons.flightCrewButtonId).AddOnClickEvent(SRManager.Instance.pm.OnClickCrewButton);
+                if (ModSettings.Instance.ShowHelp)
+                {
+                    __instance.xmlLayout.GetElementById(SRProjectsButtons.helpButtonId).AddOnClickEvent(SRManager.Instance.pm.Tutorial.ShowMessage);
+                }
+                else
+                {
+                    __instance.xmlLayout.GetElementById(SRProjectsButtons.helpButtonId).SetAndApplyAttribute("active", "false");
+                }
             }
             else 
             {
                 __instance.xmlLayout.GetElementById(SRProjectsButtons.flightProjectToggleButtonId).SetAndApplyAttribute("active", "false");
                 __instance.xmlLayout.GetElementById(SRProjectsButtons.flightCrewButtonId).SetAndApplyAttribute("active", "false");
+                __instance.xmlLayout.GetElementById(SRProjectsButtons.helpButtonId).SetAndApplyAttribute("active", "false");
             }
             return true;
         }
@@ -308,11 +272,20 @@ namespace Assets.Scripts.SpaceRace
         {
             if (Game.IsCareer)
             {
-                __instance.xmlLayout.GetElementById(SRProjectsButtons.designProjectToggleButtonId).AddOnClickEvent(ProgramManager.Instance.ToggleProgramPanel);
+                __instance.xmlLayout.GetElementById(SRProjectsButtons.designProjectToggleButtonId).AddOnClickEvent(SRManager.Instance.pm.ToggleProgramPanel);
+                if (ModSettings.Instance.ShowHelp)
+                {
+                    __instance.xmlLayout.GetElementById(SRProjectsButtons.helpButtonId).AddOnClickEvent(SRManager.Instance.pm.Tutorial.ShowMessage);
+                }
+                else
+                {
+                    __instance.xmlLayout.GetElementById(SRProjectsButtons.helpButtonId).SetAndApplyAttribute("active", "false");
+                }
             }
             else 
             {
                 __instance.xmlLayout.GetElementById(SRProjectsButtons.designProjectToggleButtonId).SetAndApplyAttribute("active", "false");
+                __instance.xmlLayout.GetElementById(SRProjectsButtons.helpButtonId).SetAndApplyAttribute("active", "false");
             }
 
             return true;
@@ -536,6 +509,19 @@ namespace Assets.Scripts.SpaceRace
         static void Postfix(Contract contract, double currentTime)
         {
             SRManager.Instance.pm.OnContractAccepted(contract);
+        }
+    }
+
+    /// <summary>
+    /// Calls a method in the program manager when contracts are added to the context.  
+    /// At time of writing, this checks for whether a historical event blocks the contract.
+    /// </summary>
+    [HarmonyPatch(typeof(ContractContext), "AddNewContract")]
+    class AddNewContract_Patch
+    {
+        static void Prefix(ref Contract contract)
+        {
+            SRManager.Instance.pm.OnNewContract(contract);
         }
     }
 

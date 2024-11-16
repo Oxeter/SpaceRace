@@ -154,7 +154,12 @@ namespace Assets.Scripts.SpaceRace.History
                 }
                 if (FailsContractIds != null)
                 {
-                    foreach(Career.Contracts.Contract contract in HistoryManager.ProgramManager.Career.Contracts.Active.Where(con => FailsContractIds.Contains(con.Id)))
+                    if (Data == null)
+                    {
+                        Data = string.Empty;
+                    }
+                    Data += string.Join(' ', FailsContractIds.Select(c => $"fail:{c}"));
+                    foreach(Career.Contracts.Contract contract in HistoryManager.ProgramManager.Career.Contracts.All.Where(con => con.Status != Career.Contracts.ContractStatus.Complete && FailsContractIds.Contains(con.Id)))
                     {
                         contract.Status = Career.Contracts.ContractStatus.Rejected;
                         HistoryManager.ProgramManager.Career.Contracts.CloseContract(contract, Game.Instance.GameState.LoadFlightStateData());
@@ -163,8 +168,12 @@ namespace Assets.Scripts.SpaceRace.History
                 }
                 if (CompletesTechId != null)
                 {
+                    if (Data == null)
+                    {
+                        Data = string.Empty;
+                    }
                     TechNode node = HistoryManager.ProgramManager.Career.TechTree.GetNode(CompletesTechId);
-                    Data = $"techNode:{CompletesTechId}";
+                    Data += $" techNode:{CompletesTechId}";
                     if (node != null)
                     {   
                         node.Researched = true;

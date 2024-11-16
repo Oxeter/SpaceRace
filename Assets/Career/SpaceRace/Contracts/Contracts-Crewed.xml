@@ -5,22 +5,39 @@
         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
       </Params>
       <Prereqs techNodes="crew" />
-      <Contract customer="internal" id="extra-crew" name="Crewed Launch Viewing" money="0" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+      <Contract customer="internal" id="crew-view" name="Crewed Launch Viewing" money="0" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
          <Description
-            short="Send a crewmemeber to visit a rocket on the launchpad"
-            long="The test pilots you are training should get to see a rocket up close.  Send one to the pad.  Recover them before you light the engines.  Historically, NASA sent the Mercury 7 to watch the launch of an Atlas rocket like the ones they would later ride to orbit.  The rocket exploded moments after liftoff." />
+            short="Send a crewmemeber to view a rocket launch"
+            long="The test pilots you are training should get to see a rocket up close.  Send one or more to the pad to see a rocket that is fully fueled and ready to launch.  Recover them before you light the engines.  Historically, NASA sent the Mercury 7 to watch the launch of an Atlas rocket like the ones they would later ride to orbit.  The rocket exploded moments after liftoff." />
          <Requirements>
-			<Payload mode="Recover" num="1" craftTrackingId="extra-1" payloadId="extra-1" payloadName="Astronaut" description="Send an astronaut to the launch pad" alwaysEvaluate="true" allowWarp="true">
+			<Payload mode="Recover" num="1" craftTrackingId="view-1" payloadId="view-1" payloadName="Astronaut" description="Send an astronaut to the launch pad" alwaysEvaluate="true" allowWarp="true">
 			</Payload>
+         </Requirements>
+      </Contract>
+   </ContractTemplate>
+   	<ContractTemplate>
+      <Params>
+        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+      </Params>
+      <Prereqs contracts="crew-view" />
+      <Contract customer="internal" id="extra-crew" name="Extra Crew" money="0" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+         <Description
+            short="Send a crewmember to the launch pad, unattached to any particular contract."
+            long="" />
+         <Requirements>
+			 <Any num="2" listedInMenu="false" >
+				<Payload mode="Recover" num="1" craftTrackingId="extra" payloadId="extra" payloadName="Astronaut" description="This is not a real contract" allowWarp="true" listedInMenu="false">
+				</Payload>
+			</Any>
          </Requirements>
       </Contract>
    </ContractTemplate>
 <ContractTemplate>
       <Params>
-        <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
+         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
       </Params>
-      <Prereqs contracts="vanguard" techNodes="crew" />
-      <Contract customer="nasc" id="capsule-suborbit" name="Space Capsule Suborbital Test" money="250000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+      <Prereqs techNodes="crew" contracts="explorer" />
+      <Contract customer="nasc" id="capsule-suborbit" name="Space Capsule Suborbital Test" money="250000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="false" flairText="Progression">
          <Description
             short="Develop a capsule and launch it into space"
             long="Human exploration of space will require a new kind of vehicle to keep our astronauts safe from the vaccuum of space and the inferno of reentry.  Develop a space capsule and launch it into space.  Historically, the Mercury capsule was developed to carry a single person to orbit.  It was initially tested empty on suborbital trajectories." />
@@ -71,7 +88,7 @@
         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
       </Params>
       <Prereqs contracts="capsule-suborbit" />
-      <Contract customer="nasc" id="capsule-orbit" name="Uncrewed Orbital Flight Test" money="75000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+      <Contract customer="nasc" id="capsule-orbit" name="Uncrewed Orbital Flight Test" money="75000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="false" flairText="Progression">
          <Description
             short="Send a capsule into orbit and return it."
             long="Before we send a person into orbit, we must test our capsule's ability to safely do so.  This will test retropropulsion, life support and reentry hardware in ways that our suborbital attempt did not. Historically, the United States flew an empty capsule and then a chimpanzee to orbit before commiting a human pilot to the craft." />
@@ -106,7 +123,7 @@
         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
       </Params>
       <Prereqs contracts="capsule-orbit" />
-      <Contract customer="nasc" id="crewed-orbit" name="First Person in Orbit" money="75000000" research="1" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+      <Contract customer="nasc" id="crewed-orbit" name="First Person in Orbit" money="75000000" research="1" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="false" flairText="Progression">
          <Description
             short="Launch a craft to orbit with a crewmember aboard and return it."
             long="blah TEST" />
@@ -125,12 +142,15 @@
    </ContractTemplate>
    <ContractTemplate>
       <Params>
+		<Expression name="First" value="NumCompletions > 0 ? 0 : 1" /> 
         <Expression name="Probability" value="NumCompletions > 2 ? 0 : 500" />
         <Expression name="Tech" value="NumCompletions = 2 ? 1: 0" />
         <Expression name="Duration" value="3600 * 6 * (NumCompletions * NumCompletions +1)" />
+        <List name="Progression" index="@First" values=";Progression" />
+        <List name="Reject" index="@First" values="true;false" />
       </Params>
       <Prereqs contracts="crewed-orbit" />
-      <Contract customer="nasc" id="crewed-orbit-repeat" name="Additional Crewed Orbits" research="@Tech" money="50000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="true">
+      <Contract customer="nasc" id="crewed-orbit-repeat" name="Additional Crewed Orbits" research="@Tech" money="50000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="1" canReject="@Reject" flairText="@Progression">
          <Description
             short="Send a crew on a longer-duration orbital mission and return."
             long="Now that we know a person can survive orbit, we must test the endurance limits of both crew and capsule.  Histroically, the Mercury 7 followed John Glenn with longer and longer missions.  Gordon Coopers's 34 hour mission strained the limits of the hardware and landed with power depleted.  A proposed 3 day mission was cancelled." />
@@ -369,6 +389,7 @@
 					    <Expression expression="2 > SurfaceVelocity" description="Return safely to Earth" />
 					</Planet>
               </Payload>
+              </PartCount>
          </Requirements>
       </Contract>
    </ContractTemplate>

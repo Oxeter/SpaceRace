@@ -44,11 +44,11 @@
     <Description>  This should be replaced </Description>
     <FixedOccurenceDate>2050-10-13T12:00:00</FixedOccurenceDate>
   </StaticHistoricalEvent>
-  <StaticHistoricalEvent Id="orbitfirst" Name="First Artificial Satellite" BlockedBy="sputnikfirst" CompletedContractId="vanguard" CompletesTechId="pre-explorer" ImagePath="juno.png">
-    <Description>The United States has awed the world by placing the first aritifical satellite in orbit. It launched on a small rocket with only peaceful applications. This satellite is our contribution to the International Geophyiscal year and will take unprecedented measurements of Earth and space. Already it has discovered bands of charged particles 1000km above the surface of the Earth.  Initial theories are that this is the solar wind, trapped by Earth's magnetic field.  What else will we discover as we continue to blaze a trail for humanity into the stars?  </Description>
+  <StaticHistoricalEvent Id="orbitfirst" Name="First Artificial Satellite" BlockedBy="sputnikfirst" CompletedContractId="vanguard" ImagePath="juno.png">
+    <Description>The United States has awed the world by placing the first aritifical satellite in orbit. It launched on a small rocket with only peaceful applications. This satellite is our contribution to the International Geophyiscal year and will take unprecedented measurements of Earth and space. Already it has discovered bands of charged particles 1000km above the surface of the Earth.  Initial theories are that this is the solar wind, trapped by Earth's magnetic field.  What else will we discover as we continue to blaze a trail for humanity into the stars?</Description>
     <FixedOccurenceDate>1990-01-01T00:00:00</FixedOccurenceDate>
   </StaticHistoricalEvent>
-    <StaticHistoricalEvent Id="orbitsecond" Name="America Reaches Orbit" BlockedBy="orbitfirst" CompletedContractId="juno" FundingName="Project Vanguard" FundingEfficiency="0.5" CompletesTechId="pre-explorer" ImagePath="juno.png">
+    <StaticHistoricalEvent Id="orbitsecond" Name="America Reaches Orbit" BlockedBy="orbitfirst" CompletedContractId="juno" FundingName="Project Vanguard" FundingEfficiency="0.5" ImagePath="juno.png">
     <Description>The United States placed its first aritifical satellite in orbit. This satellite is our contribution to the International Geophyiscal year and will take unprecedented measurements of Earth and space. Already it has discovered bands of charged particles 1000km above the surface of the Earth.  Scientists theorize that this is the solar wind, trapped by Earth's magnetic field.  While political leaders put on a brave face, this acheivement is clearly diminished in the eyes of the world by the prior efforts of the Soviet Union. Crash funding for Project Vanguard has expired.</Description>
     <FixedOccurenceDate>1990-01-01T00:00:00</FixedOccurenceDate>
     </StaticHistoricalEvent>

@@ -127,7 +127,7 @@
          <Requirements>
             <TrackSpawnedCraft craftTrackingId="SRBM" description="Use your SRBM design" visibility="HiddenWhenPassed" listedInMenu="false" >
                 <SpawnedCraftDistance range="1" description="Use your SRBM design" autoSelectTarget= "false" showTargetButton ="false" showValue="false">
-				<Payload payloadId="srbm" payloadName="Dummy W-39 Warhead">
+				<Payload payloadId="srbm" payloadName="Dummy W-39 Warhead" allowWarp="true">
 				<Planet name="Earth" description="Launch from Earth">
 					 <Location locationId="Earth.300km" range="@Accuracy" description="Deliver the payload within @Accuracy:distance of the target." distanceMode="Line" showTargetButton="true">
 					 </Location>

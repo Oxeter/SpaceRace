@@ -28,7 +28,7 @@ namespace Assets.Scripts.SpaceRace.History
         private IProgramManager _pm;
         private readonly DateTime _careerStart = new DateTime(1950,1,1,8,0,0);
 
-
+        private List<string> CancelledContracts = new List<string>(){"extra-crew"};
         public IProgramManager ProgramManager {get {return _pm;}}
         public HistoryManager(IProgramManager pm, List<HistoricalEvent> pastevents)
         {
@@ -36,8 +36,19 @@ namespace Assets.Scripts.SpaceRace.History
             PastEvents = pastevents;
             foreach (HistoricalEvent pevent in PastEvents.Where(p => p.Data.Split(':')[0]=="techNode"))
             {
-                pm.Career.TechTree.GetNode(pevent.Data.Split(':')[1]).Researched = true;
-                Debug.Log($"Technode {pevent.Data.Split(':')[1]} Unlocked by past event");
+                foreach (string item in pevent.Data.Split(' '))
+                {
+                    if (item.Split(':')[0] == "techNode")
+                    {
+                        pm.Career.TechTree.GetNode(item.Split(':')[1]).Researched = true;
+                        Debug.Log($"Technode {item.Split(':')[1]} Unlocked by past event");
+                    }
+                    if (item.Split(':')[0] == "fail")
+                    {
+                        CancelledContracts.Add(item.Split(':')[1]);
+                        Debug.Log($"Contract(s) {item.Split(':')[1]} blocked by past event");
+                    }
+                }
             }
             //Game.Instance.GameState.Career.Contracts.ContractCompleted += OnContractCompleted;
             RegisterEvents(Enumerable.Range(1950, 100).Select(i => new YearlyReport(i){HistoryManager=this}));
@@ -97,15 +108,33 @@ namespace Assets.Scripts.SpaceRace.History
             }
             hevent.Occured = true;
         }
+        public void OnContractGenerated(Assets.Scripts.Career.Contracts.Contract contract)
+        {
+            if (CancelledContracts.Contains(contract.Id))
+            {
+                contract.Status = Career.Contracts.ContractStatus.Rejected;
+                Debug.Log($"Rejected contract {contract.Id}");
+            }
+        }
 
+        public bool OnContractAccepted(Assets.Scripts.Career.Contracts.Contract contract)
+        {
+            if (CancelledContracts.Contains(contract.Id))
+            {
+                contract.Status = Career.Contracts.ContractStatus.Rejected;
+                Debug.Log($"Rejected contract {contract.Id}");
+                return false;
+            }
+            return true;
+        }
         public void OnContractCompleted(Assets.Scripts.Career.Contracts.Contract contract)
         {
             if (Game.Instance.GameState.Type == GameStateType.Simulation) return;
             Debug.Log($"HistoryManager OnContractCompleted {contract.Id}");
-            foreach (HistoricalEvent hevent in Events.Where(ev => ev.CompletedContractId != null))
-            {
-                Debug.Log($"{hevent.Id} Occured = {hevent.Occured} Repeatable ={hevent.Repeatable}");
-            }
+            //foreach (HistoricalEvent hevent in Events.Where(ev => ev.CompletedContractId != null))
+            //{
+            //   Debug.Log($"{hevent.Id} Occured = {hevent.Occured} Repeatable ={hevent.Repeatable}");
+            //}
             foreach (HistoricalEvent hevent in Events.Where(ev => ev.CompletedContractId == contract.Id && (!ev.Occured || ev.Repeatable)))
             {
                 Fire(hevent);

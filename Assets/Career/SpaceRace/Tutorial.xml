@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TutorialMessages>
+   <TutorialMessage index="1" title="Welcome" subtitle="Tutorial Step">
+	   <Text>Welcome to your SpaceRace career.  These steps and hints should help you get started with the game.
+        
+The first thing you should do is head to the Tech Tree and purchase the 'I wanna cheat (a little)' node.  This is a buggy mod.  You'll want to undo when it messes something up.
+
+When you've done that, come back to the menu.
+
+You can end the tutorial any time by clicking the button to the left of 'Close'</Text>
+   </TutorialMessage>
+   <TutorialMessage index="2" title="Your First Contract" subtitle="Tutorial Step">
+	   <Text>Now it is time to accept your first contract.  Go to Career and accept the 'Visit Space Center' contract.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="3" title="Getting to the Space Center" subtitle="Tutorial Step">
+	   <Text>SpaceRace does not have a launch button in the menu screen.  Instead it has a button to go to the space center.  Since visitng the space center is your contract, you should click it now.
+	   
+There is also a button to go to the space center in the menu of the build scene.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="10" title="The Help View" subtitle="Extra Information">
+	   <Text>You can view these tutorial and help messages any time with the Help button in the space center.
+	   
+When you outgrown these messages, this button can be diabled in the settings menu.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="11" title="The Space Center View" subtitle="Tutorial Step">
+	   <Text>Welcome to the space center on Cape Canaveral.  The date is January 1, 1950.  This is where you'll manage your space program.  As you can see, most menu functions are available here.  Open the contracts view and accept the Karman Line contract.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="14" title="The Projects Window" subtitle="Extra Information">
+	   <Text>The Projects window displays all the long term processes happening in your space program.  The Projects button in the space center interface opens and closes this window.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="15" title="Budget and Funding" subtitle="Tutorial Step">
+	   <Text>You will notice that contract had no advance payment.  I have worse news, it also won't pay you the promised $2m on completion.  Instead, that two million dollars will be disbursed to you over time.  The Projects window should already be on screen (read the entry below if it is not).  Click the view funding button.  You should see your budget here, which shows two sources of funding, base funding and funding from your contract.
+
+If you scroll down you'll see details on the contract funding, including how much money is being disbursed to you per day and how many days remain before the funding is depleted.
+
+When you're done contemplating your financial situation, it's time to design a rocket to complete this contract.  Click Build at the bottom of the screen.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="20" title="The Help and Projects Buttons" subtitle="Extra Information">
+	   <Text>The Help and Projects windows are available in the design scene too, as well as during flight.  Find them on the right.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="21" title="The Development Button" subtitle="Extra Information">
+	   <Text>The Developement button allows you to develop hardware and then integrate the rocket you design.  When your design is ready, you can find it on the left side of the screen.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="23" title="Designing your Karman Rocket" subtitle="Hints">
+	   <Text>If you want some tips, here are a few:
+
+Funds are limited.  Make something cheap and small.
+
+If you customize an engine you'll need to develop it.  You don't have engine devlopment money yet.  Stick to the available models.
+
+With an engine selected, the performance analyzer will give you reliability data.  Don't pick anything too cutting-edge.  Make note of the rated run time.
+
+Unguided avionics save mass and money.  Use fins to keep your rocket flying straight.
+
+Steel tanks require less development time than more advanced types.  Stick with steel for now.
+
+If you're out of ideas, go look up the Aerobee rocket online.  Its engines are among those available to you.  It can fulfill this contract affordably with performance to spare.
+</Text>
+   </TutorialMessage>
+   <TutorialMessage index="24" title="Engine Reliability" subtitle="Extra Information">
+	   <Text>Engines can fail to ignite or explode during flight.  To see the probability of this, open Design Info with the engine selected.
+
+Engines also have rated burn times.  If you burn the engine much longer than this time, the chance of failure becomes high.
+
+When you customize engines, the largest effects on rated burn time are the nozzle (cooling) and the chamber pressure.  In 1950, anything beyond 20% of the chamber pressure will severely decrease burn times.  Higher chamber pressures become feasible with tech tree advances.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="25" title="The Build Scene and Simulations" subtitle="Tutorial Step">
+	   <Text>Now it's time to build a rocket that can reach 100km and return.  You'll notice the fly button is now a simulate button.  If you're feeling confident, go design a rocket and simulate until you're confident it can complete the contract.
+	   
+Keep in mind your only launch pad has a limit of 20 tons (counting flight hardware only) and a 5 meter diameter. 
+	   
+When you're happy with it, click the Development button of the flyout at the left side of the screen to start developing your design.</Text>
+    </TutorialMessage>
+    <TutorialMessage index="27" title="Choosing a Contractor" subtitle="Hints">
+	   <Text>Each development has a daily cost and a projected time.  With the Projects window open, you can see your daily cashflow and how long your other developments will take.
+
+I suggest you choose contracts that keep your daily cashflow above $0.  You cannot pause a development project, only cancel it.
+
+Faster development is usually more expensive, but look out for contractors who have experience with the technology in a part.  They may be able to offer fast development at a reasonable price.
+
+You might also consider the unit production time that the contractor is promising.  If you need several of a part (say multiple engines) then having them produced quickly can keep your assembly running smoothly.  On the other hand, don't pay a premium for high production of parts that you won't need often.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="28" title="Developing your Hardware" subtitle="Tutorial Step">
+	   <Text>This flyout menu is where you develop the parts and stages for your rocket.  Parts that are already developed or in progress do not appear here.  Stages turn green when they are being developed.  
+
+You will need to choose a contractor to develop each of your parts and then each of your stages.  Select each one and then click the appropriate button to see a list of bids.  Select a bid to begin development.
+
+When all of your parts and stages are under development.  Go to the menu and return to the space center.</Text>
+   </TutorialMessage>
+      <TutorialMessage index="31" title="Development Delays" subtitle="Extra Information">
+	   <Text>Contractors don't really know how long it will take to develop new hardware or how difficult it will be to produce.  To make sure that development is profitable for them, you give them cost-plus contracts.  If they need extra time or if the hardware is more complicated, you will pay for it.
+	   
+Each development will receive a delay at the halfway point.  This will make development longer and/or make the eventual part more expensive to produce.
+
+Developments with lots of new technologies are likely to have the greatest delays.  Some contractors are also more prone to delays than others.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="32" title="Rushing Projects" subtitle="Extra Information">
+	   <Text>Most projects can be rushed if you want them to go faster. This costs extra money per day.  The extra cost is greater than the extra progress, so you'll end up paying more in total for rushed project.
+	   
+Feel free to toggle rush on and off as </Text>
+   </TutorialMessage>
+   <TutorialMessage index="34" title="Waiting for Developments" subtitle="Tutorial Step">
+	   <Text>Hardware development will take time to complete.  If you click the show developments button on the Projects window, you can see the progress of your development projects.
+        
+The Projects window has a button to engage a timewarp until the next project is complete.  You can also use the timewarp in the top right of the screen.  Warp time until all your parts and stages are developed.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="37" title="Back to the Build Scene" subtitle="Tutorial Step">
+	   <Text>It looks like all your hardware is developed.  If so, head back to the build screen to integrate your first rocket.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="45" title="Integrating a Rocket" subtitle="Tutorial Step">
+	   <Text>Open the development flyout and click Integrate Craft.  You should see lots of information about its expected cost.  You'll have the option to rename your craft. 
+	   
+The integration should show up in the project manager under Integrations.  Head back to the space center when you're done.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="52" title="Waiting for Deliveries" subtitle="Tutorial Step">
+	   <Text>Before you can assemble your rocket, the contractors need to deliver the parts. The integration in the Projects window shows you which contractors and how long they'll take.  
+
+You can toggle rush to rush the contractors for extra money.  Only those contractors whose delivery times will affect the completion date will be paid to rush.
+
+When you are happy with your rush decision, timewarp until the deliveries are complete.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="55" title="Assigning and Hiring Technicians" subtitle="Extra Information">
+	   <Text>If you need more technicians you can unlock staffing and adjust your total technician numbers.  Hiring technicians costs money.  Firing them is free.
+	   
+Your hiring limit is dependent on your launch complexes.  As you build more and larger complexes, you'll unlock the ability to support more technicians.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="56" title="Rushing Stacking" subtitle="Extra Information">
+	   <Text>Rushing a stacking project is different than rushing other projects.  It does not automatically speed up progress.  Instead, it increases the maximum number of technicians that can be assigned.  Technicians assigned above the base limit will help speed up stacking, but they will not contribute as much as the base technicians can.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="57" title="Stacking a Rocket" subtitle="Tutorial Step">
+	   <Text>Now the the hardware orders are fulfilled, the rocket can be stacked.  Your technicians have already been assigned.
+
+You may adjust the number of technicians assigned to the stacking.  Using fewer will slow down progress but also reduce daily expenditure.
+
+When you are happy with the number of technicians, timewarp until stacking is complete.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="61" title="Rolling Back" subtitle="Extra Information">
+	   <Text>You can roll back a rocket that is rolling to the pad or has already finished its rollout.
+	   
+This is extremely useful in case your rocket does something like fall over. The game doesn't care what condition the rocket is when it rolls back.  You'll have an intact rocket to try again with.
+
+If this is happening often, consider adding more stability or a launch mount to your rocket.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="62" title="Rolling to the Pad" subtitle="Tutorial Step">
+	   <Text>Your rocket is stacked. In its integration in the Projects window or using the Launch button below, you can roll it out to LC-3.  This will take a few days, depending on the number of technicians assigned.  
+        
+Once the rollout begins, timewarp until the rocket is ready.</Text>
+   </TutorialMessage>
+   <TutorialMessage index="64" title="Repeating an Integration" subtitle="Extra Information">
+	   <Text>If a rocket fails in flight or you want to repeat a similar contract with a previous design, you can repeat an intgration from the Launch button or from the Repeat Integration button in the Project window.
+	   
+If you look at the details, you'll notice that the efficiency penalty for novel configuration is reduced.  The more you integrate similar craft, the more familiar they will become and the more efficiently your technicians can stack them.</Text>
+     </TutorialMessage> 
+   <TutorialMessage index="65" title="Recovery at the Pad" subtitle="Extra Information">
+	    <Text>Rockets that are still intact and on the pad can be recovered whole.  
+	    
+Use Menu -> End Flight -> Recover Craft -> 
+
+The cost listed in the tooltip is the estimated cost of recovery, repair and rollback (assuming no rushing).  You won't have to pay it all at once.</Text>
+    </TutorialMessage> 
+   <TutorialMessage index="67" title="Launching a Rocket" subtitle="Tutorial Step">
+	   <Text>Your rocket is ready to launch.  You can click launch in its integration in the Projects window or using the Launch button below.  This will fuel the rocket and ready it for flight.
+
+If the rocket engine fails to ignite, you can recover the craft. If the rocket fails in flight, you'll need to integrate a new one (see the entries below).
+
+              Good luck!</Text>
+   </TutorialMessage>  
+   <TutorialMessage index="70" title="Finishing a Contract" subtitle="End of Tutorial">
+	   <Text>It looks like you did it.  Great job! The tutorial is now finished.  Recover (abandon) whatever landed and you'll find yourself back at the space center, ready to take on the next contract.  Good luck administrator!</Text>
+   </TutorialMessage> 
+   
+</TutorialMessages>

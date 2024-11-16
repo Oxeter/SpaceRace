@@ -32,7 +32,7 @@
         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
       </Params>
       <Prereqs contracts="crewed-orbit" />
-      <Contract customer="nasc" id="crewed-lunar-orbit" name="Crewed Lunar Orbit" money="20000000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="3" canReject="true">
+      <Contract customer="nasc" id="crewed-lunar-orbit" name="Crewed Lunar Orbit" money="20000000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="3" canReject="false" flairText="Progression">
          <Description
             short="Place a two-person craft in low lunar orbit."
             long="As a precursor to landing on the moon, demonstrate the ability to send astronauts into lunar orbit and return them.  Historically, this was the mission of Apollo 8, which flew humans beyond low earth orbit for the first time." />
@@ -58,7 +58,7 @@
         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
       </Params>
       <Prereqs contracts="crewed-lunar-orbit" />
-      <Contract customer="nasc" id="crewed-lunar-rehersal" name="Crewed Lunar Landing Rehersal" money="500000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="4" canReject="true">
+      <Contract customer="nasc" id="crewed-lunar-rehersal" name="Crewed Lunar Landing Rehersal" money="500000000" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="4" canReject="false" flairText="Progression">
          <Description
             short="Send a landing-capable craft to lunar orbit with two astronauts on board."
             long="Before attempting a lunar landing, we need an all up test of the hardware.  Send a crew and a lander to low lunar orbit.  Historically, this was the objective of the Apollo 10 mission, which saw the astronauts descend toward the lunar surface in a lander module and then rendevous and dock with the command module before returning to Earth.  The lander was underfueled, so that the crew would not be tempted by the obvious opportunity to make history." />
@@ -86,7 +86,7 @@
         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
       </Params>
       <Prereqs contracts="crewed-lunar-rehersal" />
-      <Contract customer="nasc" id="crewed-lunar-landing" name="Crewed Lunar Landing" money="500000000" research="1" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="5" canReject="true">
+      <Contract customer="nasc" id="crewed-lunar-landing" name="Crewed Lunar Landing" money="500000000" research="1" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="5" canReject="false" flairText="Progression" >
          <Description
             short="Land two people on the moon."
             long="It is time to execute your plans.  Land two crew on the moon and return them dafely to earth.  Historically, this was achieved by the Apollo 11 mission, a few months before President Kennedy's end-of-decade deadline. Good luck!" />

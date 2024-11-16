@@ -1,0 +1,27 @@
+SpaceRace Change Log
+
+0.11 (??/11/2024)
+
+Features
+* Implemented a text and picture based tutorial.  This could expand to a reference manual in future versions.
+* Launchpads now recover any nearby craft when a craft is rolled out (usually).
+
+Balance
+* Vanguard program funding extended.  It was ending too early.
+* Some contract prerequisites adjusted to make the path forward more obvious.
+
+Bug Fixes
+* Craft no longer spawn imprecisely.  This was a bug with the mod after all, not the stock code (sorry devs!)
+* Preflight saves now save craft in the correct position, so they will not shift on undo.
+* Game now saves when the flight scene needs to reload for a launch.
+* Fixed the payload in SRBM contract preventing warp.
+* Fixed an error in one of the Gemini contracts.
+* Contracts completed in simulation should no longer have their funding canceled in the real game.
+* Game now checks completed contracts on load to establish past funding.  This should make it easier to reload and fix any funding bugs.
+* Events that cancel contracts should now be more enthusiastic about preventing their return.
+* The orbital science contracts are no longer dependent on a historical event firing correctly, and should reliably become available after either first satellite contract.
+* Launchpads clamps are no longer treated as landing legs in the stage UI.  It looked cool, but was confusing the stage analyzer.
+* The space center UI will make an effort to hide the flight inspector.
+
+0.1 (11/11/2024)
+First release

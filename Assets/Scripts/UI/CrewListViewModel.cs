@@ -53,7 +53,11 @@ namespace Assets.Scripts.SpaceRace.Ui
         public CrewListViewModel(IProgramManager pm)
         {
             _contracts = new List<Contract>(pm.Career.Contracts.Active);
-            _contracts.Add(pm.Career.Contracts.Completed.FirstOrDefault(con => con.Id == "extra crew"));
+            Contract extra = pm.Career.Contracts.All.FirstOrDefault(con => con.Id == "extra-crew");
+            if (extra != null)
+            {
+                _contracts.Add(pm.Career.Contracts.All.FirstOrDefault(con => con.Id == "extra-crew"));
+            }
             _pm = pm;
         }
         private string Subtitle(Contract contract)
@@ -94,8 +98,12 @@ namespace Assets.Scripts.SpaceRace.Ui
         public override void OnPrimaryButtonClicked(ListViewItemScript selectedItem)
         {
             Contract contract = selectedItem?.ItemModel as Contract;
+            if (!_pm.Data.ContractCrewsProvided.Contains(contract.ContractNumber) && _pm.RequiredCrew(contract).TotalOccurences() != 0)
+            {
+                _pm.SendCrew(contract);
+            }
             ListView.Close();
-            _pm.SendCrew(contract);
+
         }
 
 

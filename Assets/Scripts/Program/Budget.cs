@@ -51,7 +51,7 @@ namespace Assets.Scripts.SpaceRace.Projects
             g.Add(new SpacerModel());
             g.Add(new LabelModel("Expenses", ElementAlignment.Center));
             g.Add(new TextModel("Technician salaries", () => Units.GetMoneyString(_technicianSalaries), null, $"Technicians cost {Units.GetMoneyString(SRFormulas.TechUpkeep)}per day per technician"));
-            g.Add(new TextModel("Astronaut salaries", () => Units.GetMoneyString(_astronautSalaries), null, $"Astronauts cost {Units.GetMoneyString(SRFormulas.AstroUpkeep)} per day per astronaut", ()=> Game.Instance.GameState.Validator.ItemValue("Crew")>0F));
+            g.Add(new TextModel("Astronaut salaries", () => Units.GetMoneyString(_astronautSalaries), null, $"Astronauts cost {Units.GetMoneyString(SRFormulas.AstroUpkeep)} per day per astronaut", ()=> !Game.IsCareer || Game.Instance.GameState.Validator.ItemValue("Crew")>0F));
             g.Add(new TextModel("Program management", () => Units.GetMoneyString(_upkeep), null, "Upkeep is proportional to the square of the active contracts"));
             bool flag = true;
             foreach (IProgramChild item in _pm.ActiveChildren.Values.Where(ch => ch.Category == ProjectCategory.Contractor && ch.PricePerDay > 0)) 

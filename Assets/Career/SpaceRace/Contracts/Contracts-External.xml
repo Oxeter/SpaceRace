@@ -4,7 +4,7 @@
       <Params>
          <Expression name="Probability" value="NumCompletions > 10 ? 0 : 500" />
       </Params>
-      <Prereqs techNodes="pre-explorer" />
+      <Prereqs contracts="explorer" />
       <Contract customer="nro" id="spy" name="Surveilence Satellite" money="50000000" moneyAdvance="0"  priority="10" probability="@Probability" difficulty="2">
          <Description
             short="Launch a space telescope to SSO and return the film"

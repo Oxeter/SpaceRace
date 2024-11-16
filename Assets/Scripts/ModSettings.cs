@@ -49,6 +49,10 @@ namespace Assets.Scripts
         ///// </value>
         public NumericSetting<float> AblatorEffectiveness { get; private set; }
         /// <summary>
+        /// Whether the help and tutorials appear
+        /// </summary>
+        public BoolSetting ShowHelp { get; private set; }
+        /// <summary>
         /// Whether part failures occur
         /// </summary>
         public BoolSetting HardwareFailures { get; private set; }
@@ -61,6 +65,9 @@ namespace Assets.Scripts
         /// </summary>
         protected override void InitializeSettings()
         {
+            this.ShowHelp = this.CreateBool("Show Help")
+                .SetDescription("Whether the tutorial appears for new games and the help buttons appear in the interface.")
+                .SetDefault(true);
             this.FundingMultiplier = this.CreateNumeric<float>("Funding Multiplier", 0.5f, 1.5f, 0.05f)
                 .SetDescription("Adjusts the funding received.  Takes effect when a save is loaded.")
                 .SetDisplayFormatter(x => x.ToString("F2"))

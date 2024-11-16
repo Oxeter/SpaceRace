@@ -22,6 +22,7 @@ namespace Assets.Scripts.SpaceRace.Projects
         public List<Career.Contracts.Contract> Contracts = new List<Career.Contracts.Contract>();
         public void AddContract(Career.Contracts.Contract contract)
         {
+            //Debug.Log($"{contract.Name} added {contract.RewardMoney} new funding to {Name}");
             _data.TotalProgress += contract.RewardMoney;
             Contracts.Add(contract);
             UpdateRates(true);
@@ -77,7 +78,7 @@ namespace Assets.Scripts.SpaceRace.Projects
             _data = data;
             _data.Difficulty = ModSettings.Instance.FundingMultiplier;
             _pm = pm;
-            _data.PermanentFunding = pdata?.PermanentFunding ?? 0;
+            _data.PermanentFunding = 0;
             _data.TotalProgress = _data.PermanentFunding;
             _data.CurrentProgress = pdata?.CurrentProgress ?? 0;
             _data.Efficiency = pdata?.Efficiency ?? 1;

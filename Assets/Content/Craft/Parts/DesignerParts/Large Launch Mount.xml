@@ -5,13 +5,13 @@
       <Parts>
         <Part id="428" partType="FairingBase1" position="1.513596,2.459452,1.228121" rotation="9.39297E-05,-4.963484E-05,180" name="Launch Clamps" activationStage="1" stageOverride="true" materials="24,24,24,24,24" symmetryId="81399aa5-4cbb-4994-a514-82edcf16c386" texture="Default">
           <Drag drag="0,0,31.92172,28.84758,0,0" area="0,0,35.07201,31.98319,0,0" />
-          <Config centerOfMass="2.203516E-07,0.02541659,1.161939E-07" heatShield="287.671082" heatShieldMass="0.719177663" heatShieldScale="0.1" stageActivationType="LandingLeg" symmetryId="531ef1a1-b22c-414c-9d34-38cce5412b8b" />
+          <Config centerOfMass="2.203516E-07,0.02541659,1.161939E-07" heatShield="287.671082" heatShieldMass="0.719177663" heatShieldScale="0.1" stageActivationType="Fairing" symmetryId="531ef1a1-b22c-414c-9d34-38cce5412b8b" />
           <Fuselage bottomScale="6.061573,6.061573" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="0.8" offset="2.057087E-15,0.1166375,-1.538338E-08" shellDensityOverride="-1" topScale="10.1084,10.1084" volume="48.34796" volumeInner="45.1727" symmetryId="99100bdb-5f0d-4571-b15d-5c9b9a52dbee" version="3" />
           <Fairing symmetryId="2d874aa1-f22b-449f-ad38-02c3fad3726d" />
         </Part>
-        <Part id="429" partType="FairingBase1" position="1.513596,2.258322,1.228121" rotation="6.488679E-05,-3.961692E-05,-3.292203E-05" name="Launch Clamps" stageOverride="true" materials="24,24,24,24,24" symmetryId="4555a109-2291-41aa-b415-4de5710fc3b9" texture="Default">
+        <Part id="429" partType="FairingBase1" position="1.513596,2.258322,1.228121" rotation="6.488679E-05,-3.961692E-05,-3.292203E-05" name="Launch Clamps" activationStage="1" stageOverride="true" materials="24,24,24,24,24" symmetryId="4555a109-2291-41aa-b415-4de5710fc3b9" texture="Default">
           <Drag drag="4.179131,4.161613,16.36158,16.17852,4.204155,4.214165" area="11.48635,11.48635,18.63514,18.42576,11.48635,11.48635" />
-          <Config centerOfMass="3.533922E-07,-0.001070596,2.13301E-07" heatShield="296.10437" heatShieldMass="0.7402609" heatShieldScale="0.1" stageActivationType="LandingLeg" symmetryId="4e105a99-5b8d-473c-acef-acac41f2f40c" />
+          <Config centerOfMass="3.533922E-07,-0.001070596,2.13301E-07" heatShield="296.10437" heatShieldMass="0.7402609" heatShieldScale="0.1" stageActivationType="Fairing" symmetryId="4e105a99-5b8d-473c-acef-acac41f2f40c" />
           <Fuselage bottomScale="10.4008,10.4008" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="0.8" offset="-7.385927E-09,0.08448505,-6.456981E-16" shellDensityOverride="-1" topScale="10.1084,10.1084" volume="55.1892166" volumeInner="51.8147469" symmetryId="b18827d2-9039-48dc-8ecd-d33951209a78" version="3" />
           <Fairing symmetryId="f44058d1-8857-4ab0-9e52-ad0206accb1f" />
         </Part>

@@ -4,7 +4,7 @@
       <Params>
          <Expression name="Probability" value="NumCompletions > 0 ? 0 : 97" />
       </Params>
-      <Prereqs />
+      <Prereqs contracts="space-center" />
       <Contract customer="internal" id="cons-lc-4" money="0" name="Construct Pad 4" unlockLocations="LC-4" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
          <Description
             short="Construct Pad 4."
@@ -39,7 +39,7 @@
       <Params>
          <Expression name="Probability" value="NumCompletions > 0 ? 0 : 95" />
       </Params>
-      <Prereqs />
+      <Prereqs contracts="space-center" />
       <Contract customer="internal" id="cons-lc-5" money="0" name="Construct LC 5" unlockLocations="LC-5" priority="100" probability="@Probability" difficulty="1" canReject="true"  >
          <Description
             short="Construct LC 5."

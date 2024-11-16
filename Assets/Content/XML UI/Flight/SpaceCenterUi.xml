@@ -102,6 +102,7 @@
         <Panel id="events-button" class="text-button-link audio-btn-click translucent-panel" width="200" height="40" offsetXY="225 -25" onClick="OnEventsButtonClicked();">
           <TextMeshPro class="modern" text="EVENTS" fontSize="18" />
         </Panel>
+        <Image id="help-button" color="Button" offsetXY="370 -25" width="40" height="40" sprite="Ui/Sprites/Common/IconQuestionMark" onClickSound="Ui/Audio/ButtonClicked" onClick="OnHelpButtonClicked();" />
       </Panel>
     </Panel>
 </XmlLayout>

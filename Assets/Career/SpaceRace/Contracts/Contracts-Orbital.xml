@@ -5,7 +5,7 @@
         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
       </Params>
       <Prereqs contracts="redstone" />
-      <Contract customer="nrl" id="vanguard" name="First Satellite" money="100000000" moneyAdvance="0" cancelPenalty="0" research="3" priority="10" probability="@Probability" difficulty="3" canReject="false" flairText="Progression">
+      <Contract customer="nrl" id="vanguard" name="First Satellite" money="200000000" moneyAdvance="0" cancelPenalty="0" research="3" priority="10" probability="@Probability" difficulty="3" canReject="false" flairText="Progression">
          <Description
             short="Use a small launch vehicle to place a satellite in orbit and operate the satellite for one day."
             long="The United States chose project Vanguard, submitted by the Naval Research Laboratory to place the first artificial satellite in orbit.  The proposal won out because it used a small, purpose-build launch vehicle that was not derived from a weapon of war. The Vanguard rocket had a mass of 10 tons." />
@@ -32,10 +32,10 @@
         <Expression name="Probability" value="NumCompletions > 0 ? 0 : 500" />
       </Params>
       <Prereqs techNodes="pre-juno" />
-      <Contract customer="nrl" id="juno" name="First Satellite - Rush" money="50000000" research="2" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="2" canReject="false" flairText="Progression">
+      <Contract customer="nrl" id="juno" name="First Satellite - Rush" money="200000000" research="2" moneyAdvance="0" cancelPenalty="0" priority="10" probability="@Probability" difficulty="2" canReject="false" flairText="Progression">
          <Description
             short="Use any launch vehicle to place a satellite in orbit and operate the satellite for one day."
-            long="Sputnik has changed everything.  The United States must not be left behind.  Place a satellite in orbit as quickly as possible using any available hardware.  Historically, after Sputnik, the Vanguard rocket was rushed into service. After it's first attempt failed, Von Braun's team was given the green light to launch on a modified Jupiter Missle.  They placed the first American satellite into orbit on February ?? 1958." />
+            long="Sputnik has changed everything.  The United States must not be left behind.  Place a satellite in orbit as quickly as possible using any available hardware.  Historically, after Sputnik, the Vanguard rocket was rushed into service. After it's first attempt failed, Von Braun's team was given the green light to launch on a modified Jupiter Missle.  They placed the first American satellite into orbit on February 1, 1958." />
          <Requirements>
             <TrackedLaunch>
                <Planet name="Earth" description="Launch from Earth">
@@ -51,10 +51,13 @@
    </ContractTemplate>
      <ContractTemplate>
       <Params>
-         <Expression name="Probability" value="NumCompletions > 40 ? 0 : 500" />
+		 <Completions name="Van" contractID="vanguard" />
+		 <Completions name="Juno" contractID="juno" />
+         <Expression name="Probability" value="NumCompletions > 40 | @Van + @Juno = 0 ? 0 : 500" />
          <Expression name="MaxInstances" value="floor(min(3, 0.25 * NumCompletions + 1))" />
          <Expression name="Scale" value="min(5, NumCompletions * 0.25)" />
          <Expression name="Tech" value="NumCompletions % 10 = 9 ? 1 : 0" /> 
+         <Expression name="First" value="NumCompletions > 0 ? 0 : 1" /> 
          <Random name="ExperimentVersion" min="0" max="1" round="1" distributionScale="@Scale" distribution="0,0,1,1|1,1,1,1" />
          <List name="ExperimentName" index="@ExperimentVersion" values="Charged-Particle;Micrometeoroid;Magnetospheric;Atmospheric;Ionospheric;Astronomy" />
          <List name="Customer" index="@ExperimentVersion" values="aoc;god;god;god;god;god" />
@@ -65,11 +68,12 @@
          <List name="Inclination" index="@ExperimentVersion" values="0;0;0;70;80;0" />
          <List name="BypassInclination" index="@ExperimentVersion" values="true;true;true;false;false;true" />
          <List name="Payload" index="@ExperimentVersion" values="Payload-Science-1;Payload-Science-1;Payload-Science-2;Payload-Science-2;Payload-Science-3;Payload-Sat-4" />
+         <List name="Progression" index="@First" values=";Progression" />
+         <List name="Reject" index="@First" values="true;false" />
          <Expression name="PeriapsisError" value="@Periapsis * 0.25" />
          <Expression name="ApoapsisError" value="@Apoapsis * 0.25" />
       </Params>
-      <Prereqs techNodes="pre-explorer" />
-      <Contract customer="@Customer" id="explorer" name="@ExperimentName Satellite" money="@Funding" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="@Difficulty" canReject="false" >
+      <Contract customer="@Customer" id="explorer" name="@ExperimentName Satellite" money="@Funding" moneyAdvance="0" cancelPenalty="0" research="@Tech" priority="10" probability="@Probability" difficulty="@Difficulty" canReject="@Reject" flairText="@Progression">
          <Description
             short="Send a scientific payload to orbit."
             long="We have a @ExperimentName Satellite that needs to be delivered to orbit.  Historically, the explorer program placed dozens of scientific satellites into earth orbit." />

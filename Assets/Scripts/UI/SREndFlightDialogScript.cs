@@ -65,7 +65,7 @@ namespace Assets.Scripts.SpaceRace.UI{
             });
             base.ButtonCenter.SetActive(Game.Instance.GameState.Validator.IsItemAvailable("Cheats.UndoRetry"));
             SetButtonText(base.ButtonRight, "RECOVER CRAFT");
-            base.ButtonRight.Tooltip = "View options for recovering this craft. If it's close enough to a recovery location, you can scrap its parts for money.";
+            base.ButtonRight.Tooltip = "View options for recovering this craft. If it's close enough to a recovery location, you can recover its parts to be refurbished.";
             base.ButtonRight.AddOnClickEvent(delegate
             {
                 OnRecoverCraftClicked();

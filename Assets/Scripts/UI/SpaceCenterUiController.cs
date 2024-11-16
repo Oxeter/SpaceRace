@@ -73,6 +73,10 @@ namespace Assets.Scripts.SpaceRace.UI
         // Summary:
         //     The previous space center button
         private XmlElement _previousSpaceCenterButton;
+        /// <summary>
+        /// The help button
+        /// </summary>
+        private XmlElement _helpButton;
         //
         // Summary:
         //     The button text career initial color
@@ -194,6 +198,8 @@ namespace Assets.Scripts.SpaceRace.UI
             _buttonTextCareer = xmlLayout.GetElementById<TextMeshProUGUI>("career-button-text");
             _buttonTextCareerInitialColor = ((Graphic)_buttonTextCareer).color;
             _buttonTextLaunch = xmlLayout.GetElementById<TextMeshProUGUI>("launch-button-text");
+            _helpButton = xmlLayout.GetElementById("help-button");
+            _helpButton.SetActive(ModSettings.Instance.ShowHelp);
             UpdateStats();
             _panels.Clear();
             AddPanel<ViewPanelController>("view");
@@ -263,6 +269,10 @@ namespace Assets.Scripts.SpaceRace.UI
             //_instrumentPanel.Visible = !_active; not currently assigning successfully
             if (_active)
             {
+                if (FlightSceneScript.Instance.ViewManager.GameView?.GameViewInterface?.GameViewInspector != null)
+                {
+                    FlightSceneScript.Instance.ViewManager.GameView.GameViewInterface.GameViewInspector.Visible = false;
+                }
                 Game.Instance.FlightScene.FlightSceneUI.SetNavSphereVisibility(!_active, false);
                 //_panels["staging"].Hide();
                 UpdateStats();
@@ -322,6 +332,11 @@ namespace Assets.Scripts.SpaceRace.UI
         public void OnNextSpaceCenterButtonClicked()
         {
             _pm.NextSpaceCenter();
+        }
+
+        public void OnHelpButtonClicked()
+        {
+            _pm.Tutorial.ShowMessage();
         }
         //
         // Summary:

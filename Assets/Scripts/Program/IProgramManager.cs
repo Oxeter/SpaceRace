@@ -25,12 +25,14 @@ namespace Assets.Scripts.SpaceRace.Projects
 
     public interface IProgramManager
     {
-        public void Load();
+        public void Load(GameState state = null);
         public void Save(string id);
         public GameState GameState {get; set;}
         public ProgramData Data {get;}
         public IHardwareManager HM {get;}
         public CareerState Career {get;}
+        public SRTutorialMessages Tutorial {get;}
+        public int CurrentTutorialMessage {get; set;}
         public long CostPerDay {get;}
         public string BalancePerDayString {get;}
         public int AvailableTechnicians {get; set;}
@@ -45,6 +47,7 @@ namespace Assets.Scripts.SpaceRace.Projects
         public ICostCalculator CostCalculator {get;}
         public HistoryManager History {get;}
         public IContractorScript Contractor(int i);
+        public Dictionary<int,StageDevelopmentScript> StageDevelopments {get;}
         public Dictionary<int,IProgramChild> ActiveChildren {get;}
         //public GroupModel GModel(int i);
         public IIntegrationScript Integration(int i);
@@ -73,10 +76,13 @@ namespace Assets.Scripts.SpaceRace.Projects
         public event SpaceProgramDelgate NewSpaceProgram;
         public void ActivateContractor(int i);
         public PropertyOccurenceList RequiredCrew(Contract contract);
+        public void OnNewContract(Contract contract);
         public void OnContractCompleted(Contract contract);
         public void OnContractAccepted(Contract contract);
         public void OnContractCancelled(Contract contract);
         public void EndProject(int i);
+        public void IntegrationTutorialCheck(IntegrationStatus status);
+        public void SceneTutorialCheck();
         public void CheckForLaunch();
         public void UpdateAllRates(bool efficiencies);
         public void SetNextCompletion(double time, IProgramChild child);

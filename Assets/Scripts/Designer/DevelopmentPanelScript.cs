@@ -24,6 +24,7 @@ using ModApi.Craft;
 using Assets.Scripts.Craft.Parts;
 using Assets.Scripts.Ui;
 using Assets.Scripts.State.Validation;
+using Assets.Scripts.SpaceRace.UI;
 
 namespace Assets.Scripts.SpaceRace.Ui
 {
@@ -115,6 +116,7 @@ namespace Assets.Scripts.SpaceRace.Ui
         }
         private void BuildFlyoutElements()
         {
+            _pm.Tutorial.CheckForOtherMessage();
             ICommandPod commandPod =_craft.PrimaryCommandPod;
             if (commandPod!= null) 
             {
@@ -473,7 +475,6 @@ namespace Assets.Scripts.SpaceRace.Ui
         }
         public void OnDevelopPartButtonPressed()
         {
-            Game.Instance.Designer.DesignerUi.ShowMessage("click");
             PartData part = partPanels.Find(f => f.Selected).Part.Data;
             PartDevContractListViewModel viewModel = new PartDevContractListViewModel(
                 _pm.GetPartBids(part),

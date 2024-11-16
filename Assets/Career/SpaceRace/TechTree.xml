@@ -304,6 +304,7 @@
 
       <!-- Tech Nodes that Unlock Contracts -->
       <Item id="Contract.Unlock" name="New Contracts" displayValue="$" description="You will get new contracts after unlocking this tech." value="true" />
+      <Item id="Contract.Unlock.Crew" name="Crew Contracts" displayValue="$" description="You will get contacts to send crew to space, once you have completed a few orbital flights." value="true" />
       <Item id="Contract.Unlock.Comsats" name="New Contracts" displayValue="$" description="You will get lucrative private contracts to deploy communications satellites." value="true" />
       <Item id="Contract.Unlock.InnerPlanets" name="New Contracts" displayValue="$" description="You will get new contracts to explore Venus and Mars." value="true" />
       <Item id="Contract.Unlock.Reentry" name="New Contracts" displayValue="$" description="You will get new contracts to test reentry from near-orbital speeds." value="true" />
@@ -542,6 +543,7 @@
          <Item id="FuelType.Jetpack" value="true" visible="false" />
          <Item id="Crew" value="7" />
          <Item id="Part.Drood" value="true" />
+         <Item id="Contract.Unlock.Crew" value="true" />
       </Node>
       
       <Node id="com1" name="Communications Technology" cost="1" parent="start">

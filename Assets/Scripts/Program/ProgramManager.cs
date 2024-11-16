@@ -45,7 +45,6 @@ namespace Assets.Scripts.SpaceRace.Projects
     using HarmonyLib;
     using Assets.Scripts.Craft.Parts.Modifiers.Eva;
     using Assets.Scripts.SpaceRace.Program;
-    using ModApi.Planet;
     using Assets.Scripts.Design;
 
     public class ProgramManager : MonoBehaviour, IProgramManager
@@ -70,6 +69,7 @@ namespace Assets.Scripts.SpaceRace.Projects
         private List<string> _occupiedLauchLocations = new List<string>();
         public int LaunchingId {get; set;}= 0;
         public SRCraftConfig LastCraftConfig {get; set;}
+        public SRTutorialMessages Tutorial {get; private set;}
         public ICostCalculator CostCalculator {get{return _costCalculator;}}
         public CraftDesigns Designs {get; private set;}
         public IHardwareManager HM => _hm;
@@ -80,6 +80,18 @@ namespace Assets.Scripts.SpaceRace.Projects
         public bool ContractsChanged {get; private set;} = false;
         private bool _warp = false;
         public bool IsWarp {get {return _warp;}}
+        public int CurrentTutorialMessage 
+        {
+            get 
+            {
+                return _data.CurrentTutorial;
+            }
+            set
+            {
+                _data.CurrentTutorial = value;
+            }
+        }
+
         private bool _editingStaff = false;
         public bool HighlightLaunchButton => Integrations.Values.Any(i => i.HighlightLauchButton);
         private XmlSerializer _programSerializer;
@@ -93,6 +105,7 @@ namespace Assets.Scripts.SpaceRace.Projects
         private string _hardwareFileName => _gs.RootPath + "/Hardware.xml"; 
         private string _careerHardwareFileName => _gs.Career.ResourcesAbsolutePath + "/Hardware.xml"; 
         private string _historyFileName => _gs.RootPath + "/PastEvents.xml"; 
+        private string _tutorialFileName => _gs.Career.ResourcesAbsolutePath + "/Tutorial.xml"; 
         private string _staticEventsFileName => _gs.Career.ResourcesAbsolutePath + "/StaticEvents.xml";
         private string _fundingFileName => _gs.Career.ResourcesAbsolutePath + "/Funding.xml";
         private string _defaultProgramFileName => _gs.Career.ResourcesAbsolutePath + "/Program.xml";
@@ -142,6 +155,7 @@ namespace Assets.Scripts.SpaceRace.Projects
         void Start()
         {
             Game.Instance.SceneManager.SceneLoaded += OnSceneLoaded;
+            _gs = Game.Instance.GameState;
             if (Game.IsCareer)
             {
                 Load();
@@ -252,14 +266,23 @@ namespace Assets.Scripts.SpaceRace.Projects
             }
             return pol;
         }
+        public void OnNewContract(Contract contract)
+        {
+            _hist.OnContractGenerated(contract);
+        }
         public void OnContractAccepted(Career.Contracts.Contract contract)
         {
+            if (_gs.Type == GameStateType.Simulation || !_hist.OnContractAccepted(contract))
+            {
+                return;
+            }
             if (Game.InFlightScene)
             {
                 ContractsChanged = true;
                 Career.GenerateXml();
                 Career.OnFlightStart(FlightSceneScript.Instance, false);
             }
+            ContractTutorialCheck(contract);
             _hist.FireEventsByContractsAccepted(contract);
             foreach (string locationname in contract.UnlockLocations)
             {
@@ -267,21 +290,33 @@ namespace Assets.Scripts.SpaceRace.Projects
             }
             if (FundingByContractId.TryGetValue(contract.Id, out FundingScript script))
             {
-
                 AddContractFunding(contract, script);
             }
+
         }
         public void AddContractFunding(Career.Contracts.Contract contract, FundingScript script)
         {
-            script.AddContract(contract);
-            if (script.Active)
+            if (contract.Status == ContractStatus.Complete)
             {
-                ActiveChildren[script.Id] = script;
-                ReplaceInspectorGroup(script.Id);
+                script.Data.PermanentFunding += contract.RewardMoney;
+                script.Data.TotalProgress += contract.RewardMoney;
+            }
+            if (contract.Status == ContractStatus.Active)
+            {
+                script.AddContract(contract);
+                if (script.Active)
+                {
+                    ActiveChildren[script.Id] = script;
+                    ReplaceInspectorGroup(script.Id);
+                }
             }
         }
         public void OnContractCancelled(Career.Contracts.Contract contract)
         {
+            if (_gs.Type == GameStateType.Simulation)
+            {
+                return;
+            }
             Debug.Log(contract.Id + " Cancelled");
             ContractsChanged = true;
             if (contract.UnlockLocations != null)
@@ -312,6 +347,10 @@ namespace Assets.Scripts.SpaceRace.Projects
 
         public void OnContractCompleted(Career.Contracts.Contract contract)
         {
+            if (_gs.Type == GameStateType.Simulation)
+            {
+                return;
+            }
             ContractsChanged = true;
             _data.ContractCrewsProvided.Remove(contract.ContractNumber);
             SRContracts.OnContractCompleted(contract);
@@ -331,6 +370,7 @@ namespace Assets.Scripts.SpaceRace.Projects
                 }
             }
             ReplaceInspectorGroup(0);
+            ContractTutorialCheck(contract);
             if (_spaceCenterUi != null) _spaceCenterUi.UpdateStats();
             History.OnContractCompleted(contract); // this still hits errors for missing images so should go last until fixed
         }
@@ -604,7 +644,7 @@ namespace Assets.Scripts.SpaceRace.Projects
                                 Technologies = PartMods[primarymodname].Technologies(part),
                                 StageProduction = PartMods[primarymodname].FamilyStageCost(part)
                             };
-                            Debug.Log($"Stage production required for {part.Name}: {currentFamilies[part.Id].StageProduction}");
+                            //Debug.Log($"Stage production required for {part.Name}: {currentFamilies[part.Id].StageProduction}");
                             fol.AddPair(new HardwareOccurencePair(0, 1));
                             techlist.Merge(currentFamilies[part.Id].Technologies);
                         }
@@ -1176,6 +1216,7 @@ namespace Assets.Scripts.SpaceRace.Projects
             ExternalIntegrations.Remove(id);
             Construction.Remove(id);
             ActiveChildren.Remove(id);
+            DevelopementTutorialCheck();
             if (_panel != null)
             {   
                 ReplaceInspectorGroup(0); // the budget group
@@ -1230,11 +1271,11 @@ namespace Assets.Scripts.SpaceRace.Projects
         /// <summary>
         /// Loads the program data and projects from disk.
         /// </summary>
-        public void Load()
+        public void Load(GameState state = null)
         {
             _panel = null;
             _hm?.RemoveAllDesignerParts();
-            _gs = Game.Instance.GameState;
+            _gs = state ?? Game.Instance.GameState;
             if (_gs.Career.Path == "SpaceRace" && _gs.LoadFlightState().PlanetarySystem.Name != "Solar System" && _gs.LoadFlightState().PlanetarySystem.Name != "RSS")
             {
                 Game.Instance.UserInterface.CreateMessageDialog("The SpaceRace career is designed for the Solar System.  You do not appear to have chosen the Solar System for this career.");
@@ -1254,7 +1295,7 @@ namespace Assets.Scripts.SpaceRace.Projects
                 _hm = new HardwareManager(this, hdb);
             }
             else _hm=new HardwareManager(this, new HardwareDB());
-            Debug.Log("Hardware db loaded");
+            //Debug.Log("Hardware db loaded");
             _hm.Initialize();
             List<HistoricalEvent> hevents = new List<HistoricalEvent>();
             if (File.Exists(_historyFileName))
@@ -1263,15 +1304,24 @@ namespace Assets.Scripts.SpaceRace.Projects
                 hevents = _historySerializer.Deserialize(stream) as List<HistoricalEvent> ?? new List<HistoricalEvent>(){};
                 stream.Close(); 
             }
+            if (File.Exists(_tutorialFileName))
+            {
+                XDocument tdoc = XDocument.Load(_tutorialFileName);
+                Tutorial = new SRTutorialMessages(this, tdoc.Element("TutorialMessages"));
+                //Debug.Log($"Tutorial loaded with {Tutorial.Messages.Count()} messages.");
+            }
+            else
+            {
+                Tutorial = new SRTutorialMessages(this, new XElement("TutorialMessages"));
+            }
             _hist = new HistoryManager(this, hevents);
             if (File.Exists(_historyFileName))
             {
                 FileStream stream = new FileStream(_staticEventsFileName, FileMode.Open);
                 _hist.RegisterEvents(_staticEventSerializer.Deserialize(stream) as List<StaticHistoricalEvent>);
-                Debug.Log(_hist.Events.Count.ToString());
                 stream.Close(); 
             }
-            Debug.Log("History loaded");
+            //Debug.Log($"History loaded with {_hist.Events.Count()} events.");
             _hist.AdjustTechCosts(_gs.GetCurrentTime());
             List<FundingData> funding;
             if (File.Exists(_fundingFileName))
@@ -1279,7 +1329,7 @@ namespace Assets.Scripts.SpaceRace.Projects
                 FileStream stream = new FileStream(_fundingFileName, FileMode.Open); 
                 funding = _fundingSerializer.Deserialize(stream) as List<FundingData>;
                 stream.Close();  
-                Debug.Log("Funding loaded");
+                //Debug.Log("Funding loaded");
             }
             else 
             {
@@ -1294,11 +1344,11 @@ namespace Assets.Scripts.SpaceRace.Projects
                 {
                     spacecenters.Add(new SpaceCenterLocation(sclxml));
                 }
-                Debug.Log("SpaceCenters.xml loaded");
+                //Debug.Log("SpaceCenters.xml loaded");
                 FileStream stream = new FileStream(_structuresFileName, FileMode.Open); 
                 List<SpaceCenterStructure> structures = _structuresSerializer.Deserialize(stream) as List<SpaceCenterStructure>;
                 stream.Close();
-                Debug.Log("Structures.xml loaded");
+                //Debug.Log("Structures.xml loaded");
                 SpaceCenter = new SpaceCenterManager(this, spacecenters, structures);
             }
             else throw new Exception("cannot find "+ _structuresFileName + " or "+_spaceCentersFileName);
@@ -1330,7 +1380,7 @@ namespace Assets.Scripts.SpaceRace.Projects
             {
                 throw new Exception(_defaultProgramFileName+" not found");
             }
-            Debug.Log("Pdata loaded");
+            //Debug.Log("Pdata loaded");
             _data = db.Pdata;
             _occupiedLauchLocations.Clear();
             SRContracts = new SpaceRaceContractsScript(this, db.ContractsData);
@@ -1423,7 +1473,7 @@ namespace Assets.Scripts.SpaceRace.Projects
             {
                 child.Initialize();
             }
-            foreach (Career.Contracts.Contract contract in _gs.Career.Contracts.Active)
+            foreach (Career.Contracts.Contract contract in _gs.Career.Contracts.All)
             {
                 if (FundingByContractId.TryGetValue(contract.Id, out FundingScript script))
                 {
@@ -1435,7 +1485,8 @@ namespace Assets.Scripts.SpaceRace.Projects
                 orig.State = CrewMemberState.Deceased;
             }
             if (newflag) NewSpaceProgram?.Invoke(this);
-            Debug.Log("Loaded SpaceRace Data");
+            if (newflag) SceneTutorialCheck();
+            Debug.Log($"Loaded SpaceRace Data from {_gs.Id} ({_gs.Type})");
         }
         /// <summary>
         /// Saves the spacerace data to disk.  
@@ -1470,37 +1521,73 @@ namespace Assets.Scripts.SpaceRace.Projects
             {
                 db.ConstructionProjects.Add(script.Data);
             }
-            Debug.Log("wrote construction");
+            //Debug.Log("wrote construction");
             foreach (FundingScript script in Funding.Values)
             {
                 db.Funding.Add(script.GetPersistantFundingData());
             }
-            Debug.Log("wrote funding");
+            //Debug.Log("wrote funding");
             db.ContractsData = SRContracts.Data;
-            Debug.Log("wrote contractsdata");
+            //Debug.Log("wrote contractsdata");
             FileStream stream = new FileStream(_programFileName, FileMode.Create);
             _programSerializer.Serialize(stream, db);
             stream.Close();
-            Debug.Log("wrote program data");
+            //Debug.Log("wrote program data");
             FileStream stream2 = new FileStream(_historyFileName, FileMode.Create);
             _historySerializer.Serialize(stream2, _hist.PastEvents);
             stream2.Close();
-            Debug.Log("wrote past events");
+            //Debug.Log("wrote past events");
             FileStream stream3 = new FileStream(_hardwareFileName, FileMode.Create);
             _hardwareSerializer.Serialize(stream3, _hm.DB);
             stream3.Close();
-            Debug.Log("wrote hardware");
+            //Debug.Log("wrote hardware");
             Debug.Log("Saved SpaceRace Data");
         }
-
+        public void IntegrationTutorialCheck(IntegrationStatus status)
+        {
+            if (_data.CurrentTutorial < 1000)
+            {
+                Tutorial.CheckForIntegrationMessage(status);
+            }         
+        }
+        private void ContractTutorialCheck(Contract contract)
+        {
+            if (_data.CurrentTutorial < 1000)
+            {
+                Tutorial.CheckForContractMessage(contract);
+            }
+        }
+        private void DevelopementTutorialCheck()
+        {
+            if (_data.CurrentTutorial < 1000)
+            {
+                if (StageDevelopments.Count == 0 && PartDevelopments.Count == 0)
+                {
+                    Tutorial.CheckForOtherMessage();
+                }
+            }
+        }
+        public void SceneTutorialCheck()
+        {
+            if (_data.CurrentTutorial < 1000)
+            {
+                //Debug.Log("Scene tutorial check");
+                Tutorial.CheckForSceneMessage();
+            }
+        }
         public void OnSceneLoaded(object sender, SceneEventArgs e)
         {
             _panel = null;
             _gs= Game.Instance.GameState;
             if (e.Scene == ModApi.Scenes.SceneNames.Designer)
             {
+                if (_gs.Type == GameStateType.Simulation)
+                {
+                    Game.Instance.LoadGameStateOrDefault(Game.Instance.GameState.Id, "Active");
+                }
                 CreateInspector();
             }
+            SceneTutorialCheck();
             if (e.Scene == ModApi.Scenes.SceneNames.Flight)
             {  
                 ContractsChanged = false;
@@ -1670,6 +1757,11 @@ namespace Assets.Scripts.SpaceRace.Projects
                 return;
             }
             PropertyOccurenceList roster = RequiredCrew(contract);
+            if (roster.TotalOccurences() == 0)
+            {
+                fs.FlightSceneUI.ShowMessage("This contract does not require a crew.");
+                return;
+            }
             if (roster.TotalOccurences() > _gs.Crew.Members.Where(x => x.State == CrewMemberState.Available).Count())
             {
                 fs.FlightSceneUI.ShowMessage("Not enough available astronauts.  Hire more.");
@@ -1697,18 +1789,14 @@ namespace Assets.Scripts.SpaceRace.Projects
                     node.SetPhysicsEnabled(false, ModApi.Flight.GameView.PhysicsChangeReason.Warp);
                     node.ContractTrackingId = pop.Id;
                     offset += 0.00005;
-                    //fs.FlightSceneUI.ShowMessage($"{node.CraftScript.ActiveCommandPod.Part.GetModifier<EvaData>().Name} is designated to complete {contract.Name}.");
-                    //FlightSceneScript.Instance.ChangePlayersActiveCommandPodImmediate(node.CraftScript.ActiveCommandPod, node);
+                    //fs.FlightSceneUI.ShowMessage($"{node.CraftScript.PrimaryCommandPod.Part.GetModifier<EvaData>().Name} is designated to complete {contract.Name}.");
+                    //FlightSceneScript.Instance.ChangePlayersActiveCommandPodImmediate(node.CraftScript.PrimaryCommandPod, node);
                 }
             }
-            if (contract.Id != "extra-crew")
+            if (contract.Id != "extra-crew" && contract.Id != "crew-view")
             {
                 _data.ContractCrewsProvided.Add(contract.ContractNumber);
                 contract.ResetStatus();
-            }
-            else 
-            {
-                contract.Name = "Extra Crew";
             }
         }
 
@@ -1821,7 +1909,7 @@ namespace Assets.Scripts.SpaceRace.Projects
         public void CloseProgramManager()
         {
             Game.Instance.SceneManager.SceneLoaded -= OnSceneLoaded;
-            _hm?.RemoveAllDesignerParts();
+            //_hm?.RemoveAllDesignerParts();
         }
 
         public void OnRepeatIntegrationClicked(TextButtonModel model)
@@ -1944,15 +2032,23 @@ namespace Assets.Scripts.SpaceRace.Projects
             {   
                 if (InspectorGroups.TryGetValue(id, out GroupModel group))
                 {
-                    int j = _panel.Model.IndexOfGroup(group);
+                    int j = _panel.Model?.IndexOfGroup(group) ?? -1000;
+                    if (j < 0)
+                    {
+                        return;
+                    }
                     _panel.ReplaceGroup(group, ActiveChildren[id].GetGroupModel());
                     InspectorGroups[id] = _panel.Model.Groups[j];
                 }
                 else 
                 {
-                    InspectorGroups[id]=_panel.Model?.AddGroup(ActiveChildren[id].GetGroupModel());
-                    ReplaceInspectorGroup(0);
-                    _panel.RebuildModelElements();
+                        InspectorGroups[id]=_panel.Model?.AddGroup(ActiveChildren[id].GetGroupModel());
+                        if (InspectorGroups[id] == null)
+                        {
+                            return;
+                        }
+                        ReplaceInspectorGroup(0);
+                        _panel.RebuildModelElements();
                 }
                 InspectorGroups[id].Visible = _data.VisibleInspectorGroups.Contains(ActiveChildren[id].Category);
             }
@@ -1997,7 +2093,7 @@ namespace Assets.Scripts.SpaceRace.Projects
                 if (contractor.Data.AverageRecentRush > 0.2)
                 {
                     contractor.Data.BaseProductionRate *= 1.0 + contractor.Data.AverageRecentRush * (1.0 + contractor.Data.Attitude.Optimism);
-                    reports += $"{contractor.Name} has increased base capacity by {Units.GetPercentageString((float)contractor.Data.AverageRecentRush)} in response to the rush orders they received this year.\n";
+                    reports += $"{contractor.Name} has increased base capacity by {Units.GetPercentageString((float)(contractor.Data.AverageRecentRush * (1.0 + contractor.Data.Attitude.Optimism)))} in response to the rush orders they received this year.\n";
                 }
                 else if (contractor.Data.AverageRecentInventory > 0.5)
                 {
@@ -2005,7 +2101,7 @@ namespace Assets.Scripts.SpaceRace.Projects
                     contractor.Data.BaseProductionRate *= factor;
                     contractor.Data.Inventory = math.max(contractor.Data.Inventory, 0.99 * contractor.Data.InventoryLimit);
                     contractor.Data.AverageRecentInventory = 0.0;
-                    reports += $"{contractor.Name} has reduced base capacity by {Units.GetPercentageString((float)factor)} in response to high levels of unused inventory.\n";
+                    reports += $"{contractor.Name} has reduced base capacity by {Units.GetPercentageString(1F-(float)factor)} in response to high levels of unused inventory.\n";
                 }
             }
             return reports;

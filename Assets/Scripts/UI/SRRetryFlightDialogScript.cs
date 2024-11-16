@@ -96,7 +96,7 @@ namespace Assets.Scripts.Flight.UI{
             switch (Game.Instance.GameState.Type)
             {
                 case GameStateType.Simulation:
-                    Game.Instance.LoadGameStateOrDefault(Game.Instance.GameState.Id, "Active");
+                    //Game.Instance.LoadGameStateOrDefault(Game.Instance.GameState.Id, "Active");
                     FlightSceneScript.Instance.ExitFlightScene(false, FlightSceneExitReason.UndoAndExit, "Design");
                     return;
                 case GameStateType.Default:

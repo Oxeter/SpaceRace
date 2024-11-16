@@ -5,13 +5,13 @@
       <Parts>
         <Part id="175" partType="FairingBase1" position="-0.8244143,1.801829,-0.9561272" rotation="6.319385E-05,-2.504482E-05,180" name="Launch Clamps" activationStage="1" stageOverride="true" materials="24,24,24,24,24" texture="Default">
           <Drag drag="0.791317,0.791317,0.4575722,0.2955717,0.7918226,0.7918226" area="1.095612,1.095612,1.221134,0.7702217,1.095612,1.095612" />
-          <Config centerOfMass="2.265388E-08,0.00421862,5.523775E-08" heatShield="48.35916" heatShieldMass="0.120897904" heatShieldScale="0.1" stageActivationType="LandingLeg" />
+          <Config centerOfMass="2.265388E-08,0.00421862,5.523775E-08" heatShield="48.35916" heatShieldMass="0.120897904" heatShieldScale="0.1" stageActivationType="Fairing" />
           <Fuselage bottomScale="1.5,1.5" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="0.8" offset="2.057087E-15,0.1166375,-1.538338E-08" shellDensityOverride="-1" topScale="1.62732,1.62732" volume="1.77243435" volumeInner="1.68337786" version="3" />
           <Fairing />
         </Part>
-        <Part id="176" partType="FairingBase1" position="-0.8244143,1.600709,-0.9561272" rotation="3.415094E-05,-1.502691E-05,-2.003586E-05" name="Launch Clamps" stageOverride="true" materials="24,24,24,24,24" texture="Default">
+        <Part id="176" partType="FairingBase1" position="-0.8244143,1.600709,-0.9561272" rotation="3.415094E-05,-1.502691E-05,-2.003586E-05" name="Launch Clamps" activationStage="1" stageOverride="true" materials="24,24,24,24,24" texture="Default">
           <Drag drag="0.4521451,0.4521451,0.01756203,0.008476559,0.4554307,0.4554306" area="0.5800297,0.5800297,0.1035144,0.05088001,0.6122536,0.6122536" />
-          <Config centerOfMass="3.079021E-09,-0.0002356242,8.715504E-08" heatShield="48.5239" heatShieldMass="0.121309742" heatShieldScale="0.1" stageActivationType="LandingLeg" />
+          <Config centerOfMass="3.079021E-09,-0.0002356242,8.715504E-08" heatShield="48.5239" heatShieldMass="0.121309742" heatShieldScale="0.1" stageActivationType="Fairing" />
           <Fuselage bottomScale="1.637564,1.637564" deadWeightPercentage="-10" deformations="0,0,0" depthCurve="0" meshMassMultiplier="0.8" offset="-7.385927E-09,0.08448505,-6.456981E-16" shellDensityOverride="-1" topScale="1.62732,1.62732" volume="1.39850593" volumeInner="1.30708277" version="3" />
           <Fairing />
         </Part>

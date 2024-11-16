@@ -16,6 +16,8 @@ namespace Assets.Scripts.SpaceRace.Projects
         [XmlAttribute]
         public int NextId = 1;
         [XmlAttribute]
+        public int CurrentTutorial = 0;
+        [XmlAttribute]
         public int IntegrationsPrioritized = 0;
         [XmlAttribute]
         public double LastUpdateTime = 0.0;

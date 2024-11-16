@@ -28,9 +28,11 @@ SpaceRace is a mod for Juno: New Origins.  It allows players to assume the roles
 
 * Install the Solar System from https://www.simplerockets.com/PlanetarySystems/View/XiaL6J/Solar-System-2-1 unless you already have another solar system installed with a detailed Cape Canaveral like RSS.
 
-* Download and copy SpaceRace.mod-2 to you mods folder, usually C:/Users/{yourusername}/AppData/LocalLow/Jundroo/SimpleRockets2/Mods
+* Download SpaceRace.mod-2 and Career.zip from the releases =>
 
-* Download and unzip the Career file into your career folder, usually C:/Users/{yourusername}/AppData/LocalLow/Jundroo/SimpleRockets2/Career.  Your Career folder should now have 3 folders in it: Default, Hybrid and SpaceRace.
+* Copy SpaceRace.mod-2 to you mods folder, usually C:/Users/{yourusername}/AppData/LocalLow/Jundroo/SimpleRockets2/Mods
+
+* Unzip the Career.zip file into your career folder, usually C:/Users/{yourusername}/AppData/LocalLow/Jundroo/SimpleRockets2/Career.  Your Career folder should now have 3 folders in it: Default, Hybrid and SpaceRace.
 
 * Start the game and enable the Harmony and SpaceRace mods (in that order).
 
@@ -42,10 +44,6 @@ SpaceRace is a mod for Juno: New Origins.  It allows players to assume the roles
 Q: Why should I play this instead of the excellent RP-1 mod for Kerbal Space Program?
 
 A: You shouldn't!  RP-1 is my favorite gaming experience ever, and you should check it out too.  Having said that, Juno is a different beast than KSP.  In the area of customizable parts, loading times, location targeting, and the ease of writing flight programs, I think it has something to add.  In addition, SpaceRace uses its focus on the United States to give a more detailed reflection of the nature of the US space program, especially with historical events and the role of contractors.
-
-Q: How do I actually build a rocket?
-
-A: The play button in the designer only launches a simulation. You should simulate your craft to make sure they can complete the contract you have in mind.  Then use the Development flyout to develop any parts and stages required.  Once the part and stage developments are complete, you can integrate the craft from the same flyout.  It should then appear in the integrations category of the Program inspector.
 
 Q: Why are my rockets falling over?
 
@@ -105,21 +103,17 @@ The following "bugs" in the Juno code affect this mod
 
 * The UI associates a payload with a contract when both the contract and the payload have null tracking IDs (Patched by SpaceRace)
 
-* The spawn craft command does not spawn craft with sufficient precision on large planets (Earth).  I cannot fix this, but one line of code in FlightSceneScript.SpawnCraft could do so.
-
-* Grounded objects don't always stay grounded during warp.  If your space center is wandering around, you can always click the arrows to teleport it to an appropriate place.
-
-* Terrain on large planets (Earth) does not generate at a consistent height, causing structures to appear at different heights/depths depending on how the planet is rotated when the flight scene starts (I think this is a terrain issues not a structure issue, but I'm not sure.  I can't fix it).
+* Terrain on large planets (Earth) does not generate at a consistent height, causing structures to appear at different heights/depths depending on how the planet is rotated when the flight scene starts.  Future releases should redesign launchpads to be robust to variations in height.
 
 * Launching from a pad also causes visual effects (smoke and light) on nearby pads.  One potential fix it to just remove all effects from pads that are closely packed.
 
 The following bugs are known to me in SpaceRace
 
 * The projects inspector behaves badly.  Some (low priority) fields do not update regularly.  Sometimes new projects do not appear until the scene reloads.  Occasionally, the inability to update the inspector leads other methods to fail.
-  
+
 * If you use the planet studio during a career game, the scripts do not load when you leave the studio.  Reloading your last save fixes this.
 
-* Craft validation will need to be rewritten from scratch.  For now, the validator will not stop you from integrating a craft that you could not design with your current technology.
+* Craft validation will need to be rewritten from scratch.  For now, the validator will not always stop you from integrating a craft that you could not design with your current technology.
 
 ---------- Current State of the Mod -----------
 
